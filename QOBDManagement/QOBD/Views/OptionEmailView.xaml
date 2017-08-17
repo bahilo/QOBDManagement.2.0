@@ -1,0 +1,332 @@
+﻿<UserControl x:Class="QOBD.Views.OptionEmailView"
+             Name="OptionEmail"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QOBD.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:ViewModel="clr-namespace:QOBDViewModels.ViewModel;assembly=QOBDViewModels"
+             xmlns:Views="clr-namespace:QOBD.Views"
+             xmlns:Main="clr-namespace:QOBD"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="800" Loaded="OptionEmailView_Loaded">
+
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type ViewModel:ReferentialSideBarViewModel}">
+            <Views:OptionSideBarView/>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid Grid.Row="1" x:Name="gvMain" VerticalAlignment="Top" Margin="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Here comes the side menu-->
+
+        <Grid x:Name="gvLeftSide"  Height="{Binding Height, ElementName=gvMain, UpdateSourceTrigger=PropertyChanged}" 
+                          VerticalAlignment="Top" HorizontalAlignment="Left">
+            <ContentControl Content="{Binding ReferentialViewModel.ReferentialSideBarViewModel, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
+
+        <!-- End -->
+
+
+        <!-- Here comes the main content of the view -->
+
+        <StackPanel Grid.Column="1"  Height="{Binding Height, ElementName=gvMain, UpdateSourceTrigger=PropertyChanged}" >
+
+            <Label FontSize="20" Margin="0 20 0 20" Foreground="DarkGray" HorizontalAlignment="Center" Content="{Binding ReferentialViewModel.OptionEmailViewModel.Title, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Grid MaxWidth="{Binding TxtWidthDataList, UpdateSourceTrigger=PropertyChanged}" Margin="0 0 0 20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Quote Email -->
+                <Grid Margin="20" Width="{Binding ActualWidth, ElementName=mdAnnex, UpdateSourceTrigger=PropertyChanged}"
+                      ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <materialDesign:ColorZone Name="mdAnnex" Mode="{Binding HomeViewModel.TxtMaterialDesignColourName, UpdateSourceTrigger=PropertyChanged}" Padding="6" Height="43">
+                        <Grid>
+                            <Border Padding="5" CornerRadius="2" BorderBrush="DarkGray" BorderThickness="2" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                <materialDesign:PackIcon Kind="Email"/>
+                            </Border>
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Center">Email Annex</TextBlock>
+                        </Grid>
+                    </materialDesign:ColorZone>
+                    <ScrollViewer Margin="0 40 0 0" HorizontalScrollBarVisibility="Auto"
+                          Width="{Binding ElementName=mdAnnex, Path=ActualWidth, UpdateSourceTrigger=PropertyChanged}">
+                        <Border Margin="10" BorderBrush="DarkGray" BorderThickness="1" Padding="5">
+                            <Grid ShowGridLines="True" Width="{Binding ElementName=mdAnnex, Path=ActualWidth, UpdateSourceTrigger=PropertyChanged}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Margin="5" >{COMMAND_ID}</TextBlock>
+                                <TextBlock Grid.Column="1" Margin="5" >Will be replaced by the order ID</TextBlock>
+                                
+                                <TextBlock Grid.Row="1" Margin="5" >{BILL_ID}</TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="1" Margin="5" >Will be replaced by the invoice ID</TextBlock>
+
+                                <TextBlock Grid.Row="2" Margin="5" >{COMPANY_NAME}</TextBlock>
+                                <TextBlock Grid.Row="2" Grid.Column="1" Margin="5" >Will be replaced by the company name</TextBlock>
+
+                                <TextBlock Grid.Row="3" Margin="5" >{RECIPIENT_NAME}</TextBlock>
+                                <TextBlock Grid.Row="3" Grid.Column="1" Margin="5" >Will be replaced by the company name</TextBlock>
+                            
+                            </Grid>
+                        </Border>
+                    </ScrollViewer>
+                </Grid>
+
+                <!-- Confirm Order Validation Email -->
+                <Grid Margin="20" Grid.Column="1" Width="{Binding ActualWidth, ElementName=mdConfOrderValid, UpdateSourceTrigger=PropertyChanged}"
+                      ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <materialDesign:ColorZone Name="mdConfOrderValid" Mode="{Binding HomeViewModel.TxtMaterialDesignColourName, UpdateSourceTrigger=PropertyChanged}" Padding="6" Height="43">
+                        <Grid>
+                            <Border Padding="5" CornerRadius="2" BorderBrush="DarkGray" BorderThickness="2" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                <materialDesign:PackIcon Kind="Email"/>
+                            </Border>
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Center">Edit Confirm Order Validation Email</TextBlock>
+                        </Grid>
+                    </materialDesign:ColorZone>
+                    <ScrollViewer Margin="0 40 0 0" HorizontalScrollBarVisibility="Auto"
+                          Width="{Binding ElementName=mdConfOrderValid, Path=ActualWidth, UpdateSourceTrigger=PropertyChanged}">
+                        <Border Margin="10" BorderBrush="DarkGray" BorderThickness="1" Padding="5">
+                            <Grid Width="{Binding ElementName=mdConfOrderValid, Path=ActualWidth, UpdateSourceTrigger=PropertyChanged}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid>
+                                    <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 0 40 0" HorizontalAlignment="Right" materialDesign:ShadowAssist.ShadowDepth="Depth3">
+                                        <Button ToolTip="Save" Command="{Binding ReferentialViewModel.OptionEmailViewModel.UpdateCommand}" 
+                                                CommandParameter="order-confirmation">
+                                            <materialDesign:PackIcon Kind="Pencil"/>
+                                        </Button>
+                                        <Button ToolTip="Delete Content" HorizontalAlignment="Right"
+                                                Command="{Binding ReferentialViewModel.OptionEmailViewModel.DeleteCommand}" Margin="1 0 0 0" 
+                                                CommandParameter="order-confirmation">
+                                            <materialDesign:PackIcon Kind="Delete"/>
+                                        </Button>
+                                    </StackPanel>
+                                </Grid>
+                                <StackPanel Margin="0 10 0 0"  Grid.Row="1"  Orientation="Vertical">
+                                    <TextBox Background="Beige" TextWrapping="Wrap" Height="300" MinLines="10" AcceptsReturn="True" Width="{Binding ElementName=mdConfOrderValid, Path=ActualWidth, UpdateSourceTrigger=PropertyChanged}"
+                                             Margin="0 8 0 0" FontSize="12" Text="{Binding ReferentialViewModel.OptionEmailViewModel.OrderConfirmationEmailFile.TxtContent, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </ScrollViewer>
+                </Grid>
+
+                <!-- Bill First Reminder Email -->
+                <Grid Grid.Row="1" Margin="20" Width="{Binding ActualWidth, ElementName=mdBillFirstReminder, UpdateSourceTrigger=PropertyChanged}"
+                      ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <materialDesign:ColorZone Name="mdBillFirstReminder" Mode="{Binding HomeViewModel.TxtMaterialDesignColourName, UpdateSourceTrigger=PropertyChanged}" Padding="6" Height="43">
+                        <Grid>
+                            <Border Padding="5" CornerRadius="2" BorderBrush="DarkGray" BorderThickness="2" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                <materialDesign:PackIcon Kind="Email"/>
+                            </Border>
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Center">Edit Bill First Reminder Email</TextBlock>
+                        </Grid>
+                    </materialDesign:ColorZone>
+                    <ScrollViewer Margin="0 40 0 0" HorizontalScrollBarVisibility="Auto"
+                          Width="{Binding ElementName=mdBillFirstReminder, Path=ActualWidth, UpdateSourceTrigger=PropertyChanged}">
+                        <Border Margin="10" BorderBrush="DarkGray" BorderThickness="1" Padding="5">
+                            <Grid Width="{Binding ElementName=mdBillFirstReminder, Path=ActualWidth, UpdateSourceTrigger=PropertyChanged}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid>
+                                    <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 0 40 0" HorizontalAlignment="Right" materialDesign:ShadowAssist.ShadowDepth="Depth3">
+                                        <Button ToolTip="Update" Command="{Binding ReferentialViewModel.OptionEmailViewModel.UpdateCommand}" 
+                                                CommandParameter="reminder-1">
+                                            <materialDesign:PackIcon Kind="Pencil"/>
+                                        </Button>
+                                        <Button ToolTip="Erase" HorizontalAlignment="Right"
+                                                Command="{Binding ReferentialViewModel.OptionEmailViewModel.DeleteCommand}" Margin="1 0 0 0" 
+                                                CommandParameter="reminder-1">
+                                            <materialDesign:PackIcon Kind="Delete"/>
+                                        </Button>
+                                    </StackPanel>
+                                </Grid>
+                                <StackPanel Margin="0 10 0 0"  Grid.Row="1"  Orientation="Vertical">
+                                    <TextBox Background="Beige" TextWrapping="Wrap" Height="300" MinLines="10" AcceptsReturn="True" Width="{Binding ElementName=mdBillFirstReminder, Path=ActualWidth, UpdateSourceTrigger=PropertyChanged}"
+                                             Margin="0 8 0 0" FontSize="12" Text="{Binding ReferentialViewModel.OptionEmailViewModel.ReminderOneEmailFile.TxtContent, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </ScrollViewer>
+                </Grid>
+
+                <!-- Bill Second Reminder Email -->
+                <Grid Grid.Row="1" Grid.Column="1" Margin="20" Width="{Binding ActualWidth, ElementName=mdBillSecondReminder, UpdateSourceTrigger=PropertyChanged}"
+                      ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <materialDesign:ColorZone Name="mdBillSecondReminder" Mode="{Binding HomeViewModel.TxtMaterialDesignColourName, UpdateSourceTrigger=PropertyChanged}" Padding="6" Height="43">
+                        <Grid>
+                            <Border Padding="5" CornerRadius="2" BorderBrush="DarkGray" BorderThickness="2" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                <materialDesign:PackIcon Kind="Email"/>
+                            </Border>
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Center">Edit Bill Second Reminder Email</TextBlock>
+                        </Grid>
+                    </materialDesign:ColorZone>
+                    <ScrollViewer Margin="0 40 0 0" HorizontalScrollBarVisibility="Auto"
+                          Width="{Binding ElementName=mdBillSecondReminder, Path=ActualWidth, UpdateSourceTrigger=PropertyChanged}">
+                        <Border Margin="10" BorderBrush="DarkGray" BorderThickness="1" Padding="5">
+                            <Grid Width="{Binding ElementName=mdBillSecondReminder, Path=ActualWidth, UpdateSourceTrigger=PropertyChanged}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid>
+                                    <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 0 40 0" HorizontalAlignment="Right" materialDesign:ShadowAssist.ShadowDepth="Depth3">
+                                        <Button ToolTip="Save" Command="{Binding ReferentialViewModel.OptionEmailViewModel.UpdateCommand}" 
+                                                CommandParameter="reminder-2">
+                                            <materialDesign:PackIcon Kind="Pencil"/>
+                                        </Button>
+                                        <Button ToolTip="Delete Content" HorizontalAlignment="Right"
+                                                Command="{Binding DataContext.ReferentialViewModel.OptionEmailViewModel.DeleteCommand, ElementName=TxbReminderTwo}" Margin="1 0 0 0" 
+                                                CommandParameter="reminder-2">
+                                            <materialDesign:PackIcon Kind="Delete"/>
+                                        </Button>
+                                    </StackPanel>
+                                </Grid>
+                                <StackPanel Margin="0 10 0 0"  Grid.Row="1"  Orientation="Vertical">
+                                    <TextBox Background="Beige" TextWrapping="Wrap" Height="300" MinLines="10" AcceptsReturn="True" Width="{Binding ElementName=mdBillSecondReminder, Path=ActualWidth, UpdateSourceTrigger=PropertyChanged}"
+                                             Margin="0 8 0 0" FontSize="12" Text="{Binding ReferentialViewModel.OptionEmailViewModel.ReminderTwoEmailFile.TxtContent, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </ScrollViewer>
+                </Grid>
+
+                <!-- Bill Email -->
+                <Grid  Grid.Row="2" Margin="20" Width="{Binding ActualWidth, ElementName=mdBillEmail, UpdateSourceTrigger=PropertyChanged}"
+                      ScrollViewer.HorizontalScrollBarVisibility="Auto" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <materialDesign:ColorZone Name="mdBillEmail" Mode="{Binding HomeViewModel.TxtMaterialDesignColourName, UpdateSourceTrigger=PropertyChanged}" Padding="6" Height="43">
+                        <Grid>
+                            <Border Padding="5" CornerRadius="2" BorderBrush="DarkGray" BorderThickness="2" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                <materialDesign:PackIcon Kind="Ruler"/>
+                            </Border>
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Center">Edit Bill Email</TextBlock>
+                        </Grid>
+                    </materialDesign:ColorZone>
+                    <ScrollViewer Margin="0 40 0 0" HorizontalScrollBarVisibility="Auto"
+                          Width="{Binding ElementName=mdBillEmail, Path=ActualWidth, UpdateSourceTrigger=PropertyChanged}">
+                        <Border Margin="10" BorderBrush="DarkGray" BorderThickness="1" Padding="5">
+                            <Grid Width="{Binding ElementName=mdBillEmail, Path=ActualWidth, UpdateSourceTrigger=PropertyChanged}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid>
+                                    <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 0 40 0" HorizontalAlignment="Right" materialDesign:ShadowAssist.ShadowDepth="Depth3">
+                                        <Button ToolTip="Save" Command="{Binding ReferentialViewModel.OptionEmailViewModel.UpdateCommand}" 
+                                            CommandParameter="bill">
+                                            <materialDesign:PackIcon Kind="Pencil"/>
+                                        </Button>
+                                        <Button ToolTip="Delete Content" HorizontalAlignment="Right"
+                                            Command="{Binding ReferentialViewModel.OptionEmailViewModel.DeleteCommand}" Margin="1 0 0 0" 
+                                            CommandParameter="bill">
+                                            <materialDesign:PackIcon Kind="Delete"/>
+                                        </Button>
+                                    </StackPanel>
+                                </Grid>
+                                <StackPanel Margin="0 10 0 0" Grid.Row="1" Orientation="Vertical">
+                                    <TextBox Background="Beige" TextWrapping="Wrap" Height="300" MinLines="10" AcceptsReturn="True" Width="{Binding ElementName=mdBillEmail, Path=ActualWidth, UpdateSourceTrigger=PropertyChanged}"
+                                         Margin="0 8 0 0" FontSize="12" Text="{Binding ReferentialViewModel.OptionEmailViewModel.BillEmailFile.TxtContent, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </ScrollViewer>
+                </Grid>
+
+                <!-- Quote Email -->
+                <Grid Grid.Row="2" Grid.Column="1" Margin="20" Width="{Binding ActualWidth, ElementName=mdQuoteEmail, UpdateSourceTrigger=PropertyChanged}"
+                      ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <materialDesign:ColorZone Name="mdQuoteEmail" Mode="{Binding HomeViewModel.TxtMaterialDesignColourName, UpdateSourceTrigger=PropertyChanged}" Padding="6" Height="43">
+                        <Grid>
+                            <Border Padding="5" CornerRadius="2" BorderBrush="DarkGray" BorderThickness="2" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                <materialDesign:PackIcon Kind="Email"/>
+                            </Border>
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Center">Edit Quote Email</TextBlock>
+                        </Grid>
+                    </materialDesign:ColorZone>
+                    <ScrollViewer Margin="0 40 0 0" HorizontalScrollBarVisibility="Auto"
+                          Width="{Binding ElementName=mdQuoteEmail, Path=ActualWidth, UpdateSourceTrigger=PropertyChanged}">
+                        <Border Margin="10" BorderBrush="DarkGray" BorderThickness="1" Padding="5">
+                            <Grid Width="{Binding ElementName=mdQuoteEmail, Path=ActualWidth, UpdateSourceTrigger=PropertyChanged}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid>
+                                    <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 0 40 0" HorizontalAlignment="Right" materialDesign:ShadowAssist.ShadowDepth="Depth3">
+                                        <Button ToolTip="Save" Command="{Binding ReferentialViewModel.OptionEmailViewModel.UpdateCommand}" CommandParameter="quote">
+                                            <materialDesign:PackIcon Kind="Pencil"/>
+                                        </Button>
+                                        <Button ToolTip="Delete Content" HorizontalAlignment="Right"
+                                                Command="{Binding ReferentialViewModel.OptionEmailViewModel.DeleteCommand}" Margin="1 0 0 0" 
+                                                CommandParameter="quote">
+                                            <materialDesign:PackIcon Kind="Delete"/>
+                                        </Button>
+                                    </StackPanel>
+                                </Grid>
+                                <StackPanel Margin="0 10 0 0"  Grid.Row="1"  Orientation="Vertical">
+                                    <TextBox Background="Beige" TextWrapping="Wrap" Height="300" MinLines="10" AcceptsReturn="True" Width="{Binding ElementName=mdQuoteEmail, Path=ActualWidth, UpdateSourceTrigger=PropertyChanged}"
+                                             Margin="0 8 0 0" FontSize="12" Text="{Binding ReferentialViewModel.OptionEmailViewModel.QuoteEmailFile.TxtContent, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </ScrollViewer>
+                </Grid>
+
+            </Grid>
+
+        </StackPanel>
+
+    </Grid>
+    
+        
+</UserControl>

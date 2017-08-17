@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1A984908-6C13-4517-B1A6-9478BA95C234}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QOBDModels</RootNamespace>
+    <AssemblyName>QOBDModels</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Money, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Multi-Currency-Money.1.1.0\lib\Money.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstracts\ModelCreator.cs" />
+    <Compile Include="Classes\BindBase.cs" />
+    <Compile Include="Classes\Cart.cs" />
+    <Compile Include="Classes\DiscussionGroupNameConverter.cs" />
+    <Compile Include="Classes\FindParent.cs" />
+    <Compile Include="Classes\GeneralInfos.cs" />
+    <Compile Include="Classes\ImageProxy.cs" />
+    <Compile Include="Classes\InfoManager.cs" />
+    <Compile Include="Classes\ModelConcreteCreator.cs" />
+    <Compile Include="Classes\OrderSearch.cs" />
+    <Compile Include="Classes\StringLengthConverter.cs" />
+    <Compile Include="Classes\Themes\Hue.cs" />
+    <Compile Include="Classes\Themes\Swatch.cs" />
+    <Compile Include="Classes\Themes\SwatchesProvider.cs" />
+    <Compile Include="Classes\ToDo.cs" />
+    <Compile Include="Classes\TriggerConverter.cs" />
+    <Compile Include="Classes\UIControlManager.cs" />
+    <Compile Include="Command\ButtonCommand.cs" />
+    <Compile Include="Enums\EModel.cs" />
+    <Compile Include="Enums\EPrefix.cs" />
+    <Compile Include="Enums\EServiceCommunication.cs" />
+    <Compile Include="Enums\EStatisticOption.cs" />
+    <Compile Include="Helper\PaletteHelper.cs" />
+    <Compile Include="Helper\WPFHelper.cs" />
+    <Compile Include="Interfaces\ICart.cs" />
+    <Compile Include="Interfaces\IDisplay.cs" />
+    <Compile Include="Models\ActionModel.cs" />
+    <Compile Include="Models\AddressModel.cs" />
+    <Compile Include="Models\AgentModel.cs" />
+    <Compile Include="Models\BillModel.cs" />
+    <Compile Include="Models\Cart_itemModel.cs" />
+    <Compile Include="Models\ClientModel.cs" />
+    <Compile Include="Models\CurrencyModel.cs" />
+    <Compile Include="Models\DeliveryModel.cs" />
+    <Compile Include="Models\DiscussionModel.cs" />
+    <Compile Include="Models\InfosModel.cs" />
+    <Compile Include="Models\ItemModel.cs" />
+    <Compile Include="Models\Item_deliveryModel.cs" />
+    <Compile Include="Models\LanguageModel.cs" />
+    <Compile Include="Models\MessageModel.cs" />
+    <Compile Include="Models\NotificationModel.cs" />
+    <Compile Include="Models\OrderModel.cs" />
+    <Compile Include="Models\OrderSearchModel.cs" />
+    <Compile Include="Models\Order_itemModel.cs" />
+    <Compile Include="Models\PrivilegeModel.cs" />
+    <Compile Include="Models\ProviderModel.cs" />
+    <Compile Include="Models\Provider_itemModel.cs" />
+    <Compile Include="Models\RoleModel.cs" />
+    <Compile Include="Models\StatisticModel.cs" />
+    <Compile Include="Models\TaxModel.cs" />
+    <Compile Include="Models\Tax_orderModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QOBDCommon\QOBDCommon.csproj">
+      <Project>{1c64a617-2488-4b22-92f6-431f319f6793}</Project>
+      <Name>QOBDCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QOBDDAL\QOBDDAL.csproj">
+      <Project>{175bcd94-9f53-412a-ab48-5360e0644794}</Project>
+      <Name>QOBDDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QOBDGateway\QOBDGateway.csproj">
+      <Project>{58be1190-4318-4b6c-a969-f655d9a82ef7}</Project>
+      <Name>QOBDGateway</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

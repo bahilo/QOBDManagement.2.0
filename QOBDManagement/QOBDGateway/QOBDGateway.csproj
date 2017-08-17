@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{58BE1190-4318-4B6C-A969-F655D9A82EF7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QOBDGateway</RootNamespace>
+    <AssemblyName>QOBDGateway</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstracts\ClientProxy.cs" />
+    <Compile Include="Classes\ClientConcreteProxy.cs" />
+    <Compile Include="Core\GateWayAgent.cs" />
+    <Compile Include="Core\GateWayChatRoom.cs" />
+    <Compile Include="Core\GateWayCLient.cs" />
+    <Compile Include="Core\GateWayItem.cs" />
+    <Compile Include="Core\GateWayNotification.cs" />
+    <Compile Include="Core\GateWayOrder.cs" />
+    <Compile Include="Core\GateWayReferential.cs" />
+    <Compile Include="Core\GateWaySecurity.cs" />
+    <Compile Include="Core\GateWayStatisitc.cs" />
+    <Compile Include="Helper\ChannelHelper\ServiceHelper.cs" />
+    <Compile Include="Interfaces\ICommunication.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\QOBDServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QOBDCommon\QOBDCommon.csproj">
+      <Project>{1c64a617-2488-4b22-92f6-431f319f6793}</Project>
+      <Name>QOBDCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.ActionQOBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.ActionRecordQOBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.AddressQOBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.AgentQOBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.Agent_roleQOBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.Auto_refsQOBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.BillQOBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.ClientQOBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.ContactQOBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.CurrencyQOBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.DeliveryQOBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.DiscussionChatRoom.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.InfosQOBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.ItemQOBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.Item_deliveryQOBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.MessageChatRoom.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.NotificationQOBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.OrdersQOBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.Order_itemQOBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.PrivilegeQOBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.ProviderQOBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.Provider_itemQOBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.RoleQOBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.Role_actionQOBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.StatisticQOBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.TaxQOBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.Tax_itemQOBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.Tax_orderQOBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.UserChatRoom.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.User_discussionChatRoom.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QOBDServiceReference\server.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\QOBDServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\QOBDServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\QOBDServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\QOBDServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

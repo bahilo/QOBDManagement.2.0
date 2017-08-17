@@ -1,0 +1,251 @@
+﻿<Window x:Class="QOBD.MainWindow"
+        Title="AVA" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QOBD"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:Views="clr-namespace:QOBD.Views"
+        xmlns:ViewModel="clr-namespace:QOBDViewModels.ViewModel;assembly=QOBDViewModels"
+        xmlns:Model="clr-namespace:QOBDModels.Models;assembly=QOBDModels"
+        xmlns:Classes="clr-namespace:QOBDModels.Classes;assembly=QOBDModels"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="14"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        FontFamily="{StaticResource MaterialDesignFont}"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        Closing="Window_Closing"
+        Icon="favicon.ico">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Card.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.CheckBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Flipper.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Popupbox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Shadows.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- ViewModels -->
+            <DataTemplate DataType="{x:Type ViewModel:ClientViewModel}">
+                <Views:ClientView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModel:ItemViewModel}">
+                <Views:ItemView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModel:OrderViewModel}">
+                <Views:OrderView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModel:AgentViewModel}">
+                <Views:AgentView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModel:StatisticViewModel}">
+                <Views:StatisticView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModel:HomeViewModel}">
+                <Views:HomeView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModel:QuoteViewModel}">
+                <Views:QuoteView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModel:SecurityLoginViewModel}">
+                <Views:SecurityLoginView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModel:OptionSecurityViewModel}">
+                <Views:OptionSecurityView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModel:OptionGeneralViewModel}">
+                <Views:OptionGeneralView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModel:OptionDataAndDisplayViewModel}">
+                <Views:OptionDataAndDisplayView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModel:OptionEmailViewModel}">
+                <Views:OptionEmailView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModel:ConfirmationViewModel}">
+                <Views:ConfirmationView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModel:NotificationViewModel}">
+                <Views:NotificationView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModel:SearchConfirmationViewModel}">
+                <Views:SearchConfirmationView/>
+            </DataTemplate>
+
+            <!-- Detail views -->
+            <DataTemplate DataType="{x:Type ViewModel:ItemDetailViewModel}">
+                <Views:ItemDetailView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModel:ClientDetailViewModel}">
+                <Views:ClientDetailView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModel:AgentDetailViewModel}">
+                <Views:AgentDetailView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModel:OrderDetailViewModel}">
+                <Views:OrderDetailView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type Model:ProviderModel}">
+                <Views:ItemProviderView/>
+            </DataTemplate>
+
+
+            <!-- Chat-->
+            <DataTemplate DataType="{x:Type ViewModel:ChatRoomViewModel}">
+                <Views:MainChatRoomWindow/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModel:DiscussionViewModel}">
+                <Views:ChatRoomView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModel:MessageViewModel}">
+                <Views:ChatHistoryView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModel:HelperViewModel}">
+                <Views:HelpView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModel:ChatAccountViewModel}">
+                <Views:ChatAccount/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModel:ChatGroupViewModel}">
+                <Views:ChatGroup/>
+            </DataTemplate>
+
+            <Classes:TriggerConverter x:Key="TriggerConverter"/>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <materialDesign:DialogHost Identifier="RootDialog" Loaded="DialogHost_Loaded"
+                               IsOpen="{Binding Dialog.IsDialogOpen, UpdateSourceTrigger=PropertyChanged}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!-- header -->
+
+            <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth5">
+                <materialDesign:ColorZone Background="{Binding Background, ElementName=tbMenu, UpdateSourceTrigger=PropertyChanged}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.RowSpan="2" HorizontalAlignment="Left" Margin="5 0 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding ReferentialViewModel.OptionDataAndDisplayViewModel.LogoImageDisplay.ImageSource, UpdateSourceTrigger=PropertyChanged}" Stretch="Uniform"
+                                       Width="{Binding ReferentialViewModel.OptionDataAndDisplayViewModel.LogoImageDisplay.TxtInfoItem1, UpdateSourceTrigger=PropertyChanged}"
+                                       Height="{Binding ReferentialViewModel.OptionDataAndDisplayViewModel.LogoImageDisplay.TxtInfoItem2, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Image Grid.Column="1" Source="{Binding ReferentialViewModel.OptionDataAndDisplayViewModel.HeaderImageDisplay.ImageSource, UpdateSourceTrigger=PropertyChanged}" Stretch="Uniform" Margin="10 0 0 0"
+                                       Width="{Binding ReferentialViewModel.OptionDataAndDisplayViewModel.HeaderImageDisplay.TxtInfoItem1, UpdateSourceTrigger=PropertyChanged}"
+                                       Height="{Binding ReferentialViewModel.OptionDataAndDisplayViewModel.HeaderImageDisplay.TxtInfoItem2, UpdateSourceTrigger=PropertyChanged}"/>
+                        </Grid>
+                        <ToolBarTray Name="tbMenu" Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
+                            <ToolBar Style="{DynamicResource MaterialDesignToolBar}">
+
+                                <materialDesign:Badged Badge="{Binding ChatRoomViewModel.DiscussionViewModel.TxtNbNewMessage, UpdateSourceTrigger=PropertyChanged}"
+                                                       Margin="0 12 28 4" BadgeColorZoneMode="Dark">
+                                    <Button Style="{DynamicResource MaterialDesignFlatButton}" x:Name="btnEmail" ToolTip="New Messages"
+                                            Command="{Binding ChatRoomViewModel.DiscussionViewModel.NewMessageHomePageCommand}">
+                                        <WrapPanel>
+                                            <materialDesign:PackIcon Kind="{Binding ChatRoomViewModel.DiscussionViewModel.TxtMessageIcon, UpdateSourceTrigger=PropertyChanged}" />
+                                        </WrapPanel>
+                                    </Button>
+                                </materialDesign:Badged>
+                                <Button Style="{DynamicResource MaterialDesignFlatButton}" x:Name="btnHelp" ToolTip="Help"
+                                            Command="{Binding InformationDisplayCommand}">
+                                    <materialDesign:PackIcon Kind="Help" />
+                                </Button>
+                                <Separator />
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <materialDesign:PackIcon Kind="AccountCircle" Width="40"/>
+                                    <TextBlock x:Name="txbWelcomeUser" Text="{Binding TxtUserName, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 0 0"/>
+                                </StackPanel>
+                                <Separator />
+                                <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges" StaysOpen="True">
+                                    <StackPanel>
+                                        <Button CommandParameter="{Binding AuthenticatedUserModel, UpdateSourceTrigger=PropertyChanged}">
+                                            <Button.Command>
+                                                <MultiBinding Converter="{StaticResource TriggerConverter}">
+                                                    <Binding Path="AgentViewModel.GetCurrentAgentCommand"/>
+                                                </MultiBinding>
+                                            </Button.Command>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="AccountCircle" Margin="0 0 5 0"/>
+                                                <TextBlock>Profile</TextBlock>
+                                            </StackPanel>
+                                        </Button>
+
+                                        <Button Command="{Binding SecurityLoginViewModel.LogoutCommand}">
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Logout" Margin="0 0 5 0"/>
+                                                <TextBlock>Log Out</TextBlock>
+                                            </StackPanel>
+                                        </Button>
+                                    </StackPanel>
+                                </materialDesign:PopupBox>
+                            </ToolBar>
+                        </ToolBarTray>
+                        <Grid Grid.Row="2" Grid.ColumnSpan="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="70"/>
+                                <ColumnDefinition Width="70"/>
+                                <ColumnDefinition Width="70"/>
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name="btnBack" Style="{DynamicResource MaterialDesignFlatButton}" Command="{Binding CommandNavig}" CommandParameter="back" ToolTip="Back">
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="ArrowLeftBold"/>
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="btnRefresh" Grid.Column="1" Style="{DynamicResource MaterialDesignFlatButton}" Command="{Binding CommandNavig}" CommandParameter="refresh" ToolTip="Refresh">
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="Refresh"/>
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="btnHome" Grid.Column="2" Style="{DynamicResource MaterialDesignFlatButton}" Command="{Binding CommandNavig}" CommandParameter="home" ToolTip="Home">
+                                <materialDesign:PackIcon Kind="Home"/>
+                            </Button>
+                        </Grid>
+                        <Grid Grid.Row="3" Grid.ColumnSpan="2" Height="3">
+                            <ProgressBar x:Name="pbarTop"
+                                             materialDesign:ShadowAssist.ShadowDepth="Depth4" 
+                                             VerticalAlignment="Center"
+                                             Minimum="0"
+                                             Value="{Binding ProgressBarPercentValue,UpdateSourceTrigger=PropertyChanged}"
+                                             Maximum="100"/>
+                            <ProgressBar IsIndeterminate="True" materialDesign:ShadowAssist.ShadowDepth="Depth4" 
+                                             Visibility="{Binding SearchProgressVisibility, UpdateSourceTrigger=PropertyChanged}"
+                                             VerticalAlignment="Top" />
+                        </Grid>
+                    </Grid>
+                </materialDesign:ColorZone>
+            </materialDesign:Card>
+
+            <!-- body -->
+
+            <!-- Here come all views -->
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"
+                          Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=ActualWidth}">
+                <Grid x:Name="gvCentral" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=ActualWidth}">
+                    <ContentControl Content="{Binding CurrentViewModel, IsAsync=True, UpdateSourceTrigger=PropertyChanged}"/>
+                </Grid>
+            </ScrollViewer>
+            <!-- End -->
+        </Grid>
+    </materialDesign:DialogHost>
+</Window>
