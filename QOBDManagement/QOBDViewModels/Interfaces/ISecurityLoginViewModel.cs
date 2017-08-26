@@ -1,4 +1,7 @@
-﻿using QOBDCommon.Enum;
+﻿using QOBDCommon.Classes;
+using QOBDCommon.Enum;
+using QOBDModels.Command;
+using QOBDModels.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +12,18 @@ namespace QOBDViewModels.Interfaces
 {
     public interface ISecurityLoginViewModel
     {
+        string TxtPathFavicon { get; }
+        string TxtInfoAllRightText { get; }
+        string TxtInfoCompanyName { get; }
+        string TxtWelcomeMessage { get; }
+        AgentModel AgentModel { get; set; }
+        BusinessLogic Bl { get; }
+        string TxtErrorMessage { get; set; }
+        string TxtClearPassword { get; set; }
+        string TxtLogin { get; set; }
+
+        ButtonCommand<object> LogoutCommand { get; set; }
+
         Task showLoginView();
         Task<object> authenticateAgent();
         bool securityCheck(EAction action, ESecurity right);

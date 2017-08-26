@@ -15,7 +15,7 @@ using QOBDModels.Classes;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class SecurityLoginViewModel : Classes.ViewModel
+    public class SecurityLoginViewModel : Classes.ViewModel, ISecurityLoginViewModel
     {
         private Func<Object, Object> _page;
         private string _errorMessage;
@@ -137,7 +137,7 @@ namespace QOBDViewModels.ViewModel
 
         public async Task showLoginView()
         {
-            bool result = await Singleton.getDialogueBox().showAsync(this);
+            bool result = await Singleton.getDialogueBox().showAsync(this as ISecurityLoginViewModel);
             if (!string.IsNullOrEmpty(TxtLogin) && !string.IsNullOrEmpty(TxtClearPassword) && result)
             {
                 await authenticateAgent();

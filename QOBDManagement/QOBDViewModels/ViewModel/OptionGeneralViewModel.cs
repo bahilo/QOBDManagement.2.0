@@ -16,7 +16,7 @@ using QOBDModels.Command;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class OptionGeneralViewModel : Classes.ViewModel
+    public class OptionGeneralViewModel : Classes.ViewModel, IOptionGeneralViewModel
     {
         private Func<object, object> _page;
         private List<InfoBank> _bankDetails;

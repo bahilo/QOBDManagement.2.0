@@ -18,7 +18,7 @@ using QOBDDAL.Core;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class ItemViewModel : Classes.ViewModel
+    public class ItemViewModel : Classes.ViewModel, IItemViewModel
     {
         private HashSet<string> _itemFamilyList;
         private HashSet<string> _itemBrandList;
@@ -36,8 +36,8 @@ namespace QOBDViewModels.ViewModel
 
         private ItemModel _itemModel;
         private List<ItemModel> _itemsModel;
-        private ItemDetailViewModel _itemDetailViewModel;
-        private ItemSideBarViewModel _itemSideBarViewModel;
+        private IItemDetailViewModel _itemDetailViewModel;
+        private ISideBarViewModel _itemSideBarViewModel;
         private IMainWindowViewModel _main;
 
 
@@ -94,8 +94,8 @@ namespace QOBDViewModels.ViewModel
             _itemModel = (ItemModel)_main.ModelCreator.createModel(QOBDModels.Enums.EModel.ITEM);
             _itemsModel = new List<ItemModel>();
             _selectedProviderModel = (ProviderModel)_main.ModelCreator.createModel(QOBDModels.Enums.EModel.PROVIDER);
-            _itemDetailViewModel = (ItemDetailViewModel)_main.ViewModelCreator.createViewModel( Enums.EViewModel.ITEMDETAIL, _main);
-            _itemSideBarViewModel = (ItemSideBarViewModel)_main.ViewModelCreator.createViewModel( Enums.EViewModel.ITEMMENU, _main);
+            _itemDetailViewModel = (IItemDetailViewModel)_main.ViewModelCreator.createViewModel( Enums.EViewModel.ITEMDETAIL, _main);
+            _itemSideBarViewModel = (ISideBarViewModel)_main.ViewModelCreator.createViewModel( Enums.EViewModel.ITEMMENU, _main);
         }
 
         private void instancesCommand()
@@ -142,7 +142,7 @@ namespace QOBDViewModels.ViewModel
             set { setProperty(ref _providerTitle, value); }
         }
 
-        public ItemDetailViewModel ItemDetailViewModel
+        public IItemDetailViewModel ItemDetailViewModel
         {
             get { return _itemDetailViewModel; }
             set { setProperty(ref _itemDetailViewModel, value); }
@@ -154,7 +154,7 @@ namespace QOBDViewModels.ViewModel
             set { setProperty(ref _selectedProviderModel, value); }
         }
 
-        public ItemSideBarViewModel ItemSideBarViewModel
+        public ISideBarViewModel ItemSideBarViewModel
         {
             get { return _itemSideBarViewModel; }
             set { setProperty(ref _itemSideBarViewModel, value); }
@@ -282,6 +282,11 @@ namespace QOBDViewModels.ViewModel
         public string BoxVisibility
         {
             get { return _main.OrderViewModel.OrderDetailViewModel.BoxVisibility; }
+        }
+
+        public string TxtIconColour
+        {
+            get { return Utility.getRandomColour(); }
         }
 
 
@@ -578,7 +583,6 @@ namespace QOBDViewModels.ViewModel
             {
                 _main.Startup.Dal.DALItem.PropertyChanged -= onCatalogueDataDownloadingStatusChange;
                 ItemDetailViewModel.Dispose();
-                ItemSideBarViewModel.Dispose();
                 foreach (var itemModel in ItemModelList)
                 {
                     if (itemModel.Image != null)
@@ -713,7 +717,6 @@ namespace QOBDViewModels.ViewModel
             obj.PropertyChanged -= _itemDetailViewModel.onItemNameChange_generateReference;
             obj.PropertyChanged += _itemDetailViewModel.onItemNameChange_generateReference;
             SelectedItemModel = obj;
-            ItemSideBarViewModel.SelectedItem = SelectedItemModel;
             executeNavig("item-detail");
         }
 

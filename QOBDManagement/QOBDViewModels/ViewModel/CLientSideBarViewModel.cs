@@ -10,7 +10,7 @@ using QOBDModels.Classes;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class CLientSideBarViewModel : Classes.ViewModel
+    public class CLientSideBarViewModel : Classes.ViewModel, ISideBarViewModel
     {
         private Func<Object, Object> _page; 
 
@@ -20,8 +20,8 @@ namespace QOBDViewModels.ViewModel
 
         //----------------------------[ Commands ]------------------
 
-        public ButtonCommand<string> CLientSetupCommand { get; set; }
-        public ButtonCommand<string> ClientUtilitiesCommand { get; set; }
+        public ButtonCommand<string> SetupCommand { get; set; }
+        public ButtonCommand<string> UtilitiesCommand { get; set; }
 
 
 
@@ -41,8 +41,8 @@ namespace QOBDViewModels.ViewModel
         
         private void instancesCommand()
         {
-            CLientSetupCommand = _main.CommandCreator.createSingleInputCommand<string>(executeSetupAction, canExecuteSetupAction);
-            ClientUtilitiesCommand = _main.CommandCreator.createSingleInputCommand<string>(executeUtilityAction, canExecuteUtilityAction);
+            SetupCommand = _main.CommandCreator.createSingleInputCommand<string>(executeSetupAction, canExecuteSetupAction);
+            UtilitiesCommand = _main.CommandCreator.createSingleInputCommand<string>(executeUtilityAction, canExecuteUtilityAction);
 
         }
 
@@ -63,8 +63,8 @@ namespace QOBDViewModels.ViewModel
         
         private void updateCommand()
         {
-            ClientUtilitiesCommand.raiseCanExecuteActionChanged();
-            CLientSetupCommand.raiseCanExecuteActionChanged();
+            UtilitiesCommand.raiseCanExecuteActionChanged();
+            SetupCommand.raiseCanExecuteActionChanged();
         }
 
         public override void Dispose()
@@ -72,7 +72,7 @@ namespace QOBDViewModels.ViewModel
         }
 
         //----------------------------[ Event Handler ]------------------
-
+        
         private void onSelectedCLientChange(object sender, PropertyChangedEventArgs e)
         {
             if (e.PropertyName.Equals("SelectedClient"))

@@ -7,6 +7,7 @@
              xmlns:local="clr-namespace:QOBD.Views"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:ViewModel="clr-namespace:QOBDViewModels.ViewModel;assembly=QOBDViewModels"
+             xmlns:Interfaces="clr-namespace:QOBDViewModels.Interfaces;assembly=QOBDViewModels"
              xmlns:Classes="clr-namespace:QOBDModels.Classes;assembly=QOBDModels"
              xmlns:Views="clr-namespace:QOBD.Views"
              xmlns:Main="clr-namespace:QOBD"

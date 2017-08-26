@@ -17,7 +17,7 @@ using System.Windows.Controls;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class AgentDetailViewModel : Classes.ViewModel
+    public class AgentDetailViewModel : Classes.ViewModel, IAgentDetailViewModel
     {
         private string _title;
         private Func<string, object> _page;
@@ -28,7 +28,7 @@ namespace QOBDViewModels.ViewModel
         private AgentModel _selectedAgentModel;
         private List<AgentModel> _agentsViewModel;
 
-        public AgentSideBarViewModel AgentSideBarViewModel { get; set; }
+        public ISideBarViewModel AgentSideBarViewModel { get; set; }
 
 
         //----------------------------[ Commands ]------------------
@@ -64,6 +64,7 @@ namespace QOBDViewModels.ViewModel
         private void instancesModel()
         {
             _selectedAgentModel = (AgentModel)_main.ModelCreator.createModel(QOBDModels.Enums.EModel.AGENT);
+            AgentSideBarViewModel = (ISideBarViewModel)_main.ViewModelCreator.createViewModel(Enums.EViewModel.AGENTMENU, _main);
             _agentsViewModel = new List<AgentModel>();
         }
 
@@ -81,7 +82,7 @@ namespace QOBDViewModels.ViewModel
         public AgentModel SelectedAgentModel
         {
             get { return _selectedAgentModel; }
-            set { setProperty(ref _selectedAgentModel, value); AgentSideBarViewModel.SelectedAgentModel = value; }
+            set { setProperty(ref _selectedAgentModel, value); }
         }
 
         public BusinessLogic Bl

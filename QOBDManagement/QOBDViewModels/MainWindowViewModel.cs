@@ -47,16 +47,16 @@ namespace QOBDViewModels
         //----------------------------[ Models ]------------------
 
         public IClientViewModel ClientViewModel { get; set; }
-        public ItemViewModel ItemViewModel { get; set; }
-        public OrderViewModel OrderViewModel { get; set; }
-        public AgentViewModel AgentViewModel { get; set; }
-        public NotificationViewModel NotificationViewModel { get; set; }
-        public HomeViewModel HomeViewModel { get; set; }
-        public ReferentialViewModel ReferentialViewModel { get; set; }
-        public StatisticViewModel StatisticViewModel { get; set; }
-        public QuoteViewModel QuoteViewModel { get; set; }
-        public SecurityLoginViewModel SecurityLoginViewModel { get; set; }
-        public ChatRoomViewModel ChatRoomViewModel { get; set; }
+        public IItemViewModel ItemViewModel { get; set; }
+        public IOrderViewModel OrderViewModel { get; set; }
+        public IAgentViewModel AgentViewModel { get; set; }
+        public INotificationViewModel NotificationViewModel { get; set; }
+        public IHomeViewModel HomeViewModel { get; set; }
+        public IReferentialViewModel ReferentialViewModel { get; set; }
+        public IStatisticViewModel StatisticViewModel { get; set; }
+        public IQuoteViewModel QuoteViewModel { get; set; }
+        public ISecurityLoginViewModel SecurityLoginViewModel { get; set; }
+        public IChatRoomViewModel ChatRoomViewModel { get; set; }
 
 
         //----------------------------[ Orders ]------------------        
@@ -103,17 +103,17 @@ namespace QOBDViewModels
             _heightDataList = 600;                        
             
             //------[ ViewModels ]
-            ItemViewModel = (ItemViewModel)_viewModelCreator.createViewModel( EViewModel.ITEM, this);
+            ItemViewModel = (IItemViewModel)_viewModelCreator.createViewModel( EViewModel.ITEM, this);
             ClientViewModel = (IClientViewModel)_viewModelCreator.createViewModel(EViewModel.CLIENT, this);
-            AgentViewModel = (AgentViewModel)_viewModelCreator.createViewModel(EViewModel.AGENT, this);
-            ChatRoomViewModel = (ChatRoomViewModel)_viewModelCreator.createViewModel(EViewModel.CHAT, this);
-            HomeViewModel = (HomeViewModel)_viewModelCreator.createViewModel(EViewModel.HOME, this);
-            NotificationViewModel = (NotificationViewModel)_viewModelCreator.createViewModel(EViewModel.NOTIFICATION, this);
-            ReferentialViewModel = (ReferentialViewModel)_viewModelCreator.createViewModel(EViewModel.REFERENTIAL, this);
-            StatisticViewModel = (StatisticViewModel)_viewModelCreator.createViewModel(EViewModel.STATISTIC, this);
-            OrderViewModel = (OrderViewModel)_viewModelCreator.createViewModel(EViewModel.ORDER, this);
-            QuoteViewModel = (QuoteViewModel)_viewModelCreator.createViewModel(EViewModel.QUOTE, this);
-            SecurityLoginViewModel = (SecurityLoginViewModel)_viewModelCreator.createViewModel(EViewModel.SECURITYLOGIN, this);
+            AgentViewModel = (IAgentViewModel)_viewModelCreator.createViewModel(EViewModel.AGENT, this);
+            ChatRoomViewModel = (IChatRoomViewModel)_viewModelCreator.createViewModel(EViewModel.CHAT, this);
+            HomeViewModel = (IHomeViewModel)_viewModelCreator.createViewModel(EViewModel.HOME, this);
+            NotificationViewModel = (INotificationViewModel)_viewModelCreator.createViewModel(EViewModel.NOTIFICATION, this);
+            ReferentialViewModel = (IReferentialViewModel)_viewModelCreator.createViewModel(EViewModel.REFERENTIAL, this);
+            StatisticViewModel = (IStatisticViewModel)_viewModelCreator.createViewModel(EViewModel.STATISTIC, this);
+            OrderViewModel = (IOrderViewModel)_viewModelCreator.createViewModel(EViewModel.ORDER, this);
+            QuoteViewModel = (IQuoteViewModel)_viewModelCreator.createViewModel(EViewModel.QUOTE, this);
+            SecurityLoginViewModel = (ISecurityLoginViewModel)_viewModelCreator.createViewModel(EViewModel.SECURITYLOGIN, this);
 
         }
 
@@ -212,7 +212,7 @@ namespace QOBDViewModels
             set { setProperty(ref _context, value); }
         }
 
-        public OrderSideBarViewModel OrderQuoteSideBar
+        public ISideBarViewModel OrderQuoteSideBar
         {
             get { return OrderViewModel.OrderSideBarViewModel; }
         }

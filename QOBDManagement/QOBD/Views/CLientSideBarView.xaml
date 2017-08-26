@@ -24,7 +24,7 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Button Style="{DynamicResource MaterialDesignFlatButton}" ToolTip="New Client/Prospect"
-                                Command="{Binding ClientViewModel.ClientSideBarViewModel.CLientSetupCommand}"
+                                Command="{Binding ClientViewModel.ClientSideBarViewModel.SetupCommand}"
                                 CommandParameter="new-client">
                             <StackPanel>
                                 <materialDesign:PackIcon Kind="AccountMultiplePlus" Width="35" Height="Auto" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
@@ -43,7 +43,7 @@
                                 <StackPanel Orientation="Vertical">
                                     <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
                                         <Button Style="{DynamicResource MaterialDesignFlatButton}" ToolTip="Select client for a quote"
-                                            Command="{Binding ClientViewModel.ClientSideBarViewModel.ClientUtilitiesCommand}"
+                                            Command="{Binding ClientViewModel.ClientSideBarViewModel.UtilitiesCommand}"
                                             CommandParameter="select-quote-client"
                                             HorizontalContentAlignment="Left">
                                             <StackPanel Orientation="Horizontal">
@@ -56,7 +56,7 @@
                                     </Border>
                                     <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
                                         <Button Style="{DynamicResource MaterialDesignFlatButton}" ToolTip="Selected Client's Orders"
-                                        Command="{Binding ClientViewModel.ClientSideBarViewModel.ClientUtilitiesCommand}"
+                                        Command="{Binding ClientViewModel.ClientSideBarViewModel.UtilitiesCommand}"
                                         CommandParameter="client-order"
                                         HorizontalContentAlignment="Left">
                                             <StackPanel Orientation="Horizontal">
@@ -69,7 +69,7 @@
                                     </Border>
                                     <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
                                         <Button Style="{DynamicResource MaterialDesignFlatButton}" ToolTip="Selected Client's Quotes"
-                                        Command="{Binding ClientViewModel.ClientSideBarViewModel.ClientUtilitiesCommand}"
+                                        Command="{Binding ClientViewModel.ClientSideBarViewModel.UtilitiesCommand}"
                                         CommandParameter="client-quote"
                                         HorizontalContentAlignment="Left">
                                             <StackPanel Orientation="Horizontal">
@@ -82,7 +82,7 @@
                                     </Border>
                                     <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
                                         <Button Style="{DynamicResource MaterialDesignFlatButton}" ToolTip="Clients Home Page"
-                                            Command="{Binding ClientViewModel.ClientSideBarViewModel.ClientUtilitiesCommand}"
+                                            Command="{Binding ClientViewModel.ClientSideBarViewModel.UtilitiesCommand}"
                                             CommandParameter="client"
                                             HorizontalContentAlignment="Left">
                                             <StackPanel Orientation="Horizontal">

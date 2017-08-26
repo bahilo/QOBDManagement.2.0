@@ -22,7 +22,7 @@ using QOBDModels.Enums;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class StatisticViewModel : Classes.ViewModel
+    public class StatisticViewModel : Classes.ViewModel, IStatisticViewModel
     {
         private SeriesCollection _purchaseAndSalePriceseriesCollection;
         private SeriesCollection _payReceivedSeries;
@@ -51,6 +51,7 @@ namespace QOBDViewModels.ViewModel
         public StatisticViewModel(IMainWindowViewModel mainWindowViewModel)
         {
             _main = mainWindowViewModel;
+            _page = _main.navigation;
         }
 
         //----------------------------[ Initialization ]------------------

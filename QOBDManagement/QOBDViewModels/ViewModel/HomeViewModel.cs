@@ -6,7 +6,7 @@ using QOBDModels.Command;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class HomeViewModel : Classes.ViewModel
+    public class HomeViewModel : Classes.ViewModel, IHomeViewModel
     {
         private IMainWindowViewModel _main;
         private Func<object, object> _page;
@@ -37,6 +37,10 @@ namespace QOBDViewModels.ViewModel
 
         //----------------------------[ Actions ]------------------
 
+        public override void load()
+        {
+            
+        }
 
         //----------------------------[ Action Commands ]------------------
 

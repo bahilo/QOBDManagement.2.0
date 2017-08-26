@@ -16,7 +16,7 @@ using QOBDModels.Classes;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class ItemDetailViewModel : Classes.ViewModel
+    public class ItemDetailViewModel : Classes.ViewModel, IItemDetailViewModel
     {
         private string _ITEMREFERENCEPREFIX;
         private Func<object, object> _page;

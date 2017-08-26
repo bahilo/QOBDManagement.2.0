@@ -25,7 +25,7 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Button Style="{DynamicResource MaterialDesignFlatButton}" 
-                                Command="{Binding AgentViewModel.AgentSideBarViewModel.SetupAgentCommand}"
+                                Command="{Binding AgentViewModel.AgentSideBarViewModel.SetupCommand}"
                                 CommandParameter="new-agent" ToolTip="Add New Agent">
                             <StackPanel>
                                 <materialDesign:PackIcon Kind="AccountPlus" Width="35" Height="Auto" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
@@ -48,7 +48,7 @@
                                         CommandParameter="activate"
                                         HorizontalContentAlignment="Left">
                                             <StackPanel Orientation="Horizontal">
-                                                <Border CornerRadius="3" Background="{Binding AgentViewModel.AgentSideBarViewModel.TxtIconColour}" Padding="2" >
+                                                <Border CornerRadius="3" Background="{Binding AgentViewModel.TxtIconColour}" Padding="2" >
                                                     <materialDesign:PackIcon Kind="LockOpen" Foreground="WhiteSmoke"/>
                                                 </Border>
                                                 <TextBlock Margin="8 0 0 0">Activate Agent</TextBlock>
@@ -61,7 +61,7 @@
                                         CommandParameter="deactivate"
                                         HorizontalContentAlignment="Left">
                                             <StackPanel Orientation="Horizontal">
-                                                <Border CornerRadius="3" Background="{Binding AgentViewModel.AgentSideBarViewModel.TxtIconColour}" Padding="2" >
+                                                <Border CornerRadius="3" Background="{Binding AgentViewModel.TxtIconColour}" Padding="2" >
                                                     <materialDesign:PackIcon Kind="Lock" Foreground="WhiteSmoke"/>
                                                 </Border>
                                                 <TextBlock Margin="8 0 0 0">Deactivate Agent</TextBlock>
@@ -74,7 +74,7 @@
                                             CommandParameter="use"
                                             HorizontalContentAlignment="Left">
                                             <StackPanel Orientation="Horizontal">
-                                                <Border CornerRadius="3" Background="{Binding AgentViewModel.AgentSideBarViewModel.TxtIconColour}" Padding="2" >
+                                                <Border CornerRadius="3" Background="{Binding AgentViewModel.TxtIconColour}" Padding="2" >
                                                     <materialDesign:PackIcon Kind="Login" Foreground="WhiteSmoke"/>
                                                 </Border>
                                                 <TextBlock Margin="8 0 0 0">Connect As</TextBlock>

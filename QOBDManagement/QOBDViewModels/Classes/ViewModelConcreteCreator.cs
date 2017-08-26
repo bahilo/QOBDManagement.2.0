@@ -15,7 +15,7 @@ namespace QOBDViewModels.Classes
 {
     public class ViewModelConcreteCreator: Creator
     {
-        public override object createViewModel(EViewModel viewModelName, IMainWindowViewModel mainViewModel)
+        public override object createViewModel(EViewModel viewModelName, IMainWindowViewModel mainViewModel, object param = null)
         {
             switch (viewModelName)
             {
@@ -47,6 +47,10 @@ namespace QOBDViewModels.Classes
                     return new NotificationSideBarViewModel(mainViewModel);
                 case EViewModel.ORDER:
                     return new OrderViewModel(mainViewModel);
+                case EViewModel.ORDERDETAIL:
+                    return new OrderDetailViewModel(mainViewModel);
+                case EViewModel.ORDERMENU:
+                    return new OrderSideBarViewModel(mainViewModel, (IOrderDetailViewModel)param);
                 case EViewModel.QUOTE:
                     return new QuoteViewModel(mainViewModel);
                 case EViewModel.REFERENTIAL:

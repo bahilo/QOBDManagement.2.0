@@ -34,7 +34,7 @@
             </ResourceDictionary.MergedDictionaries>
 
             <!-- ViewModels -->
-            <DataTemplate DataType="{x:Type Interfaces:IClientViewModel}">
+            <DataTemplate DataType="{x:Type ViewModel:ClientViewModel}">
                 <Views:ClientView/>
             </DataTemplate>
             <DataTemplate DataType="{x:Type ViewModel:ItemViewModel}">

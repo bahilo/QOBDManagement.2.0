@@ -2,10 +2,11 @@
 using QOBDViewModels.Interfaces;
 using System;
 using QOBDModels.Command;
+using System.ComponentModel;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class ReferentialSideBarViewModel : Classes.ViewModel
+    public class ReferentialSideBarViewModel : Classes.ViewModel, ISideBarViewModel
     {
         //----------------------------[ Commands ]------------------
 
@@ -68,7 +69,20 @@ namespace QOBDViewModels.ViewModel
                     break;
             }
         }
-        
+        private void updateCommand()
+        {
+            UtilitiesCommand.raiseCanExecuteActionChanged();
+            SetupCommand.raiseCanExecuteActionChanged();
+        }
+
+        //----------------------------[ Event Handler ]------------------
+
+        public void onCurrentPageChange_updateCommand(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName.Equals("CurrentViewModel"))
+                updateCommand();
+        }
+
         //----------------------------[ Action Commands ]------------------
 
         private void executeSetupAction(string obj)

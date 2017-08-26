@@ -24,7 +24,7 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Button Style="{DynamicResource MaterialDesignFlatButton}" 
-                                Command="{Binding OrderViewModel.OrderSideBarViewModel.SetupOrderCommand}"
+                                Command="{Binding OrderViewModel.OrderSideBarViewModel.SetupCommand}"
                                 CommandParameter="select-client" ToolTip="Select A Client">
                             <StackPanel>
                                 <materialDesign:PackIcon Kind="AccountPlus" Width="35" Height="Auto" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
@@ -46,7 +46,7 @@
                                         Command="{Binding OrderViewModel.OrderSideBarViewModel.UtilitiesCommand}"
                                         CommandParameter="convert-quoteToOrder" HorizontalContentAlignment="Left">
                                             <StackPanel Orientation="Horizontal">
-                                                <Border CornerRadius="3" Background="{Binding OrderViewModel.OrderSideBarViewModel.TxtIconColour}" Padding="2" >
+                                                <Border CornerRadius="3" Background="{Binding OrderViewModel.TxtIconColour}" Padding="2" >
                                                     <materialDesign:PackIcon Kind="Cart" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
                                                 </Border>
                                                 <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">Convert Quote into Order</TextBlock>
@@ -58,7 +58,7 @@
                                         Command="{Binding OrderViewModel.OrderSideBarViewModel.UtilitiesCommand}"
                                         CommandParameter="convert-orderToQuote" HorizontalContentAlignment="Left">
                                             <StackPanel Orientation="Horizontal">
-                                                <Border CornerRadius="3" Background="{Binding OrderViewModel.OrderSideBarViewModel.TxtIconColour}" Padding="2" >
+                                                <Border CornerRadius="3" Background="{Binding OrderViewModel.TxtIconColour}" Padding="2" >
                                                     <materialDesign:PackIcon Kind="CartPlus" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
                                                 </Border>
                                                 <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">Convert Order into Quote</TextBlock>
@@ -70,7 +70,7 @@
                                         Command="{Binding OrderViewModel.OrderSideBarViewModel.UtilitiesCommand}"
                                         CommandParameter="convert-quoteToCredit" HorizontalContentAlignment="Left">
                                             <StackPanel Orientation="Horizontal">
-                                                <Border CornerRadius="3" Background="{Binding OrderViewModel.OrderSideBarViewModel.TxtIconColour}" Padding="2" >
+                                                <Border CornerRadius="3" Background="{Binding OrderViewModel.TxtIconColour}" Padding="2" >
                                                     <materialDesign:PackIcon Kind="CreditCardPlus" Foreground="WhiteSmoke"/>
                                                 </Border>
                                                 <TextBlock Margin="8 0 0 0">Convert Quote into Credit</TextBlock>
@@ -82,7 +82,7 @@
                                         Command="{Binding OrderViewModel.OrderSideBarViewModel.UtilitiesCommand}"
                                         CommandParameter="valid-order" HorizontalContentAlignment="Left">
                                             <StackPanel Orientation="Horizontal">
-                                                <Border CornerRadius="3" Background="{Binding OrderViewModel.OrderSideBarViewModel.TxtIconColour}" Padding="2" >
+                                                <Border CornerRadius="3" Background="{Binding OrderViewModel.TxtIconColour}" Padding="2" >
                                                     <materialDesign:PackIcon Kind="CreditCard" Foreground="WhiteSmoke"/>
                                                 </Border>
                                                 <TextBlock Margin="8 0 0 0">Valid Order</TextBlock>
@@ -94,7 +94,7 @@
                                         Command="{Binding OrderViewModel.OrderSideBarViewModel.UtilitiesCommand}"
                                         CommandParameter="valid-credit" HorizontalContentAlignment="Left">
                                             <StackPanel Orientation="Horizontal">
-                                                <Border CornerRadius="3" Background="{Binding OrderViewModel.OrderSideBarViewModel.TxtIconColour}" Padding="2" >
+                                                <Border CornerRadius="3" Background="{Binding OrderViewModel.TxtIconColour}" Padding="2" >
                                                     <materialDesign:PackIcon Kind="CreditCard" Foreground="WhiteSmoke"/>
                                                 </Border>
                                                 <TextBlock Margin="8 0 0 0">Valid Credit</TextBlock>
@@ -106,7 +106,7 @@
                                         Command="{Binding OrderViewModel.OrderSideBarViewModel.UtilitiesCommand}"
                                         CommandParameter="close-order" HorizontalContentAlignment="Left">
                                             <StackPanel Orientation="Horizontal">
-                                                <Border CornerRadius="3" Background="{Binding OrderViewModel.OrderSideBarViewModel.TxtIconColour}" Padding="2" >
+                                                <Border CornerRadius="3" Background="{Binding OrderViewModel.TxtIconColour}" Padding="2" >
                                                     <materialDesign:PackIcon Kind="CreditCardPlus" Foreground="WhiteSmoke"/>
                                                 </Border>
                                                 <TextBlock Margin="8 0 0 0">Close Order</TextBlock>
@@ -118,7 +118,7 @@
                                         Command="{Binding OrderViewModel.OrderSideBarViewModel.UtilitiesCommand}"
                                         CommandParameter="close-credit" HorizontalContentAlignment="Left">
                                             <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                                                <Border CornerRadius="3" Background="{Binding OrderViewModel.OrderSideBarViewModel.TxtIconColour}" Padding="2" >
+                                                <Border CornerRadius="3" Background="{Binding OrderViewModel.TxtIconColour}" Padding="2" >
                                                     <materialDesign:PackIcon Kind="BookmarkCheck" Foreground="WhiteSmoke"/>
                                                 </Border>
                                                 <TextBlock Margin="8 0 0 0">Close Credit</TextBlock>
@@ -130,7 +130,7 @@
                                         Command="{Binding OrderViewModel.OrderSideBarViewModel.UtilitiesCommand}"
                                         CommandParameter="order" HorizontalContentAlignment="Left">
                                             <StackPanel Orientation="Horizontal">
-                                                <Border CornerRadius="3" Background="{Binding OrderViewModel.OrderSideBarViewModel.TxtIconColour}" Padding="2" >
+                                                <Border CornerRadius="3" Background="{Binding OrderViewModel.TxtIconColour}" Padding="2" >
                                                     <materialDesign:PackIcon Kind="Home" Foreground="WhiteSmoke"/>
                                                 </Border>
                                                 <TextBlock Margin="8 0 0 0">Orders Page</TextBlock>
@@ -142,7 +142,7 @@
                                         Command="{Binding OrderViewModel.OrderSideBarViewModel.UtilitiesCommand}"
                                         CommandParameter="quote" HorizontalContentAlignment="Left">
                                             <StackPanel Orientation="Horizontal">
-                                                <Border CornerRadius="3" Background="{Binding OrderViewModel.OrderSideBarViewModel.TxtIconColour}" Padding="2" >
+                                                <Border CornerRadius="3" Background="{Binding OrderViewModel.TxtIconColour}" Padding="2" >
                                                     <materialDesign:PackIcon Kind="Home" Foreground="WhiteSmoke"/>
                                                 </Border>
                                                 <TextBlock Margin="8 0 0 0">Quotes Page</TextBlock>

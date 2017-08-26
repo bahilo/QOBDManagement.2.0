@@ -17,7 +17,7 @@ using QOBDDAL.Core;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class OrderViewModel : Classes.ViewModel
+    public class OrderViewModel : Classes.ViewModel, IOrderViewModel
     {
         private string _navigTo;
         private Func<Object, Object> _page;
@@ -37,8 +37,8 @@ namespace QOBDViewModels.ViewModel
 
         //----------------------------[ Models ]------------------
 
-        public OrderSideBarViewModel OrderSideBarViewModel { get; set; }
-        private OrderDetailViewModel _orderDetailViewModel;
+        public ISideBarViewModel OrderSideBarViewModel { get; set; }
+        private IOrderDetailViewModel _orderDetailViewModel;
         private List<OrderModel> _orderModelList;
         private List<OrderModel> _waitValidOrders;
         private List<OrderModel> _waitValidClientOrders;
@@ -102,8 +102,8 @@ namespace QOBDViewModels.ViewModel
             _inProcessOrders = new List<OrderModel>();
             _waitPayOrders = new List<OrderModel>();
             _closedOrders = new List<OrderModel>();
-            _orderDetailViewModel = new OrderDetailViewModel(main);
-            OrderSideBarViewModel = new OrderSideBarViewModel(main, _orderDetailViewModel);
+            _orderDetailViewModel = (IOrderDetailViewModel)_main.ViewModelCreator.createViewModel( Enums.EViewModel.ORDERDETAIL,main);
+            OrderSideBarViewModel = (ISideBarViewModel)_main.ViewModelCreator.createViewModel(Enums.EViewModel.ORDERMENU, main, _orderDetailViewModel);
             _selectedClient = (ClientModel)_main.ModelCreator.createModel(QOBDModels.Enums.EModel.CLIENT);
         }
 
@@ -154,7 +154,7 @@ namespace QOBDViewModels.ViewModel
             set { setProperty(ref _currenciesList, value); }
         }
 
-        public OrderDetailViewModel OrderDetailViewModel
+        public IOrderDetailViewModel OrderDetailViewModel
         {
             get { return _orderDetailViewModel; }
             set { setProperty(ref _orderDetailViewModel, value); }
@@ -224,6 +224,11 @@ namespace QOBDViewModels.ViewModel
         {
             get { return _blockOrderVisibility; }
             set { setProperty(ref _blockOrderVisibility, value, "BlockOrderVisibility"); }
+        }
+
+        public string TxtIconColour
+        {
+            get { return Utility.getRandomColour(); }
         }
 
         //----------------------------[ Actions ]------------------
@@ -389,6 +394,16 @@ namespace QOBDViewModels.ViewModel
             CurrenciesList = (await Bl.BlOrder.GetCurrencyDataAsync((int)EOrderStatus.ALL)).Select(x=> new CurrencyModel { Currency = x }).ToList();
         }
 
+        public void removeObserver(PropertyChangedEventHandler observerMethode)
+        {
+            PropertyChanged += observerMethode;
+        }
+
+        public void addObserver(PropertyChangedEventHandler observerMethode)
+        {
+            PropertyChanged -= observerMethode;
+        }
+
 
         public override void Dispose()
         {
@@ -397,7 +412,6 @@ namespace QOBDViewModels.ViewModel
             _main.Startup.Dal.DALOrder.PropertyChanged -= onOrdersDownloadingStatusChange;
             Bl.BlOrder.Dispose();
             OrderDetailViewModel.Dispose();
-            OrderSideBarViewModel.Dispose();
         }
 
         //----------------------------[ Event Handler ]------------------

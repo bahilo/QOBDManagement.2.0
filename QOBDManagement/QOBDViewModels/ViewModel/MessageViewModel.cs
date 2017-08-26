@@ -9,10 +9,11 @@ using System.Windows;
 using System.Configuration;
 using QOBDModels.Models;
 using QOBDModels.Classes;
+using System.ComponentModel;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class MessageViewModel : Classes.ViewModel
+    public class MessageViewModel : Classes.ViewModel, IMessageViewModel
     {
         private int _maxMessageCharacters;
         private Func<object, object> _page;
@@ -58,6 +59,11 @@ namespace QOBDViewModels.ViewModel
         {
             get { return _messageGroupHistoryList; }
             set { setProperty(ref _messageGroupHistoryList, value); }
+        }
+
+        public override async void load()
+        {
+            await loadAsync(); 
         }
 
         public async Task loadAsync()
@@ -145,6 +151,16 @@ namespace QOBDViewModels.ViewModel
                 });
             else
                 MessageIndividualHistoryList = Utility.concat(MessageIndividualHistoryList, dict);
+        }
+
+        public void addObserver(PropertyChangedEventHandler observerMethode)
+        {
+            PropertyChanged += observerMethode;
+        }
+
+        public void removeObserver(PropertyChangedEventHandler observerMethode)
+        {
+            PropertyChanged -= observerMethode;
         }
 
 

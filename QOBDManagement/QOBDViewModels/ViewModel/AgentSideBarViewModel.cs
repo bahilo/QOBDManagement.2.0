@@ -12,18 +12,17 @@ using QOBDModels.Classes;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class AgentSideBarViewModel : Classes.ViewModel
+    public class AgentSideBarViewModel : Classes.ViewModel, ISideBarViewModel
     {
         private Func<object, object> _page;
 
         //----------------------------[ Models ]------------------
-
-        private AgentModel _selectedAgentModel;
+        
         private IMainWindowViewModel _main;
 
         //----------------------------[ Commands ]------------------
 
-        public ButtonCommand<string> SetupAgentCommand { get; set; }
+        public ButtonCommand<string> SetupCommand { get; set; }
         public ButtonCommand<string> UtilitiesCommand { get; set; }
 
 
@@ -34,7 +33,7 @@ namespace QOBDViewModels.ViewModel
 
         public AgentSideBarViewModel(IMainWindowViewModel mainWindowViewModel) :this()
         {
-            this._main = mainWindowViewModel;
+            _main = mainWindowViewModel;
             _page = mainWindowViewModel.navigation;
             instancesCommand();
             initEvents();
@@ -49,7 +48,7 @@ namespace QOBDViewModels.ViewModel
 
         private void instancesCommand()
         {
-            SetupAgentCommand = _main.CommandCreator.createSingleInputCommand<string>(executeSetupAction, canExcecuteSetupAction);
+            SetupCommand = _main.CommandCreator.createSingleInputCommand<string>(executeSetupAction, canExcecuteSetupAction);
             UtilitiesCommand = _main.CommandCreator.createSingleInputCommand<string>(executeUtilityAction, canExecuteUtilityAction);
         }
 
@@ -68,8 +67,8 @@ namespace QOBDViewModels.ViewModel
 
         public AgentModel SelectedAgentModel
         {
-            get { return _selectedAgentModel; }
-            set { _selectedAgentModel = value; onPropertyChange("SelectedAgentModel"); }
+            get { return _main.AgentViewModel.AgentDetailViewModel.SelectedAgentModel; }
+            set { _main.AgentViewModel.AgentDetailViewModel.SelectedAgentModel = value; onPropertyChange("SelectedAgentModel"); }
         }
 
         public Func<object, object> Page
@@ -103,7 +102,7 @@ namespace QOBDViewModels.ViewModel
         private void updateCommand()
         {
             UtilitiesCommand.raiseCanExecuteActionChanged();
-            SetupAgentCommand.raiseCanExecuteActionChanged();
+            SetupCommand.raiseCanExecuteActionChanged();
         }
 
         public override void Dispose()
@@ -115,9 +114,7 @@ namespace QOBDViewModels.ViewModel
         
         public void onCurrentPageChange_updateCommand(object sender, PropertyChangedEventArgs e)
         {
-            if (e.PropertyName.Equals("CurrentViewModel")
-                && ((_main.CurrentViewModel as AgentDetailViewModel) != null)
-                || (_main.CurrentViewModel as AgentViewModel) != null)
+            if (e.PropertyName.Equals("CurrentViewModel"))
                 updateCommand();
         }
 

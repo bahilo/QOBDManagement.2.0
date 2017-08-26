@@ -15,7 +15,7 @@ using QOBDModels.Classes;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class NotificationViewModel : Classes.ViewModel
+    public class NotificationViewModel : Classes.ViewModel, INotificationViewModel
     {
         private Func<Object, Object> _page;
         private Notification _notification;
@@ -29,7 +29,7 @@ namespace QOBDViewModels.ViewModel
         private List<BillModel> _billNotPaidList;
         private List<OrderModel> _orderWaitingValidationList;
         private List<ClientModel> _clientList;
-        private NotificationSideBarViewModel _notificationSideBarViewModel;
+        private ISideBarViewModel _notificationSideBarViewModel;
 
 
         //----------------------------[ Commands ]------------------
@@ -70,7 +70,7 @@ namespace QOBDViewModels.ViewModel
 
         private void instancesModel()
         {
-            _notificationSideBarViewModel = (NotificationSideBarViewModel)_main.ViewModelCreator.createViewModel( Enums.EViewModel.NOTIFICATIONMENU, _main);
+            _notificationSideBarViewModel = (ISideBarViewModel)_main.ViewModelCreator.createViewModel( Enums.EViewModel.NOTIFICATIONMENU, _main);
             _billNotPaidList = new List<BillModel>();
             _clientList = new List<ClientModel>();
             _orderWaitingValidationList = new List<OrderModel>();
@@ -86,7 +86,7 @@ namespace QOBDViewModels.ViewModel
 
         //----------------------------[ Properties ]------------------
 
-        public NotificationSideBarViewModel NotificationSideBarViewModel
+        public ISideBarViewModel NotificationSideBarViewModel
         {
             get { return _notificationSideBarViewModel; }
             set { setProperty(ref _notificationSideBarViewModel, value); }
@@ -173,11 +173,6 @@ namespace QOBDViewModels.ViewModel
                 output.Add(bvm);
             }
             return output;
-        }
-
-        public override void Dispose()
-        {
-            NotificationSideBarViewModel.Dispose();
         }
 
         //----------------------------[ Action Commands ]------------------

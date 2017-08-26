@@ -14,7 +14,7 @@ using QOBDModels.Classes;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class AgentViewModel : Classes.ViewModel
+    public class AgentViewModel : Classes.ViewModel, IAgentViewModel
     {
         
         private Func<Object, Object> _page;
@@ -26,7 +26,7 @@ namespace QOBDViewModels.ViewModel
         //----------------------------[ Models ]------------------
 
         private AgentModel _agentModel;
-        private AgentDetailViewModel _agentDetailViewModel;
+        private IAgentDetailViewModel _agentDetailViewModel;
         private IMainWindowViewModel _main;
 
         //----------------------------[ Commands ]------------------
@@ -56,8 +56,8 @@ namespace QOBDViewModels.ViewModel
         {
             _clientAgentToMoveList = new List<Agent>();
             _agentModel = (AgentModel)_main.ModelCreator.createModel(QOBDModels.Enums.EModel.AGENT);
-            _agentDetailViewModel = (AgentDetailViewModel)_main.ViewModelCreator.createViewModel( Enums.EViewModel.AGENTDETAIL, mainWindowViewModel);
-            AgentSideBarViewModel = (AgentSideBarViewModel)_main.ViewModelCreator.createViewModel(Enums.EViewModel.AGENTMENU, mainWindowViewModel);
+            _agentDetailViewModel = (IAgentDetailViewModel)_main.ViewModelCreator.createViewModel( Enums.EViewModel.AGENTDETAIL, mainWindowViewModel);
+            
         }
 
         private void instancesCommand()
@@ -122,13 +122,13 @@ namespace QOBDViewModels.ViewModel
             set { AgentDetailViewModel.SelectedAgentModel = value; onPropertyChange("SelectedAgentModel"); }
         }
 
-        public AgentDetailViewModel AgentDetailViewModel
+        public IAgentDetailViewModel AgentDetailViewModel
         {
             get { return _agentDetailViewModel; }
             set { _agentDetailViewModel = value; onPropertyChange("AgentDetailViewModel"); }
         }
 
-        public AgentSideBarViewModel AgentSideBarViewModel
+        public ISideBarViewModel AgentSideBarViewModel
         {
             get { return _agentDetailViewModel.AgentSideBarViewModel; }
             set { _agentDetailViewModel.AgentSideBarViewModel = value; onPropertyChange("AgentSideBarViewModel"); }
@@ -148,6 +148,11 @@ namespace QOBDViewModels.ViewModel
         {
             get { return _chatUserGroupList; }
             set { setProperty(ref _chatUserGroupList, value); }
+        }
+
+        public string TxtIconColour
+        {
+            get { return Utility.getRandomColour(); }
         }
 
 
@@ -289,7 +294,7 @@ namespace QOBDViewModels.ViewModel
 
             Bl.BlAgent.Dispose();
             AgentDetailViewModel.Dispose();
-            AgentSideBarViewModel.Dispose();
+            
         }
 
         

@@ -13,7 +13,7 @@ using QOBDModels.Classes;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class QuoteViewModel : Classes.ViewModel
+    public class QuoteViewModel : Classes.ViewModel, IQuoteViewModel
     {
         private bool _isCurrentPage;
         private Func<Object, Object> _page;
@@ -24,7 +24,7 @@ namespace QOBDViewModels.ViewModel
         //----------------------------[ Models ]------------------
 
         private OrderModel _orderModel;
-        private OrderDetailViewModel _quoteDetailViewModel;
+        private IOrderDetailViewModel _quoteDetailViewModel;
         private List<OrderModel> _quoteModelList;
         private ClientModel _selectedClient;
         private ItemModel _itemModel;
@@ -121,7 +121,7 @@ namespace QOBDViewModels.ViewModel
             set { QuoteDetailViewModel.OrderSelected = value; onPropertyChange("SelectedQuoteModel"); }
         }
 
-        public OrderDetailViewModel QuoteDetailViewModel
+        public IOrderDetailViewModel QuoteDetailViewModel
         {
             get { return _quoteDetailViewModel; }
             set { _quoteDetailViewModel = value; onPropertyChange("QuoteDetailViewModel"); }
@@ -168,7 +168,7 @@ namespace QOBDViewModels.ViewModel
             //-------[ retrieve quotes ]
             if (_main.OrderViewModel != null)
             {
-                _main.OrderViewModel.PropertyChanged += onOrderModelChange_loadOrder;
+                _main.OrderViewModel.addObserver(onOrderModelChange_loadOrder);
                 _main.OrderViewModel.loadOrders();
             }
         }
@@ -314,7 +314,7 @@ namespace QOBDViewModels.ViewModel
 
         public override void Dispose()
         {
-            _main.OrderViewModel.PropertyChanged -= onOrderModelChange_loadOrder;
+            _main.OrderViewModel.removeObserver(onOrderModelChange_loadOrder);
         }
 
         //----------------------------[ Event Handler ]------------------

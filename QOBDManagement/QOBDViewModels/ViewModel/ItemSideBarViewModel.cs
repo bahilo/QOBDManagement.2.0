@@ -3,25 +3,24 @@ using QOBDViewModels.Interfaces;
 using QOBDCommon.Classes;
 using QOBDModels.Models;
 using QOBDModels.Command;
+using System.ComponentModel;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class ItemSideBarViewModel : Classes.ViewModel
+    public class ItemSideBarViewModel : Classes.ViewModel, ISideBarViewModel
     {
         
         private Func<object, object> _page;
 
         //----------------------------[ Models ]------------------
 
-        private ItemModel _selectedItem;
         private IMainWindowViewModel _main;
 
         //----------------------------[ Commands ]------------------
 
-        public ButtonCommand<string> SetupItemCommand { get; set; }
+        public ButtonCommand<string> SetupCommand { get; set; }
         public ButtonCommand<string> UtilitiesCommand { get; set; }
-
-
+        
 
         public ItemSideBarViewModel()
         {
@@ -32,34 +31,31 @@ namespace QOBDViewModels.ViewModel
         {
             this._main = main;
             _page = _main.navigation;
-            instances();
             instancesCommand();
         }
 
         //----------------------------[ Initialization ]------------------
-
-        private void instances()
-        {
-            _selectedItem = (ItemModel)_main.ModelCreator.createModel(QOBDModels.Enums.EModel.ITEM);
-        }
-
+        
         private void instancesCommand()
         {
-            SetupItemCommand = _main.CommandCreator.createSingleInputCommand<string>(executeSetupAction, canExecuteSetupAction);
+            SetupCommand = _main.CommandCreator.createSingleInputCommand<string>(executeSetupAction, canExecuteSetupAction);
             UtilitiesCommand = _main.CommandCreator.createSingleInputCommand<string>(executeUtilityAction, canExecuteUtilityAction);
         }
 
-        //----------------------------[ Properties ]------------------
+        //----------------------------[ Actions ]----------------------
 
-        public ItemModel SelectedItem
+        private void updateCommand()
         {
-            get { return _selectedItem; }
-            set { setProperty(ref _selectedItem, value, "SelectedItem"); }
+            UtilitiesCommand.raiseCanExecuteActionChanged();
+            SetupCommand.raiseCanExecuteActionChanged();
         }
 
-        public string TxtIconColour
+        //----------------------------[ Event Handler ]------------------
+
+        public void onCurrentPageChange_updateCommand(object sender, PropertyChangedEventArgs e)
         {
-            get { return Utility.getRandomColour(); }
+            if (e.PropertyName.Equals("CurrentViewModel"))
+                updateCommand();
         }
 
         //----------------------------[ Action Commands ]------------------
@@ -120,7 +116,6 @@ namespace QOBDViewModels.ViewModel
                 return false;
 
             return true;
-        }  
-
+        }
     }
 }

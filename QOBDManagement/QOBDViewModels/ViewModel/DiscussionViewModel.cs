@@ -18,7 +18,7 @@ using QOBDModels.Enums;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class DiscussionViewModel : Classes.ViewModel
+    public class DiscussionViewModel : Classes.ViewModel, IDiscussionViewModel
     {
         private int _nbNewMessage;
         private string _messageIcon;
@@ -579,7 +579,7 @@ namespace QOBDViewModels.ViewModel
             if (ChatAgentModelList.Where(x => x.IsModified).Count() > 0 && DiscussionModel != null && DiscussionModel.Discussion.ID == 0)
             {
                 _userDiscussionGroupList = ChatAgentModelList.Where(x => x.IsModified).Select(x => x).ToList();
-
+                
                 var discussionCreatedList = await BL.BlChatRoom.InsertDiscussionAsync(new List<Discussion> { new Discussion { Date = DateTime.Now } });
                 if (discussionCreatedList.Count > 0)
                 {
@@ -821,6 +821,16 @@ namespace QOBDViewModels.ViewModel
                             ChatMessages.Add(message);
                     }
                 }));
+        }
+
+        public void addObserver(PropertyChangedEventHandler observerMethode)
+        {
+            PropertyChanged += observerMethode;
+        }
+
+        public void removeObserver(PropertyChangedEventHandler observerMethode)
+        {
+            PropertyChanged -= observerMethode;
         }
 
         public override void Dispose()

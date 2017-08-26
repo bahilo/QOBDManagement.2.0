@@ -10,11 +10,11 @@ namespace QOBDViewModels.ViewModel
         
         //----------------------------[ Models ]------------------
 
-        private ReferentialSideBarViewModel _referentialSideBarViewModel;
-        private OptionSecurityViewModel _optionSecurityViewModel;
-        private OptionGeneralViewModel _optionGeneralViewModel;
-        private OptionDataAndDisplayViewModel _optionDataAndDisplayViewModel;
-        private OptionEmailViewModel _optionEmailViewModel;
+        private ISideBarViewModel _referentialSideBarViewModel;
+        private IOptionSecurityViewModel _optionSecurityViewModel;
+        private IOptionGeneralViewModel _optionGeneralViewModel;
+        private IOptionDataAndDisplayViewModel _optionDataAndDisplayViewModel;
+        private IOptionEmailViewModel _optionEmailViewModel;
         private IMainWindowViewModel _main;
         
         public ReferentialViewModel(IMainWindowViewModel mainWindowViewModel)
@@ -28,11 +28,11 @@ namespace QOBDViewModels.ViewModel
 
         private void instancesModel(IMainWindowViewModel main)
         {
-            _referentialSideBarViewModel = (ReferentialSideBarViewModel)_main.ViewModelCreator.createSettingViewModel( Enums.EViewModel.REFERENTIALMENU, this);
-            _optionSecurityViewModel = (OptionSecurityViewModel)_main.ViewModelCreator.createSettingViewModel(Enums.EViewModel.REFERENTIALSECURITY, this);
-            _optionGeneralViewModel = (OptionGeneralViewModel)_main.ViewModelCreator.createSettingViewModel(Enums.EViewModel.REFERENTIALGENERAL, this);
-            _optionDataAndDisplayViewModel = (OptionDataAndDisplayViewModel)_main.ViewModelCreator.createSettingViewModel(Enums.EViewModel.REFERENTIALDATAANDDISPLAY, this);
-            _optionEmailViewModel = (OptionEmailViewModel)_main.ViewModelCreator.createSettingViewModel(Enums.EViewModel.REFERENTIALEMAIL, this);
+            _referentialSideBarViewModel = (ISideBarViewModel)_main.ViewModelCreator.createSettingViewModel( Enums.EViewModel.REFERENTIALMENU, this);
+            _optionSecurityViewModel = (IOptionSecurityViewModel)_main.ViewModelCreator.createSettingViewModel(Enums.EViewModel.REFERENTIALSECURITY, this);
+            _optionGeneralViewModel = (IOptionGeneralViewModel)_main.ViewModelCreator.createSettingViewModel(Enums.EViewModel.REFERENTIALGENERAL, this);
+            _optionDataAndDisplayViewModel = (IOptionDataAndDisplayViewModel)_main.ViewModelCreator.createSettingViewModel(Enums.EViewModel.REFERENTIALDATAANDDISPLAY, this);
+            _optionEmailViewModel = (IOptionEmailViewModel)_main.ViewModelCreator.createSettingViewModel(Enums.EViewModel.REFERENTIALEMAIL, this);
         }
 
         //----------------------------[ Properties ]------------------
@@ -43,31 +43,31 @@ namespace QOBDViewModels.ViewModel
             get { return _main.Startup.Bl; }
         }
 
-        public OptionGeneralViewModel OptionGeneralViewModel
+        public IOptionGeneralViewModel OptionGeneralViewModel
         {
             get { return _optionGeneralViewModel; }
             set { setProperty(ref _optionGeneralViewModel, value); }
         }
 
-        public OptionDataAndDisplayViewModel OptionDataAndDisplayViewModel
+        public IOptionDataAndDisplayViewModel OptionDataAndDisplayViewModel
         {
             get { return _optionDataAndDisplayViewModel; }
             set { setProperty(ref _optionDataAndDisplayViewModel, value); }
         }
 
-        public OptionSecurityViewModel OptionSecurityViewModel
+        public IOptionSecurityViewModel OptionSecurityViewModel
         {
             get { return _optionSecurityViewModel; }
             set { setProperty(ref _optionSecurityViewModel, value); }
         }
 
-        public ReferentialSideBarViewModel ReferentialSideBarViewModel
+        public ISideBarViewModel ReferentialSideBarViewModel
         {
             get { return _referentialSideBarViewModel; }
             set { setProperty(ref _referentialSideBarViewModel, value); }
         }
 
-        public OptionEmailViewModel OptionEmailViewModel
+        public IOptionEmailViewModel OptionEmailViewModel
         {
             get { return _optionEmailViewModel; }
             set { setProperty(ref _optionEmailViewModel, value); }

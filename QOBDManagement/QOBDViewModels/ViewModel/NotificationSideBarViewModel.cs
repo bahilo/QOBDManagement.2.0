@@ -3,14 +3,17 @@ using QOBDModels.Classes;
 using QOBDModels.Command;
 using QOBDViewModels.Interfaces;
 using System;
+using System.ComponentModel;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class NotificationSideBarViewModel : Classes.ViewModel
+    public class NotificationSideBarViewModel : Classes.ViewModel, ISideBarViewModel
     {
         private Func<Object, Object> _page;
         private IMainWindowViewModel _main;
-        public ButtonCommand<string> UtilitiesCommand;
+
+        public ButtonCommand<string> UtilitiesCommand { get; set; }
+        public ButtonCommand<string> SetupCommand { get; set; }
 
         public NotificationSideBarViewModel()
         {
@@ -28,6 +31,24 @@ namespace QOBDViewModels.ViewModel
         {
             get { return Utility.getRandomColour(); }
         }
+
+        //----------------------------[ Actions ]----------------------
+
+        private void updateCommand()
+        {
+            UtilitiesCommand.raiseCanExecuteActionChanged();
+            SetupCommand.raiseCanExecuteActionChanged();
+        }
+
+        //----------------------------[ Event Handler ]------------------
+
+        public void onCurrentPageChange_updateCommand(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName.Equals("CurrentViewModel"))
+                updateCommand();
+        }
+
+        //----------------------------[ Action Commands ]------------------
 
         private bool canExecuteUtilityAction(string arg)
         {

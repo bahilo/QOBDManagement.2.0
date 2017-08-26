@@ -14,16 +14,16 @@ namespace QOBDViewModels.Interfaces
     {
         //----------------[ Properties ]
         IClientViewModel ClientViewModel { get; set; }
-        ItemViewModel ItemViewModel { get; set; }
-        OrderViewModel OrderViewModel { get; set; }
-        AgentViewModel AgentViewModel { get; set; }
-        NotificationViewModel NotificationViewModel { get; set; }
-        HomeViewModel HomeViewModel { get; set; }
-        ReferentialViewModel ReferentialViewModel { get; set; }
-        StatisticViewModel StatisticViewModel { get; set; }
-        QuoteViewModel QuoteViewModel { get; set; }
-        ChatRoomViewModel ChatRoomViewModel { get; set; }
-        SecurityLoginViewModel SecurityLoginViewModel { get; set; }
+        IItemViewModel ItemViewModel { get; set; }
+        IOrderViewModel OrderViewModel { get; set; }
+        IAgentViewModel AgentViewModel { get; set; }
+        INotificationViewModel NotificationViewModel { get; set; }
+        IHomeViewModel HomeViewModel { get; set; }
+        IReferentialViewModel ReferentialViewModel { get; set; }
+        IStatisticViewModel StatisticViewModel { get; set; }
+        IQuoteViewModel QuoteViewModel { get; set; }
+        IChatRoomViewModel ChatRoomViewModel { get; set; }
+        ISecurityLoginViewModel SecurityLoginViewModel { get; set; }
 
         bool IsRefresh { get; set; }
         bool IsThroughContext { get; set; }

@@ -30,8 +30,8 @@ namespace QOBDViewModels.ViewModel
 
         //----------------------------[ ViewModels ]------------------
 
-        public DiscussionViewModel DiscussionViewModel { get; set; }
-        public MessageViewModel MessageViewModel { get; set; }
+        public IDiscussionViewModel DiscussionViewModel { get; set; }
+        public IMessageViewModel MessageViewModel { get; set; }
 
 
 
@@ -67,8 +67,8 @@ namespace QOBDViewModels.ViewModel
 
         private void setInitEvents()
         {
-            DiscussionViewModel.PropertyChanged += onChatRoomChange;
-            DiscussionViewModel.PropertyChanged += onUpdateUsersStatusChange;
+            DiscussionViewModel.addObserver(onChatRoomChange);
+            DiscussionViewModel.addObserver(onUpdateUsersStatusChange);
         }
 
         private void CommandInstances()
@@ -109,7 +109,7 @@ namespace QOBDViewModels.ViewModel
             set { _main.Startup.Bl.BlSecurity.GetAuthenticatedUser().Comment = value; onPropertyChange(); }
         }
 
-        public AgentViewModel AgentViewModel
+        public IAgentViewModel AgentViewModel
         {
             get { return _main.AgentViewModel; }
         }
@@ -140,11 +140,6 @@ namespace QOBDViewModels.ViewModel
         {
             get { return _context; }
             set { setProperty(ref _context, value); }
-        }
-
-        public AgentViewModel UserViewModel
-        {
-            get { return _main.AgentViewModel; }
         }
 
 
@@ -316,8 +311,8 @@ namespace QOBDViewModels.ViewModel
         private void unSubscribeEvents()
         {
             // unsubscribe events
-            DiscussionViewModel.PropertyChanged -= onChatRoomChange;
-            DiscussionViewModel.PropertyChanged -= onUpdateUsersStatusChange;
+            DiscussionViewModel.removeObserver(onChatRoomChange);
+            DiscussionViewModel.removeObserver(onUpdateUsersStatusChange);
         }
 
         private async Task signOutFromServerAsync(List<DiscussionModel> discussionList)

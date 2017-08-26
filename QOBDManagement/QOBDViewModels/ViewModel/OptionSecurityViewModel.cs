@@ -14,7 +14,7 @@ using QOBDModels.Classes;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class OptionSecurityViewModel : Classes.ViewModel
+    public class OptionSecurityViewModel : Classes.ViewModel, IOptionSecurityViewModel
     {
         private string _title;
         private IReferentialViewModel _referential;

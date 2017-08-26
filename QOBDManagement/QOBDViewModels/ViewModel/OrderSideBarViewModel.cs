@@ -11,7 +11,7 @@ using QOBDModels.Classes;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class OrderSideBarViewModel : Classes.ViewModel
+    public class OrderSideBarViewModel : Classes.ViewModel, ISideBarViewModel
     {
         private Func<Object, Object> _page;
         private NotifyTaskCompletion<List<Entity.Order_item>> _order_itemTask_updateItem;
@@ -20,13 +20,13 @@ namespace QOBDViewModels.ViewModel
 
         //----------------------------[ Models ]------------------
 
-        private OrderDetailViewModel _orderDetailViewModel;
+        private IOrderDetailViewModel _orderDetailViewModel;
         private IMainWindowViewModel _main;
 
         //----------------------------[ Commands ]------------------
 
         public ButtonCommand<string> UtilitiesCommand { get; set; }
-        public ButtonCommand<string> SetupOrderCommand { get; set; }
+        public ButtonCommand<string> SetupCommand { get; set; }
 
 
         public OrderSideBarViewModel()
@@ -34,10 +34,10 @@ namespace QOBDViewModels.ViewModel
             
         }
 
-        public OrderSideBarViewModel(IMainWindowViewModel mainWindowViewModel, OrderDetailViewModel orderDetail) : this()
+        public OrderSideBarViewModel(IMainWindowViewModel mainWindowViewModel, IOrderDetailViewModel orderDetailvieModel) : this()
         {
             _main = mainWindowViewModel;
-            _orderDetailViewModel = orderDetail;
+            _orderDetailViewModel = orderDetailvieModel;
             _page = _main.navigation;
             instances();
             instancesCommand();
@@ -49,7 +49,7 @@ namespace QOBDViewModels.ViewModel
 
         private void initEvents()
         {
-            _orderDetailViewModel.PropertyChanged += onSelectedCommandModelChange;
+            _orderDetailViewModel.addObserver(onSelectedCommandModelChange);
         }
 
         private void instances()
@@ -62,7 +62,7 @@ namespace QOBDViewModels.ViewModel
         private void instancesCommand()
         {
             UtilitiesCommand = _main.CommandCreator.createSingleInputCommand<string>(executeUtilityAction, canExecuteUtilityAction);
-            SetupOrderCommand = _main.CommandCreator.createSingleInputCommand<string>(executeSetupAction, canExecuteSetupAction);
+            SetupCommand = _main.CommandCreator.createSingleInputCommand<string>(executeSetupAction, canExecuteSetupAction);
         }
 
         //----------------------------[ Properties ]------------------
@@ -78,11 +78,6 @@ namespace QOBDViewModels.ViewModel
             set { _orderDetailViewModel.OrderSelected = value; onPropertyChange(); }
         }
 
-        public string TxtIconColour
-        {
-            get { return Utility.getRandomColour(); }
-        }
-
 
         //----------------------------[ Actions ]------------------
 
@@ -90,7 +85,7 @@ namespace QOBDViewModels.ViewModel
         private void updateCommand()
         {
             UtilitiesCommand.raiseCanExecuteActionChanged();
-            SetupOrderCommand.raiseCanExecuteActionChanged();
+            SetupCommand.raiseCanExecuteActionChanged();
         }
 
         private void generateAllBillsPdf()
@@ -124,7 +119,7 @@ namespace QOBDViewModels.ViewModel
 
         public override void Dispose()
         {
-            _orderDetailViewModel.PropertyChanged -= onSelectedCommandModelChange;
+            _orderDetailViewModel.removeObserver(onSelectedCommandModelChange);
         }
 
         //----------------------------[ Event Handler ]------------------
@@ -205,7 +200,7 @@ namespace QOBDViewModels.ViewModel
 
         private async void executeUtilityAction(string obj)
         {
-            OrderDetailViewModel orderDetail = _main.OrderViewModel.OrderDetailViewModel;
+            IOrderDetailViewModel orderDetail = _main.OrderViewModel.OrderDetailViewModel;
             switch (obj)
             {
                 case "convert-quoteToOrder":

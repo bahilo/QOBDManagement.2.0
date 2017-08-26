@@ -1,6 +1,4 @@
-﻿using Microsoft.Win32;
-using QOBDCommon.Classes;
-using System;
+﻿using QOBDCommon.Classes;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -21,7 +19,7 @@ using System.Windows;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class OptionDataAndDisplayViewModel : Classes.ViewModel
+    public class OptionDataAndDisplayViewModel : Classes.ViewModel, IOptionDataAndDisplayViewModel
     {
         private ObservableCollection<InfoDisplay> _imageList;
         private int _imageWidth;

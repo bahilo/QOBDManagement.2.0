@@ -6,6 +6,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:QOBD.Views"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:Interfaces="clr-namespace:QOBDViewModels.Interfaces;assembly=QOBDViewModels"
              xmlns:ViewModel="clr-namespace:QOBDViewModels.ViewModel;assembly=QOBDViewModels"
              xmlns:Views="clr-namespace:QOBD.Views"
              xmlns:Main="clr-namespace:QOBD"

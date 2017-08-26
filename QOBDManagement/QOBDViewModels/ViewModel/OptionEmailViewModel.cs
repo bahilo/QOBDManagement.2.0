@@ -12,7 +12,7 @@ using QOBDCommon.Classes;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class OptionEmailViewModel : Classes.ViewModel
+    public class OptionEmailViewModel : Classes.ViewModel, IOptionEmailViewModel
     {
         Dictionary<string, InfoFileWriter> _emails;
         private string _title;

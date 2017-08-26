@@ -20,7 +20,7 @@ namespace QOBDViewModels.Abstracts
             throw new NotSupportedException();
         }
 
-        public virtual object createViewModel(EViewModel viewModelName, IMainWindowViewModel mainViewModel)
+        public virtual object createViewModel(EViewModel viewModelName, IMainWindowViewModel mainViewModel, object param = null)
         {
             throw new NotSupportedException();
         }

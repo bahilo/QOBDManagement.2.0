@@ -18,7 +18,7 @@ using QOBDModels.Command;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class OrderDetailViewModel : Classes.ViewModel
+    public class OrderDetailViewModel : Classes.ViewModel, IOrderDetailViewModel
     {
         #region [ Variables ]
         private string _title;
@@ -1083,6 +1083,16 @@ namespace QOBDViewModels.ViewModel
             onPropertyChange("TxtTotalIncomePercent");
             onPropertyChange("TxtTotalPurchase");
             onPropertyChange("TxtTaxValue");
+        }
+
+        public void removeObserver(PropertyChangedEventHandler observerMethode)
+        {
+            PropertyChanged -= observerMethode;
+        }
+
+        public void addObserver(PropertyChangedEventHandler observerMethode)
+        {
+            PropertyChanged += observerMethode;
         }
 
         /// <summary>

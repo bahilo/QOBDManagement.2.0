@@ -121,6 +121,15 @@
     <Compile Include="ViewModel\DiscussionViewModel.cs" />
     <Compile Include="ViewModel\HelperViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
+    <Compile Include="Interfaces\ISideBarViewModel.cs" />
+    <Compile Include="Interfaces\IItemDetailViewModel.cs" />
+    <Compile Include="Interfaces\IOrderDetailViewModel.cs" />
+    <Compile Include="Interfaces\IAgentDetailViewModel.cs" />
+    <Compile Include="Interfaces\IMessageViewModel.cs" />
+    <Compile Include="Interfaces\IOptionDataAndDisplayViewModel.cs" />
+    <Compile Include="Interfaces\IOptionSecurityViewModel.cs" />
+    <Compile Include="Interfaces\IOptionEmailViewModel.cs" />
+    <Compile Include="Interfaces\IOptionGeneralViewModel.cs" />
     <Compile Include="ViewModel\ItemDetailViewModel.cs" />
     <Compile Include="ViewModel\ItemSideBarViewModel.cs" />
     <Compile Include="ViewModel\ItemViewModel.cs" />
