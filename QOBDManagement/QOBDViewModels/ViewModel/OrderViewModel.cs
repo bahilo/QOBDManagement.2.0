@@ -163,7 +163,7 @@ namespace QOBDViewModels.ViewModel
         public OrderModel SelectedOrderModel
         {
             get { return OrderDetailViewModel.OrderSelected; }
-            set { OrderDetailViewModel.OrderSelected = value; OrderSideBarViewModel.SelectedOrderModel = value; onPropertyChange("SelectedOrderModel"); }
+            set { OrderDetailViewModel.OrderSelected = value; onPropertyChange("SelectedOrderModel"); }
         }
 
         public BusinessLogic Bl

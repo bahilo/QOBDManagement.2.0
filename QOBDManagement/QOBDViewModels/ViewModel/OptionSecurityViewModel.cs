@@ -17,7 +17,7 @@ namespace QOBDViewModels.ViewModel
     public class OptionSecurityViewModel : Classes.ViewModel
     {
         private string _title;
-        private IMainWindowViewModel _main;
+        private IReferentialViewModel _referential;
         private Func<object, object> _page;
         private List<RoleModel> _roleModelList;
         private List<AgentModel> _agentModelList;
@@ -40,10 +40,10 @@ namespace QOBDViewModels.ViewModel
             
         }
 
-        public OptionSecurityViewModel(IMainWindowViewModel main): this()
+        public OptionSecurityViewModel(IReferentialViewModel viewModel) : this()
         {
-            _main = main;
-            _page = _main.navigation;
+            _referential = viewModel;
+            _page = _referential.MainWindowViewModel.navigation;
             instances();
             //instancesModel();
             instancesCommand();
@@ -62,14 +62,14 @@ namespace QOBDViewModels.ViewModel
 
         /*private void instancesModel()
         {
-            ReferentialSideBarViewModel = _main.ReferentialViewModel.ReferentialSideBarViewModel;
+            ReferentialSideBarViewModel = _referential.MainWindowViewModel.ReferentialViewModel.ReferentialSideBarViewModel;
         }*/
 
         private void instancesCommand()
         {
-            CbxGetSelectedRoleCommand = _main.CommandCreator.createSingleInputCommand<RoleModel>(getCurrentRoleModel, canGetCurrentRoleModel);
-            CbxGetSelectedAgentCommand = _main.CommandCreator.createSingleInputCommand<AgentModel>(getCurrentAgentModel, canGetCurrentAgentModel);
-            UpdateCredentialCommand = _main.CommandCreator.createSingleInputCommand<object>(updateSecurityCredential, canUpdateSecurityCredential);
+            CbxGetSelectedRoleCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<RoleModel>(getCurrentRoleModel, canGetCurrentRoleModel);
+            CbxGetSelectedAgentCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<AgentModel>(getCurrentAgentModel, canGetCurrentAgentModel);
+            UpdateCredentialCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<object>(updateSecurityCredential, canUpdateSecurityCredential);
         }
 
         //----------------------------[ Properties ]------------------
@@ -146,7 +146,7 @@ namespace QOBDViewModels.ViewModel
 
         public BusinessLogic Bl
         {
-            get { return _main.Startup.Bl; }
+            get { return _referential.MainWindowViewModel.Startup.Bl; }
         }
 
         //----------------------------[ Actions ]------------------
@@ -361,7 +361,7 @@ namespace QOBDViewModels.ViewModel
             {
                 updateAuthenticatedUserRoles(agentModifiedList.Where(x => x.Agent.ID == Bl.BlSecurity.GetAuthenticatedUser().ID).SelectMany(x => x.RoleList.Select(y=>new RoleModel { Role = y })).ToList());
                 await Singleton.getDialogueBox().showAsync("Security updated successfuly!");
-                _main.CommandNavig.raiseCanExecuteActionChanged();
+                _referential.MainWindowViewModel.CommandNavig.raiseCanExecuteActionChanged();
                 //_page(this);
             }
             

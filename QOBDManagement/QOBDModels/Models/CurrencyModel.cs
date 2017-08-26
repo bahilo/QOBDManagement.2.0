@@ -1,6 +1,6 @@
 ﻿using QOBDCommon.Classes;
 using QOBDCommon.Entities;
-using QOBDModels.Classes;
+using QOBDModels.Abstracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;

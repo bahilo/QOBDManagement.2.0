@@ -1,13 +1,12 @@
 ﻿using QOBDCommon.Entities;
-using QOBDModels.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Windows;
 using QOBDCommon.Classes;
+using QOBDModels.Abstracts;
+using QOBDModels.Classes;
 
 namespace QOBDModels.Models
 {
@@ -24,7 +23,7 @@ namespace QOBDModels.Models
         private List<RoleModel> _roleToRemoveList;
         private string _profileImageFileNameBase;
         private Dictionary<int, int> _rolePosition;
-        private InfoManager.Display _image;
+        private InfoDisplay _image;
 
         public AgentModel()
         {
@@ -150,7 +149,7 @@ namespace QOBDModels.Models
             set { _agent.Picture = value; onPropertyChange(); }
         }
 
-        public InfoManager.Display Image
+        public InfoDisplay Image
         {
             get { return _image; }
             set

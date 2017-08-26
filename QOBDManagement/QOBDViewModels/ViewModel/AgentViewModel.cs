@@ -28,7 +28,6 @@ namespace QOBDViewModels.ViewModel
         private AgentModel _agentModel;
         private AgentDetailViewModel _agentDetailViewModel;
         private IMainWindowViewModel _main;
-        public IDiscussionViewModel _chatDiscussionViewModel;
 
         //----------------------------[ Commands ]------------------
 

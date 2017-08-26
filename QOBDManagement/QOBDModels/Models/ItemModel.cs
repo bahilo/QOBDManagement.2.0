@@ -1,14 +1,10 @@
 ﻿using QOBDCommon.Entities;
-using QOBDModels.Classes;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel;
 using QOBDCommon.Classes;
-using QOBDModels.Helper;
 using QOBDManagement.Helper;
+using QOBDModels.Abstracts;
+using QOBDModels.Classes;
 
 namespace QOBDModels.Models
 {
@@ -28,7 +24,7 @@ namespace QOBDModels.Models
         private bool _isSearchByItemName;
         private bool _isExactMatch;
         private bool _isDeepSearch;
-        private InfoManager.Display _itemImage;
+        private InfoDisplay _itemImage;
         private Item _item;
 
         public ItemModel()
@@ -125,7 +121,7 @@ namespace QOBDModels.Models
             set { setProperty(ref _item_deliveryModelList, value); }
         }
 
-        public InfoManager.Display Image
+        public InfoDisplay Image
         {
             get { return _itemImage; }
             set { _itemImage = value; onPropertyChange(); }

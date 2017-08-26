@@ -136,7 +136,7 @@ namespace QOBDViewModels.ViewModel
             DeleteDiscussionCommand = _mainChatRoom.MainWindowViewModel.CommandCreator.createSingleInputCommand<AgentModel>(deleteUserDiscussion, canDeleteUserDiscussion);
             DeleteGroupDiscussionCommand = _mainChatRoom.MainWindowViewModel.CommandCreator.createSingleInputCommand<string>(deleteGroupDiscussion, canDeleteGroupDiscussion);
             ShowMoreMessagesCommand = _mainChatRoom.MainWindowViewModel.CommandCreator.createSingleInputCommand<object>(showMoreMessages, canShowMoreMessages);
-            NewMessageHomePageCommand = _mainChatRoom.MainWindowViewModel.CommandCreator.createSingleInputCommand<string>(goToMessageHome, canGoToMessageHome);
+            NewMessageHomePageCommand = _mainChatRoom.MainWindowViewModel.CommandCreator.createSingleInputCommand<string>(openChatRoom, canOpenChatRoom);
         }
 
 
@@ -1121,13 +1121,13 @@ namespace QOBDViewModels.ViewModel
         /// display chat application
         /// </summary>
         /// <param name="obj"></param>
-        private async void goToMessageHome(string obj)
+        private async void openChatRoom(string obj)
         {
             // display the chat app
             await Singleton.getDialogueBox().showAsync((ChatRoomViewModel)_mainChatRoom.MainWindowViewModel.ViewModelCreator.createViewModel(Enums.EViewModel.CHAT, _mainChatRoom.MainWindowViewModel));
         }
 
-        private bool canGoToMessageHome(string arg)
+        private bool canOpenChatRoom(string arg)
         {
             return true;
         }

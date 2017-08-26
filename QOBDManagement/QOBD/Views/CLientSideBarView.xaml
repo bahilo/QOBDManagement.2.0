@@ -34,68 +34,70 @@
                                   HorizontalAlignment="Right" Margin="10"
                                   IsChecked="{Binding ElementName=MenuToggleButton, Path=IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                     </Grid>
-                    <StackPanel Orientation="Vertical">
-                        <Expander IsExpanded="True" HorizontalAlignment="Stretch">
-                            <Expander.Header>
-                                <TextBlock Text="Utilities" />
-                            </Expander.Header>
-                            <StackPanel Orientation="Vertical">
-                                <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
-                                    <Button Style="{DynamicResource MaterialDesignFlatButton}" ToolTip="Select client for a quote"
+                    <ScrollViewer VerticalScrollBarVisibility="Visible">
+                        <StackPanel Orientation="Vertical">
+                            <Expander IsExpanded="True" HorizontalAlignment="Stretch">
+                                <Expander.Header>
+                                    <TextBlock Text="Utilities" />
+                                </Expander.Header>
+                                <StackPanel Orientation="Vertical">
+                                    <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
+                                        <Button Style="{DynamicResource MaterialDesignFlatButton}" ToolTip="Select client for a quote"
                                             Command="{Binding ClientViewModel.ClientSideBarViewModel.ClientUtilitiesCommand}"
                                             CommandParameter="select-quote-client"
                                             HorizontalContentAlignment="Left">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Border CornerRadius="3" Background="{Binding ClientViewModel.ClientSideBarViewModel.TxtIconColour}" Padding="2" >
-                                                <materialDesign:PackIcon Kind="CartPlus" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
-                                            </Border>
-                                            <TextBlock Margin="8 0 0 0">Select Client For a Quote</TextBlock>
-                                        </StackPanel>
-                                    </Button>
-                                </Border>
-                                <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
-                                    <Button Style="{DynamicResource MaterialDesignFlatButton}" ToolTip="Selected Client's Orders"
+                                            <StackPanel Orientation="Horizontal">
+                                                <Border CornerRadius="3" Background="{Binding ClientViewModel.ClientSideBarViewModel.TxtIconColour}" Padding="2" >
+                                                    <materialDesign:PackIcon Kind="CartPlus" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
+                                                </Border>
+                                                <TextBlock Margin="8 0 0 0">Select Client For a Quote</TextBlock>
+                                            </StackPanel>
+                                        </Button>
+                                    </Border>
+                                    <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
+                                        <Button Style="{DynamicResource MaterialDesignFlatButton}" ToolTip="Selected Client's Orders"
                                         Command="{Binding ClientViewModel.ClientSideBarViewModel.ClientUtilitiesCommand}"
                                         CommandParameter="client-order"
                                         HorizontalContentAlignment="Left">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Border CornerRadius="3" Background="{Binding ClientViewModel.ClientSideBarViewModel.TxtIconColour}" Padding="2" >
-                                                <materialDesign:PackIcon Kind="Cart" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
-                                            </Border>
-                                            <TextBlock Margin="8 0 0 0">See Client Orders</TextBlock>
-                                        </StackPanel>
-                                    </Button>
-                                </Border>
-                                <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
-                                    <Button Style="{DynamicResource MaterialDesignFlatButton}" ToolTip="Selected Client's Quotes"
+                                            <StackPanel Orientation="Horizontal">
+                                                <Border CornerRadius="3" Background="{Binding ClientViewModel.ClientSideBarViewModel.TxtIconColour}" Padding="2" >
+                                                    <materialDesign:PackIcon Kind="Cart" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
+                                                </Border>
+                                                <TextBlock Margin="8 0 0 0">See Client Orders</TextBlock>
+                                            </StackPanel>
+                                        </Button>
+                                    </Border>
+                                    <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
+                                        <Button Style="{DynamicResource MaterialDesignFlatButton}" ToolTip="Selected Client's Quotes"
                                         Command="{Binding ClientViewModel.ClientSideBarViewModel.ClientUtilitiesCommand}"
                                         CommandParameter="client-quote"
                                         HorizontalContentAlignment="Left">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Border CornerRadius="3" Background="{Binding ClientViewModel.ClientSideBarViewModel.TxtIconColour}" Padding="2" >
-                                                <materialDesign:PackIcon Kind="Eye" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
-                                            </Border>
-                                            <TextBlock Margin="8 0 0 0">See Client Quote</TextBlock>
-                                        </StackPanel>
-                                    </Button>
-                                </Border>
-                                <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
-                                    <Button Style="{DynamicResource MaterialDesignFlatButton}" ToolTip="Clients Home Page"
+                                            <StackPanel Orientation="Horizontal">
+                                                <Border CornerRadius="3" Background="{Binding ClientViewModel.ClientSideBarViewModel.TxtIconColour}" Padding="2" >
+                                                    <materialDesign:PackIcon Kind="Eye" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
+                                                </Border>
+                                                <TextBlock Margin="8 0 0 0">See Client Quote</TextBlock>
+                                            </StackPanel>
+                                        </Button>
+                                    </Border>
+                                    <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
+                                        <Button Style="{DynamicResource MaterialDesignFlatButton}" ToolTip="Clients Home Page"
                                             Command="{Binding ClientViewModel.ClientSideBarViewModel.ClientUtilitiesCommand}"
                                             CommandParameter="client"
                                             HorizontalContentAlignment="Left">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Border CornerRadius="3" Background="{Binding ClientViewModel.ClientSideBarViewModel.TxtIconColour}" Padding="2" >
-                                                <materialDesign:PackIcon Kind="Home" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
-                                            </Border>
-                                            <TextBlock Margin="8 0 0 0">Clients Page</TextBlock>
-                                        </StackPanel>
-                                    </Button>
-                                </Border>
-                            </StackPanel>
-                        </Expander>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Border CornerRadius="3" Background="{Binding ClientViewModel.ClientSideBarViewModel.TxtIconColour}" Padding="2" >
+                                                    <materialDesign:PackIcon Kind="Home" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
+                                                </Border>
+                                                <TextBlock Margin="8 0 0 0">Clients Page</TextBlock>
+                                            </StackPanel>
+                                        </Button>
+                                    </Border>
+                                </StackPanel>
+                            </Expander>
 
-                    </StackPanel>
+                        </StackPanel>
+                    </ScrollViewer>
                 </DockPanel>
             </materialDesign:DrawerHost.LeftDrawerContent>
             <StackPanel>

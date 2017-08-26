@@ -12,7 +12,7 @@ namespace QOBDViewModels.ViewModel
         public ButtonCommand<string> UtilitiesCommand { get; set; }
         public ButtonCommand<string> SetupCommand { get; set; }
         private Func<object, object> _page;
-        private IMainWindowViewModel _main;
+        private IReferentialViewModel _referential;
 
 
         public ReferentialSideBarViewModel()
@@ -20,10 +20,10 @@ namespace QOBDViewModels.ViewModel
             
         }
 
-        public ReferentialSideBarViewModel(IMainWindowViewModel main): this()
+        public ReferentialSideBarViewModel(IReferentialViewModel viewModel) : this()
         {
-            _main = main;
-            _page = _main.navigation;
+            _referential = viewModel;
+            _page = _referential.MainWindowViewModel.navigation;
             instancesCommand();
         }
 
@@ -31,8 +31,8 @@ namespace QOBDViewModels.ViewModel
         
         private void instancesCommand()
         {
-            UtilitiesCommand = _main.CommandCreator.createSingleInputCommand<string>(executeUtilityAction, canExecuteUtilityAction);
-            SetupCommand = _main.CommandCreator.createSingleInputCommand<string>(executeSetupAction, canExecuteSetupAction);
+            UtilitiesCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<string>(executeUtilityAction, canExecuteUtilityAction);
+            SetupCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<string>(executeSetupAction, canExecuteSetupAction);
         }
 
         //----------------------------[ Properties ]------------------
@@ -40,7 +40,7 @@ namespace QOBDViewModels.ViewModel
 
         public BusinessLogic Bl
         {
-            get { return _main.Startup.Bl; }
+            get { return _referential.MainWindowViewModel.Startup.Bl; }
         }
 
         public string TxtIconColour
@@ -86,7 +86,7 @@ namespace QOBDViewModels.ViewModel
 
         private bool canExecuteSetupAction(string arg)
         {
-            bool isUserAdmin = _main.AgentViewModel.IsAuthenticatedAgentAdmin;
+            bool isUserAdmin = _referential.MainWindowViewModel.AgentViewModel.IsAuthenticatedAgentAdmin;
 
             if (isUserAdmin && arg.Equals("credential") && _page(null) as OptionSecurityViewModel == null)
                 return true;
@@ -99,7 +99,7 @@ namespace QOBDViewModels.ViewModel
 
         private bool canExecuteUtilityAction(string arg)
         {
-            bool canRead = _main.securityCheck(QOBDCommon.Enum.EAction.Option, QOBDCommon.Enum.ESecurity._Read);
+            bool canRead = _referential.MainWindowViewModel.securityCheck(QOBDCommon.Enum.EAction.Option, QOBDCommon.Enum.ESecurity._Read);
 
             if (arg.Equals("setting") && _page(null) as OptionGeneralViewModel != null)
                 return false;

@@ -51,16 +51,6 @@ namespace QOBDViewModels.Classes
                     return new QuoteViewModel(mainViewModel);
                 case EViewModel.REFERENTIAL:
                     return new ReferentialViewModel(mainViewModel);
-                case EViewModel.REFERENTIALDATAANDDISPLAY:
-                    return new OptionDataAndDisplayViewModel(mainViewModel);
-                case EViewModel.REFERENTIALEMAIL:
-                    return new OptionEmailViewModel(mainViewModel);
-                case EViewModel.REFERENTIALGENERAL:
-                    return new OptionGeneralViewModel(mainViewModel);
-                case EViewModel.REFERENTIALSECURITY:
-                    return new OptionSecurityViewModel(mainViewModel);
-                case EViewModel.REFERENTIALMENU:
-                    return new ReferentialSideBarViewModel(mainViewModel);
                 case EViewModel.SECURITYLOGIN:
                     return new SecurityLoginViewModel(mainViewModel);
                 case EViewModel.STATISTIC:
@@ -77,6 +67,25 @@ namespace QOBDViewModels.Classes
                     return new DiscussionViewModel(mainChatViewModel);
                 case EViewModel.CHATMESSAGE:
                     return new MessageViewModel(mainChatViewModel);
+            }
+            return null;
+        }
+
+        public override object createSettingViewModel(EViewModel viewModelName, IReferentialViewModel mainSettingViewModel)
+        {
+            switch (viewModelName)
+            {
+
+                case EViewModel.REFERENTIALDATAANDDISPLAY:
+                    return new OptionDataAndDisplayViewModel(mainSettingViewModel);
+                case EViewModel.REFERENTIALEMAIL:
+                    return new OptionEmailViewModel(mainSettingViewModel);
+                case EViewModel.REFERENTIALGENERAL:
+                    return new OptionGeneralViewModel(mainSettingViewModel);
+                case EViewModel.REFERENTIALSECURITY:
+                    return new OptionSecurityViewModel(mainSettingViewModel);
+                case EViewModel.REFERENTIALMENU:
+                    return new ReferentialSideBarViewModel(mainSettingViewModel);
             }
             return null;
         }

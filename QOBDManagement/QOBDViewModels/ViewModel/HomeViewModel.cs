@@ -2,15 +2,16 @@
 using QOBDViewModels.Interfaces;
 using QOBDCommon.Classes;
 using QOBDModels.Classes;
+using QOBDModels.Command;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class HomeViewModel : BindBase//, IHomeViewModel
+    public class HomeViewModel : Classes.ViewModel
     {
         private IMainWindowViewModel _main;
         private Func<object, object> _page;
+        public ButtonCommand<string> CommandNavig { get; set; }
 
-        
         public HomeViewModel()
         {
         }
@@ -19,8 +20,9 @@ namespace QOBDViewModels.ViewModel
         {
             _main = mainWindowViewModel;
             _page = _main.navigation;
+            CommandNavig = _main.CommandCreator.createSingleInputCommand<string>(appNavig, canAppNavig);
         }
-        
+
         //----------------------------[ Properties ]------------------
 
         public string TxtMaterialDesignColourName
@@ -35,11 +37,18 @@ namespace QOBDViewModels.ViewModel
 
         //----------------------------[ Actions ]------------------
 
-        public void loadData()
-        {
-            
-        }        
 
+        //----------------------------[ Action Commands ]------------------
+
+        private void appNavig(string obj)
+        {
+            _main.appNavig(obj);
+        }
+
+        private bool canAppNavig(string arg)
+        {
+            return _main.canAppNavig(arg);
+        }
 
     }
 }

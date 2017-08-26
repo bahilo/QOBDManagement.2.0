@@ -34,62 +34,64 @@
                                   HorizontalAlignment="Right" Margin="10"
                                   IsChecked="{Binding ElementName=MenuToggleButton, Path=IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                     </Grid>
-                    <StackPanel Orientation="Vertical">
-                        <Expander IsExpanded="true" HorizontalAlignment="Stretch">
-                            <Expander.Header>
-                                <TextBlock Text="Setup" />
-                            </Expander.Header>
-                            <StackPanel Orientation="Vertical">
-                                <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
-                                    <Button Style="{DynamicResource MaterialDesignFlatButton}" 
+                    <ScrollViewer VerticalScrollBarVisibility="Visible">
+                        <StackPanel Orientation="Vertical">
+                            <Expander IsExpanded="true" HorizontalAlignment="Stretch">
+                                <Expander.Header>
+                                    <TextBlock Text="Setup" />
+                                </Expander.Header>
+                                <StackPanel Orientation="Vertical">
+                                    <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
+                                        <Button Style="{DynamicResource MaterialDesignFlatButton}" 
                 			            Command="{Binding ReferentialViewModel.ReferentialSideBarViewModel.SetupCommand}"
                 			            CommandParameter="data-display"
                 			            HorizontalContentAlignment="Left">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Border CornerRadius="3" Background="{Binding ReferentialViewModel.ReferentialSideBarViewModel.TxtIconColour}" Padding="2" >
-                                                <materialDesign:PackIcon Kind="ScreenRotation" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
-                                            </Border>
-                                            <TextBlock Margin="8 0 0 0"><Run Text="Data / Display"/></TextBlock>
-                                        </StackPanel>
-                                    </Button>
-                                </Border>
-                            </StackPanel>
-                        </Expander>
-                        <Expander IsExpanded="True" HorizontalAlignment="Stretch">
-                            <Expander.Header>
-                                <TextBlock Text="Utilities" />
-                            </Expander.Header>
-                            <StackPanel Orientation="Vertical">
-                                <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
-                                    <Button Style="{DynamicResource MaterialDesignFlatButton}" 
+                                            <StackPanel Orientation="Horizontal">
+                                                <Border CornerRadius="3" Background="{Binding ReferentialViewModel.ReferentialSideBarViewModel.TxtIconColour}" Padding="2" >
+                                                    <materialDesign:PackIcon Kind="ScreenRotation" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
+                                                </Border>
+                                                <TextBlock Margin="8 0 0 0"><Run Text="Data / Display"/></TextBlock>
+                                            </StackPanel>
+                                        </Button>
+                                    </Border>
+                                </StackPanel>
+                            </Expander>
+                            <Expander IsExpanded="True" HorizontalAlignment="Stretch">
+                                <Expander.Header>
+                                    <TextBlock Text="Utilities" />
+                                </Expander.Header>
+                                <StackPanel Orientation="Vertical">
+                                    <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
+                                        <Button Style="{DynamicResource MaterialDesignFlatButton}" 
                                         Command="{Binding DataContext.ReferentialViewModel.ReferentialSideBarViewModel.UtilitiesCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
                                         CommandParameter="email"
                                         HorizontalContentAlignment="Left">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Border CornerRadius="3" Background="{Binding ReferentialViewModel.ReferentialSideBarViewModel.TxtIconColour}" Padding="2" >
-                                                <materialDesign:PackIcon Kind="Email" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
-                                            </Border>
-                                            <TextBlock Margin="8 0 0 0"><Run Text="Email"/></TextBlock>
-                                        </StackPanel>
-                                    </Button>
-                                </Border>
-                                <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
-                                    <Button Style="{DynamicResource MaterialDesignFlatButton}" 
+                                            <StackPanel Orientation="Horizontal">
+                                                <Border CornerRadius="3" Background="{Binding ReferentialViewModel.ReferentialSideBarViewModel.TxtIconColour}" Padding="2" >
+                                                    <materialDesign:PackIcon Kind="Email" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
+                                                </Border>
+                                                <TextBlock Margin="8 0 0 0"><Run Text="Email"/></TextBlock>
+                                            </StackPanel>
+                                        </Button>
+                                    </Border>
+                                    <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
+                                        <Button Style="{DynamicResource MaterialDesignFlatButton}" 
                                         Command="{Binding DataContext.ReferentialViewModel.ReferentialSideBarViewModel.UtilitiesCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
                                         CommandParameter="setting"
                                         HorizontalContentAlignment="Left">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Border CornerRadius="3" Background="{Binding ReferentialViewModel.ReferentialSideBarViewModel.TxtIconColour}" Padding="2" >
-                                                <materialDesign:PackIcon Kind="Settings" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
-                                            </Border>
-                                            <TextBlock Margin="8 0 0 0"><Run Text="Settings Home"/></TextBlock>
-                                        </StackPanel>
-                                    </Button>
-                                </Border>
-                            </StackPanel>
-                        </Expander>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Border CornerRadius="3" Background="{Binding ReferentialViewModel.ReferentialSideBarViewModel.TxtIconColour}" Padding="2" >
+                                                    <materialDesign:PackIcon Kind="Settings" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
+                                                </Border>
+                                                <TextBlock Margin="8 0 0 0"><Run Text="Settings Home"/></TextBlock>
+                                            </StackPanel>
+                                        </Button>
+                                    </Border>
+                                </StackPanel>
+                            </Expander>
 
-                    </StackPanel>
+                        </StackPanel>
+                    </ScrollViewer>
                 </DockPanel>
             </materialDesign:DrawerHost.LeftDrawerContent>
             <StackPanel>

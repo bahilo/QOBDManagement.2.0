@@ -20,7 +20,7 @@ using System.Windows;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class ChatRoomViewModel : BindBase, IChatRoomViewModel
+    public class ChatRoomViewModel : Classes.ViewModel, IChatRoomViewModel
     {
         private Context _context;
         private Object _currentViewModel;
@@ -51,27 +51,31 @@ namespace QOBDViewModels.ViewModel
         {
             _main = mainWindowViewModel;
             _context = _main.ContextCreator.createContext(_main);
-            initializer();
+            init();
             setInitEvents();
         }
 
 
         //----------------------------[ Initialization ]------------------
-
-        private void initializer()
+        
+        private void init()
         {
-            DiscussionViewModel = new DiscussionViewModel(this);
-            MessageViewModel = new MessageViewModel(this);            
-            CurrentViewModel = MessageViewModel;
-            CommandNavig = _main.CommandCreator.createSingleInputCommand<string>(appNavig, canAppNavig);
-            DisplayAccountCommand = _main.CommandCreator.createSingleInputCommand<object>(displayChatAgentAccount, canDisplayChatAgentAccount);
-            ChatValidUserAccountCommand = _main.CommandCreator.createSingleInputCommand<object>(validChatAccount, canValidChatAccount);
+            DiscussionViewModel = (DiscussionViewModel)_main.ViewModelCreator.createChatViewModel(Enums.EViewModel.CHATDISCUSSION, this);
+            MessageViewModel = (MessageViewModel)_main.ViewModelCreator.createChatViewModel(Enums.EViewModel.CHATMESSAGE, this);
+            CurrentViewModel = MessageViewModel;            
         }
 
         private void setInitEvents()
         {
             DiscussionViewModel.PropertyChanged += onChatRoomChange;
             DiscussionViewModel.PropertyChanged += onUpdateUsersStatusChange;
+        }
+
+        private void CommandInstances()
+        {
+            CommandNavig = _main.CommandCreator.createSingleInputCommand<string>(appNavig, canAppNavig);
+            DisplayAccountCommand = _main.CommandCreator.createSingleInputCommand<object>(displayChatAgentAccount, canDisplayChatAgentAccount);
+            ChatValidUserAccountCommand = _main.CommandCreator.createSingleInputCommand<object>(validChatAccount, canValidChatAccount);
         }
 
 
@@ -81,6 +85,11 @@ namespace QOBDViewModels.ViewModel
         {
             get { return _currentViewModel; }
             set { setProperty(ref _currentViewModel, value); }
+        }
+
+        public IConfirmationViewModel Dialog
+        {
+            get { return Singleton.getDialogueBox(); }
         }
 
         public string TxtIconColour

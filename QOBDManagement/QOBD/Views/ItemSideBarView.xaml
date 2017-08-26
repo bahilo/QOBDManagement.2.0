@@ -28,60 +28,62 @@
                                   HorizontalAlignment="Right" Margin="10"
                                   IsChecked="{Binding ElementName=MenuToggleButton, Path=IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                     </Grid>
-                    <StackPanel Orientation="Vertical">
-                        <Expander IsExpanded="True" HorizontalAlignment="Stretch">
-                            <Expander.Header>
-                                <TextBlock Text="Setup" />
-                            </Expander.Header>
-                            <StackPanel Orientation="Vertical">
-                                <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
-                                    <Button Style="{DynamicResource MaterialDesignFlatButton}" 
+                    <ScrollViewer VerticalScrollBarVisibility="Visible">
+                        <StackPanel Orientation="Vertical">
+                            <Expander IsExpanded="True" HorizontalAlignment="Stretch">
+                                <Expander.Header>
+                                    <TextBlock Text="Setup" />
+                                </Expander.Header>
+                                <StackPanel Orientation="Vertical">
+                                    <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
+                                        <Button Style="{DynamicResource MaterialDesignFlatButton}" 
                                             Command="{Binding ItemViewModel.ItemSideBarViewModel.SetupItemCommand}"
                                             CommandParameter="new-item" ToolTip="Add New Item" HorizontalContentAlignment="Left">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Border CornerRadius="3" Background="{Binding ItemViewModel.ItemSideBarViewModel.TxtIconColour}" Padding="2" >
-                                                <materialDesign:PackIcon Kind="BasketFill" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
-                                            </Border>
-                                            <TextBlock Margin="8 0 0 0">Create Item</TextBlock>
-                                        </StackPanel>
-                                    </Button>
-                                </Border>                                
-                            </StackPanel>
-                        </Expander>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Border CornerRadius="3" Background="{Binding ItemViewModel.ItemSideBarViewModel.TxtIconColour}" Padding="2" >
+                                                    <materialDesign:PackIcon Kind="BasketFill" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
+                                                </Border>
+                                                <TextBlock Margin="8 0 0 0">Create Item</TextBlock>
+                                            </StackPanel>
+                                        </Button>
+                                    </Border>
+                                </StackPanel>
+                            </Expander>
 
-                        <Expander IsExpanded="True" HorizontalAlignment="Stretch">
-                            <Expander.Header>
-                                <TextBlock Text="Utilities" />
-                            </Expander.Header>
-                            <StackPanel Orientation="Vertical">
-                                <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
-                                    <Button Style="{DynamicResource MaterialDesignFlatButton}" ToolTip="Catalogue home"
+                            <Expander IsExpanded="True" HorizontalAlignment="Stretch">
+                                <Expander.Header>
+                                    <TextBlock Text="Utilities" />
+                                </Expander.Header>
+                                <StackPanel Orientation="Vertical">
+                                    <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
+                                        <Button Style="{DynamicResource MaterialDesignFlatButton}" ToolTip="Catalogue home"
                                         Command="{Binding ItemViewModel.ItemSideBarViewModel.UtilitiesCommand}"
                                         CommandParameter="catalogue" HorizontalContentAlignment="Left">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Border CornerRadius="3" Background="{Binding ItemViewModel.ItemSideBarViewModel.TxtIconColour}" Padding="2" >
-                                                <materialDesign:PackIcon Kind="Home" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
-                                            </Border>
-                                            <TextBlock Margin="8 0 0 0">Catalogue</TextBlock>
-                                        </StackPanel>
-                                    </Button>
-                                </Border>
-                                <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
-                                    <Button Style="{DynamicResource MaterialDesignFlatButton}" ToolTip="Catalogue home"
+                                            <StackPanel Orientation="Horizontal">
+                                                <Border CornerRadius="3" Background="{Binding ItemViewModel.ItemSideBarViewModel.TxtIconColour}" Padding="2" >
+                                                    <materialDesign:PackIcon Kind="Home" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
+                                                </Border>
+                                                <TextBlock Margin="8 0 0 0">Catalogue</TextBlock>
+                                            </StackPanel>
+                                        </Button>
+                                    </Border>
+                                    <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
+                                        <Button Style="{DynamicResource MaterialDesignFlatButton}" ToolTip="Catalogue home"
                                         Command="{Binding ItemViewModel.ItemSideBarViewModel.UtilitiesCommand}"
                                         CommandParameter="provider" HorizontalContentAlignment="Left">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Border CornerRadius="3" Background="{Binding ItemViewModel.ItemSideBarViewModel.TxtIconColour}" Padding="2" >
-                                                <materialDesign:PackIcon Kind="Blender" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
-                                            </Border>
-                                            <TextBlock Margin="8 0 0 0">Providers</TextBlock>
-                                        </StackPanel>
-                                    </Button>
-                                </Border>
-                            </StackPanel>
-                        </Expander>
-                        
-                    </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Border CornerRadius="3" Background="{Binding ItemViewModel.ItemSideBarViewModel.TxtIconColour}" Padding="2" >
+                                                    <materialDesign:PackIcon Kind="Blender" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
+                                                </Border>
+                                                <TextBlock Margin="8 0 0 0">Providers</TextBlock>
+                                            </StackPanel>
+                                        </Button>
+                                    </Border>
+                                </StackPanel>
+                            </Expander>
+
+                        </StackPanel>
+                    </ScrollViewer>
                 </DockPanel>
             </materialDesign:DrawerHost.LeftDrawerContent>
             <StackPanel>

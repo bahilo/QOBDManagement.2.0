@@ -35,55 +35,57 @@
                                   HorizontalAlignment="Right" Margin="10"
                                   IsChecked="{Binding ElementName=MenuToggleButton, Path=IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                     </Grid>
-                    <StackPanel Orientation="Vertical">
-                        <Expander IsExpanded="True" HorizontalAlignment="Stretch">
-                            <Expander.Header>
-                                <TextBlock Text="Utilities" />
-                            </Expander.Header>
-                            <StackPanel Orientation="Vertical">
-                                <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
-                                    <Button Style="{DynamicResource MaterialDesignFlatButton}" 
+                    <ScrollViewer VerticalScrollBarVisibility="Visible">
+                        <StackPanel Orientation="Vertical">
+                            <Expander IsExpanded="True" HorizontalAlignment="Stretch">
+                                <Expander.Header>
+                                    <TextBlock Text="Utilities" />
+                                </Expander.Header>
+                                <StackPanel Orientation="Vertical">
+                                    <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
+                                        <Button Style="{DynamicResource MaterialDesignFlatButton}" 
                                         Command="{Binding AgentViewModel.AgentSideBarViewModel.UtilitiesCommand}"
                                         CommandParameter="activate"
                                         HorizontalContentAlignment="Left">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Border CornerRadius="3" Background="{Binding AgentViewModel.AgentSideBarViewModel.TxtIconColour}" Padding="2" >
-                                                <materialDesign:PackIcon Kind="LockOpen" Foreground="WhiteSmoke"/>
-                                            </Border>
-                                            <TextBlock Margin="8 0 0 0">Activate Agent</TextBlock>
-                                        </StackPanel>
-                                    </Button>
-                                </Border>
-                                <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
-                                    <Button Style="{DynamicResource MaterialDesignFlatButton}" 
+                                            <StackPanel Orientation="Horizontal">
+                                                <Border CornerRadius="3" Background="{Binding AgentViewModel.AgentSideBarViewModel.TxtIconColour}" Padding="2" >
+                                                    <materialDesign:PackIcon Kind="LockOpen" Foreground="WhiteSmoke"/>
+                                                </Border>
+                                                <TextBlock Margin="8 0 0 0">Activate Agent</TextBlock>
+                                            </StackPanel>
+                                        </Button>
+                                    </Border>
+                                    <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
+                                        <Button Style="{DynamicResource MaterialDesignFlatButton}" 
                                         Command="{Binding AgentViewModel.AgentSideBarViewModel.UtilitiesCommand}"
                                         CommandParameter="deactivate"
                                         HorizontalContentAlignment="Left">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Border CornerRadius="3" Background="{Binding AgentViewModel.AgentSideBarViewModel.TxtIconColour}" Padding="2" >
-                                                <materialDesign:PackIcon Kind="Lock" Foreground="WhiteSmoke"/>
-                                            </Border>
-                                            <TextBlock Margin="8 0 0 0">Deactivate Agent</TextBlock>
-                                        </StackPanel>
-                                    </Button>
-                                </Border>
-                                <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
-                                    <Button Style="{DynamicResource MaterialDesignFlatButton}" ToolTip="Connect as the selected user"
+                                            <StackPanel Orientation="Horizontal">
+                                                <Border CornerRadius="3" Background="{Binding AgentViewModel.AgentSideBarViewModel.TxtIconColour}" Padding="2" >
+                                                    <materialDesign:PackIcon Kind="Lock" Foreground="WhiteSmoke"/>
+                                                </Border>
+                                                <TextBlock Margin="8 0 0 0">Deactivate Agent</TextBlock>
+                                            </StackPanel>
+                                        </Button>
+                                    </Border>
+                                    <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
+                                        <Button Style="{DynamicResource MaterialDesignFlatButton}" ToolTip="Connect as the selected user"
                                             Command="{Binding AgentViewModel.AgentSideBarViewModel.UtilitiesCommand}"
                                             CommandParameter="use"
                                             HorizontalContentAlignment="Left">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Border CornerRadius="3" Background="{Binding AgentViewModel.AgentSideBarViewModel.TxtIconColour}" Padding="2" >
-                                                <materialDesign:PackIcon Kind="Login" Foreground="WhiteSmoke"/>
-                                            </Border>
-                                            <TextBlock Margin="8 0 0 0">Connect As</TextBlock>
-                                        </StackPanel>
-                                    </Button>
-                                </Border>
-                            </StackPanel>
-                        </Expander>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Border CornerRadius="3" Background="{Binding AgentViewModel.AgentSideBarViewModel.TxtIconColour}" Padding="2" >
+                                                    <materialDesign:PackIcon Kind="Login" Foreground="WhiteSmoke"/>
+                                                </Border>
+                                                <TextBlock Margin="8 0 0 0">Connect As</TextBlock>
+                                            </StackPanel>
+                                        </Button>
+                                    </Border>
+                                </StackPanel>
+                            </Expander>
 
-                    </StackPanel>
+                        </StackPanel>
+                    </ScrollViewer>
                 </DockPanel>
             </materialDesign:DrawerHost.LeftDrawerContent>
                 <StackPanel>

@@ -10,6 +10,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:Views="clr-namespace:QOBD.Views"
         xmlns:ViewModel="clr-namespace:QOBDViewModels.ViewModel;assembly=QOBDViewModels"
+        xmlns:Interfaces="clr-namespace:QOBDViewModels.Interfaces;assembly=QOBDViewModels"
         xmlns:Model="clr-namespace:QOBDModels.Models;assembly=QOBDModels"
         xmlns:Classes="clr-namespace:QOBDModels.Classes;assembly=QOBDModels"
         TextElement.FontWeight="Regular"
@@ -33,7 +34,7 @@
             </ResourceDictionary.MergedDictionaries>
 
             <!-- ViewModels -->
-            <DataTemplate DataType="{x:Type ViewModel:ClientViewModel}">
+            <DataTemplate DataType="{x:Type Interfaces:IClientViewModel}">
                 <Views:ClientView/>
             </DataTemplate>
             <DataTemplate DataType="{x:Type ViewModel:ItemViewModel}">

@@ -15,7 +15,7 @@ namespace QOBD.Views
             InitializeComponent();
         }
 
-        private void MainChatRoom_Unloaded(object sender, RoutedEventArgs e)
+        private void MainChatRoom_loaded(object sender, RoutedEventArgs e)
         {
             if(this.DataContext as IChatRoomViewModel != null)
                 ((IChatRoomViewModel)this.DataContext).DiscussionViewModel.DiscussionModel = (DiscussionModel)((IChatRoomViewModel)this.DataContext).MainWindowViewModel.ModelCreator.createModel(QOBDModels.Enums.EModel.DISCUSSION);

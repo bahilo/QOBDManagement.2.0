@@ -12,7 +12,7 @@
              xmlns:ViewModel="clr-namespace:QOBDViewModels.ViewModel;assembly=QOBDViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="2000" Loaded="HomeView_Loaded">
-    <Grid>
+    <Grid Margin="0 30 0 0">
 
         <ItemsControl>
 
@@ -35,17 +35,17 @@
                         <materialDesign:TransitionEffect Kind="ExpandIn" />
                         <materialDesign:TransitionEffect Kind="SlideInFromTop" />
                     </materialDesign:TransitioningContent.OpeningEffects>
-                    <Button Width="420" Height="270" Margin="20" Style="{DynamicResource MaterialDesignFlatButton}"
-                    Command="{Binding CommandNavig}" CommandParameter="order">
-                        <materialDesign:Card>
-                            <materialDesign:ColorZone Mode="{Binding HomeViewModel.TxtMaterialDesignColourName, UpdateSourceTrigger=PropertyChanged}">
-                                <Grid Width="420" Height="270">
+                    <Button Width="200" Height="170" Margin="0" Style="{DynamicResource MaterialDesignFlatButton}"
+                            Command="{Binding HomeViewModel.CommandNavig}" CommandParameter="order">
+                        <materialDesign:Card UniformCornerRadius="8" Padding="6">
+                            <materialDesign:ColorZone Name="orderBtnClr" Mode="{Binding HomeViewModel.TxtMaterialDesignColourName, UpdateSourceTrigger=PropertyChanged}">
+                                <Grid Width="170" Height="160">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>
                                         <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
                                     <materialDesign:PackIcon Kind="Cart" Width="80" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    <TextBlock Text="Order" FontSize="20" Grid.Row="1" Margin="16"/>
+                                    <TextBlock Text="Order" FontSize="14" Grid.Row="1" Margin="16"/>
                                 </Grid>
                             </materialDesign:ColorZone>
                         </materialDesign:Card>
@@ -58,17 +58,17 @@
                         <materialDesign:TransitionEffect Kind="ExpandIn" />
                         <materialDesign:TransitionEffect Kind="SlideInFromTop" />
                     </materialDesign:TransitioningContent.OpeningEffects>
-                    <Button Width="420" Height="270" Margin="20" Style="{DynamicResource MaterialDesignFlatButton}"
-                            Command="{Binding CommandNavig}" CommandParameter="quote">
-                        <materialDesign:Card>
+                    <Button Width="200" Height="170" Margin="10" Style="{DynamicResource MaterialDesignFlatButton}"
+                            Command="{Binding HomeViewModel.CommandNavig}" CommandParameter="quote">
+                        <materialDesign:Card UniformCornerRadius="8" Padding="6">
                             <materialDesign:ColorZone Mode="{Binding HomeViewModel.TxtMaterialDesignColourName, UpdateSourceTrigger=PropertyChanged}">
-                                <Grid Width="420" Height="270">
+                                <Grid Width="170" Height="160">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>
                                         <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
                                     <materialDesign:PackIcon Kind="CartPlus" Width="80" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    <TextBlock Text="Quote" FontSize="20" Grid.Row="1" Margin="16"/>
+                                    <TextBlock Text="Quote" FontSize="14" Grid.Row="1" Margin="16"/>
                                 </Grid>
                             </materialDesign:ColorZone>
                         </materialDesign:Card>
@@ -82,23 +82,23 @@
                         <materialDesign:TransitionEffect Kind="ExpandIn" />
                         <materialDesign:TransitionEffect Kind="SlideInFromBottom" />
                     </materialDesign:TransitioningContent.OpeningEffects>
-                    <Button Width="420" Height="270" Margin="20" Style="{DynamicResource MaterialDesignFlatButton}"
-                            Command="{Binding CommandNavig}" CommandParameter="item">
-                        <materialDesign:Card>
+                    <Button Width="200" Height="170" Margin="10" Style="{DynamicResource MaterialDesignFlatButton}"
+                            Command="{Binding HomeViewModel.CommandNavig}" CommandParameter="item">
+                        <materialDesign:Card UniformCornerRadius="8" Padding="6">
                             <materialDesign:ColorZone Mode="{Binding HomeViewModel.TxtMaterialDesignColourName, UpdateSourceTrigger=PropertyChanged}">
-                                <Grid Width="420" Height="270">
+                                <Grid Width="170" Height="160">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>
                                         <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
                                     <materialDesign:PackIcon Kind="LibraryBooks" Width="80" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    <TextBlock Text="Catalogue" FontSize="20" Grid.Row="1" Margin="16"/>
+                                    <TextBlock Text="Catalogue" FontSize="14" Grid.Row="1" Margin="16"/>
                                 </Grid>
                             </materialDesign:ColorZone>
                         </materialDesign:Card>
                     </Button>
                 </materialDesign:TransitioningContent>
-                
+
 
                 <!-- Clients -->
                 <materialDesign:TransitioningContent Grid.Row="1" Grid.Column="1" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0:10}">
@@ -106,94 +106,94 @@
                         <materialDesign:TransitionEffect Kind="ExpandIn" />
                         <materialDesign:TransitionEffect Kind="SlideInFromBottom" />
                     </materialDesign:TransitioningContent.OpeningEffects>
-                    <Button Width="420" Height="270" Margin="20" Style="{DynamicResource MaterialDesignFlatButton}"
-                        Command="{Binding CommandNavig}" CommandParameter="client">
-                        <materialDesign:Card>
+                    <Button Width="200" Height="170" Margin="10" Style="{DynamicResource MaterialDesignFlatButton}"
+                        Command="{Binding HomeViewModel.CommandNavig}" CommandParameter="client">
+                        <materialDesign:Card UniformCornerRadius="8" Padding="6">
                             <materialDesign:ColorZone Mode="{Binding HomeViewModel.TxtMaterialDesignColourName, UpdateSourceTrigger=PropertyChanged}">
-                                <Grid Width="420" Height="270">
+                                <Grid Width="170" Height="160">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>
                                         <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
                                     <materialDesign:PackIcon Kind="AccountMultiple" Width="80" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    <TextBlock Text="Clients" FontSize="20" Grid.Row="1" Margin="16"/>
+                                    <TextBlock Text="Clients" FontSize="14" Grid.Row="1" Margin="16"/>
                                 </Grid>
                             </materialDesign:ColorZone>
                         </materialDesign:Card>
                     </Button>
                 </materialDesign:TransitioningContent>
-                                
+
                 <!-- Agents -->
-                <materialDesign:TransitioningContent Grid.Column="2" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0:20}">
+                <materialDesign:TransitioningContent Grid.Column="2" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0:10}">
                     <materialDesign:TransitioningContent.OpeningEffects>
                         <materialDesign:TransitionEffect Kind="ExpandIn" />
                         <materialDesign:TransitionEffect Kind="SlideInFromTop" />
                     </materialDesign:TransitioningContent.OpeningEffects>
-                    <Button Width="420" Height="270" Margin="20" Style="{DynamicResource MaterialDesignFlatButton}"
-                 Command="{Binding CommandNavig}" CommandParameter="agent">
-                        <materialDesign:Card>
+                    <Button Width="200" Height="170" Margin="10" Style="{DynamicResource MaterialDesignFlatButton}"
+                 Command="{Binding HomeViewModel.CommandNavig}" CommandParameter="agent">
+                        <materialDesign:Card UniformCornerRadius="8" Padding="6">
                             <materialDesign:ColorZone Mode="{Binding HomeViewModel.TxtMaterialDesignColourName, UpdateSourceTrigger=PropertyChanged}">
-                                <Grid Width="420" Height="270">
+                                <Grid Width="170" Height="160">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>
                                         <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
                                     <materialDesign:PackIcon Kind="AccountMultiple" Width="80" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    <TextBlock Text="Agents" FontSize="20" Grid.Row="1" Margin="16"/>
+                                    <TextBlock Text="Agents" FontSize="14" Grid.Row="1" Margin="16"/>
                                 </Grid>
                             </materialDesign:ColorZone>
                         </materialDesign:Card>
                     </Button>
                 </materialDesign:TransitioningContent>
-                
+
 
                 <!-- Notifications -->
-                <materialDesign:TransitioningContent Grid.Row="1" Grid.Column="2" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0:20}">
+                <materialDesign:TransitioningContent Grid.Row="1" Grid.Column="2" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0:10}">
                     <materialDesign:TransitioningContent.OpeningEffects>
                         <materialDesign:TransitionEffect Kind="ExpandIn" />
                         <materialDesign:TransitionEffect Kind="SlideInFromBottom" />
                     </materialDesign:TransitioningContent.OpeningEffects>
-                    <Button Width="420" Height="270" Margin="20" Style="{DynamicResource MaterialDesignFlatButton}"
-                            Command="{Binding CommandNavig}" CommandParameter="notification">
-                        <materialDesign:Card>
+                    <Button Width="200" Height="170" Margin="10" Style="{DynamicResource MaterialDesignFlatButton}"
+                            Command="{Binding HomeViewModel.CommandNavig}" CommandParameter="notification">
+                        <materialDesign:Card UniformCornerRadius="8" Padding="6">
                             <materialDesign:ColorZone Mode="{Binding HomeViewModel.TxtMaterialDesignColourName, UpdateSourceTrigger=PropertyChanged}">
-                                <Grid Width="420" Height="270">
+                                <Grid Width="170" Height="160">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>
                                         <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
                                     <materialDesign:PackIcon Kind="Alert" Width="80" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    <TextBlock Text="Notifications" FontSize="20" Grid.Row="1" Margin="16"/>
+                                    <TextBlock Text="Notifications" FontSize="14" Grid.Row="1" Margin="16"/>
                                 </Grid>
                             </materialDesign:ColorZone>
                         </materialDesign:Card>
                     </Button>
                 </materialDesign:TransitioningContent>
-                
+
 
                 <!-- Settings -->
-                <materialDesign:TransitioningContent Grid.Column="3" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0:30}">
+                <materialDesign:TransitioningContent Grid.Row="0" Grid.Column="3" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0:30}">
                     <materialDesign:TransitioningContent.OpeningEffects>
                         <materialDesign:TransitionEffect Kind="ExpandIn" />
                         <materialDesign:TransitionEffect Kind="SlideInFromTop" />
                     </materialDesign:TransitioningContent.OpeningEffects>
-                    <Button Width="420" Height="270" Margin="20" Style="{DynamicResource MaterialDesignFlatButton}"
-                            Command="{Binding CommandNavig}" CommandParameter="option">
-                        <materialDesign:Card>
+                    <Button Width="200" Height="170" Margin="10" Style="{DynamicResource MaterialDesignFlatButton}"
+                            Command="{Binding HomeViewModel.CommandNavig}" CommandParameter="option">
+                        <materialDesign:Card UniformCornerRadius="8" Padding="6">
                             <materialDesign:ColorZone Mode="{Binding HomeViewModel.TxtMaterialDesignColourName, UpdateSourceTrigger=PropertyChanged}">
-                                <Grid Width="420" Height="270">
+                                <Grid Width="170" Height="160">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>
                                         <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
                                     <materialDesign:PackIcon Kind="Settings" Width="80" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    <TextBlock Text="Settings" FontSize="20" Grid.Row="1" Margin="16"/>
+                                    <TextBlock Text="Settings" FontSize="14" Grid.Row="1" Margin="16"/>
                                 </Grid>
                             </materialDesign:ColorZone>
                         </materialDesign:Card>
                     </Button>
                 </materialDesign:TransitioningContent>
-                
+
 
                 <!-- Statistics -->
                 <materialDesign:TransitioningContent Grid.Row="1" Grid.Column="3" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0:30}">
@@ -201,23 +201,23 @@
                         <materialDesign:TransitionEffect Kind="ExpandIn" />
                         <materialDesign:TransitionEffect Kind="SlideInFromBottom" />
                     </materialDesign:TransitioningContent.OpeningEffects>
-                    <Button Width="420" Height="270" Margin="20" Style="{DynamicResource MaterialDesignFlatButton}"
-                            Command="{Binding CommandNavig}" CommandParameter="statistic">
-                        <materialDesign:Card>
+                    <Button Width="200" Height="170" Margin="10" Style="{DynamicResource MaterialDesignFlatButton}"
+                            Command="{Binding HomeViewModel.CommandNavig}" CommandParameter="statistic">
+                        <materialDesign:Card UniformCornerRadius="8" Padding="6">
                             <materialDesign:ColorZone Mode="{Binding HomeViewModel.TxtMaterialDesignColourName, UpdateSourceTrigger=PropertyChanged}">
-                                <Grid Width="420" Height="270">
+                                <Grid Width="170" Height="160">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>
                                         <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
                                     <materialDesign:PackIcon Kind="ChartBar" Width="80" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    <TextBlock Text="Statistics" FontSize="20" Grid.Row="1" Margin="16"/>
+                                    <TextBlock Text="Statistics" FontSize="14" Grid.Row="1" Margin="16"/>
                                 </Grid>
                             </materialDesign:ColorZone>
                         </materialDesign:Card>
                     </Button>
                 </materialDesign:TransitioningContent>
-                
+
 
             </Grid>
         </ItemsControl>

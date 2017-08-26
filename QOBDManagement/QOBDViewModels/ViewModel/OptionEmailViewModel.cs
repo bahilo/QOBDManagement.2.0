@@ -14,9 +14,9 @@ namespace QOBDViewModels.ViewModel
 {
     public class OptionEmailViewModel : Classes.ViewModel
     {
-        Dictionary<string, InfoManager.FileWriter> _emails;
+        Dictionary<string, InfoFileWriter> _emails;
         private string _title;
-        private IMainWindowViewModel _main;
+        private IReferentialViewModel _referential;
         
         //----------------------------[ Commands ]------------------
 
@@ -29,9 +29,9 @@ namespace QOBDViewModels.ViewModel
             
         }
 
-        public OptionEmailViewModel(IMainWindowViewModel main): this()
+        public OptionEmailViewModel(IReferentialViewModel viewModel): this()
         {
-            _main = main;
+            _referential = viewModel;
             instances();
             instancesCommand();
         }
@@ -42,25 +42,25 @@ namespace QOBDViewModels.ViewModel
         private void instances()
         {
             _title = ConfigurationManager.AppSettings["title_setting_email"];
-            _emails = new Dictionary<string, InfoManager.FileWriter>();
-            _emails["quote"] = new InfoManager.FileWriter("quote", EOption.mails);
-            _emails["reminder_1"] = new InfoManager.FileWriter("reminder_1", EOption.mails);
-            _emails["reminder_2"] = new InfoManager.FileWriter("reminder_2", EOption.mails);
-            _emails["bill"] = new InfoManager.FileWriter("bill", EOption.mails);
-            _emails["order_confirmation"] = new InfoManager.FileWriter("order_confirmation", EOption.mails);
+            _emails = new Dictionary<string, InfoFileWriter>();
+            _emails["quote"] = new InfoFileWriter("quote", EOption.mails);
+            _emails["reminder_1"] = new InfoFileWriter("reminder_1", EOption.mails);
+            _emails["reminder_2"] = new InfoFileWriter("reminder_2", EOption.mails);
+            _emails["bill"] = new InfoFileWriter("bill", EOption.mails);
+            _emails["order_confirmation"] = new InfoFileWriter("order_confirmation", EOption.mails);
         }
 
         private void instancesCommand()
         {
-            UpdateCommand = _main.CommandCreator.createSingleInputCommand<string>(updateEmailFiles, canUpdateEmailFiles);
-            DeleteCommand = _main.CommandCreator.createSingleInputCommand<string>(eraseContent, canEraseContent);
+            UpdateCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<string>(updateEmailFiles, canUpdateEmailFiles);
+            DeleteCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<string>(eraseContent, canEraseContent);
         }
 
         //----------------------------[ Properties ]------------------
 
         public BusinessLogic Bl
         {
-            get { return _main.Startup.Bl; }
+            get { return _referential.MainWindowViewModel.Startup.Bl; }
         }
 
         public string Title
@@ -69,31 +69,31 @@ namespace QOBDViewModels.ViewModel
             set { setProperty(ref _title, value); }
         }
 
-        public InfoManager.FileWriter OrderConfirmationEmailFile
+        public InfoFileWriter OrderConfirmationEmailFile
         {
             get { return _emails["order_confirmation"]; }
             set { _emails["order_confirmation"] = value; onPropertyChange(); }
         }
 
-        public InfoManager.FileWriter BillEmailFile
+        public InfoFileWriter BillEmailFile
         {
             get { return _emails["bill"]; }
             set { _emails["bill"] = value; onPropertyChange(); }
         }
 
-        public InfoManager.FileWriter ReminderTwoEmailFile
+        public InfoFileWriter ReminderTwoEmailFile
         {
             get { return _emails["reminder_2"]; }
             set { _emails["reminder_2"] = value; onPropertyChange(); }
         }
 
-        public InfoManager.FileWriter ReminderOneEmailFile
+        public InfoFileWriter ReminderOneEmailFile
         {
             get { return _emails["reminder_1"]; }
             set { _emails["reminder_1"] = value; onPropertyChange(); }
         }
 
-        public InfoManager.FileWriter QuoteEmailFile
+        public InfoFileWriter QuoteEmailFile
         {
             get { return _emails["quote"]; }
             set { _emails["quote"] = value; onPropertyChange(); }
@@ -106,8 +106,8 @@ namespace QOBDViewModels.ViewModel
             await Task.Factory.StartNew(()=> {
                 Singleton.getDialogueBox().showSearch(ConfigurationManager.AppSettings["load_message"]);
 
-                string login = (_main.Startup.Bl.BlReferential.searchInfo(new QOBDCommon.Entities.Info { Name = "ftp_login" }, ESearchOption.OR).FirstOrDefault() ?? new Info()).Value;
-                string password = (_main.Startup.Bl.BlReferential.searchInfo(new QOBDCommon.Entities.Info { Name = "ftp_password" }, ESearchOption.OR).FirstOrDefault() ?? new Info()).Value;
+                string login = (_referential.MainWindowViewModel.Startup.Bl.BlReferential.searchInfo(new QOBDCommon.Entities.Info { Name = "ftp_login" }, ESearchOption.OR).FirstOrDefault() ?? new Info()).Value;
+                string password = (_referential.MainWindowViewModel.Startup.Bl.BlReferential.searchInfo(new QOBDCommon.Entities.Info { Name = "ftp_password" }, ESearchOption.OR).FirstOrDefault() ?? new Info()).Value;
 
                 foreach (var email in _emails)
                 {
@@ -156,8 +156,8 @@ namespace QOBDViewModels.ViewModel
 
         private bool canEraseContent(string arg)
         {
-            bool isWrite = _main.securityCheck(QOBDCommon.Enum.EAction.Option, QOBDCommon.Enum.ESecurity._Write);
-            bool isUpdate = _main.securityCheck(QOBDCommon.Enum.EAction.Option, QOBDCommon.Enum.ESecurity._Update);
+            bool isWrite = _referential.MainWindowViewModel.securityCheck(QOBDCommon.Enum.EAction.Option, QOBDCommon.Enum.ESecurity._Write);
+            bool isUpdate = _referential.MainWindowViewModel.securityCheck(QOBDCommon.Enum.EAction.Option, QOBDCommon.Enum.ESecurity._Update);
             if (isUpdate && isWrite)
                 return true;
             return false;
@@ -192,8 +192,8 @@ namespace QOBDViewModels.ViewModel
 
         private bool canUpdateEmailFiles(string arg)
         {
-            bool isWrite = _main.securityCheck(QOBDCommon.Enum.EAction.Option, QOBDCommon.Enum.ESecurity._Write);
-            bool isUpdate = _main.securityCheck(QOBDCommon.Enum.EAction.Option, QOBDCommon.Enum.ESecurity._Update);
+            bool isWrite = _referential.MainWindowViewModel.securityCheck(QOBDCommon.Enum.EAction.Option, QOBDCommon.Enum.ESecurity._Write);
+            bool isUpdate = _referential.MainWindowViewModel.securityCheck(QOBDCommon.Enum.EAction.Option, QOBDCommon.Enum.ESecurity._Update);
             if (isUpdate && isWrite)
                 return true;
             return false;

@@ -52,14 +52,18 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstracts\InfoBase.cs" />
     <Compile Include="Abstracts\ModelCreator.cs" />
-    <Compile Include="Classes\BindBase.cs" />
+    <Compile Include="Abstracts\BindBase.cs" />
     <Compile Include="Classes\Cart.cs" />
+    <Compile Include="Classes\InfoBank.cs" />
+    <Compile Include="Classes\InfoContact.cs" />
     <Compile Include="Classes\DiscussionGroupNameConverter.cs" />
+    <Compile Include="Classes\InfoDisplay.cs" />
+    <Compile Include="Classes\InfoFileWriter.cs" />
     <Compile Include="Classes\FindParent.cs" />
-    <Compile Include="Classes\GeneralInfos.cs" />
+    <Compile Include="Classes\InfoGeneral.cs" />
     <Compile Include="Classes\ImageProxy.cs" />
-    <Compile Include="Classes\InfoManager.cs" />
     <Compile Include="Classes\ModelConcreteCreator.cs" />
     <Compile Include="Classes\OrderSearch.cs" />
     <Compile Include="Classes\StringLengthConverter.cs" />
@@ -90,7 +94,6 @@
     <Compile Include="Models\InfosModel.cs" />
     <Compile Include="Models\ItemModel.cs" />
     <Compile Include="Models\Item_deliveryModel.cs" />
-    <Compile Include="Models\LanguageModel.cs" />
     <Compile Include="Models\MessageModel.cs" />
     <Compile Include="Models\NotificationModel.cs" />
     <Compile Include="Models\OrderModel.cs" />

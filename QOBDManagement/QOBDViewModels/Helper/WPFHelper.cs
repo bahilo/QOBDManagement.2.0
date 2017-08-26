@@ -91,7 +91,7 @@ namespace QOBDViewModels.Helper
         /// <param name="fileName">The new image file name in case of absence of a record</param>
         /// <param name="ftpCredentialInfoList">The ftp credential information list</param>
         /// <returns>Image</returns>
-        public static InfoManager.Display getPicture(this InfoManager.Display image, string ftpDirectory, string localDirectory, string recordedFileName, string fileName, List<Info> ftpCredentialInfoList)
+        public static InfoDisplay getPicture(this InfoDisplay image, string ftpDirectory, string localDirectory, string recordedFileName, string fileName, List<Info> ftpCredentialInfoList)
         {
             object _lock = new object();
             lock (_lock)
@@ -113,7 +113,7 @@ namespace QOBDViewModels.Helper
                         {
                             Application.Current.Dispatcher.Invoke(() =>
                             {
-                                image = new InfoManager.Display(ftpDirectory, localDirectory, usernameInfo.Value, passwordInfo.Value);
+                                image = new InfoDisplay(ftpDirectory, localDirectory, usernameInfo.Value, passwordInfo.Value);
                             });
                         }
                     }
@@ -136,7 +136,7 @@ namespace QOBDViewModels.Helper
         }
 
 
-        public static InfoManager.Display downloadPicture(this InfoManager.Display image, string ftpDirectory, string localDirectory, string recordedFileName, string fileName, List<Info> ftpCredentialInfoList)
+        public static InfoDisplay downloadPicture(this InfoDisplay image, string ftpDirectory, string localDirectory, string recordedFileName, string fileName, List<Info> ftpCredentialInfoList)
         {
             if (ftpCredentialInfoList.Count > 0)
             {

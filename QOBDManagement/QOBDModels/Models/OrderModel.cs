@@ -1,10 +1,10 @@
-﻿using QOBDModels.Classes;
-using Entity = QOBDCommon.Entities;
+﻿using Entity = QOBDCommon.Entities;
 using System.Collections.Generic;
 using System.Linq;
 using System.ComponentModel;
 using QOBDCommon.Classes;
 using QOBDManagement.Helper;
+using QOBDModels.Abstracts;
 
 namespace QOBDModels.Models
 {

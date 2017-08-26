@@ -12,7 +12,7 @@ using QOBDModels.Classes;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class ClientViewModel : Classes.ViewModel
+    public class ClientViewModel : Classes.ViewModel, IClientViewModel
     {
         private List<string> _saveSearchParametersList;
         private Func<Object, Object> _page;
@@ -22,8 +22,7 @@ namespace QOBDViewModels.ViewModel
         private List<Client> _saveResultParametersList;
 
         //----------------------------[ Models ]------------------
-
-        private ClientModel _clientModel;
+        
         private List<ClientModel> _clientsModel;
         private ClientDetailViewModel _clientDetailViewModel;
         private IMainWindowViewModel _main;
@@ -70,7 +69,6 @@ namespace QOBDViewModels.ViewModel
         private void instancesModel(IMainWindowViewModel main)
         {
             _clientsModel = new List<ClientModel>();
-            _clientModel = (ClientModel)_main.ModelCreator.createModel(QOBDModels.Enums.EModel.CLIENT);
             _clientDetailViewModel = (ClientDetailViewModel)_main.ViewModelCreator.createViewModel(Enums.EViewModel.CLIENTDETAIL, main);
             ClientSideBarViewModel = (CLientSideBarViewModel)_main.ViewModelCreator.createViewModel(Enums.EViewModel.CLIENTMENU, main);
         }
@@ -125,16 +123,9 @@ namespace QOBDViewModels.ViewModel
             set { _clientDetailViewModel.SelectedCLientModel = value; onPropertyChange("SelectedCLientModel"); }
         }
 
-        public ClientModel ClientModel
-        {
-            get { return _clientModel; }
-            set { _clientModel = value; onPropertyChange("ClientModel"); }
-        }
-
-
         //----------------------------[ Actions ]------------------
 
-        public void loadClients()
+        public override void load()
         {
             Singleton.getDialogueBox().showSearch(ConfigurationManager.AppSettings["load_message"]);
             AgentList = Bl.BlAgent.GetAgentData(999);

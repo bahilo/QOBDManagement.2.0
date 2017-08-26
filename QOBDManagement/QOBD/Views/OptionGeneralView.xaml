@@ -93,7 +93,7 @@
                         </Grid>
                     </materialDesign:ColorZone>
                     <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0 6 0 0" HorizontalAlignment="Center" VerticalAlignment="Center" >
-                        <ComboBox ItemsSource="{Binding ReferentialViewModel.OptionGeneralViewModel.ListSizeList}" SelectedItem="{Binding ReferentialViewModel.OptionGeneralViewModel.TxtSelectedListSize, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="20 0 0 0" Width="50"/>
+                        <TextBox Text="{Binding ReferentialViewModel.OptionGeneralViewModel.TxtSelectedListSize, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="20 0 0 0" Width="50"/>
                         <Button Margin="20 0 0 0" ToolTip="Save"
                                                 Command="{Binding ReferentialViewModel.OptionGeneralViewModel.UpdateListSizeCommand}">
                             <materialDesign:PackIcon Kind="Pencil"/>

@@ -1,6 +1,6 @@
 ﻿using Entity = QOBDCommon.Entities;
 using System;
-using QOBDModels.Classes;
+using QOBDModels.Abstracts;
 
 namespace QOBDModels.Models
 {

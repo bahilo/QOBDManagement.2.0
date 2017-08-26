@@ -20,7 +20,6 @@ namespace QOBDViewModels.ViewModel
 
         //----------------------------[ Models ]------------------
 
-        private OrderModel _selectedCommandModel;
         private OrderDetailViewModel _orderDetailViewModel;
         private IMainWindowViewModel _main;
 
@@ -41,7 +40,6 @@ namespace QOBDViewModels.ViewModel
             _orderDetailViewModel = orderDetail;
             _page = _main.navigation;
             instances();
-            instancesModel();
             instancesCommand();
             initEvents();
         }
@@ -51,7 +49,7 @@ namespace QOBDViewModels.ViewModel
 
         private void initEvents()
         {
-            PropertyChanged += onSelectedCommandModelChange;
+            _orderDetailViewModel.PropertyChanged += onSelectedCommandModelChange;
         }
 
         private void instances()
@@ -59,12 +57,6 @@ namespace QOBDViewModels.ViewModel
             _order_itemTask_updateItem = new NotifyTaskCompletion<List<Entity.Order_item>>();
             _order_itemTask_updateCommand_Item = new NotifyTaskCompletion<List<Entity.Order_item>>();
             _quoteTask = new NotifyTaskCompletion<object>();
-        }
-
-        private void instancesModel()
-        {
-            _selectedCommandModel = (OrderModel)_main.ModelCreator.createModel(QOBDModels.Enums.EModel.ORDER);
-
         }
 
         private void instancesCommand()
@@ -82,8 +74,8 @@ namespace QOBDViewModels.ViewModel
 
         public OrderModel SelectedOrderModel
         {
-            get { return _selectedCommandModel; }
-            set { setProperty(ref _selectedCommandModel, value); }
+            get { return _orderDetailViewModel.OrderSelected; }
+            set { _orderDetailViewModel.OrderSelected = value; onPropertyChange(); }
         }
 
         public string TxtIconColour
@@ -132,7 +124,7 @@ namespace QOBDViewModels.ViewModel
 
         public override void Dispose()
         {
-            PropertyChanged -= onSelectedCommandModelChange;
+            _orderDetailViewModel.PropertyChanged -= onSelectedCommandModelChange;
         }
 
         //----------------------------[ Event Handler ]------------------

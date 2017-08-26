@@ -21,7 +21,7 @@ namespace QOBD.Views
             IUIContext dataContext = new UIContext();
 
             if (dataContext.setWindowContext(this) != null && !((IMainWindowViewModel)this.DataContext).IsThroughContext)
-                ((IMainWindowViewModel)this.DataContext).HomeViewModel.loadData();
+                ((IMainWindowViewModel)this.DataContext).HomeViewModel.load();
         }
     }
 }

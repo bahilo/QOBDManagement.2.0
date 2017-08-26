@@ -474,7 +474,7 @@ namespace QOBDViewModels.ViewModel
 
         private async void getFileFromLocal(object obj)
         {
-            string newFileFullPath = InfoManager.ExecuteOpenFileDialog("Select an image file", new List<string> { "png", "jpeg", "jpg" });
+            string newFileFullPath = InfoGeneral.ExecuteOpenFileDialog("Select an image file", new List<string> { "png", "jpeg", "jpg" });
             if (!string.IsNullOrEmpty(newFileFullPath) && File.Exists(newFileFullPath))
             {
                 Singleton.getDialogueBox().showSearch(ConfigurationManager.AppSettings["wait_message"]);

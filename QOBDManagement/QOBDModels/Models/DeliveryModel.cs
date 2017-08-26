@@ -1,13 +1,9 @@
 ﻿using QOBDCommon.Entities;
 using QOBDManagement.Helper;
-using QOBDModels.Classes;
+using QOBDModels.Abstracts;
 using QOBDModels.Enums;
-using QOBDModels.Helper;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QOBDModels.Models
 {

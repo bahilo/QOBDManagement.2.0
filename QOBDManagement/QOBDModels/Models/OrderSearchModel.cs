@@ -2,6 +2,7 @@
 using QOBDCommon.Entities;
 using QOBDCommon.Enum;
 using QOBDManagement.Helper;
+using QOBDModels.Abstracts;
 using QOBDModels.Classes;
 using QOBDModels.Helper;
 using System;
@@ -14,10 +15,9 @@ using System.Threading.Tasks;
 
 namespace QOBDModels.Models
 {
-    public class OrderSearchModel : System.ComponentModel.INotifyPropertyChanged
+    public class OrderSearchModel : BindBase
     {
         OrderSearch _orderSearch;
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public OrderSearchModel()
         {
@@ -113,13 +113,6 @@ namespace QOBDModels.Models
         {
             get { return _orderSearch.IsDeepSearch; }
             set { _orderSearch.IsDeepSearch = value; onPropertyChange(); }
-        }
-
-
-        public void onPropertyChange([CallerMemberName]string propertyName = null)
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

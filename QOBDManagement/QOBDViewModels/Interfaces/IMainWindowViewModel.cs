@@ -13,7 +13,7 @@ namespace QOBDViewModels.Interfaces
     public interface IMainWindowViewModel
     {
         //----------------[ Properties ]
-        ClientViewModel ClientViewModel { get; set; }
+        IClientViewModel ClientViewModel { get; set; }
         ItemViewModel ItemViewModel { get; set; }
         OrderViewModel OrderViewModel { get; set; }
         AgentViewModel AgentViewModel { get; set; }
@@ -41,6 +41,7 @@ namespace QOBDViewModels.Interfaces
         Object ChatRoomCurrentView { get; set; }
                       
         //---------------[ Actions ]
+        bool canAppNavig(string arg);
         void appNavig(string propertyName);
         double progressBarManagement(double status = 0);
         bool securityCheck(EAction action, ESecurity right);

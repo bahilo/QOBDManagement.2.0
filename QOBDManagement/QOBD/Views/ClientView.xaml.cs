@@ -22,7 +22,7 @@ namespace QOBD.Views
             if (dataContext.setWindowContext(this) != null)
             {
                 if (!((IMainWindowViewModel)this.DataContext).IsThroughContext)
-                    ((IMainWindowViewModel)this.DataContext).ClientViewModel.loadClients();
+                    ((IMainWindowViewModel)this.DataContext).ClientViewModel.load();
             }
         }
     }

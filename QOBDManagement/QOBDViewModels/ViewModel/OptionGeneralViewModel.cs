@@ -19,13 +19,13 @@ namespace QOBDViewModels.ViewModel
     public class OptionGeneralViewModel : Classes.ViewModel
     {
         private Func<object, object> _page;
-        private List<InfoManager.Bank> _bankDetails;
-        private List<InfoManager.Contact> _addressDetails;
-        private GeneralInfos _generalInfos;
+        private List<InfoBank> _bankDetails;
+        private List<InfoContact> _addressDetails;
+        private InfoGeneral _generalInfos;
         private string _selectedTaxInteger;
         private string _selectedTaxFloat;
-        private InfoManager.FileWriter _legalInformationFileManagement;
-        private InfoManager.FileWriter _saleGeneralConditionFileManagement;
+        private InfoFileWriter _legalInformationFileManagement;
+        private InfoFileWriter _saleGeneralConditionFileManagement;
         private string _validationEmail;
         private string _reminderEmail;
         private string _invoiceEmail;
@@ -39,7 +39,8 @@ namespace QOBDViewModels.ViewModel
 
         private List<TaxModel> _taxes;
         private TaxModel _taxModel;
-        private IMainWindowViewModel _main;
+        private IReferentialViewModel _referential;
+        private int _selectedListSize;
 
         //----------------------------[ Commands ]------------------
 
@@ -68,10 +69,10 @@ namespace QOBDViewModels.ViewModel
             
         }
 
-        public OptionGeneralViewModel(IMainWindowViewModel main) : this()
+        public OptionGeneralViewModel(IReferentialViewModel viewModel) : this()
         {
-            _main = main;
-            _page = _main.navigation;
+            _referential = viewModel;
+            _page = _referential.MainWindowViewModel.navigation;
             instances();
             instancesModel();
             instancesCommand();
@@ -82,12 +83,12 @@ namespace QOBDViewModels.ViewModel
 
         private void instances()
         {
-            _currency = (CurrencyModel)_main.ModelCreator.createModel(QOBDModels.Enums.EModel.CURRENCY);
-            _legalInformationFileManagement = new InfoManager.FileWriter("legal_information", EOption.texts);
-            _saleGeneralConditionFileManagement = new InfoManager.FileWriter("sale_general_condition", EOption.texts);
-            _addressDetails = new List<InfoManager.Contact>();
-            _bankDetails = new List<InfoManager.Bank>();
-            _generalInfos = new GeneralInfos();
+            _currency = (CurrencyModel)_referential.MainWindowViewModel.ModelCreator.createModel(QOBDModels.Enums.EModel.CURRENCY);
+            _legalInformationFileManagement = new InfoFileWriter("legal_information", EOption.texts);
+            _saleGeneralConditionFileManagement = new InfoFileWriter("sale_general_condition", EOption.texts);
+            _addressDetails = new List<InfoContact>();
+            _bankDetails = new List<InfoBank>();
+            _generalInfos = new InfoGeneral();
             _emailfilterList = new List<string> { "email", "invoice_email", "quote_email", "reminder_email", "validation_email" };
             _title = ConfigurationManager.AppSettings["title_settings"];
         }
@@ -106,23 +107,23 @@ namespace QOBDViewModels.ViewModel
 
         private void instancesCommand()
         {
-            UpdateAddressCommand = _main.CommandCreator.createSingleInputCommand<object>(updateAddress, canUpdateAddress);
-            UpdateBankDetailCommand = _main.CommandCreator.createSingleInputCommand<object>(updateBankDetail, canUpdateBankDetail);
-            UpdateLegalInformationCommand = _main.CommandCreator.createSingleInputCommand<object>(updateLegalInformation, canUpdateLegalInformation);
-            UpdateSaleGeneralConditionCommand = _main.CommandCreator.createSingleInputCommand<object>(updateSaleGeneralCondition, canUpdateSaleGeneralCondition);
-            NewLegalInformationCommand = _main.CommandCreator.createSingleInputCommand<object>(eraseLegalInformation, canEraseLegalInformation);
-            NewSaleGeneralConditionCommand = _main.CommandCreator.createSingleInputCommand<object>(eraseSaleGeneralCondition, canEraseSaleGeneralCondition);
-            UpdateListSizeCommand = _main.CommandCreator.createSingleInputCommand<object>(updateListSize, canUpdateListSize);
-            AddTaxCommand = _main.CommandCreator.createSingleInputCommand<object>(addTax, canAddTax);
-            DeleteTaxCommand = _main.CommandCreator.createSingleInputCommand<TaxModel>(deleteTax, canDeleteTax);
-            AddCurrencyCommand = _main.CommandCreator.createSingleInputCommand<CurrencyModel>(addCurrency, canAddCurrency);
-            DeleteCurrencyCommand = _main.CommandCreator.createSingleInputCommand<CurrencyModel>(deleteCurrency, canDeleteCurrency);
-            UpdateEmailCommand = _main.CommandCreator.createSingleInputCommand<object>(updateEmail, canUpdateEmail);
-            UpdateDefaultCurrencyCommand = _main.CommandCreator.createSingleInputCommand<CurrencyModel>(updateDefaultCurrency, canUpdateDefaultCurrency);
-            UpdateDefaultTaxCommand = _main.CommandCreator.createSingleInputCommand<TaxModel>(updateDefaultTax, canUpdateDefaultTax); ;
-            ClearNewCurrencyCommand = _main.CommandCreator.createSingleInputCommand<object>(clearNewCurrency, canClearNewCurrency);
-            ClearNewTaxCommand = _main.CommandCreator.createSingleInputCommand<object>(clearNewTax, canClearNewTax);
-            CurrenciesRateUpdateCommand = _main.CommandCreator.createSingleInputCommand<object>(refreshCurrenciesRate, canRefreshCurrenciesRate);
+            UpdateAddressCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<object>(updateAddress, canUpdateAddress);
+            UpdateBankDetailCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<object>(updateBankDetail, canUpdateBankDetail);
+            UpdateLegalInformationCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<object>(updateLegalInformation, canUpdateLegalInformation);
+            UpdateSaleGeneralConditionCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<object>(updateSaleGeneralCondition, canUpdateSaleGeneralCondition);
+            NewLegalInformationCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<object>(eraseLegalInformation, canEraseLegalInformation);
+            NewSaleGeneralConditionCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<object>(eraseSaleGeneralCondition, canEraseSaleGeneralCondition);
+            UpdateListSizeCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<object>(updateListSize, canUpdateListSize);
+            AddTaxCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<object>(addTax, canAddTax);
+            DeleteTaxCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<TaxModel>(deleteTax, canDeleteTax);
+            AddCurrencyCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<CurrencyModel>(addCurrency, canAddCurrency);
+            DeleteCurrencyCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<CurrencyModel>(deleteCurrency, canDeleteCurrency);
+            UpdateEmailCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<object>(updateEmail, canUpdateEmail);
+            UpdateDefaultCurrencyCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<CurrencyModel>(updateDefaultCurrency, canUpdateDefaultCurrency);
+            UpdateDefaultTaxCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<TaxModel>(updateDefaultTax, canUpdateDefaultTax); ;
+            ClearNewCurrencyCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<object>(clearNewCurrency, canClearNewCurrency);
+            ClearNewTaxCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<object>(clearNewTax, canClearNewTax);
+            CurrenciesRateUpdateCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<object>(refreshCurrenciesRate, canRefreshCurrenciesRate);
         }
 
         //----------------------------[ Properties ]------------------
@@ -130,7 +131,7 @@ namespace QOBDViewModels.ViewModel
 
         public BusinessLogic Bl
         {
-            get { return _main.Startup.Bl; }
+            get { return _referential.MainWindowViewModel.Startup.Bl; }
         }
 
         public string Title
@@ -139,28 +140,22 @@ namespace QOBDViewModels.ViewModel
             set { setProperty(ref _title, value); }
         }
 
-        public InfoManager.FileWriter LegalInformationFileManagement
+        public InfoFileWriter LegalInformationFileManagement
         {
             get { return _legalInformationFileManagement; }
             set { setProperty(ref _legalInformationFileManagement, value); }
         }
 
-        public InfoManager.FileWriter SaleGeneralConditionFileManagement
+        public InfoFileWriter SaleGeneralConditionFileManagement
         {
             get { return _saleGeneralConditionFileManagement; }
             set { setProperty(ref _saleGeneralConditionFileManagement, value); }
         }
 
-        public List<int> ListSizeList
-        {
-            get { return _generalInfos.ListSizeList; }
-            set { _generalInfos.ListSizeList = value; onPropertyChange(); }
-        }
-
         public int TxtSelectedListSize
         {
-            get { return _generalInfos.TxtSelectedListSize; }
-            set { _generalInfos.TxtSelectedListSize = value; onPropertyChange(); }
+            get { return _selectedListSize; }
+            set { _selectedListSize = value; onPropertyChange(); }
         }
 
         public TaxModel TaxModel
@@ -241,17 +236,17 @@ namespace QOBDViewModels.ViewModel
 
         public List<CurrencyModel> CurrenciesList
         {
-            get { return _main.OrderViewModel.CurrenciesList; }
-            set { _main.OrderViewModel.CurrenciesList = value; onPropertyChange(); }
+            get { return _referential.MainWindowViewModel.OrderViewModel.CurrenciesList; }
+            set { _referential.MainWindowViewModel.OrderViewModel.CurrenciesList = value; onPropertyChange(); }
         }
 
-        public List<InfoManager.Bank> BankDetailList
+        public List<InfoBank> BankDetailList
         {
             get { return _bankDetails; }
             set { setProperty(ref _bankDetails, value); }
         }
 
-        public List<InfoManager.Contact> AddressList
+        public List<InfoContact> AddressList
         {
             get { return _addressDetails; }
             set { setProperty(ref _addressDetails, value); }
@@ -294,13 +289,12 @@ namespace QOBDViewModels.ViewModel
         public override async void load()
         {
             Singleton.getDialogueBox().showSearch(ConfigurationManager.AppSettings["load_message"]);
-            var userListSizeFoundList = _generalInfos.ListSizeList.Where(x => x.Equals(Bl.BlSecurity.GetAuthenticatedUser().ListSize)).ToList();
-            TxtSelectedListSize = (userListSizeFoundList.Count > 0) ? userListSizeFoundList[0] : 0;
+            TxtSelectedListSize = Bl.BlSecurity.GetAuthenticatedUser().ListSize;
             TaxList = TaxListToTaxModelList(await Bl.BlOrder.GetTaxDataAsync(999));
 
             var infosFoundList = Bl.BlReferential.GetInfoData(999);
-            BankDetailList = new List<InfoManager.Bank> { new InfoManager.Bank(infosFoundList) };
-            AddressList = new List<InfoManager.Contact> { new InfoManager.Contact(infosFoundList) };
+            BankDetailList = new List<InfoBank> { new InfoBank(infosFoundList) };
+            AddressList = new List<InfoContact> { new InfoContact(infosFoundList) };
 
             LoadEmail();
             loadTexts();
@@ -358,8 +352,8 @@ namespace QOBDViewModels.ViewModel
 
         private string disableUIElementByString([CallerMemberName] string obj = "")
         {
-            bool isWrite = _main.securityCheck(QOBDCommon.Enum.EAction.Option, QOBDCommon.Enum.ESecurity._Write);
-            bool isUpdate = _main.securityCheck(QOBDCommon.Enum.EAction.Option, QOBDCommon.Enum.ESecurity._Update);
+            bool isWrite = _referential.MainWindowViewModel.securityCheck(QOBDCommon.Enum.EAction.Option, QOBDCommon.Enum.ESecurity._Write);
+            bool isUpdate = _referential.MainWindowViewModel.securityCheck(QOBDCommon.Enum.EAction.Option, QOBDCommon.Enum.ESecurity._Update);
             if ((!isWrite || !isUpdate)
                 && (obj.Equals("BlockBankDetailVisibility")
                 || obj.Equals("BlockTaxDetailVisibility")
@@ -651,14 +645,14 @@ namespace QOBDViewModels.ViewModel
 
         private bool canUpdateDefaultCurrency(CurrencyModel arg)
         {
-            if (_main.AgentViewModel.IsAuthenticatedAgentAdmin)
+            if (_referential.MainWindowViewModel.AgentViewModel.IsAuthenticatedAgentAdmin)
                 return true;
             return false;
         }
 
         private void clearNewCurrency(object obj)
         {
-            CurrencyModel = (CurrencyModel)_main.ModelCreator.createModel(QOBDModels.Enums.EModel.CURRENCY);
+            CurrencyModel = (CurrencyModel)_referential.MainWindowViewModel.ModelCreator.createModel(QOBDModels.Enums.EModel.CURRENCY);
         }
 
         private bool canClearNewCurrency(object arg)
@@ -688,7 +682,7 @@ namespace QOBDViewModels.ViewModel
         {
             Singleton.getDialogueBox().showSearch(ConfigurationManager.AppSettings["update_message"]);
             var authenticatedUser = Bl.BlSecurity.GetAuthenticatedUser();
-            authenticatedUser.ListSize = Convert.ToInt32(_generalInfos.TxtSelectedListSize);
+            authenticatedUser.ListSize = TxtSelectedListSize;
             var savedAgentList = await Bl.BlAgent.UpdateAgentAsync(new List<Agent> { authenticatedUser });
             if (savedAgentList.Count > 0)
                 await Singleton.getDialogueBox().showAsync("List Size saved Successfully!");
@@ -774,7 +768,7 @@ namespace QOBDViewModels.ViewModel
         private async void updateBankDetail(object obj)
         {
             Singleton.getDialogueBox().showSearch(ConfigurationManager.AppSettings["update_message"]);
-            var infosList = new InfoManager().GeneralInfo.retrieveInfoDataListFromDictionary(_bankDetails[0].BankDictionary);// _bankDetails[0].extractInfosListFromBankDictionary();
+            var infosList = InfoGeneral.getInfoData(_bankDetails[0].BankDictionary);// _bankDetails[0].extractInfosListFromBankDictionary();
             var infosToUpdateList = infosList.Where(x => x.ID != 0).ToList();
             var infosToCreateList = infosList.Where(x => x.ID == 0).ToList();
             var infosUpdatedList = await Bl.BlReferential.UpdateInfoAsync(infosToUpdateList);
@@ -784,7 +778,7 @@ namespace QOBDViewModels.ViewModel
                 await Singleton.getDialogueBox().showAsync("Bank Details saved Successfully!");
                 List<Info> savedInfosList = new List<Info>(infosUpdatedList);
                 savedInfosList = new List<Info>(savedInfosList.Concat(infosCreatedList));
-                BankDetailList = new List<InfoManager.Bank> { new InfoManager.Bank(savedInfosList) };
+                BankDetailList = new List<InfoBank> { new InfoBank(savedInfosList) };
             }
             else
                 await Singleton.getDialogueBox().showAsync("Error occured while updating the bank Details!");
@@ -800,7 +794,7 @@ namespace QOBDViewModels.ViewModel
         private async void updateAddress(object obj)
         {
             Singleton.getDialogueBox().showSearch(ConfigurationManager.AppSettings["update_message"]);
-            var infosList = new InfoManager().GeneralInfo.retrieveInfoDataListFromDictionary(_addressDetails[0].ContactDictionary);// _addressDetails[0].extractInfosListFromContactDictionary();
+            var infosList = InfoGeneral.getInfoData(_addressDetails[0].ContactDictionary);// _addressDetails[0].extractInfosListFromContactDictionary();
             var infosToUpdateList = infosList.Where(x => x.ID != 0).ToList();
             var infosToCreateList = infosList.Where(x => x.ID == 0).ToList();
             var infosUpdatedList = await Bl.BlReferential.UpdateInfoAsync(infosToUpdateList);
@@ -810,7 +804,7 @@ namespace QOBDViewModels.ViewModel
                 await Singleton.getDialogueBox().showAsync("Address Detail saved Successfully!");
                 List<Info> savedInfosList = new List<Info>(infosUpdatedList);
                 savedInfosList = new List<Info>(savedInfosList.Concat(infosCreatedList));
-                AddressList = new List<InfoManager.Contact> { new InfoManager.Contact(savedInfosList) };
+                AddressList = new List<InfoContact> { new InfoContact(savedInfosList) };
             }
             else
                 await Singleton.getDialogueBox().showAsync("Error occured while updating the address Details!");

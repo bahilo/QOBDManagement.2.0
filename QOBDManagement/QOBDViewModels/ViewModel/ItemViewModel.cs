@@ -25,7 +25,7 @@ namespace QOBDViewModels.ViewModel
         private List<ProviderModel> _providerList;
         private List<string> _cbSearchCriteriaList;
         private Func<Object, Object> _page;
-        private List<Item> _items;
+        //private List<Item> _items;
         private string _searchItemName;
         private string _title;
         private string _providerTitle;
@@ -83,7 +83,7 @@ namespace QOBDViewModels.ViewModel
 
         private void instances()
         {
-            _items = new List<Item>();
+            //_items = new List<Item>();
             _cbSearchCriteriaList = new List<string>();
             _title = ConfigurationManager.AppSettings["title_catalogue"];
             _providerTitle = ConfigurationManager.AppSettings["title_catalogue_provider"];
@@ -166,11 +166,11 @@ namespace QOBDViewModels.ViewModel
             set { setProperty(ref _itemModel, value); }
         }
 
-        public List<Item> Items
+        /*public List<Item> Items
         {
             get { return _items; }
             set { setProperty(ref _items, value); }
-        }
+        }*/
 
         public List<ItemModel> ItemModelList
         {

@@ -23,23 +23,21 @@ namespace QOBDViewModels.ViewModel
 {
     public class OptionDataAndDisplayViewModel : Classes.ViewModel
     {
-        private ObservableCollection<InfoManager.Display> _imageList;
-        private List<string> _imageWidthSizeList;
-        private List<string> _imageHeightSizeList;       
-        private List<InfoManager.Data> _dataList;
+        private ObservableCollection<InfoDisplay> _imageList;
+        private int _imageWidth;
+        private int _imageHeight;  
         private CultureInfo[] _cultureInfoArray;
         private string _title;
-        private IMainWindowViewModel _main;
-        //private IEnumerable<Swatch> _swatches;
-        private InfoManager.Display _theme;
-        private InfoManager.Display _headerImageDisplay;
-        private InfoManager.Display _logoImageDisplay;
-        private InfoManager.Display _billImageDisplay;
+        private IReferentialViewModel _referential;
+        private InfoDisplay _theme;
+        private InfoDisplay _headerImageDisplay;
+        private InfoDisplay _logoImageDisplay;
+        private InfoDisplay _billImageDisplay;
 
         //----------------------------[ Commands ]------------------
 
-        public ButtonCommand<InfoManager.Display> OpenFileExplorerCommand { get; set; }
-        public ButtonCommand<InfoManager.Display> DeleteImageCommand { get; set; }
+        public ButtonCommand<InfoDisplay> OpenFileExplorerCommand { get; set; }
+        public ButtonCommand<InfoDisplay> DeleteImageCommand { get; set; }
         public ButtonCommand<string> UpdateLanguageCommand { get; set; }
         public ButtonCommand<string> AddNewRowLanguageCommand { get; set; }
         public ButtonCommand<bool> ToggleThemeBaseCommand { get; set; }
@@ -51,9 +49,9 @@ namespace QOBDViewModels.ViewModel
             
         }
 
-        public OptionDataAndDisplayViewModel(IMainWindowViewModel main):this()
+        public OptionDataAndDisplayViewModel(IReferentialViewModel viewModel):this()
         {
-            _main = main;
+            _referential = viewModel;
             instances();
             instancesCommand();
             initEvents();
@@ -63,38 +61,33 @@ namespace QOBDViewModels.ViewModel
 
         private void initEvents()
         {
-            _main.Startup.Dal.DALReferential.PropertyChanged += onGeneralInfoDataDownloadingStatusChange;
+            _referential.MainWindowViewModel.Startup.Dal.DALReferential.PropertyChanged += onGeneralInfoDataDownloadingStatusChange;
         }
 
         private void instances()
         {
             _title = ConfigurationManager.AppSettings["title_setting_display"];
-            _imageList = new ObservableCollection<InfoManager.Display>();
-            _imageWidthSizeList = new List<string>();
-            _imageHeightSizeList = new List<string>();
+            _imageList = new ObservableCollection<InfoDisplay>();
             _cultureInfoArray = CultureInfo.GetCultures(CultureTypes.AllCultures & CultureTypes.NeutralCultures);
 
-            _theme = new InfoManager.Display();
+            _theme = new InfoDisplay();
 
             // palette initialization
             //_swatches = new SwatchesProvider().Swatches;
-                
-            // populating the image size list
-            ImageWidthSizeList = ImageHeightSizeList = InfoManager.getGeneratedImageSizeList();
 
             //------[ Images ]
-            _headerImageDisplay = _main.ImageCreator.createImage("header_image", new List<string> { "header_image", "header_image_width", "header_image_height" }, ConfigurationManager.AppSettings["ftp_image_folder"], ConfigurationManager.AppSettings["local_image_folder"], "", "");
-            _logoImageDisplay = _main.ImageCreator.createImage("logo_image", new List<string> { "logo_image", "logo_image_width", "logo_image_height" }, ConfigurationManager.AppSettings["ftp_image_folder"], ConfigurationManager.AppSettings["local_image_folder"], "", "");
-            _billImageDisplay = _main.ImageCreator.createImage("bill_image", new List<string> { "bill_image", "bill_image_width", "bill_image_height" }, ConfigurationManager.AppSettings["ftp_image_folder"], ConfigurationManager.AppSettings["local_image_folder"], "", "");
+            _headerImageDisplay = _referential.MainWindowViewModel.ImageCreator.createImage("header_image", new List<string> { "header_image", "header_image_width", "header_image_height" }, ConfigurationManager.AppSettings["ftp_image_folder"], ConfigurationManager.AppSettings["local_image_folder"], "", "");
+            _logoImageDisplay = _referential.MainWindowViewModel.ImageCreator.createImage("logo_image", new List<string> { "logo_image", "logo_image_width", "logo_image_height" }, ConfigurationManager.AppSettings["ftp_image_folder"], ConfigurationManager.AppSettings["local_image_folder"], "", "");
+            _billImageDisplay = _referential.MainWindowViewModel.ImageCreator.createImage("bill_image", new List<string> { "bill_image", "bill_image_width", "bill_image_height" }, ConfigurationManager.AppSettings["ftp_image_folder"], ConfigurationManager.AppSettings["local_image_folder"], "", "");
         }
 
         private void instancesCommand()
         {
-            OpenFileExplorerCommand = _main.CommandCreator.createSingleInputCommand<InfoManager.Display>(getFileFromLocal, canGetFileFromLocal);
-            DeleteImageCommand = _main.CommandCreator.createSingleInputCommand<InfoManager.Display>(deleteImage, canDeleteImage);
-            ToggleThemeBaseCommand = _main.CommandCreator.createSingleInputCommand<bool>(changeTheme, canChangeTheme);
-            ApplyThemeAccentStyleCommand = _main.CommandCreator.createSingleInputCommand<Swatch>(applyThemeAccentStyle, canApplyThemeAccentStyle);
-            ApplyThemePrimaryStyleCommand = _main.CommandCreator.createSingleInputCommand<Swatch>(applyThemePrimaryStyle, canApplyThemePrimaryStyle);
+            OpenFileExplorerCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<InfoDisplay>(getFileFromLocal, canGetFileFromLocal);
+            DeleteImageCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<InfoDisplay>(deleteImage, canDeleteImage);
+            ToggleThemeBaseCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<bool>(changeTheme, canChangeTheme);
+            ApplyThemeAccentStyleCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<Swatch>(applyThemeAccentStyle, canApplyThemeAccentStyle);
+            ApplyThemePrimaryStyleCommand = _referential.MainWindowViewModel.CommandCreator.createSingleInputCommand<Swatch>(applyThemePrimaryStyle, canApplyThemePrimaryStyle);
         }
 
         //----------------------------[ Properties ]------------------
@@ -102,10 +95,10 @@ namespace QOBDViewModels.ViewModel
 
         public BusinessLogic Bl
         {
-            get { return _main.Startup.Bl; }
+            get { return _referential.MainWindowViewModel.Startup.Bl; }
         }
 
-        public InfoManager.Display Theme
+        public InfoDisplay Theme
         {
             get { return _theme; }
             set { setProperty(ref _theme, value); }
@@ -117,7 +110,7 @@ namespace QOBDViewModels.ViewModel
             set { setProperty(ref _title, value); }
         }
 
-        public InfoManager.Display HeaderImageDisplay
+        public InfoDisplay HeaderImageDisplay
         {
             get { return _headerImageDisplay; }
             set
@@ -127,31 +120,31 @@ namespace QOBDViewModels.ViewModel
             }
         }
 
-        public InfoManager.Display LogoImageDisplay
+        public InfoDisplay LogoImageDisplay
         {
             get { return _logoImageDisplay; }
             set { _logoImageDisplay = value; onPropertyChange(); }
         }
 
-        public InfoManager.Display BillImageDisplay
+        public InfoDisplay BillImageDisplay
         {
             get { return _billImageDisplay; }
             set { _billImageDisplay = value; onPropertyChange(); }
         }
 
-        public List<string> ImageWidthSizeList
+        public int ImageWidth
         {
-            get { return _imageWidthSizeList; }
-            set { setProperty(ref _imageWidthSizeList, value); }
+            get { return _imageWidth; }
+            set { setProperty(ref _imageWidth, value); }
         }
 
-        public List<string> ImageHeightSizeList
+        public int ImageHeight
         {
-            get { return _imageHeightSizeList; }
-            set { setProperty(ref _imageHeightSizeList, value); }
+            get { return _imageHeight; }
+            set { setProperty(ref _imageHeight, value); }
         }
 
-        public ObservableCollection<InfoManager.Display> ImageList
+        public ObservableCollection<InfoDisplay> ImageList
         {
             get { return _imageList; }
             set { setProperty(ref _imageList, value); }
@@ -163,14 +156,7 @@ namespace QOBDViewModels.ViewModel
             set { setProperty(ref _cultureInfoArray, value); }
         }
 
-        //----------------------------[ Display by LanguageModel ]------------------
-
-        public List<InfoManager.Data> DataList
-        {
-            get { return _dataList; }
-            set { setProperty(ref _dataList, value); }
-        }
-
+        
         //----------------------------[ Actions ]------------------
 
         public override void load()
@@ -205,7 +191,7 @@ namespace QOBDViewModels.ViewModel
             Singleton.getDialogueBox().IsDialogOpen = false;
         }
 
-        public string ExecuteOpenFileDialog()
+        /*public string ExecuteOpenFileDialog()
         {
             string outputFile = null;
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -218,11 +204,10 @@ namespace QOBDViewModels.ViewModel
                 outputFile = openFileDialog.FileName;
 
             return outputFile;
-        }
+        }*/
 
         public async Task<List<Info>> saveInfo(List<Info> infoDataList)
         {
-            Singleton.getDialogueBox().showSearch(ConfigurationManager.AppSettings["update_message"]);
             var infoToUpdateList = infoDataList.Where(x => x.ID != 0).ToList();
             var infoToCreateList = infoDataList.Where(x => x.ID == 0).ToList();
             var infoUpdatedList = await Bl.BlReferential.UpdateInfoAsync(infoToUpdateList);
@@ -242,9 +227,8 @@ namespace QOBDViewModels.ViewModel
                     if(createdInfo != null)
                         info.ID = createdInfo.ID;
                 }
-            }
-                        
-            Singleton.getDialogueBox().IsDialogOpen = false;
+            }                        
+            
             return infoUpdatedList.Concat(infoCreatedList).ToList();
         }
 
@@ -284,14 +268,14 @@ namespace QOBDViewModels.ViewModel
             });
         }
 
-        public InfoManager.Display loadImage(InfoManager.Display image)
+        public InfoDisplay loadImage(InfoDisplay image)
         {
             image.InfoDataList = Bl.BlReferential.searchInfo(new QOBDCommon.Entities.Info { Name = image.TxtFileNameWithoutExtension }, ESearchOption.AND);
             image.downloadFile();
             return image;
         }
 
-        private InfoManager.Display imageManagement(InfoManager.Display newImage = null, string fileType = null)
+        private InfoDisplay imageManagement(InfoDisplay newImage = null, string fileType = null)
         {
             switch (fileType.ToUpper())
             {
@@ -311,7 +295,7 @@ namespace QOBDViewModels.ViewModel
                     return BillImageDisplay;
             }
 
-            return new InfoManager.Display();
+            return new InfoDisplay();
         }
 
 
@@ -322,7 +306,7 @@ namespace QOBDViewModels.ViewModel
                 image.PropertyChanged -= onFilePathChange_updateUIImage;
                 image.PropertyChanged -= onImageInfoChange;
                 Theme.PropertyChanged -= onImageInfoChange;
-                _main.Startup.Dal.DALReferential.PropertyChanged -= onGeneralInfoDataDownloadingStatusChange;
+                _referential.MainWindowViewModel.Startup.Dal.DALReferential.PropertyChanged -= onGeneralInfoDataDownloadingStatusChange;
                 image.Dispose();
             }
         }
@@ -333,20 +317,22 @@ namespace QOBDViewModels.ViewModel
         {
             if (e.PropertyName.Equals("ImageInfoUpdated"))
             {
-                var infoUpdatedList = await saveInfo(((InfoManager.Display)sender).InfoDataList);
+                Singleton.getDialogueBox().showSearch(ConfigurationManager.AppSettings["update_message"]);
+                var infoUpdatedList = await saveInfo(((InfoDisplay)sender).InfoDataList);
+                Singleton.getDialogueBox().IsDialogOpen = false;
             }                
         }
 
         private void onFilePathChange_updateUIImage(object sender, PropertyChangedEventArgs e)
         {
-            if (e.PropertyName.Equals("TxtFileFullPath") && !string.IsNullOrEmpty(((InfoManager.Display)sender).TxtFileFullPath) )
+            if (e.PropertyName.Equals("TxtFileFullPath") && !string.IsNullOrEmpty(((InfoDisplay)sender).TxtFileFullPath) )
             {
-                if (((InfoManager.Display)sender).TxtFileNameWithoutExtension.Equals("header_image"))
-                    imageManagement((InfoManager.Display)sender, "header");
-                else if(((InfoManager.Display)sender).TxtFileNameWithoutExtension.Equals("logo_image"))
-                    imageManagement((InfoManager.Display)sender, "logo");
-                else if (((InfoManager.Display)sender).TxtFileNameWithoutExtension.Equals("bill_image"))
-                    imageManagement((InfoManager.Display)sender, "bill");
+                if (((InfoDisplay)sender).TxtFileNameWithoutExtension.Equals("header_image"))
+                    imageManagement((InfoDisplay)sender, "header");
+                else if(((InfoDisplay)sender).TxtFileNameWithoutExtension.Equals("logo_image"))
+                    imageManagement((InfoDisplay)sender, "logo");
+                else if (((InfoDisplay)sender).TxtFileNameWithoutExtension.Equals("bill_image"))
+                    imageManagement((InfoDisplay)sender, "bill");
             }
         }
 
@@ -365,7 +351,7 @@ namespace QOBDViewModels.ViewModel
                     if (Application.Current.Dispatcher.CheckAccess())
                     {
                         // reload user information
-                        await _main.ChatRoomViewModel.getChatUserInformation();
+                        await _referential.MainWindowViewModel.ChatRoomViewModel.getChatUserInformation();
 
                         downloadHeaderImages();
                     }
@@ -373,7 +359,7 @@ namespace QOBDViewModels.ViewModel
                         await Application.Current.Dispatcher.Invoke(async () =>
                         {
                             // reload user information
-                            await _main.ChatRoomViewModel.getChatUserInformation();
+                            await _referential.MainWindowViewModel.ChatRoomViewModel.getChatUserInformation();
 
                             downloadHeaderImages();
                         });
@@ -387,28 +373,31 @@ namespace QOBDViewModels.ViewModel
         /// load and save file information into database
         /// </summary>
         /// <param name="obj">object which the file is associated with</param>
-        public void getFileFromLocal(InfoManager.Display obj)
+        public async void getFileFromLocal(InfoDisplay obj)
         {
-            // opening the file explorer for image file choosing
-            string imageFile = InfoManager.ExecuteOpenFileDialog("Select an image file", new List<string> { "png", "jpeg", "jpg" });
-            if (!string.IsNullOrEmpty(imageFile))
-            {
-                Singleton.getDialogueBox().showSearch(ConfigurationManager.AppSettings["wait_message"]);
-                obj.TxtChosenFile = imageFile;
+            await Task.Factory.StartNew(()=> {
+                // opening the file explorer for image file choosing
+                string imageFile = InfoGeneral.ExecuteOpenFileDialog("Select an image file", new List<string> { "png", "jpeg", "jpg" });
+                if (!string.IsNullOrEmpty(imageFile))
+                {
+                    string msg = ConfigurationManager.AppSettings["wait_message"];
+                    Singleton.getDialogueBox().showSearch(ConfigurationManager.AppSettings["wait_message"]);
+                    obj.TxtChosenFile = imageFile;
 
-                // upload the image file to the server FTP
-                obj.uploadImage();
+                    // upload the image file to the server FTP
+                    obj.uploadImage();
 
-                Singleton.getDialogueBox().IsDialogOpen = false;
-            }            
+                    Singleton.getDialogueBox().IsDialogOpen = false;
+                }
+            });        
         }
 
-        private bool canGetFileFromLocal(InfoManager.Display arg)
+        private bool canGetFileFromLocal(InfoDisplay arg)
         {
             return true;
         }
 
-        private async void deleteImage(InfoManager.Display obj)
+        private async void deleteImage(InfoDisplay obj)
         {
             if (await Singleton.getDialogueBox().showAsync("Do you really want to delete this image ["+obj.TxtFileName+"] ?"))
             {
@@ -440,7 +429,7 @@ namespace QOBDViewModels.ViewModel
             }            
         }
 
-        private bool canDeleteImage(InfoManager.Display arg)
+        private bool canDeleteImage(InfoDisplay arg)
         {
             return true;
         }

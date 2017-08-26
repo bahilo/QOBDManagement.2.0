@@ -46,7 +46,7 @@ namespace QOBDViewModels
 
         //----------------------------[ Models ]------------------
 
-        public ClientViewModel ClientViewModel { get; set; }
+        public IClientViewModel ClientViewModel { get; set; }
         public ItemViewModel ItemViewModel { get; set; }
         public OrderViewModel OrderViewModel { get; set; }
         public AgentViewModel AgentViewModel { get; set; }
@@ -104,7 +104,7 @@ namespace QOBDViewModels
             
             //------[ ViewModels ]
             ItemViewModel = (ItemViewModel)_viewModelCreator.createViewModel( EViewModel.ITEM, this);
-            ClientViewModel = (ClientViewModel)_viewModelCreator.createViewModel(EViewModel.CLIENT, this);
+            ClientViewModel = (IClientViewModel)_viewModelCreator.createViewModel(EViewModel.CLIENT, this);
             AgentViewModel = (AgentViewModel)_viewModelCreator.createViewModel(EViewModel.AGENT, this);
             ChatRoomViewModel = (ChatRoomViewModel)_viewModelCreator.createViewModel(EViewModel.CHAT, this);
             HomeViewModel = (HomeViewModel)_viewModelCreator.createViewModel(EViewModel.HOME, this);
@@ -568,7 +568,7 @@ namespace QOBDViewModels
             }
         }
 
-        private bool canAppNavig(string arg)
+        public bool canAppNavig(string arg)
         {
             if (_startup == null)
                 return false;

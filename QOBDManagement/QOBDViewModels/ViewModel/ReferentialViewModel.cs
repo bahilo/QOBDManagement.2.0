@@ -4,7 +4,7 @@ using QOBDCommon.Classes;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class ReferentialViewModel : Classes.ViewModel
+    public class ReferentialViewModel : Classes.ViewModel, IReferentialViewModel
     {
         private Func<object, object> _page;
         
@@ -16,9 +16,7 @@ namespace QOBDViewModels.ViewModel
         private OptionDataAndDisplayViewModel _optionDataAndDisplayViewModel;
         private OptionEmailViewModel _optionEmailViewModel;
         private IMainWindowViewModel _main;
-
-        // An unhandled exception of type 'System.StackOverflowException' occurred in QOBDModels.dll
-
+        
         public ReferentialViewModel(IMainWindowViewModel mainWindowViewModel)
         {
             this._main = mainWindowViewModel;
@@ -30,11 +28,11 @@ namespace QOBDViewModels.ViewModel
 
         private void instancesModel(IMainWindowViewModel main)
         {
-            _referentialSideBarViewModel = (ReferentialSideBarViewModel)_main.ViewModelCreator.createViewModel( Enums.EViewModel.REFERENTIALMENU, main);
-            _optionSecurityViewModel = new OptionSecurityViewModel(main);
-            _optionGeneralViewModel = new OptionGeneralViewModel(main);
-            _optionDataAndDisplayViewModel = new OptionDataAndDisplayViewModel(main);
-            _optionEmailViewModel = new OptionEmailViewModel(main);
+            _referentialSideBarViewModel = (ReferentialSideBarViewModel)_main.ViewModelCreator.createSettingViewModel( Enums.EViewModel.REFERENTIALMENU, this);
+            _optionSecurityViewModel = (OptionSecurityViewModel)_main.ViewModelCreator.createSettingViewModel(Enums.EViewModel.REFERENTIALSECURITY, this);
+            _optionGeneralViewModel = (OptionGeneralViewModel)_main.ViewModelCreator.createSettingViewModel(Enums.EViewModel.REFERENTIALGENERAL, this);
+            _optionDataAndDisplayViewModel = (OptionDataAndDisplayViewModel)_main.ViewModelCreator.createSettingViewModel(Enums.EViewModel.REFERENTIALDATAANDDISPLAY, this);
+            _optionEmailViewModel = (OptionEmailViewModel)_main.ViewModelCreator.createSettingViewModel(Enums.EViewModel.REFERENTIALEMAIL, this);
         }
 
         //----------------------------[ Properties ]------------------
@@ -75,8 +73,14 @@ namespace QOBDViewModels.ViewModel
             set { setProperty(ref _optionEmailViewModel, value); }
         }
 
+        public IMainWindowViewModel MainWindowViewModel
+        {
+            get { return _main; }
+            set { setProperty(ref _main, value); }
+        }
+
         //----------------------------[ Actions ]------------------
-        
+
         public override void Dispose()
         {
             OptionDataAndDisplayViewModel.Dispose();

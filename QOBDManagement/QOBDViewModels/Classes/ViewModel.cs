@@ -1,6 +1,4 @@
-﻿using QOBDModels.Classes;
-using QOBDModels.Interfaces;
-using QOBDViewModels.Abstracts;
+﻿using QOBDModels.Abstracts;
 using QOBDViewModels.Interfaces;
 using System;
 

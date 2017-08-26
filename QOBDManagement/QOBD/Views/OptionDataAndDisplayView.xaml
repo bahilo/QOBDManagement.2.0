@@ -193,11 +193,11 @@
                                             <StackPanel Orientation="Vertical">
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Margin="0 0 8 0">Width:</TextBlock>
-                                                    <ComboBox ItemsSource="{Binding DataContext.ReferentialViewModel.OptionDataAndDisplayViewModel.ImageWidthSizeList, ElementName=dgImages, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding TxtInfoItem1, UpdateSourceTrigger=PropertyChanged}"/>
+                                                    <TextBox Text="{Binding TxtInfoItem1, UpdateSourceTrigger=LostFocus}" MinWidth="50"/>
                                                 </StackPanel>
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Margin="0 0 8 0">Height:</TextBlock>
-                                                    <ComboBox ItemsSource="{Binding DataContext.ReferentialViewModel.OptionDataAndDisplayViewModel.ImageHeightSizeList, ElementName=dgImages, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding TxtInfoItem2, UpdateSourceTrigger=PropertyChanged}"/>
+                                                    <TextBox Text="{Binding TxtInfoItem2, UpdateSourceTrigger=LostFocus}" MinWidth="50"/>
                                                 </StackPanel>
                                             </StackPanel>
                                         </DataTemplate>
@@ -240,7 +240,7 @@
                     </StackPanel>
                 </Grid>
 
-                <StackPanel Grid.Row="2" Grid.ColumnSpan="4" Orientation="Vertical">
+                <!--<StackPanel Grid.Row="2" Grid.ColumnSpan="4" Orientation="Vertical">
                     <materialDesign:ColorZone Mode="PrimaryMid">
                         <TextBlock HorizontalAlignment="Center">Data</TextBlock>
                     </materialDesign:ColorZone>
@@ -303,7 +303,7 @@
                             </DataGridTemplateColumn>
                         </DataGrid.Columns>
                     </DataGrid>
-                </StackPanel>
+                </StackPanel>-->
 
             </Grid>
 

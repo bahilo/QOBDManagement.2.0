@@ -15,7 +15,7 @@ namespace QOBDViewModels.Abstracts
 {
     public abstract class Creator
     {
-        public virtual InfoManager.Display createImage(string fileNameWithoutExtension, List<string> filter, string ftpPath = "", string localPath = "", string login = "", string password = "")
+        public virtual InfoDisplay createImage(string fileNameWithoutExtension, List<string> filter, string ftpPath = "", string localPath = "", string login = "", string password = "")
         {
             throw new NotSupportedException();
         }
@@ -36,6 +36,11 @@ namespace QOBDViewModels.Abstracts
         }
 
         public virtual ButtonCommand<input> createSingleInputCommand<input>(System.Action<input> action, Func<input, bool> canPerformAction)
+        {
+            throw new NotSupportedException();
+        }
+
+        public virtual object createSettingViewModel(EViewModel viewModelName, IReferentialViewModel mainSettingViewModel)
         {
             throw new NotSupportedException();
         }

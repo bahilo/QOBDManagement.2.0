@@ -17,7 +17,7 @@ using System.Windows.Controls;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class AgentDetailViewModel : BindBase
+    public class AgentDetailViewModel : Classes.ViewModel
     {
         private string _title;
         private Func<string, object> _page;
@@ -104,7 +104,7 @@ namespace QOBDViewModels.ViewModel
 
         //----------------------------[ Actions ]----------------------
 
-        public void load()
+        public override void load()
         {            
             bool isUserAdmin = _main.AgentViewModel.IsAuthenticatedAgentAdmin;
 
@@ -237,7 +237,7 @@ namespace QOBDViewModels.ViewModel
 
         private async void getFileFromLocal(object obj)
         {
-            string newFileFullPath = InfoManager.ExecuteOpenFileDialog("Select an image file", new List<string> { "png", "jpeg", "jpg" });
+            string newFileFullPath = InfoGeneral.ExecuteOpenFileDialog("Select an image file", new List<string> { "png", "jpeg", "jpg" });
             if (!string.IsNullOrEmpty(newFileFullPath) && File.Exists(newFileFullPath))
             {
                 var ftpCredentials = Bl.BlReferential.searchInfo(new Info { Name = "ftp_" }, ESearchOption.AND);

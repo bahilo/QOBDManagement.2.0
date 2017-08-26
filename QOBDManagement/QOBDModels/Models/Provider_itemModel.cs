@@ -1,11 +1,6 @@
 ﻿using QOBDCommon.Classes;
 using QOBDCommon.Entities;
-using QOBDModels.Classes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using QOBDModels.Abstracts;
 
 namespace QOBDModels.Models
 {

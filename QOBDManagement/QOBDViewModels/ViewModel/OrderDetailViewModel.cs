@@ -26,7 +26,7 @@ namespace QOBDViewModels.ViewModel
         //private string _incomeHeaderWithCurrency;
         private decimal _totalBeforeTax;
         private CurrencyModel _currencyModel;
-        private InfoManager.FileWriter _mailFile;
+        private InfoFileWriter _mailFile;
         private ParamOrderToPdf _paramQuoteToPdf;
         private ParamOrderToPdf _paramOrderToPdf;
         private ParamDeliveryToPdf _paramDeliveryToPdf;
@@ -118,7 +118,7 @@ namespace QOBDViewModels.ViewModel
             //_incomeHeaderWithCurrency = "Total Income (" + CultureInfo.CurrentCulture.NumberFormat.CurrencySymbol + ")";
             _paramDeliveryToPdf.Lang = _paramOrderToPdf.Lang = _paramQuoteToPdf.Lang = _paramDeliveryToPdf.Lang = CultureInfo.CurrentCulture.Name.Split('-').FirstOrDefault() ?? "en";
 
-            _mailFile = new InfoManager.FileWriter("", EOption.mails);
+            _mailFile = new InfoFileWriter("", EOption.mails);
         }
 
         private void instancesModel()
@@ -186,7 +186,7 @@ namespace QOBDViewModels.ViewModel
             set { OrderSelected.DeliveryModelList = value; onPropertyChange(); }
         }
 
-        public InfoManager.FileWriter EmailFile
+        public InfoFileWriter EmailFile
         {
             get { return _mailFile; }
             set { setProperty(ref _mailFile, value); }
@@ -577,7 +577,7 @@ namespace QOBDViewModels.ViewModel
                 switch (OrderSelected.TxtStatus)
                 {
                     case "Quote":
-                        EmailFile = new InfoManager.FileWriter("quote", EOption.mails, ftpLogin: login, ftpPassword: password);
+                        EmailFile = new InfoFileWriter("quote", EOption.mails, ftpLogin: login, ftpPassword: password);
                         EmailFile.read();
                         if (infos != null)
                             EmailFile.TxtSubject = "** " + infos.Value + " – Your Quote n°{QUOTE_ID} **";
@@ -585,7 +585,7 @@ namespace QOBDViewModels.ViewModel
                             EmailFile.TxtSubject = "** Your Quote n°{QUOTE_ID} **";
                         break;
                     case "Pre_Order":
-                        EmailFile = new InfoManager.FileWriter("order_confirmation", EOption.mails, ftpLogin: login, ftpPassword: password);
+                        EmailFile = new InfoFileWriter("order_confirmation", EOption.mails, ftpLogin: login, ftpPassword: password);
                         EmailFile.read();
                         if (infos != null)
                             EmailFile.TxtSubject = "** " + infos.Value + " – Your Invoice n°{BILL_ID} **";
@@ -593,7 +593,7 @@ namespace QOBDViewModels.ViewModel
                             EmailFile.TxtSubject = "** Your Order n°{BILL_ID} **";
                         break;
                     case "Pre_Credit":
-                        EmailFile = new InfoManager.FileWriter("order_confirmation", EOption.mails, ftpLogin: login, ftpPassword: password);
+                        EmailFile = new InfoFileWriter("order_confirmation", EOption.mails, ftpLogin: login, ftpPassword: password);
                         EmailFile.read();
                         if (infos != null)
                             EmailFile.TxtSubject = "** " + infos.Value + " – Your Credit with Invoice n°{BILL_ID} **";
@@ -601,7 +601,7 @@ namespace QOBDViewModels.ViewModel
                             EmailFile.TxtSubject = "** Your Credit with Invoice n°{BILL_ID} **";
                         break;
                     case "Order":
-                        EmailFile = new InfoManager.FileWriter("bill", EOption.mails, ftpLogin: login, ftpPassword: password);
+                        EmailFile = new InfoFileWriter("bill", EOption.mails, ftpLogin: login, ftpPassword: password);
                         EmailFile.read();
                         if (infos != null)
                             EmailFile.TxtSubject = "** " + infos.Value + " – Bill n°{BILL_ID} **";
@@ -1093,7 +1093,7 @@ namespace QOBDViewModels.ViewModel
             PropertyChanged -= onOrder_itemModelWorkFlowChange;
             _updateOrderStatusTask.PropertyChanged -= onInitializationTaskComplete_UpdateOrderStatus;
 
-            foreach (var order_itemModel in Order_ItemModelList)
+            foreach (Order_itemModel order_itemModel in Order_ItemModelList)
             {
                 order_itemModel.PropertyChanged -= onQuantityOrPriceChange;
                 order_itemModel.Dispose();

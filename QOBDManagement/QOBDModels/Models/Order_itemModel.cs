@@ -1,14 +1,8 @@
-﻿using QOBDViewModels;
-using QOBDCommon.Entities;
-using QOBDModels.Classes;
+﻿using QOBDCommon.Entities;
 using System;
-using QOBDModels.Helper;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using QOBDCommon.Classes;
 using QOBDManagement.Helper;
+using QOBDModels.Abstracts;
 
 namespace QOBDModels.Models
 {
