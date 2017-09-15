@@ -17,8 +17,15 @@ namespace QOBDCommon.Interfaces.REMOTE
 
         void setServiceCredential(object channel);
 
+        void setCompanyName(string companyName);
+
         Task<Agent> AuthenticateUserAsync(string username, string password);
-             
+
+        Task<List<License>> checkLicenseByKeyAsync(string licenseKey);
+
+        Task<List<License>> checkLicenseByCompanyAsync(string companyName);
+
+
 
     } /* end interface Isecurity */
 }

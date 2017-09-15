@@ -22,6 +22,7 @@ namespace QOBDGateway.Core
     public class GateWayReferential : IReferentialManager, INotifyPropertyChanged
     {
         private ClientProxy _channel;
+        private string _companyName;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -41,12 +42,17 @@ namespace QOBDGateway.Core
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        public void setCompanyName(string companyName)
+        {
+            _companyName = companyName;
+        }
+
         public async Task<List<Info>> DeleteInfoAsync(List<Info> listInfos)
         {
             List<Info> result = new List<Info>();
             try
             {
-                result = (await _channel.delete_data_infosAsync(listInfos.InfosTypeToArray())).ArrayTypeToInfos();
+                result = (await _channel.delete_data_infosAsync(_companyName, listInfos.InfosTypeToArray())).ArrayTypeToInfos();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -59,7 +65,7 @@ namespace QOBDGateway.Core
             List<Info> result = new List<Info>();
             try
             {
-                result = (await _channel.insert_data_infosAsync(listInfos.InfosTypeToArray())).ArrayTypeToInfos();
+                result = (await _channel.insert_data_infosAsync(_companyName, listInfos.InfosTypeToArray())).ArrayTypeToInfos();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -72,7 +78,7 @@ namespace QOBDGateway.Core
             List<Info> result = new List<Info>();
             try
             {
-                result = (await _channel.update_data_infosAsync(listInfos.InfosTypeToArray())).ArrayTypeToInfos();
+                result = (await _channel.update_data_infosAsync(_companyName, listInfos.InfosTypeToArray())).ArrayTypeToInfos();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -85,7 +91,7 @@ namespace QOBDGateway.Core
             List<Info> result = new List<Info>();
             try
             {
-                result = (await _channel.get_data_infosAsync(nbLine.ToString())).ArrayTypeToInfos().OrderBy(x => x.ID).ToList();
+                result = (await _channel.get_data_infosAsync(_companyName, nbLine.ToString())).ArrayTypeToInfos().OrderBy(x => x.ID).ToList();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -98,7 +104,7 @@ namespace QOBDGateway.Core
             List<Info> result = new List<Info>();
             try
             {
-                result = (await _channel.get_data_infos_by_idAsync(id.ToString())).ArrayTypeToInfos();
+                result = (await _channel.get_data_infos_by_idAsync(_companyName, id.ToString())).ArrayTypeToInfos();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -111,7 +117,7 @@ namespace QOBDGateway.Core
             List<Info> result = new List<Info>();
             try
             {
-                result = (await _channel.get_filter_infosAsync(Infos.InfosTypeToFilterArray(filterOperator))).ArrayTypeToInfos();
+                result = (await _channel.get_filter_infosAsync(_companyName, Infos.InfosTypeToFilterArray(filterOperator))).ArrayTypeToInfos();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }

@@ -1,5 +1,6 @@
 ﻿using QOBDCommon.Classes;
 using QOBDCommon.Entities;
+using QOBDDAL.Core;
 using QOBDModels.Classes;
 using QOBDModels.Command;
 using QOBDModels.Models;
@@ -69,6 +70,7 @@ namespace QOBDViewModels.ViewModel
         {
             DiscussionViewModel.addObserver(onChatRoomChange);
             DiscussionViewModel.addObserver(onUpdateUsersStatusChange);
+            _main.Startup.Dal.DALAgent.PropertyChanged += onAgentDataDownloadingStatusChange;
         }
 
         private void CommandInstances()
@@ -313,6 +315,7 @@ namespace QOBDViewModels.ViewModel
             // unsubscribe events
             DiscussionViewModel.removeObserver(onChatRoomChange);
             DiscussionViewModel.removeObserver(onUpdateUsersStatusChange);
+            _main.Startup.Dal.DALAgent.PropertyChanged -= onAgentDataDownloadingStatusChange;
         }
 
         private async Task signOutFromServerAsync(List<DiscussionModel> discussionList)
@@ -388,6 +391,19 @@ namespace QOBDViewModels.ViewModel
                     Application.Current.Dispatcher.Invoke(()=> {
                         updateUsersOnlineStatus();
                     });
+            }
+        }
+
+        private void onAgentDataDownloadingStatusChange(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName.Equals("IsDataDownloading") && !((DALAgent)sender).IsDataDownloading)
+            {
+                // if not unit testing
+                if (Application.Current != null)
+                {
+                    // load chat
+                    start();
+                }
             }
         }
 

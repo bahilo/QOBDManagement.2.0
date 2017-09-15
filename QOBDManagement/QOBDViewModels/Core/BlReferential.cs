@@ -40,6 +40,11 @@ namespace QOBDViewModels.Core
             DAC.DALReferential.cacheWebServiceData();
         }
 
+        public void setCompanyName(string companyName)
+        {
+            DAC.DALReferential.setCompanyName(companyName);
+        }
+
 
         public void setServiceCredential(object channel)
         {

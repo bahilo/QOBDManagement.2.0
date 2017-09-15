@@ -25,6 +25,8 @@ namespace QOBDCommon.Interfaces.REMOTE
 
         void setServiceCredential(object channel);
 
+        void setCompanyName(string companyName);
+
         Task<List<Notification>> InsertNotificationAsync(List<Notification> notificationList);
 
         Task<List<Notification>> UpdateNotificationAsync(List<Notification> notificationList);

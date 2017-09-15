@@ -23,7 +23,7 @@ namespace QOBD.Views
             if (dataContext.setWindowContext(this) != null)
             {
                 if (!((IMainWindowViewModel)this.DataContext).IsThroughContext)
-                    ((IMainWindowViewModel)this.DataContext).OrderViewModel.loadOrders();
+                    ((IMainWindowViewModel)this.DataContext).OrderViewModel.loadOrdersAsync();
                 
             }
         }

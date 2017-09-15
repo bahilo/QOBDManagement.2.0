@@ -63,6 +63,11 @@ namespace QOBDDAL.Core
             _gateWaySecurity.setServiceCredential(_servicePortType);
         }
 
+        public void setCompanyName(string companyName)
+        {
+            _gateWaySecurity.setCompanyName(companyName);
+        }
+
         public bool IsDataDownloading
         {
             get { return _isLodingDataFromWebServiceToLocal; }
@@ -71,6 +76,12 @@ namespace QOBDDAL.Core
         
 
         public async Task<Agent> AuthenticateUserAsync(string username, string password)
+        {
+            setChannelCredential(username, password);
+            return await _gateWaySecurity.AuthenticateUserAsync(username, password);
+        }
+
+        private void setChannelCredential(string username, string password)
         {
             try
             {
@@ -83,14 +94,11 @@ namespace QOBDDAL.Core
                 _servicePortType.ClientCredentials.UserName.UserName = username;
                 _servicePortType.ClientCredentials.UserName.Password = password;
             }
-
-            return await _gateWaySecurity.AuthenticateUserAsync(username, password);
         }
 
         private void checkServiceCommunication()
         {
-            if (_servicePortType.State == System.ServiceModel.CommunicationState.Closed || _servicePortType.State == System.ServiceModel.CommunicationState.Faulted)
-                _serviceCommunication.resetCommunication();
+            _serviceCommunication.checkServiceCommunication(_servicePortType);
         }
 
         #region [ Actions ]
@@ -281,6 +289,19 @@ namespace QOBDDAL.Core
             return AuthenticatedUser;
         }
 
+        public async Task<List<QOBDCommon.Entities.License>> checkLicenseByKeyAsync(string licenseKey)
+        {
+            setChannelCredential(licenseKey, "none");
+            checkServiceCommunication();
+            return await _gateWaySecurity.checkLicenseByKeyAsync(licenseKey);
+        }
+
+        public async Task<List<QOBDCommon.Entities.License>> checkLicenseByCompanyAsync(string companyName)
+        {
+            checkServiceCommunication();
+            return await _gateWaySecurity.checkLicenseByCompanyAsync(companyName);
+        }
+
         public async Task<List<ActionRecord>> searchActionRecordAsync(ActionRecord ActionRecord, ESearchOption filterOperator)
         {
             checkServiceCommunication();
@@ -324,7 +345,5 @@ namespace QOBDDAL.Core
             if (_gateWaySecurity != null)
                 _gateWaySecurity.Dispose();
         }
-
-
     } /* end class BlSecurity */
 }

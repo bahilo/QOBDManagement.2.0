@@ -1334,6 +1334,7 @@ namespace QOBDViewModels.ViewModel
         {
             Singleton.getDialogueBox().showSearch(ConfigurationManager.AppSettings["create_message"]);
             _paramDeliveryToPdf.OrderId = OrderSelected.Order.ID;
+            _paramDeliveryToPdf.LicenseKey = _main.SecurityLoginViewModel.TxtLicenseKey;
             _paramDeliveryToPdf.DeliveryId = obj.Delivery.ID;
             Bl.BlOrder.GeneratePdfDelivery(_paramDeliveryToPdf);
             Singleton.getDialogueBox().IsDialogOpen = false;
@@ -1758,6 +1759,7 @@ namespace QOBDViewModels.ViewModel
         {
             Singleton.getDialogueBox().showSearch(ConfigurationManager.AppSettings["create_message"]);
             _paramOrderToPdf.ParamEmail = new ParamEmail();
+            _paramOrderToPdf.LicenseKey = _main.SecurityLoginViewModel.TxtLicenseKey;
             _paramOrderToPdf.BillId = obj.Bill.ID;
             _paramOrderToPdf.OrderId = OrderSelected.Order.ID;
             Bl.BlOrder.GeneratePdfOrder(_paramOrderToPdf);
@@ -1781,7 +1783,9 @@ namespace QOBDViewModels.ViewModel
         private void generateQuotePdf(object obj)
         {
             Singleton.getDialogueBox().showSearch(ConfigurationManager.AppSettings["create_message"]);
+            
             _paramQuoteToPdf.ParamEmail = new ParamEmail();
+            _paramQuoteToPdf.LicenseKey = _main.SecurityLoginViewModel.TxtLicenseKey;
             _paramQuoteToPdf.OrderId = OrderSelected.Order.ID;
             Bl.BlOrder.GeneratePdfQuote(_paramQuoteToPdf);
             Singleton.getDialogueBox().IsDialogOpen = false;
@@ -1979,9 +1983,10 @@ namespace QOBDViewModels.ViewModel
         /// <param name="obj">the invoice to process</param>
         private async void sendEmail(BillModel obj)
         {
-            if (await Singleton.getDialogueBox().showAsync("Confirme sending email!"))
+            if (await Singleton.getDialogueBox().showAsync("Confirme email sending!"))
             {
                 var paramEmail = new ParamEmail();
+                _paramQuoteToPdf.LicenseKey = _main.SecurityLoginViewModel.TxtLicenseKey;
                 paramEmail.IsCopyToAgent = await Singleton.getDialogueBox().showAsync("Do you want to receive a copy of the email?");
 
                 Singleton.getDialogueBox().showSearch(ConfigurationManager.AppSettings["wait_message"]);

@@ -29,6 +29,10 @@ namespace QOBDViewModels.Core
             DAC = DataAccessComponent;
         }
 
+        public void setCompanyName(string companyName)
+        {
+            DAC.DALStatistic.setCompanyName(companyName);
+        }
 
         public void progressBarManagement(Func<double, double> progressBarFunc)
         {

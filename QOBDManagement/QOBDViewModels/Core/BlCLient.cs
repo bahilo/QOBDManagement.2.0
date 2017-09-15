@@ -49,6 +49,11 @@ namespace QOBDViewModels.Core
             DAC.DALClient.setServiceCredential(channel);
         }
 
+        public void setCompanyName(string companyName)
+        {
+            DAC.DALClient.setCompanyName(companyName);
+        }
+
         public void progressBarManagement(Func<double, double> progressBarFunc)
         {
             if (progressBarFunc != null)

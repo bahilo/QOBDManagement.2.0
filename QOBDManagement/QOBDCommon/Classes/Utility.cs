@@ -51,6 +51,15 @@ namespace QOBDCommon.Classes
             }
         }
 
+        public static DateTime dateTryParse(string inputDate)
+        {
+            DateTime outDate = new DateTime();
+            if (DateTime.TryParse(inputDate, out outDate) && outDate > DateTimeMinValueInSQL2005)
+                return outDate;
+
+            return DateTimeMinValueInSQL2005;
+        }
+
         public static bool convertToBoolean(string boolString)
         {
             object _lock = new object();

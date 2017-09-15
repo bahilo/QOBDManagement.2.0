@@ -25,6 +25,8 @@ namespace QOBDCommon.Interfaces.REMOTE
 
         void setServiceCredential(object channel);
 
+        void setCompanyName(string companyName);
+
         Task<List<Statistic>> InsertStatisticAsync(List<Statistic> statisticList);
 
         Task<List<Statistic>> UpdateStatisticAsync(List<Statistic> statisticList);

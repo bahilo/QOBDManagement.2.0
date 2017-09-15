@@ -79,6 +79,9 @@
             <DataTemplate DataType="{x:Type ViewModel:SearchConfirmationViewModel}">
                 <Views:SearchConfirmationView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModel:LicenseViewModel}">
+                <Views:LicenseView/>
+            </DataTemplate>
 
             <!-- Detail views -->
             <DataTemplate DataType="{x:Type ViewModel:ItemDetailViewModel}">

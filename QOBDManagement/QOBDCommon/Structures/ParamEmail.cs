@@ -12,6 +12,7 @@ namespace QOBDCommon.Structures
         private int _reminder ;
         private bool _isSendEmail;
         private bool _isCopyToAgent;
+        private string _licenseKey;
 
         public string Subject
         {
@@ -23,6 +24,12 @@ namespace QOBDCommon.Structures
         {
             get { return _reminder; }
             set { _reminder = value; }
+        }
+                
+        public string LicenseKey
+        {
+            get { return _licenseKey; }
+            set { _licenseKey = value; }
         }
 
         public bool IsSendEmail

@@ -337,7 +337,7 @@ namespace QOBDViewModels.ViewModel
 
         private async void selectClientForQuote(ClientModel obj)
         {
-            if (obj != null && await Singleton.getDialogueBox().showAsync("Do you confirme selecting " + obj.TxtCompany + " for a Quote?"))
+            if (obj != null && await Singleton.getDialogueBox().showAsync("Do you confirme the selection of [" + obj.TxtCompany + "] for a Quote?"))
                 ClientDetailViewModel.setCartClientForQuote(obj);
             else
                 obj.IsSelectForQuote = false;

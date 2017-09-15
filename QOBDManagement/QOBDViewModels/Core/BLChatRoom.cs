@@ -34,6 +34,11 @@ namespace QOBDViewModels.Core
             DAC.DALChatRoom.setServiceCredential(channel);
         }
 
+        public void setCompanyName(string companyName)
+        {
+            DAC.DALChatRoom.setCompanyName(companyName);
+        }
+
 
         #region [ Discussion ]
         public async Task<List<Discussion>> InsertDiscussionAsync(List<Discussion> discussionList)

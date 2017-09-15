@@ -1,6 +1,5 @@
 using QOBDCommon.Entities;
 using QOBDCommon.Interfaces.REMOTE;
-using QOBDGateway.Classes;
 using QOBDGateway.Helper.ChannelHelper;
 using System;
 using System.Collections.Generic;
@@ -20,6 +19,7 @@ namespace QOBDGateway.Core
     public class GateWayClient : IClientManager, INotifyPropertyChanged
     {
         private ClientProxy _channel;
+        private string _companyName;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -40,12 +40,17 @@ namespace QOBDGateway.Core
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        public void setCompanyName(string companyName)
+        {
+            _companyName = companyName;
+        }
+
         public async Task<List<Client>> InsertClientAsync(List<Client> clientList)
         {
             List<Client> result = new List<Client>();
             try
             {                
-                result = (await _channel.insert_data_clientAsync(clientList.ClientTypeToArray())).ArrayTypeToClient();
+                result = (await _channel.insert_data_clientAsync(_companyName, clientList.ClientTypeToArray())).ArrayTypeToClient();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -58,7 +63,7 @@ namespace QOBDGateway.Core
             List<Contact> result = new List<Contact>();
             try
             {                
-                result = (await _channel.insert_data_contactAsync(contactList.ContactTypeToArray())).ArrayTypeToContact();
+                result = (await _channel.insert_data_contactAsync(_companyName, contactList.ContactTypeToArray())).ArrayTypeToContact();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -71,7 +76,7 @@ namespace QOBDGateway.Core
             List<Address> result = new List<Address>();
             try
             {                
-                result = (await _channel.insert_data_addressAsync(addressList.AddressTypeToArray())).ArrayTypeToAddress();
+                result = (await _channel.insert_data_addressAsync(_companyName, addressList.AddressTypeToArray())).ArrayTypeToAddress();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -84,7 +89,7 @@ namespace QOBDGateway.Core
             List<Client> result = new List<Client>();
             try
             {                
-                result = (await _channel.update_data_clientAsync(clientList.ClientTypeToArray())).ArrayTypeToClient();
+                result = (await _channel.update_data_clientAsync(_companyName, clientList.ClientTypeToArray())).ArrayTypeToClient();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -97,7 +102,7 @@ namespace QOBDGateway.Core
             List<Contact> result = new List<Contact>();
             try
             {                
-                result = (await _channel.update_data_contactAsync(contactList.ContactTypeToArray())).ArrayTypeToContact();
+                result = (await _channel.update_data_contactAsync(_companyName, contactList.ContactTypeToArray())).ArrayTypeToContact();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -110,7 +115,7 @@ namespace QOBDGateway.Core
             List<Address> result = new List<Address>();
             try
             {                
-                result = (await _channel.update_data_addressAsync(addressList.AddressTypeToArray())).ArrayTypeToAddress();
+                result = (await _channel.update_data_addressAsync(_companyName, addressList.AddressTypeToArray())).ArrayTypeToAddress();
              }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -123,7 +128,7 @@ namespace QOBDGateway.Core
             List<Client> result = new List<Client>();
             try
             {                
-                result = (await _channel.delete_data_clientAsync(clientList.ClientTypeToArray())).ArrayTypeToClient();
+                result = (await _channel.delete_data_clientAsync(_companyName, clientList.ClientTypeToArray())).ArrayTypeToClient();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -136,7 +141,7 @@ namespace QOBDGateway.Core
             List<Contact> result = new List<Contact>();
             try
             {                
-                result = (await _channel.delete_data_contactAsync(contactList.ContactTypeToArray())).ArrayTypeToContact();
+                result = (await _channel.delete_data_contactAsync(_companyName, contactList.ContactTypeToArray())).ArrayTypeToContact();
              }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -149,7 +154,7 @@ namespace QOBDGateway.Core
             List<Address> result = new List<Address>();
             try
             {                
-                result = (await _channel.delete_data_addressAsync(addressList.AddressTypeToArray())).ArrayTypeToAddress();
+                result = (await _channel.delete_data_addressAsync(_companyName, addressList.AddressTypeToArray())).ArrayTypeToAddress();
              }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -163,7 +168,7 @@ namespace QOBDGateway.Core
             List<Client> result = new List<Client>();
             try
             {                
-                result = (await _channel.get_data_clientAsync(nbLine.ToString())).ArrayTypeToClient();
+                result = (await _channel.get_data_clientAsync(_companyName, nbLine.ToString())).ArrayTypeToClient();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -176,7 +181,7 @@ namespace QOBDGateway.Core
             List<Client> result = new List<Client>();
             try
             {
-                result = (await _channel.get_data_client_by_max_credit_overAsync(agentId.ToString())).ArrayTypeToClient();
+                result = (await _channel.get_data_client_by_max_credit_overAsync(_companyName, agentId.ToString())).ArrayTypeToClient();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -189,7 +194,7 @@ namespace QOBDGateway.Core
             List<Client> result = new List<Client>();
             try
             {
-                result = (await _channel.get_data_client_by_bill_listAsync(billList.BillTypeToArray())).ArrayTypeToClient();
+                result = (await _channel.get_data_client_by_bill_listAsync(_companyName, billList.BillTypeToArray())).ArrayTypeToClient();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -202,7 +207,7 @@ namespace QOBDGateway.Core
             List<Client> result = new List<Client>();
             try
             {
-                result = (await _channel.get_data_client_by_order_listAsync(orderList.OrderTypeToArray())).ArrayTypeToClient();
+                result = (await _channel.get_data_client_by_order_listAsync(_companyName, orderList.OrderTypeToArray())).ArrayTypeToClient();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -215,7 +220,7 @@ namespace QOBDGateway.Core
             List<Contact> result = new List<Contact>();
             try
             {                
-                result = (await _channel.get_data_contactAsync(nbLine.ToString())).ArrayTypeToContact();
+                result = (await _channel.get_data_contactAsync(_companyName, nbLine.ToString())).ArrayTypeToContact();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -228,7 +233,7 @@ namespace QOBDGateway.Core
             List<Contact> result = new List<Contact>();
             try
             {
-                result = (await _channel.get_data_contact_by_client_listAsync(clientList.ClientTypeToArray())).ArrayTypeToContact();
+                result = (await _channel.get_data_contact_by_client_listAsync(_companyName, clientList.ClientTypeToArray())).ArrayTypeToContact();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -241,7 +246,7 @@ namespace QOBDGateway.Core
             List<Address> result = new List<Address>();
             try
             {                
-                result = (await _channel.get_data_addressAsync(nbLine.ToString())).ArrayTypeToAddress();
+                result = (await _channel.get_data_addressAsync(_companyName, nbLine.ToString())).ArrayTypeToAddress();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -254,10 +259,10 @@ namespace QOBDGateway.Core
             List<Address> result = new List<Address>();
             try
             {
-                result = (await _channel.get_data_address_by_order_listAsync(orderList.OrderTypeToArray())).ArrayTypeToAddress();
+                result = (await _channel.get_data_address_by_order_listAsync(_companyName, orderList.OrderTypeToArray())).ArrayTypeToAddress();
             }
             catch (FaultException) { Dispose(); throw; }
-            catch (CommunicationException) { _channel.Abort(); throw; }
+            catch (CommunicationException ex) { _channel.Abort(); throw; }
             catch (TimeoutException) { _channel.Abort(); }
             return result;
         }
@@ -267,7 +272,7 @@ namespace QOBDGateway.Core
             List<Address> result = new List<Address>();
             try
             {
-                result = (await _channel.get_data_address_by_client_listAsync(clientList.ClientTypeToArray())).ArrayTypeToAddress();
+                result = (await _channel.get_data_address_by_client_listAsync(_companyName, clientList.ClientTypeToArray())).ArrayTypeToAddress();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -280,7 +285,7 @@ namespace QOBDGateway.Core
             List<Order> result = new List<Order>();
             try
             {                
-                result = (await _channel.get_orders_clientAsync(id.ToString())).ArrayTypeToOrder();
+                result = (await _channel.get_orders_clientAsync(_companyName, id.ToString())).ArrayTypeToOrder();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -293,7 +298,7 @@ namespace QOBDGateway.Core
             List<Order> result = new List<Order>();
             try
             {                
-                result = (await _channel.get_quotes_clientAsync(id.ToString())).ArrayTypeToOrder();
+                result = (await _channel.get_quotes_clientAsync(_companyName, id.ToString())).ArrayTypeToOrder();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -306,7 +311,7 @@ namespace QOBDGateway.Core
             List<Client> result = new List<Client>();
             try
             {                
-                result = (await _channel.get_data_client_by_idAsync(id.ToString())).ArrayTypeToClient();
+                result = (await _channel.get_data_client_by_idAsync(_companyName, id.ToString())).ArrayTypeToClient();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -319,7 +324,7 @@ namespace QOBDGateway.Core
             List<Contact> result = new List<Contact>();
             try
             {                
-                result = (await _channel.get_data_contact_by_idAsync(id.ToString())).ArrayTypeToContact();
+                result = (await _channel.get_data_contact_by_idAsync(_companyName, id.ToString())).ArrayTypeToContact();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -332,7 +337,7 @@ namespace QOBDGateway.Core
             List<Address> result = new List<Address>();
             try
             {                
-                result = (await _channel.get_data_address_by_idAsync(id.ToString())).ArrayTypeToAddress();
+                result = (await _channel.get_data_address_by_idAsync(_companyName, id.ToString())).ArrayTypeToAddress();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -346,7 +351,7 @@ namespace QOBDGateway.Core
             List<Client> result = new List<Client>();
             try
             {                
-                result = (await _channel.get_filter_ClientAsync(client.ClientTypeToFilterArray(filterOperator))).ArrayTypeToClient();
+                result = (await _channel.get_filter_ClientAsync(_companyName, client.ClientTypeToFilterArray(filterOperator))).ArrayTypeToClient();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -360,7 +365,7 @@ namespace QOBDGateway.Core
             List<Contact> result = new List<Contact>();
             try
             {                
-                result = (await _channel.get_filter_contactAsync(Contact.ContactTypeToFilterArray(filterOperator))).ArrayTypeToContact();
+                result = (await _channel.get_filter_contactAsync(_companyName, Contact.ContactTypeToFilterArray(filterOperator))).ArrayTypeToContact();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -373,7 +378,7 @@ namespace QOBDGateway.Core
             List<Address> result = new List<Address>();
             try
             {                
-                result = (await _channel.get_filter_addressAsync(Address.AddressTypeToFilterArray(filterOperator))).ArrayTypeToAddress();
+                result = (await _channel.get_filter_addressAsync(_companyName, Address.AddressTypeToFilterArray(filterOperator))).ArrayTypeToAddress();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }

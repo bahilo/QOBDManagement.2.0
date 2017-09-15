@@ -128,6 +128,9 @@
     <Compile Include="Views\ItemView.xaml.cs">
       <DependentUpon>ItemView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\LicenseView.xaml.cs">
+      <DependentUpon>LicenseView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainChatRoomWindow.xaml.cs">
       <DependentUpon>MainChatRoomWindow.xaml</DependentUpon>
     </Compile>
@@ -833,6 +836,10 @@
     <Page Include="Views\ItemView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\LicenseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainChatRoomWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

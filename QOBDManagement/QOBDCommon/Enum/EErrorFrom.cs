@@ -22,6 +22,7 @@ namespace QOBDCommon.Enum
         MAIN,
         COMMAND,
         DIALOGBOXCONFIRMATION,
-        INFOMANAGER
+        INFOMANAGER,
+        LICENSE
     }
 }

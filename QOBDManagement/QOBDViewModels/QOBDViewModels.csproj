@@ -133,6 +133,7 @@
     <Compile Include="ViewModel\ItemDetailViewModel.cs" />
     <Compile Include="ViewModel\ItemSideBarViewModel.cs" />
     <Compile Include="ViewModel\ItemViewModel.cs" />
+    <Compile Include="ViewModel\LicenseViewModel.cs" />
     <Compile Include="ViewModel\MessageViewModel.cs" />
     <Compile Include="ViewModel\NotificationSideBarViewModel.cs" />
     <Compile Include="ViewModel\NotificationViewModel.cs" />

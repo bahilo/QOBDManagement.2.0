@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using QOBDGateway.Abstracts;
+using QOBDGateway.Classes;
 
 namespace QOBDGateway.Interfaces
 {
     public interface ICommunication
     {
         void resetCommunication();
+        ClientConcreteProxy getProxy();
+        void checkServiceCommunication(ClientProxy proxy);
     }
 }

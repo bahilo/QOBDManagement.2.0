@@ -1,4 +1,5 @@
-﻿using QOBDModels.Enums;
+﻿using QOBDCommon.Exceptions;
+using QOBDModels.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,10 @@ namespace QOBDModels.Abstracts
 {
     public abstract class ModelCreator
     {
+
         public virtual object createModel(EModel modelName)
         {
-            throw new NotSupportedException();
+            throw new NotApplicableException("Cannot create model for the targeted object!");
         }
     }
 }

@@ -21,7 +21,6 @@ namespace QOBDViewModels.ViewModel
         private Func<object, object> _page;
         private List<InfoBank> _bankDetails;
         private List<InfoContact> _addressDetails;
-        private InfoGeneral _generalInfos;
         private string _selectedTaxInteger;
         private string _selectedTaxFloat;
         private InfoFileWriter _legalInformationFileManagement;
@@ -88,7 +87,6 @@ namespace QOBDViewModels.ViewModel
             _saleGeneralConditionFileManagement = new InfoFileWriter("sale_general_condition", EOption.texts);
             _addressDetails = new List<InfoContact>();
             _bankDetails = new List<InfoBank>();
-            _generalInfos = new InfoGeneral();
             _emailfilterList = new List<string> { "email", "invoice_email", "quote_email", "reminder_email", "validation_email" };
             _title = ConfigurationManager.AppSettings["title_settings"];
         }

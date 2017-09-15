@@ -23,6 +23,7 @@ namespace QOBDViewModels.ViewModel
         public ConfirmationViewModel()
         {
             _message = "";
+            _isDialogOpen = true;
         }
 
         public void onPropertyChange([CallerMemberName] string propertyName = null)
@@ -103,6 +104,7 @@ namespace QOBDViewModels.ViewModel
 
             try
             {
+                closeDialogBox(isChatDialogBox);
                 if (Application.Current != null)
                     await DialogHost.Show(new SearchConfirmationViewModel(this), getDialogBox(isChatDialogBox));
             }
@@ -120,6 +122,7 @@ namespace QOBDViewModels.ViewModel
 
             try
             {
+                closeDialogBox(isChatDialogBox);
                 if (Application.Current != null)
                     result = await DialogHost.Show(this, getDialogBox(isChatDialogBox));
             }
@@ -140,6 +143,7 @@ namespace QOBDViewModels.ViewModel
 
             try
             {
+                closeDialogBox(isChatDialogBox);
                 if (Application.Current != null)
                     result = await DialogHost.Show(viewModel, getDialogBox(isChatDialogBox));
             }
@@ -159,17 +163,19 @@ namespace QOBDViewModels.ViewModel
         {
             string result = "";
             if (isChatDialogBox)
-            {
                 result = "RootDialogChatRoom";
-                IsChatDialogOpen = false;
-            }
             else
-            {
                 result = "RootDialog";
-                IsDialogOpen = false;
-            }
                 
             return result;
+        }
+
+        private void closeDialogBox(bool isChatDialogBox = false)
+        {
+            if (isChatDialogBox)
+               IsChatDialogOpen = false;
+            else
+               IsDialogOpen = false;
         }
 
     }

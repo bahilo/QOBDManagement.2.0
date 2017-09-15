@@ -2,6 +2,7 @@ using QOBDCommon.Classes;
 using QOBDCommon.Entities;
 using QOBDCommon.Enum;
 using QOBDCommon.Interfaces.DAC;
+using QOBDDAL.Helper.ChannelHelper;
 using QOBDGateway.Abstracts;
 using QOBDGateway.Classes;
 using QOBDGateway.Core;
@@ -66,7 +67,11 @@ namespace QOBDDAL.Core
 
         public async void cacheWebServiceData()
         {
-            await retrieveGateWayAgentDataAsync();
+            try
+            {
+                await DALHelper.doAction(retrieveGateWayAgentDataAsync, new TimeSpan(200), 0, new List<Exception>(), 3);
+            }
+            catch (Exception ex) { Log.error(ex.Message, EErrorFrom.AGENT); }
         }
 
         public void setServiceCredential(object channel)
@@ -78,6 +83,11 @@ namespace QOBDDAL.Core
                 _servicePortType.ClientCredentials.UserName.Password = AuthenticatedUser.HashedPassword;
             }
             _gateWayAgent.setServiceCredential(_servicePortType);
+        }
+
+        public void setCompanyName(string companyName)
+        {
+            _gateWayAgent.setCompanyName(companyName);
         }
 
         public async Task retrieveGateWayAgentDataAsync()
@@ -92,21 +102,12 @@ namespace QOBDDAL.Core
 
                 if (agentList.Count > 0)
                     LoadAgent(agentList);
+
+                try { _progressBarFunc((double)100 / _progressStep); }
+                catch (DivideByZeroException ex) { Log.error(ex.Message, EErrorFrom.AGENT); }
             }
-            catch (Exception ex)
-            {
-                Log.error(ex.Message, EErrorFrom.AGENT);
-            }
-            finally
-            {
-                lock (_lock) IsDataDownloading = false;
-                try
-                {
-                    _progressBarFunc((double)100 / _progressStep);
-                }
-                catch (DivideByZeroException ex) { Log.error(ex.Message, EErrorFrom.STATISTIC); }
-                //Log.debug("Loaded[" + _progressBarFunc(0) + "%]!", EErrorFrom.AGENT);
-            }
+            catch (Exception) { throw; }
+            finally { lock (_lock) IsDataDownloading = false; }
         }
 
         public void progressBarManagement(Func<double, double> progressBarFunc)
@@ -116,8 +117,7 @@ namespace QOBDDAL.Core
 
         private void checkServiceCommunication()
         {
-            if (_servicePortType.State == System.ServiceModel.CommunicationState.Closed || _servicePortType.State == System.ServiceModel.CommunicationState.Faulted)
-                _serviceCommunication.resetCommunication();
+            _serviceCommunication.checkServiceCommunication(_servicePortType);
         }
 
         public void onPropertyChange(string propertyName)

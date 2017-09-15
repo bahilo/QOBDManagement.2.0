@@ -13,6 +13,7 @@ using System.Collections.Concurrent;
 using QOBDCommon.Classes;
 using QOBDGateway.Interfaces;
 using QOBDGateway.Abstracts;
+using QOBDDAL.Helper.ChannelHelper;
 /// <summary>
 ///  A class that represents ...
 /// 
@@ -82,7 +83,11 @@ namespace QOBDDAL.Core
 
         public async void cacheWebServiceData()
         {
-            await retrieveGateWayClientDataAsync();
+            try
+            {
+                await DALHelper.doAction(retrieveGateWayClientDataAsync, TimeSpan.FromSeconds(1), 0, new List<Exception>(), 3);
+            }
+            catch (Exception ex) { Log.error(ex.Message, EErrorFrom.CLIENT); }
         }
 
         public void setServiceCredential(object channel)
@@ -96,45 +101,32 @@ namespace QOBDDAL.Core
             _gateWayClient.setServiceCredential(_servicePortType);
         }
 
+        public void setCompanyName(string companyName)
+        {
+            _gateWayClient.setCompanyName(companyName);
+        }
+
         private async Task retrieveGateWayClientDataAsync()
-        {       
+        {
             lock (_lock) IsDataDownloading = true;
             try
             {
                 checkServiceCommunication();
-                ConcurrentBag<Client> loadedClientList = new ConcurrentBag<Client>();
-                ConcurrentBag<Client> clientList = new ConcurrentBag<Client>();
+                List<Client> clientList = await _gateWayClient.GetClientDataAsync(_loadSize);
 
-                do
-                {
-                    int lastLoadedClientID = loadedClientList.OrderBy(x => x.ID).Select(x => x.ID).FirstOrDefault();
-                    loadedClientList = new ConcurrentBag<Client>(await _gateWayClient.searchClientAsync(new Client { AgentId = AuthenticatedUser.ID, Option = lastLoadedClientID }, ESearchOption.AND));
-                    clientList = new ConcurrentBag<Client>(clientList.Concat(loadedClientList).ToList());
-                } while (loadedClientList.Count > 0);
-
-                    if (clientList.Count > 0)
-                        await UpdateClientDependenciesAsync(clientList.ToList());
+                if (clientList.Count > 0)
+                    await UpdateClientDependenciesAsync(clientList);
 
                 var addresses = await _gateWayClient.GetAddressDataAsync(_loadSize);
                 if (addresses.Count() > 0)
                     LoadAddress(addresses);
-                //Log.debug("-- Clients loaded --");
+
+                try { _progressBarFunc((double)100 / _progressStep); }
+                catch (DivideByZeroException ex) { Log.error(ex.Message, EErrorFrom.CLIENT); }
             }
-            catch (Exception ex)
-            {
-                Log.error(ex.Message, EErrorFrom.CLIENT);
-            }
-            finally
-            {
-                lock (_lock) IsDataDownloading = false;
-                try
-                {
-                    _progressBarFunc((double)100 / _progressStep);
-                }
-                catch (DivideByZeroException ex) { Log.error(ex.Message, EErrorFrom.STATISTIC); }
-                // Log.debug("Loaded[" + _progressBarFunc(0) + "%]!", EErrorFrom.CLIENT);
-            }
-            
+            catch (Exception) { throw; }
+            finally { lock (_lock) IsDataDownloading = false; }
+
         }
 
         public void progressBarManagement(Func<double, double> progressBarFunc)
@@ -144,8 +136,7 @@ namespace QOBDDAL.Core
 
         private void checkServiceCommunication()
         {
-            if (_servicePortType.State == System.ServiceModel.CommunicationState.Closed || _servicePortType.State == System.ServiceModel.CommunicationState.Faulted)
-                _serviceCommunication.resetCommunication();
+            _serviceCommunication.checkServiceCommunication(_servicePortType);
         }
 
         #region [ Actions ]
@@ -180,13 +171,13 @@ namespace QOBDDAL.Core
             List<Client> result = new List<Client>();
             checkServiceCommunication();
             List<Client> gateWayResultList = await _gateWayClient.DeleteClientAsync(listClient);
-                if (gateWayResultList.Count == 0)
-                    foreach (Client client in listClient)
-                    {
-                        int returnResult = _dataSet.DeleteClient(client.ID);
-                        if (returnResult > 0)
-                            result.Add(client);
-                    }
+            if (gateWayResultList.Count == 0)
+                foreach (Client client in listClient)
+                {
+                    int returnResult = _dataSet.DeleteClient(client.ID);
+                    if (returnResult > 0)
+                        result.Add(client);
+                }
             return result;
         }
 
@@ -195,13 +186,13 @@ namespace QOBDDAL.Core
             List<Contact> result = new List<Contact>();
             checkServiceCommunication();
             List<Contact> gateWayResultList = await _gateWayClient.DeleteContactAsync(listContact);
-                if (gateWayResultList.Count == 0)
-                    foreach (Contact contact in listContact)
-                    {
-                        int returnResult = _dataSet.DeleteContact(contact.ID);
-                        if (returnResult > 0)
-                            result.Add(contact);
-                    }
+            if (gateWayResultList.Count == 0)
+                foreach (Contact contact in listContact)
+                {
+                    int returnResult = _dataSet.DeleteContact(contact.ID);
+                    if (returnResult > 0)
+                        result.Add(contact);
+                }
             return result;
         }
 
@@ -210,13 +201,13 @@ namespace QOBDDAL.Core
             List<Address> result = new List<Address>();
             checkServiceCommunication();
             List<Address> gateWayResultList = await _gateWayClient.DeleteAddressAsync(listAddress);
-                if (gateWayResultList.Count == 0)
-                    foreach (Address address in listAddress)
-                    {
-                        int returnResult = _dataSet.DeleteAddress(address.ID);
-                        if (returnResult > 0)
-                            result.Add(address);
-                    }
+            if (gateWayResultList.Count == 0)
+                foreach (Address address in listAddress)
+                {
+                    int returnResult = _dataSet.DeleteAddress(address.ID);
+                    if (returnResult > 0)
+                        result.Add(address);
+                }
             return result;
         }
 
@@ -232,11 +223,11 @@ namespace QOBDDAL.Core
         {
             List<Client> result = new List<Client>();
             foreach (var client in clientList)
-                {
-                    var returnResult = _dataSet.LoadClient(client);
-                    if (returnResult > 0)
-                        result.Add(client);
-                }
+            {
+                var returnResult = _dataSet.LoadClient(client);
+                if (returnResult > 0)
+                    result.Add(client);
+            }
             return result;
         }
 
@@ -252,11 +243,11 @@ namespace QOBDDAL.Core
         {
             List<Contact> result = new List<Contact>();
             foreach (var contact in contactList)
-                {
-                    int returnResult = _dataSet.LoadContact(contact);
-                    if (returnResult > 0)
-                        result.Add(contact);
-                }
+            {
+                int returnResult = _dataSet.LoadContact(contact);
+                if (returnResult > 0)
+                    result.Add(contact);
+            }
             return result;
         }
 
@@ -272,11 +263,11 @@ namespace QOBDDAL.Core
         {
             List<Address> result = new List<Address>();
             foreach (var address in addressList)
-                {
-                    int returnResult = _dataSet.LoadAddress(address);
-                    if (returnResult > 0)
-                        result.Add(address);
-                }
+            {
+                int returnResult = _dataSet.LoadAddress(address);
+                if (returnResult > 0)
+                    result.Add(address);
+            }
             return result;
         }
 
@@ -284,7 +275,7 @@ namespace QOBDDAL.Core
         public List<Client> GetClientData(int nbLine)
         {
             List<Client> result = _dataSet.GetClientData();
-            if (nbLine.Equals(999) || result.Count == 0|| result.Count < nbLine)
+            if (nbLine.Equals(999) || result.Count == 0 || result.Count < nbLine)
                 return result;
             return result.GetRange(0, nbLine);
         }
@@ -329,7 +320,7 @@ namespace QOBDDAL.Core
         public List<Contact> GetContactData(int nbLine)
         {
             List<Contact> result = _dataSet.GetContactData();
-            if (nbLine.Equals(999) || result.Count == 0|| result.Count < nbLine)
+            if (nbLine.Equals(999) || result.Count == 0 || result.Count < nbLine)
                 return result;
             return result.GetRange(0, nbLine);
         }
@@ -361,7 +352,7 @@ namespace QOBDDAL.Core
         public List<Address> GetAddressData(int nbLine)
         {
             List<Address> result = _dataSet.GetAddressData();
-            if (nbLine.Equals(999) || result.Count == 0|| result.Count < nbLine)
+            if (nbLine.Equals(999) || result.Count == 0 || result.Count < nbLine)
                 return result;
             return result.GetRange(0, nbLine);
         }
@@ -426,7 +417,7 @@ namespace QOBDDAL.Core
         }
 
         public List<Order> GetQuoteCLient(int id)
-        {            
+        {
             return _dataSet.GetOrderDataById(id);
         }
 
@@ -492,11 +483,11 @@ namespace QOBDDAL.Core
             ConcurrentBag<Address> addressList = new ConcurrentBag<Address>();
 
             // saving the clients
-            List<Client> savedClientList = LoadClient(clientList.ToList());
+            List<Client> savedClientList = LoadClient(clientList);
 
             for (int i = 0; i < (savedClientList.Count() / loadUnit) || loadUnit >= savedClientList.Count() && i == 0; i++)
             {
-                ConcurrentBag<Address> addressFoundList = new ConcurrentBag<Address>(await _gateWayClient.GetAddressDataByClientListAsync(savedClientList.Skip(i * loadUnit).Take(loadUnit).ToList())); 
+                ConcurrentBag<Address> addressFoundList = new ConcurrentBag<Address>(await _gateWayClient.GetAddressDataByClientListAsync(savedClientList.Skip(i * loadUnit).Take(loadUnit).ToList()));
                 addressList = new ConcurrentBag<Address>(addressList.Concat(new ConcurrentBag<Address>(addressFoundList)));
 
                 ConcurrentBag<Contact> contactFoundList = new ConcurrentBag<Contact>(await _gateWayClient.GetContactDataByClientListAsync(savedClientList.Skip(i * loadUnit).Take(loadUnit).ToList()));

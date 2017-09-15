@@ -7,6 +7,7 @@ using QOBDViewModels.Abstracts;
 using QOBDViewModels.Classes;
 using QOBDViewModels.ViewModel;
 using System;
+using System.Threading.Tasks;
 
 namespace QOBDViewModels.Interfaces
 {
@@ -38,9 +39,27 @@ namespace QOBDViewModels.Interfaces
         Context Context { get; set; }
         ButtonCommand<string> CommandNavig { get; set; }
         Object CurrentViewModel { get; set; }
-        Object ChatRoomCurrentView { get; set; }
-                      
+        Object ChatRoomCurrentView { get; set; } 
+        string TxtUserName { get; }
+        IConfirmationViewModel Dialog { get; }
+        string TxtHeightDataList { get; set; }
+        string TxtWidthDataList { get; set; }        
+        ISideBarViewModel OrderQuoteSideBar { get; }
+        string SearchProgressVisibility { get; set; }
+        double ProgressBarPercentValue { get; set; }
+        string CompanyName { get; set; }
+
+
+        //----------------------------[ information properties ]------------------
+
+        string TxtInfo { get; }
+        string TxtInfoAllRightText { get; }
+        string TxtInfoActivationCode { get; }
+        string TxtInfoVersion { get; }
+        string TxtInfoCompanyName { get; }
+
         //---------------[ Actions ]
+        Task<bool> DisposeAsync();
         bool canAppNavig(string arg);
         void appNavig(string propertyName);
         double progressBarManagement(double status = 0);

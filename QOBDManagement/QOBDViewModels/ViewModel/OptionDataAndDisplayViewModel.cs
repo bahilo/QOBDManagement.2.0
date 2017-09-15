@@ -23,7 +23,7 @@ namespace QOBDViewModels.ViewModel
     {
         private ObservableCollection<InfoDisplay> _imageList;
         private int _imageWidth;
-        private int _imageHeight;  
+        private int _imageHeight;
         private CultureInfo[] _cultureInfoArray;
         private string _title;
         private IReferentialViewModel _referential;
@@ -44,10 +44,10 @@ namespace QOBDViewModels.ViewModel
 
         public OptionDataAndDisplayViewModel() : base()
         {
-            
+
         }
 
-        public OptionDataAndDisplayViewModel(IReferentialViewModel viewModel):this()
+        public OptionDataAndDisplayViewModel(IReferentialViewModel viewModel) : this()
         {
             _referential = viewModel;
             instances();
@@ -113,7 +113,15 @@ namespace QOBDViewModels.ViewModel
             get { return _headerImageDisplay; }
             set
             {
-                _headerImageDisplay = value;
+                if (Application.Current != null && !Application.Current.Dispatcher.CheckAccess())
+                {
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        _headerImageDisplay = value;
+                    });
+                }
+                else
+                    _headerImageDisplay = value;
                 onPropertyChange();
             }
         }
@@ -121,31 +129,91 @@ namespace QOBDViewModels.ViewModel
         public InfoDisplay LogoImageDisplay
         {
             get { return _logoImageDisplay; }
-            set { _logoImageDisplay = value; onPropertyChange(); }
+            set
+            {
+                if (Application.Current != null && !Application.Current.Dispatcher.CheckAccess())
+                {
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        _logoImageDisplay = value;
+                    });
+                }
+                else
+                    _logoImageDisplay = value;
+                onPropertyChange();
+            }
         }
 
         public InfoDisplay BillImageDisplay
         {
             get { return _billImageDisplay; }
-            set { _billImageDisplay = value; onPropertyChange(); }
+            set
+            {
+                if (Application.Current != null && !Application.Current.Dispatcher.CheckAccess())
+                {
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        _billImageDisplay = value;
+                    });
+                }
+                else
+                    _billImageDisplay = value;
+                onPropertyChange();
+            }
         }
 
         public int ImageWidth
         {
             get { return _imageWidth; }
-            set { setProperty(ref _imageWidth, value); }
+            set
+            {
+                if (Application.Current != null && !Application.Current.Dispatcher.CheckAccess())
+                {
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        _imageWidth = value;
+                    });
+                }
+                else
+                    _imageWidth = value;
+                onPropertyChange();
+            }
         }
 
         public int ImageHeight
         {
             get { return _imageHeight; }
-            set { setProperty(ref _imageHeight, value); }
+            set
+            {
+                if (Application.Current != null && !Application.Current.Dispatcher.CheckAccess())
+                {
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        _imageHeight = value;
+                    });
+                }
+                else
+                    _imageHeight = value;
+                onPropertyChange();
+            }
         }
 
         public ObservableCollection<InfoDisplay> ImageList
         {
             get { return _imageList; }
-            set { setProperty(ref _imageList, value); }
+            set
+            {
+                if (Application.Current != null && !Application.Current.Dispatcher.CheckAccess())
+                {
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        _imageList = value;
+                    });
+                }
+                else
+                    _imageList = value;
+                onPropertyChange();
+            }
         }
 
         public CultureInfo[] CultureInfoArray
@@ -154,7 +222,7 @@ namespace QOBDViewModels.ViewModel
             set { setProperty(ref _cultureInfoArray, value); }
         }
 
-        
+
         //----------------------------[ Actions ]------------------
 
         public override void load()
@@ -185,7 +253,7 @@ namespace QOBDViewModels.ViewModel
             _headerImageDisplay.PropertyChanged += onFilePathChange_updateUIImage;
             _headerImageDisplay.PropertyChanged += onImageInfoChange;
             ImageList.Add(_headerImageDisplay);
-            
+
             Singleton.getDialogueBox().IsDialogOpen = false;
         }
 
@@ -217,22 +285,23 @@ namespace QOBDViewModels.ViewModel
                 Log.error(errorMessage, EErrorFrom.REFERENTIAL);
                 await Singleton.getDialogueBox().showAsync(errorMessage);
             }
-            else if(infoCreatedList.Count > 0)
+            else if (infoCreatedList.Count > 0)
             {
-                foreach(Info info in infoDataList)
+                foreach (Info info in infoDataList)
                 {
-                    var createdInfo = infoCreatedList.Where(x=>x.Name == info.Name).SingleOrDefault();
-                    if(createdInfo != null)
+                    var createdInfo = infoCreatedList.Where(x => x.Name == info.Name).SingleOrDefault();
+                    if (createdInfo != null)
                         info.ID = createdInfo.ID;
                 }
-            }                        
-            
+            }
+
             return infoUpdatedList.Concat(infoCreatedList).ToList();
         }
 
         private async void downloadHeaderImages()
         {
-            await Task.Factory.StartNew(() => {
+            await Task.Factory.StartNew(() =>
+            {
                 // set ftp credentials
                 if (string.IsNullOrEmpty(_headerImageDisplay.TxtLogin) || string.IsNullOrEmpty(_logoImageDisplay.TxtLogin) || string.IsNullOrEmpty(_billImageDisplay.TxtLogin))
                 {
@@ -310,7 +379,7 @@ namespace QOBDViewModels.ViewModel
         }
 
         //----------------------------[ Event Handler ]------------------
-        
+
         private async void onImageInfoChange(object sender, PropertyChangedEventArgs e)
         {
             if (e.PropertyName.Equals("ImageInfoUpdated"))
@@ -318,16 +387,16 @@ namespace QOBDViewModels.ViewModel
                 Singleton.getDialogueBox().showSearch(ConfigurationManager.AppSettings["update_message"]);
                 var infoUpdatedList = await saveInfo(((InfoDisplay)sender).InfoDataList);
                 Singleton.getDialogueBox().IsDialogOpen = false;
-            }                
+            }
         }
 
         private void onFilePathChange_updateUIImage(object sender, PropertyChangedEventArgs e)
         {
-            if (e.PropertyName.Equals("TxtFileFullPath") && !string.IsNullOrEmpty(((InfoDisplay)sender).TxtFileFullPath) )
+            if (e.PropertyName.Equals("TxtFileFullPath") && !string.IsNullOrEmpty(((InfoDisplay)sender).TxtFileFullPath))
             {
                 if (((InfoDisplay)sender).TxtFileNameWithoutExtension.Equals("header_image"))
                     imageManagement((InfoDisplay)sender, "header");
-                else if(((InfoDisplay)sender).TxtFileNameWithoutExtension.Equals("logo_image"))
+                else if (((InfoDisplay)sender).TxtFileNameWithoutExtension.Equals("logo_image"))
                     imageManagement((InfoDisplay)sender, "logo");
                 else if (((InfoDisplay)sender).TxtFileNameWithoutExtension.Equals("bill_image"))
                     imageManagement((InfoDisplay)sender, "bill");
@@ -343,24 +412,13 @@ namespace QOBDViewModels.ViewModel
         {
             if (e.PropertyName.Equals("IsDataDownloading") && !((DALReferential)sender).IsDataDownloading)
             {
-                // if not unit testing download images
+                // if not unit testing
                 if (Application.Current != null)
                 {
-                    if (Application.Current.Dispatcher.CheckAccess())
-                    {
-                        // reload user information
-                        await _referential.MainWindowViewModel.ChatRoomViewModel.getChatUserInformation();
+                    // reload user information
+                    await _referential.MainWindowViewModel.ChatRoomViewModel.getChatUserInformation();
 
-                        downloadHeaderImages();
-                    }
-                    else
-                        await Application.Current.Dispatcher.Invoke(async () =>
-                        {
-                            // reload user information
-                            await _referential.MainWindowViewModel.ChatRoomViewModel.getChatUserInformation();
-
-                            downloadHeaderImages();
-                        });
+                    downloadHeaderImages();
                 }
             }
         }
@@ -373,7 +431,8 @@ namespace QOBDViewModels.ViewModel
         /// <param name="obj">object which the file is associated with</param>
         public async void getFileFromLocal(InfoDisplay obj)
         {
-            await Task.Factory.StartNew(()=> {
+            await Task.Factory.StartNew(() =>
+            {
                 // opening the file explorer for image file choosing
                 string imageFile = InfoGeneral.ExecuteOpenFileDialog("Select an image file", new List<string> { "png", "jpeg", "jpg" });
                 if (!string.IsNullOrEmpty(imageFile))
@@ -387,7 +446,7 @@ namespace QOBDViewModels.ViewModel
 
                     Singleton.getDialogueBox().IsDialogOpen = false;
                 }
-            });        
+            });
         }
 
         private bool canGetFileFromLocal(InfoDisplay arg)
@@ -397,7 +456,7 @@ namespace QOBDViewModels.ViewModel
 
         private async void deleteImage(InfoDisplay obj)
         {
-            if (await Singleton.getDialogueBox().showAsync("Do you really want to delete this image ["+obj.TxtFileName+"] ?"))
+            if (await Singleton.getDialogueBox().showAsync("Do you really want to delete this image [" + obj.TxtFileName + "] ?"))
             {
                 Singleton.getDialogueBox().showSearch(ConfigurationManager.AppSettings["delete_message"]);
                 var notDeletedInfosList = await Bl.BlReferential.DeleteInfoAsync(obj.InfoDataList);
@@ -412,11 +471,11 @@ namespace QOBDViewModels.ViewModel
                     }
                     else
                     {
-                        string errorMessage = "Error occurred while deleting the image ["+obj.TxtFileName+"]";
+                        string errorMessage = "Error occurred while deleting the image [" + obj.TxtFileName + "]";
                         Log.error(errorMessage, EErrorFrom.REFERENTIAL);
                         Singleton.getDialogueBox().showSearch(errorMessage);
                     }
-                    
+
                 }
 
                 // reset the picture information
@@ -424,7 +483,7 @@ namespace QOBDViewModels.ViewModel
                     info.ID = 0;
 
                 Singleton.getDialogueBox().IsDialogOpen = false;
-            }            
+            }
         }
 
         private bool canDeleteImage(InfoDisplay arg)

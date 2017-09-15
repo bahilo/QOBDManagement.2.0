@@ -276,6 +276,68 @@ namespace QOBDGateway.Helper.ChannelHelper
             }
             return agentQCBD;
         }
+        //====================================================================================
+        //===============================[ License ]===========================================
+        //====================================================================================
+
+        public static List<License> ArrayTypeToLicense(this LicenseQOBD[] agentQOBDList)
+        {
+            List<License> outputList = agentQOBDList.AsParallel().Select(x => {
+                if (x != null && x.ID != "0")
+                {
+                    return new License
+                    {
+                        ID = Utility.intTryParse(Utility.decodeBase64ToString(x.ID)),
+                        AppVersion = Utility.decodeBase64ToString(x.AppVersion),
+                        CompanyName = Utility.decodeBase64ToString(x.CompanyName),
+                        Email = Utility.decodeBase64ToString(x.Email),
+                        Key = Utility.decodeBase64ToString(x.Key),
+                        Status = Utility.decodeBase64ToString(x.Status),
+                        Date = Utility.convertToDateTime(Utility.decodeBase64ToString(x.Date)),
+                        EndDate = Utility.convertToDateTime(Utility.decodeBase64ToString(x.EndDate)),                        
+                    };
+                }
+                else
+                    return new License();
+            }).ToList();
+
+            return outputList;
+        }
+
+        public static LicenseQOBD[] LicenseTypeToArray(this List<License> agentList)
+        {
+            LicenseQOBD[] outputArray = agentList.AsParallel().Select(x => new LicenseQOBD
+            {
+                ID = Utility.encodeStringToBase64(x.ID.ToString()),
+                AppVersion = Utility.encodeStringToBase64(x.AppVersion),
+                CompanyName = Utility.encodeStringToBase64(x.CompanyName),
+                Email = Utility.encodeStringToBase64(x.Email),
+                Key = Utility.encodeStringToBase64(x.Key),
+                Status = Utility.encodeStringToBase64(x.Status),
+                Date = Utility.encodeStringToBase64(x.Date.ToString("yyyy-MM-dd H:mm:ss")),
+                EndDate = Utility.encodeStringToBase64(x.EndDate.ToString("yyyy-MM-dd H:mm:ss")),
+            }).ToArray();
+
+            return outputArray;
+        }
+
+        public static LicenseFilterQOBD LicenseTypeToFilterArray(this License license, ESearchOption filterOperator)
+        {
+            LicenseFilterQOBD licenseQCBD = new LicenseFilterQOBD();
+            if (license != null)
+            {
+                licenseQCBD.ID = Utility.encodeStringToBase64(license.ID.ToString());
+                licenseQCBD.AppVersion = Utility.encodeStringToBase64(license.AppVersion);
+                licenseQCBD.CompanyName = Utility.encodeStringToBase64(license.CompanyName);
+                licenseQCBD.Email = Utility.encodeStringToBase64(license.Email);
+                licenseQCBD.Key = Utility.encodeStringToBase64(license.Key);
+                licenseQCBD.Status = Utility.encodeStringToBase64(license.Status);
+                licenseQCBD.Date = Utility.encodeStringToBase64(license.Date.ToString("yyyy-MM-dd H:mm:ss"));
+                licenseQCBD.EndDate = Utility.encodeStringToBase64(license.EndDate.ToString("yyyy-MM-dd H:mm:ss"));
+                licenseQCBD.Operator = Utility.encodeStringToBase64(filterOperator.ToString());
+            }
+            return licenseQCBD;
+        }
 
 
         //====================================================================================
@@ -735,7 +797,7 @@ namespace QOBDGateway.Helper.ChannelHelper
         {
             List<Order> outputList = OrderQOBDList.AsParallel().Select(x => new Order
             {
-                ID = Utility.intTryParse(Utility.decodeBase64ToString(x.ID)),
+                ID = Utility.intTryParse(x.ID),
                 AgentId = Utility.intTryParse(Utility.decodeBase64ToString(x.AgentId)),
                 BillAddress = Utility.intTryParse(Utility.decodeBase64ToString(x.BillAddress)),
                 ClientId = Utility.intTryParse(Utility.decodeBase64ToString(x.ClientId)),
@@ -756,7 +818,7 @@ namespace QOBDGateway.Helper.ChannelHelper
         {
             OrdersQOBD[] outputArray = orderList.AsParallel().Select(x => new OrdersQOBD
             {
-                ID = Utility.encodeStringToBase64(x.ID.ToString()),
+                ID = x.ID.ToString(),
                 AgentId = Utility.encodeStringToBase64(x.AgentId.ToString()),
                 BillAddress = Utility.encodeStringToBase64(x.BillAddress.ToString()),
                 ClientId = Utility.encodeStringToBase64(x.ClientId.ToString()),
@@ -778,7 +840,7 @@ namespace QOBDGateway.Helper.ChannelHelper
             OrderFilterQOBD orderQCBD = new OrderFilterQOBD();
             if (order != null)
             {
-                orderQCBD.ID = Utility.encodeStringToBase64(order.ID.ToString());
+                orderQCBD.ID = order.ID.ToString();
                 orderQCBD.AgentId = Utility.encodeStringToBase64(order.AgentId.ToString());
                 orderQCBD.BillAddress = Utility.encodeStringToBase64(order.BillAddress.ToString());
                 orderQCBD.ClientId = Utility.encodeStringToBase64(order.ClientId.ToString());

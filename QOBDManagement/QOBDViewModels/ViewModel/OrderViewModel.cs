@@ -120,7 +120,16 @@ namespace QOBDViewModels.ViewModel
         public OrderSearchModel OrderSearchModel
         {
             get { return _orderSearchModel; }
-            set { setProperty(ref _orderSearchModel, value); }
+            set
+            {
+                if (!Application.Current.Dispatcher.CheckAccess())
+                    Application.Current.Dispatcher.Invoke(() => {
+                        _orderSearchModel = value;
+                    });
+                else
+                    _orderSearchModel = value;
+                onPropertyChange();
+            }
         }
 
         public string OutputStringFormat
@@ -132,26 +141,62 @@ namespace QOBDViewModels.ViewModel
         public string Title
         {
             get { return _title; }
-            set { setProperty(ref _title, value); }
+            set
+            {
+                if (!Application.Current.Dispatcher.CheckAccess())
+                    Application.Current.Dispatcher.Invoke(() => {
+                        _title = value;
+                    });
+                else
+                    _title = value;
+                onPropertyChange();
+            }
         }
 
         public ClientModel SelectedClient
         {
             get { return (_selectedClient != null) ? _selectedClient : (ClientModel)_main.ModelCreator.createModel(QOBDModels.Enums.EModel.CLIENT); }
-            set { setProperty(ref _selectedClient, value); }
+            set
+            {
+                if (!Application.Current.Dispatcher.CheckAccess())
+                    Application.Current.Dispatcher.Invoke(() => {
+                        _selectedClient = value;
+                    });
+                else
+                    _selectedClient = value;
+                onPropertyChange();
+            }
 
         }
 
         public List<Entity.Tax> TaxList
         {
             get { return _taxesList; }
-            set { setProperty(ref _taxesList, value); }
+            set
+            {
+                if (!Application.Current.Dispatcher.CheckAccess())
+                    Application.Current.Dispatcher.Invoke(() => {
+                        _taxesList = value;
+                    });
+                else
+                    _taxesList = value;
+                onPropertyChange();
+            }
         }
 
         public List<CurrencyModel> CurrenciesList
         {
             get { return _currenciesList; }
-            set { setProperty(ref _currenciesList, value); }
+            set
+            {
+                if (!Application.Current.Dispatcher.CheckAccess())
+                    Application.Current.Dispatcher.Invoke(() => {
+                        _currenciesList = value;                        
+                    });
+                else
+                    _currenciesList = value;
+                onPropertyChange();
+            }
         }
 
         public IOrderDetailViewModel OrderDetailViewModel
@@ -163,7 +208,16 @@ namespace QOBDViewModels.ViewModel
         public OrderModel SelectedOrderModel
         {
             get { return OrderDetailViewModel.OrderSelected; }
-            set { OrderDetailViewModel.OrderSelected = value; onPropertyChange("SelectedOrderModel"); }
+            set
+            {
+                if (!Application.Current.Dispatcher.CheckAccess())
+                    Application.Current.Dispatcher.Invoke(() => {
+                        OrderDetailViewModel.OrderSelected = value;
+                    });
+                else
+                    OrderDetailViewModel.OrderSelected = value;
+                onPropertyChange();
+            }
         }
 
         public BusinessLogic Bl
@@ -217,13 +271,13 @@ namespace QOBDViewModels.ViewModel
         public string BlockSearchResultVisibility
         {
             get { return _blockSearchResultVisibility; }
-            set { setProperty(ref _blockSearchResultVisibility, value, "BlockSearchResultVisibility"); }
+            set { setProperty(ref _blockSearchResultVisibility, value); }
         }
 
         public string BlockOrderVisibility
         {
             get { return _blockOrderVisibility; }
-            set { setProperty(ref _blockOrderVisibility, value, "BlockOrderVisibility"); }
+            set { setProperty(ref _blockOrderVisibility, value); }
         }
 
         public string TxtIconColour
@@ -236,15 +290,9 @@ namespace QOBDViewModels.ViewModel
         /// <summary>
         /// Load all orders in defferent sections according to their status
         /// </summary>
-        public void loadOrders()
+        public async void loadOrdersAsync()
         {
-            if (Application.Current != null)
-                Application.Current.Dispatcher.Invoke(() =>
-                {
-                    load();
-                });
-            else
-                load();
+            await Task.Factory.StartNew(() => { load(); });
         }
 
         public override void load()
@@ -395,13 +443,14 @@ namespace QOBDViewModels.ViewModel
         }
 
         public void removeObserver(PropertyChangedEventHandler observerMethode)
-        {
-            PropertyChanged += observerMethode;
+        {            
+            PropertyChanged -= observerMethode;
         }
 
         public void addObserver(PropertyChangedEventHandler observerMethode)
         {
-            PropertyChanged -= observerMethode;
+            removeObserver(observerMethode);
+            PropertyChanged += observerMethode;
         }
 
 

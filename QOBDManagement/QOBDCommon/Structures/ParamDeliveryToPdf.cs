@@ -11,12 +11,20 @@ namespace QOBDCommon.Structures
         private int _commandId;
         private int _deliveryId;
         private string _lang;
+        private string _licenseKey;
 
         public ParamDeliveryToPdf(int commandId, int deliveryId)
         {
             _commandId = commandId;
             _deliveryId = deliveryId;
+            _licenseKey = "";
             _lang = "";
+        }
+
+        public string LicenseKey
+        {
+            get { return _licenseKey; }
+            set { _licenseKey = value; }
         }
 
         public int OrderId

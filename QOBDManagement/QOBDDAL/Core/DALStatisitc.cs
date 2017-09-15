@@ -2,20 +2,15 @@ using QOBDCommon.Classes;
 using QOBDCommon.Entities;
 using QOBDCommon.Enum;
 using QOBDCommon.Interfaces.DAC;
-using QOBDDAL.Helper.ChannelHelper;
 using QOBDGateway.Core;
-using QOBDGateway.QOBDServiceReference;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
-using System.Data.SqlClient;
 using System.Threading.Tasks;
-using QOBDDAL.Classes;
-using QOBDDAL.Interfaces;
-using QOBDGateway.Classes;
 using QOBDGateway.Interfaces;
 using QOBDGateway.Abstracts;
+using QOBDDAL.Helper.ChannelHelper;
 /// <summary>
 ///  A class that represents ...
 /// 
@@ -66,7 +61,11 @@ namespace QOBDDAL.Core
 
         public async void cacheWebServiceData()
         {
-            await retrieveGateWayStatisticDataAsync();
+            try
+            {
+                await DALHelper.doAction(retrieveGateWayStatisticDataAsync, TimeSpan.FromSeconds(1), 0, new List<Exception>(), 3);
+            }
+            catch (Exception ex) { Log.error(ex.Message, EErrorFrom.STATISTIC); }
         }
 
         public void setServiceCredential(object channel)
@@ -78,6 +77,11 @@ namespace QOBDDAL.Core
                 _servicePortType.ClientCredentials.UserName.Password = AuthenticatedUser.HashedPassword;
             }
             _gateWayStatistic.setServiceCredential(_servicePortType);
+        }
+
+        public void setCompanyName(string companyName)
+        {
+            _gateWayStatistic.setCompanyName(companyName);
         }
 
         public bool IsDataDownloading
@@ -101,21 +105,12 @@ namespace QOBDDAL.Core
                 var statisticList = await _gateWayStatistic.GetStatisticDataAsync(_loadSize);
                 if (statisticList.Count > 0)
                     LoadStatistic(statisticList);
-            }
-            catch (Exception ex)
-            {
-                Log.error(ex.Message, EErrorFrom.STATISTIC);
-            }
-            finally
-            {
 
-                lock (_lock) IsDataDownloading = false;
-                try
-                {
-                    _progressBarFunc((double)100 / _progressStep);
-                } catch (DivideByZeroException ex) { Log.error(ex.Message, EErrorFrom.STATISTIC); }
-                //Log.debug("Loaded[" + _progressBarFunc(0) + "%]!", EErrorFrom.STATISTIC);
+                try { _progressBarFunc((double)100 / _progressStep); }
+                catch (DivideByZeroException ex) { Log.error(ex.Message, EErrorFrom.STATISTIC); }
             }
+            catch (Exception) { throw; }
+            finally { lock (_lock) IsDataDownloading = false; }
 
         }
 
@@ -126,8 +121,7 @@ namespace QOBDDAL.Core
 
         private void checkServiceCommunication()
         {
-            if (_servicePortType.State == System.ServiceModel.CommunicationState.Closed || _servicePortType.State == System.ServiceModel.CommunicationState.Faulted)
-                _serviceCommunication.resetCommunication();
+            _serviceCommunication.checkServiceCommunication(_servicePortType);
         }
 
         #region [ Actions ]

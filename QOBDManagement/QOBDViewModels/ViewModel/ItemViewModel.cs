@@ -166,11 +166,10 @@ namespace QOBDViewModels.ViewModel
             set { setProperty(ref _itemModel, value); }
         }
 
-        /*public List<Item> Items
+        public Cart Cart
         {
-            get { return _items; }
-            set { setProperty(ref _items, value); }
-        }*/
+            get { return Singleton.getCart(); }
+        }
 
         public List<ItemModel> ItemModelList
         {
@@ -599,20 +598,11 @@ namespace QOBDViewModels.ViewModel
         {
             if (e.PropertyName.Equals("IsDataDownloading") && !((DALItem)sender).IsDataDownloading)
             {
-                // if not unit testing download images
+                // if not unit testing
                 if (Application.Current != null)
                 {
-                    if (Application.Current.Dispatcher.CheckAccess())
-                    {
-                        // load catalog items
-                        loadItems();
-                    }
-                    else
-                        Application.Current.Dispatcher.Invoke(() =>
-                        {
-                            // load catalog items
-                            loadItems();
-                        });
+                    // load catalog items
+                    loadItems();
                 }
             }
         }

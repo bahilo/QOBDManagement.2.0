@@ -37,7 +37,7 @@
                                 <StackPanel Orientation="Vertical">
                                     <Border BorderThickness="0 0 0 1" BorderBrush="DarkGray">
                                         <Button Style="{DynamicResource MaterialDesignFlatButton}" 
-                                            Command="{Binding ItemViewModel.ItemSideBarViewModel.SetupItemCommand}"
+                                            Command="{Binding ItemViewModel.ItemSideBarViewModel.SetupCommand}"
                                             CommandParameter="new-item" ToolTip="Add New Item" HorizontalContentAlignment="Left">
                                             <StackPanel Orientation="Horizontal">
                                                 <Border CornerRadius="3" Background="{Binding ItemViewModel.TxtIconColour}" Padding="2" >

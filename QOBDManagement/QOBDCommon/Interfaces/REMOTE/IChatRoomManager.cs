@@ -9,5 +9,7 @@ namespace QOBDCommon.Interfaces.REMOTE
     public interface IChatRoomManager: IMessageManager, IDiscussionManager, IUser_discussionManager
     {
         void setServiceCredential(object channel);
+
+        void setCompanyName(string companyName);
     }
 }

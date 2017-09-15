@@ -16,6 +16,7 @@ namespace QOBDGateway.Core
     {
 
         private ClientProxy _channel;
+        private string _companyName;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -42,6 +43,11 @@ namespace QOBDGateway.Core
             get { return _channel; }
         }
 
+        public void setCompanyName(string companyName)
+        {
+            _companyName = companyName;
+        }
+
         // discussion
         #region [ Discussion ]
         public async Task<List<Discussion>> DeleteDiscussionAsync(List<Discussion> listDiscussion)
@@ -49,7 +55,7 @@ namespace QOBDGateway.Core
             List<Discussion> result = new List<Discussion>();
             try
             {
-                result = (await _channel.delete_data_discussionAsync(listDiscussion.DiscussionTypeToArray())).ArrayTypeToDiscussion();
+                result = (await _channel.delete_data_discussionAsync(_companyName, listDiscussion.DiscussionTypeToArray())).ArrayTypeToDiscussion();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -62,7 +68,7 @@ namespace QOBDGateway.Core
             List<Discussion> result = new List<Discussion>();
             try
             {
-                result = (await _channel.get_data_discussionAsync(nbLine.ToString())).ArrayTypeToDiscussion().OrderBy(x => x.ID).ToList();
+                result = (await _channel.get_data_discussionAsync(_companyName, nbLine.ToString())).ArrayTypeToDiscussion().OrderBy(x => x.ID).ToList();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -75,7 +81,7 @@ namespace QOBDGateway.Core
             List<Discussion> result = new List<Discussion>();
             try
             {
-                result = (await _channel.get_data_discussion_by_idAsync(id.ToString())).ArrayTypeToDiscussion();
+                result = (await _channel.get_data_discussion_by_idAsync(_companyName, id.ToString())).ArrayTypeToDiscussion();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -88,7 +94,7 @@ namespace QOBDGateway.Core
             List<Discussion> result = new List<Discussion>();
             try
             {
-                result = (await _channel.get_data_discussion_by_user_discussion_listAsync(user_discussionList.User_discussionTypeToArray())).ArrayTypeToDiscussion();
+                result = (await _channel.get_data_discussion_by_user_discussion_listAsync(_companyName, user_discussionList.User_discussionTypeToArray())).ArrayTypeToDiscussion();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -101,7 +107,7 @@ namespace QOBDGateway.Core
             List<Discussion> result = new List<Discussion>();
             try
             {
-                result = (await _channel.get_data_discussion_by_message_listAsync(messageList.MessageTypeToArray())).ArrayTypeToDiscussion();
+                result = (await _channel.get_data_discussion_by_message_listAsync(_companyName, messageList.MessageTypeToArray())).ArrayTypeToDiscussion();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -115,7 +121,7 @@ namespace QOBDGateway.Core
             List<Discussion> result = new List<Discussion>();
             try
             {
-                result = (await _channel.insert_data_discussionAsync(listDiscussion.DiscussionTypeToArray())).ArrayTypeToDiscussion();
+                result = (await _channel.insert_data_discussionAsync(_companyName, listDiscussion.DiscussionTypeToArray())).ArrayTypeToDiscussion();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -128,7 +134,7 @@ namespace QOBDGateway.Core
             List<Discussion> result = new List<Discussion>();
             try
             {
-                result = (await _channel.update_data_discussionAsync(listDiscussion.DiscussionTypeToArray())).ArrayTypeToDiscussion();
+                result = (await _channel.update_data_discussionAsync(_companyName, listDiscussion.DiscussionTypeToArray())).ArrayTypeToDiscussion();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -141,7 +147,7 @@ namespace QOBDGateway.Core
             List<Discussion> result = new List<Discussion>();
             try
             {
-                result = (await _channel.get_filter_discussionAsync(discussion.DiscussionTypeToFilterArray(filterOperator.ToString()))).ArrayTypeToDiscussion();
+                result = (await _channel.get_filter_discussionAsync(_companyName, discussion.DiscussionTypeToFilterArray(filterOperator.ToString()))).ArrayTypeToDiscussion();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -157,7 +163,7 @@ namespace QOBDGateway.Core
             List<Message> result = new List<Message>();
             try
             {
-                result = (await _channel.delete_data_messageAsync(listMessage.MessageTypeToArray())).ArrayTypeToMessage();
+                result = (await _channel.delete_data_messageAsync(_companyName, listMessage.MessageTypeToArray())).ArrayTypeToMessage();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -170,7 +176,7 @@ namespace QOBDGateway.Core
             List<Message> result = new List<Message>();
             try
             {
-                result = (await _channel.get_data_messageAsync(nbLine.ToString())).ArrayTypeToMessage().OrderBy(x => x.ID).ToList();
+                result = (await _channel.get_data_messageAsync(_companyName, nbLine.ToString())).ArrayTypeToMessage().OrderBy(x => x.ID).ToList();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -183,7 +189,7 @@ namespace QOBDGateway.Core
             List<Message> result = new List<Message>();
             try
             {
-                result = (await _channel.get_data_message_by_idAsync(id.ToString())).ArrayTypeToMessage();
+                result = (await _channel.get_data_message_by_idAsync(_companyName, id.ToString())).ArrayTypeToMessage();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -197,7 +203,7 @@ namespace QOBDGateway.Core
             List<Message> result = new List<Message>();
             try
             {
-                result = (await _channel.insert_data_messageAsync(listMessage.MessageTypeToArray())).ArrayTypeToMessage();
+                result = (await _channel.insert_data_messageAsync(_companyName, listMessage.MessageTypeToArray())).ArrayTypeToMessage();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -210,7 +216,7 @@ namespace QOBDGateway.Core
             List<Message> result = new List<Message>();
             try
             {
-                result = (await _channel.update_data_messageAsync(listMessage.MessageTypeToArray())).ArrayTypeToMessage();
+                result = (await _channel.update_data_messageAsync(_companyName, listMessage.MessageTypeToArray())).ArrayTypeToMessage();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -223,7 +229,7 @@ namespace QOBDGateway.Core
             List<Message> result = new List<Message>();
             try
             {
-                result = (await _channel.get_filter_messageAsync(message.MessageTypeToFilterArray(filterOperator.ToString()))).ArrayTypeToMessage();
+                result = (await _channel.get_filter_messageAsync(_companyName, message.MessageTypeToFilterArray(filterOperator.ToString()))).ArrayTypeToMessage();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -238,7 +244,7 @@ namespace QOBDGateway.Core
             List<User_discussion> result = new List<User_discussion>();
             try
             {
-                result = (await _channel.delete_data_user_discussionAsync(listUser_discussion.User_discussionTypeToArray())).ArrayTypeToUser_discussion();
+                result = (await _channel.delete_data_user_discussionAsync(_companyName, listUser_discussion.User_discussionTypeToArray())).ArrayTypeToUser_discussion();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -251,7 +257,7 @@ namespace QOBDGateway.Core
             List<User_discussion> result = new List<User_discussion>();
             try
             {
-                result = (await _channel.get_data_user_discussionAsync(nbLine.ToString())).ArrayTypeToUser_discussion().OrderBy(x => x.ID).ToList();
+                result = (await _channel.get_data_user_discussionAsync(_companyName, nbLine.ToString())).ArrayTypeToUser_discussion().OrderBy(x => x.ID).ToList();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -264,7 +270,7 @@ namespace QOBDGateway.Core
             List<User_discussion> result = new List<User_discussion>();
             try
             {
-                result = (await _channel.get_data_user_discussion_by_idAsync(id.ToString())).ArrayTypeToUser_discussion();
+                result = (await _channel.get_data_user_discussion_by_idAsync(_companyName, id.ToString())).ArrayTypeToUser_discussion();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -277,7 +283,7 @@ namespace QOBDGateway.Core
             List<User_discussion> result = new List<User_discussion>();
             try
             {
-                result = (await _channel.insert_data_user_discussionAsync(listUser_discussion.User_discussionTypeToArray())).ArrayTypeToUser_discussion();
+                result = (await _channel.insert_data_user_discussionAsync(_companyName, listUser_discussion.User_discussionTypeToArray())).ArrayTypeToUser_discussion();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -290,7 +296,7 @@ namespace QOBDGateway.Core
             List<User_discussion> result = new List<User_discussion>();
             try
             {
-                result = (await _channel.update_data_user_discussionAsync(listUser_discussion.User_discussionTypeToArray())).ArrayTypeToUser_discussion();
+                result = (await _channel.update_data_user_discussionAsync(_companyName, listUser_discussion.User_discussionTypeToArray())).ArrayTypeToUser_discussion();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -303,7 +309,7 @@ namespace QOBDGateway.Core
             List<User_discussion> result = new List<User_discussion>();
             try
             {
-                result = (await _channel.get_filter_user_discussionAsync(user_discussion.User_discussionTypeToFilterArray(filterOperator.ToString()))).ArrayTypeToUser_discussion();
+                result = (await _channel.get_filter_user_discussionAsync(_companyName, user_discussion.User_discussionTypeToFilterArray(filterOperator.ToString()))).ArrayTypeToUser_discussion();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }

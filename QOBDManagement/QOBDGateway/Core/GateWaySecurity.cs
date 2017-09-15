@@ -27,6 +27,7 @@ namespace QOBDGateway.Core
         public event PropertyChangedEventHandler PropertyChanged;
 
         public Agent _authenticatedUser;
+        private string _companyName;
 
         public GateWaySecurity(ClientProxy servicePort)
         {
@@ -44,13 +45,18 @@ namespace QOBDGateway.Core
             _channel = (ClientProxy)channel;
         }
 
+        public void setCompanyName(string companyName)
+        {
+            _companyName = companyName;
+        }
+
         public async Task<Agent> AuthenticateUserAsync(string username, string password)
         {
             Agent agentFound = new Agent();
             try
             {
-                AgentQOBD agentArray = await _channel.get_authenticate_userAsync(username, password);
-                agentFound = new AgentQOBD[] { agentArray}.ArrayTypeToAgent().FirstOrDefault();
+                AgentQOBD[] agentArray = await _channel.get_authenticated_userAsync(_companyName, username, password);
+                agentFound = agentArray.ArrayTypeToAgent().FirstOrDefault();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -63,7 +69,7 @@ namespace QOBDGateway.Core
             List<ActionRecord> result = new List<ActionRecord>();
             try
             {
-                result = (await _channel.insert_data_actionRecordAsync(listActionRecord.ActionRecordTypeToArray())).ArrayTypeToActionRecord();
+                result = (await _channel.insert_data_actionRecordAsync(_companyName, listActionRecord.ActionRecordTypeToArray())).ArrayTypeToActionRecord();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -76,7 +82,7 @@ namespace QOBDGateway.Core
             List<Role> result = new List<Role>();
             try
             {
-                result = (await _channel.insert_data_roleAsync(roleList.RoleTypeToArray())).ArrayTypeToRole();
+                result = (await _channel.insert_data_roleAsync(_companyName, roleList.RoleTypeToArray())).ArrayTypeToRole();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -89,7 +95,7 @@ namespace QOBDGateway.Core
             List<QOBDCommon.Entities.Action> result = new List<QOBDCommon.Entities.Action>();
             try
             {
-                result = (await _channel.insert_data_actionAsync(actionList.ActionTypeToArray())).ArrayTypeToAction();
+                result = (await _channel.insert_data_actionAsync(_companyName, actionList.ActionTypeToArray())).ArrayTypeToAction();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -102,7 +108,7 @@ namespace QOBDGateway.Core
             List<Role_action> result = new List<Role_action>();
             try
             {
-                result = (await _channel.insert_data_role_actionAsync(role_actionList.Role_actionTypeToArray())).ArrayTypeToRole_action();
+                result = (await _channel.insert_data_role_actionAsync(_companyName, role_actionList.Role_actionTypeToArray())).ArrayTypeToRole_action();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -115,7 +121,7 @@ namespace QOBDGateway.Core
             List<Agent_role> result = new List<Agent_role>();
             try
             {
-                result = (await _channel.insert_data_agent_roleAsync(agent_roleList.Agent_roleTypeToArray())).ArrayTypeToAgent_role();
+                result = (await _channel.insert_data_agent_roleAsync(_companyName, agent_roleList.Agent_roleTypeToArray())).ArrayTypeToAgent_role();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -128,7 +134,7 @@ namespace QOBDGateway.Core
             List<Privilege> result = new List<Privilege>();
             try
             {
-                result = (await _channel.insert_data_privilegeAsync(privilegeList.PrivilegeTypeToArray())).ArrayTypeToPrivilege();
+                result = (await _channel.insert_data_privilegeAsync(_companyName, privilegeList.PrivilegeTypeToArray())).ArrayTypeToPrivilege();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -141,7 +147,7 @@ namespace QOBDGateway.Core
             List<ActionRecord> result = new List<ActionRecord>();
             try
             {
-                result = (await _channel.delete_data_actionRecordAsync(actionRecordList.ActionRecordTypeToArray())).ArrayTypeToActionRecord();
+                result = (await _channel.delete_data_actionRecordAsync(_companyName, actionRecordList.ActionRecordTypeToArray())).ArrayTypeToActionRecord();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -154,7 +160,7 @@ namespace QOBDGateway.Core
             List<Role> result = new List<Role>();
             try
             {
-                result = (await _channel.delete_data_roleAsync(roleList.RoleTypeToArray())).ArrayTypeToRole();
+                result = (await _channel.delete_data_roleAsync(_companyName, roleList.RoleTypeToArray())).ArrayTypeToRole();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -167,7 +173,7 @@ namespace QOBDGateway.Core
             List<QOBDCommon.Entities.Action> result = new List<QOBDCommon.Entities.Action>();
             try
             {
-                result = (await _channel.delete_data_actionAsync(actionList.ActionTypeToArray())).ArrayTypeToAction();
+                result = (await _channel.delete_data_actionAsync(_companyName, actionList.ActionTypeToArray())).ArrayTypeToAction();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -180,7 +186,7 @@ namespace QOBDGateway.Core
             List<Agent_role> result = new List<Agent_role>();
             try
             {
-                result = (await _channel.delete_data_agent_roleAsync(agent_roleList.Agent_roleTypeToArray())).ArrayTypeToAgent_role();
+                result = (await _channel.delete_data_agent_roleAsync(_companyName, agent_roleList.Agent_roleTypeToArray())).ArrayTypeToAgent_role();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -193,7 +199,7 @@ namespace QOBDGateway.Core
             List<Role_action> result = new List<Role_action>();
             try
             {
-                result = (await _channel.delete_data_role_actionAsync(role_actionList.Role_actionTypeToArray())).ArrayTypeToRole_action();
+                result = (await _channel.delete_data_role_actionAsync(_companyName, role_actionList.Role_actionTypeToArray())).ArrayTypeToRole_action();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -206,7 +212,7 @@ namespace QOBDGateway.Core
             List<Privilege> result = new List<Privilege>();
             try
             {
-                result = (await _channel.delete_data_privilegeAsync(privilegeList.PrivilegeTypeToArray())).ArrayTypeToPrivilege();
+                result = (await _channel.delete_data_privilegeAsync(_companyName, privilegeList.PrivilegeTypeToArray())).ArrayTypeToPrivilege();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -219,7 +225,7 @@ namespace QOBDGateway.Core
             List<ActionRecord> result = new List<ActionRecord>();
             try
             {
-                result = (await _channel.update_data_actionRecordAsync(listActionRecord.ActionRecordTypeToArray())).ArrayTypeToActionRecord();
+                result = (await _channel.update_data_actionRecordAsync(_companyName, listActionRecord.ActionRecordTypeToArray())).ArrayTypeToActionRecord();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -232,7 +238,7 @@ namespace QOBDGateway.Core
             List<Role> result = new List<Role>();
             try
             {
-                result = (await _channel.update_data_roleAsync(listRole.RoleTypeToArray())).ArrayTypeToRole();
+                result = (await _channel.update_data_roleAsync(_companyName, listRole.RoleTypeToArray())).ArrayTypeToRole();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -245,7 +251,7 @@ namespace QOBDGateway.Core
             List<QOBDCommon.Entities.Action> result = new List<QOBDCommon.Entities.Action>();
             try
             {
-                result = (await _channel.update_data_actionAsync(listAction.ActionTypeToArray())).ArrayTypeToAction();
+                result = (await _channel.update_data_actionAsync(_companyName, listAction.ActionTypeToArray())).ArrayTypeToAction();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -258,7 +264,7 @@ namespace QOBDGateway.Core
             List<Agent_role> result = new List<Agent_role>();
             try
             {
-                result = (await _channel.update_data_agent_roleAsync(agent_roleList.Agent_roleTypeToArray())).ArrayTypeToAgent_role();
+                result = (await _channel.update_data_agent_roleAsync(_companyName, agent_roleList.Agent_roleTypeToArray())).ArrayTypeToAgent_role();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -271,7 +277,7 @@ namespace QOBDGateway.Core
             List<Role_action> result = new List<Role_action>();
             try
             {
-                result = (await _channel.update_data_role_actionAsync(role_actionList.Role_actionTypeToArray())).ArrayTypeToRole_action();
+                result = (await _channel.update_data_role_actionAsync(_companyName, role_actionList.Role_actionTypeToArray())).ArrayTypeToRole_action();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -284,7 +290,7 @@ namespace QOBDGateway.Core
             List<Privilege> result = new List<Privilege>();
             try
             {
-                result = (await _channel.update_data_privilegeAsync(privilegeList.PrivilegeTypeToArray())).ArrayTypeToPrivilege();
+                result = (await _channel.update_data_privilegeAsync(_companyName, privilegeList.PrivilegeTypeToArray())).ArrayTypeToPrivilege();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -297,7 +303,7 @@ namespace QOBDGateway.Core
             List<ActionRecord> result = new List<ActionRecord>();
             try
             {
-                result = (await _channel.get_data_actionRecordAsync(nbLine.ToString())).ArrayTypeToActionRecord();
+                result = (await _channel.get_data_actionRecordAsync(_companyName, nbLine.ToString())).ArrayTypeToActionRecord();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -310,7 +316,7 @@ namespace QOBDGateway.Core
             List<ActionRecord> result = new List<ActionRecord>();
             try
             {
-                result = (await _channel.get_data_actionRecord_by_idAsync(id.ToString())).ArrayTypeToActionRecord();
+                result = (await _channel.get_data_actionRecord_by_idAsync(_companyName, id.ToString())).ArrayTypeToActionRecord();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -323,7 +329,7 @@ namespace QOBDGateway.Core
             List<Role> result = new List<Role>();
             try
             {
-                result = (await _channel.get_data_roleAsync(nbLine.ToString())).ArrayTypeToRole();
+                result = (await _channel.get_data_roleAsync(_companyName, nbLine.ToString())).ArrayTypeToRole();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -336,7 +342,7 @@ namespace QOBDGateway.Core
             List<Role> result = new List<Role>();
             try
             {
-                result = (await _channel.get_data_role_by_idAsync(id.ToString())).ArrayTypeToRole();
+                result = (await _channel.get_data_role_by_idAsync(_companyName, id.ToString())).ArrayTypeToRole();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -349,7 +355,7 @@ namespace QOBDGateway.Core
             List<QOBDCommon.Entities.Action> result = new List<QOBDCommon.Entities.Action>();
             try
             {
-                result = (await _channel.get_data_actionAsync(nbLine.ToString())).ArrayTypeToAction();
+                result = (await _channel.get_data_actionAsync(_companyName, nbLine.ToString())).ArrayTypeToAction();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -362,7 +368,7 @@ namespace QOBDGateway.Core
             List<QOBDCommon.Entities.Action> result = new List<QOBDCommon.Entities.Action>();
             try
             {
-                result = (await _channel.get_data_action_by_idAsync(id.ToString())).ArrayTypeToAction();
+                result = (await _channel.get_data_action_by_idAsync(_companyName, id.ToString())).ArrayTypeToAction();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -375,7 +381,7 @@ namespace QOBDGateway.Core
             List<Agent_role> result = new List<Agent_role>();
             try
             {
-                result = (await _channel.get_data_agent_roleAsync(nbLine.ToString())).ArrayTypeToAgent_role();
+                result = (await _channel.get_data_agent_roleAsync(_companyName, nbLine.ToString())).ArrayTypeToAgent_role();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -388,7 +394,7 @@ namespace QOBDGateway.Core
             List<Agent_role> result = new List<Agent_role>();
             try
             {
-                result = (await _channel.get_data_agent_role_by_idAsync(id.ToString())).ArrayTypeToAgent_role();
+                result = (await _channel.get_data_agent_role_by_idAsync(_companyName, id.ToString())).ArrayTypeToAgent_role();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -401,7 +407,7 @@ namespace QOBDGateway.Core
             List<Role_action> result = new List<Role_action>();
             try
             {
-                result = (await _channel.get_data_role_actionAsync(nbLine.ToString())).ArrayTypeToRole_action();
+                result = (await _channel.get_data_role_actionAsync(_companyName, nbLine.ToString())).ArrayTypeToRole_action();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -414,7 +420,7 @@ namespace QOBDGateway.Core
             List<Role_action> result = new List<Role_action>();
             try
             {
-                result = (await _channel.get_data_role_action_by_idAsync(id.ToString())).ArrayTypeToRole_action();
+                result = (await _channel.get_data_role_action_by_idAsync(_companyName, id.ToString())).ArrayTypeToRole_action();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -427,7 +433,7 @@ namespace QOBDGateway.Core
             List<Privilege> result = new List<Privilege>();
             try
             {
-                result = (await _channel.get_data_privilegeAsync(nbLine.ToString())).ArrayTypeToPrivilege();
+                result = (await _channel.get_data_privilegeAsync(_companyName, nbLine.ToString())).ArrayTypeToPrivilege();
 
             }
             catch (FaultException) { Dispose(); throw; }
@@ -441,7 +447,33 @@ namespace QOBDGateway.Core
             List<Privilege> result = new List<Privilege>();
             try
             {
-                result = (await _channel.get_data_privilege_by_idAsync(id.ToString())).ArrayTypeToPrivilege();
+                result = (await _channel.get_data_privilege_by_idAsync(_companyName, id.ToString())).ArrayTypeToPrivilege();
+            }
+            catch (FaultException) { Dispose(); throw; }
+            catch (CommunicationException) { _channel.Abort(); throw; }
+            catch (TimeoutException) { _channel.Abort(); }
+            return result;
+        }
+
+        public async Task<List<QOBDCommon.Entities.License>> checkLicenseByKeyAsync(string licenseKey)
+        {
+            List<QOBDCommon.Entities.License> result = new List<QOBDCommon.Entities.License>();
+            try
+            {
+                result = (await _channel.check_license_by_keyAsync(licenseKey)).ArrayTypeToLicense();
+            }
+            catch (FaultException) { Dispose(); throw; }
+            catch (CommunicationException) { _channel.Abort(); throw; }
+            catch (TimeoutException) { _channel.Abort(); }
+            return result;
+        }
+
+        public async Task<List<QOBDCommon.Entities.License>> checkLicenseByCompanyAsync(string companyName)
+        {
+            List<QOBDCommon.Entities.License> result = new List<QOBDCommon.Entities.License>();
+            try
+            {
+                result = (await _channel.check_license_by_companyAsync(companyName)).ArrayTypeToLicense();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -454,7 +486,7 @@ namespace QOBDGateway.Core
             List<ActionRecord> result = new List<ActionRecord>();
             try
             {
-                result = (await _channel.get_filter_actionRecordAsync(ActionRecord.ActionRecordTypeToFilterArray(filterOperator))).ArrayTypeToActionRecord();
+                result = (await _channel.get_filter_actionRecordAsync(_companyName, ActionRecord.ActionRecordTypeToFilterArray(filterOperator))).ArrayTypeToActionRecord();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -467,7 +499,7 @@ namespace QOBDGateway.Core
             List<Role> result = new List<Role>();
             try
             {
-                result = (await _channel.get_filter_roleAsync(Role.RoleTypeToFilterArray(filterOperator))).ArrayTypeToRole();
+                result = (await _channel.get_filter_roleAsync(_companyName, Role.RoleTypeToFilterArray(filterOperator))).ArrayTypeToRole();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -480,7 +512,7 @@ namespace QOBDGateway.Core
             List<QOBDCommon.Entities.Action> result = new List<QOBDCommon.Entities.Action>();
             try
             {
-                result = (await _channel.get_filter_actionAsync(Action.ActionTypeToFilterArray(filterOperator))).ArrayTypeToAction();
+                result = (await _channel.get_filter_actionAsync(_companyName, Action.ActionTypeToFilterArray(filterOperator))).ArrayTypeToAction();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -493,7 +525,7 @@ namespace QOBDGateway.Core
             List<Role_action> result = new List<Role_action>();
             try
             {
-                result = (await _channel.get_filter_role_actionAsync(Role_action.Role_actionTypeToFilterArray(filterOperator))).ArrayTypeToRole_action();
+                result = (await _channel.get_filter_role_actionAsync(_companyName, Role_action.Role_actionTypeToFilterArray(filterOperator))).ArrayTypeToRole_action();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -506,7 +538,7 @@ namespace QOBDGateway.Core
             List<Privilege> result = new List<Privilege>();
             try
             {
-                result = (await _channel.get_filter_privilegeAsync(Privilege.PrivilegeTypeToFilterArray(filterOperator))).ArrayTypeToPrivilege();
+                result = (await _channel.get_filter_privilegeAsync(_companyName, Privilege.PrivilegeTypeToFilterArray(filterOperator))).ArrayTypeToPrivilege();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -519,7 +551,7 @@ namespace QOBDGateway.Core
             List<Agent_role> result = new List<Agent_role>();
             try
             {
-                result = (await _channel.get_filter_agent_roleAsync(Agent_role.Agent_roleTypeToFilterArray(filterOperator))).ArrayTypeToAgent_role();
+                result = (await _channel.get_filter_agent_roleAsync(_companyName, Agent_role.Agent_roleTypeToFilterArray(filterOperator))).ArrayTypeToAgent_role();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }

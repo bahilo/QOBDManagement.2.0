@@ -9,21 +9,13 @@ using System.Runtime.CompilerServices;
 using QOBDCommon.Classes;
 using QOBDCommon.Enum;
 using System.Data.SqlServerCe;
+using System.Threading;
 
 namespace QOBDDAL.Helper.ChannelHelper
 {
 
     public static class DALHelper
     {
-        public static string convertDateToStringFormat(string dateToConvert, string dateFormat)
-        {
-            string output = "0000-00-00 00:00:00";
-            DateTime date = Utility.convertToDateTime(dateToConvert);
-            if (date > Utility.DateTimeMinValueInSQL2005)
-                return date.ToString(dateFormat);
-            return output;
-        }
-
         public static string getAllDataSqlText(this string tableName, Dictionary<string, string> columsDict)
         {
             string output = "SELECT ";
@@ -41,22 +33,111 @@ namespace QOBDDAL.Helper.ChannelHelper
 
         public static string getInsertSqlText(this string tableName, Dictionary<string, string> columsDict)
         {
-            string output = "INSERT INTO [" + tableName + "] (";
-
+            string output = "INSERT INTO [" + tableName + "] ";
+            string headers = "(";
+            string values = ") VALUES ('";
+            
             // append column 
             foreach (var dictElement in columsDict)
-                output += "[" + dictElement.Key + "], ";
+            {
+                if (!string.IsNullOrEmpty(dictElement.Value))
+                {
+                    headers += "[" + dictElement.Key + "], ";
+                    values += dictElement.Value.Replace("'", "''") + "', '";
+                }
+            }
 
-            output += ") VALUES ('";
-
-            // append values
-            foreach (var dictElement in columsDict)
-                output += dictElement.Value.Replace("'", "''") + "', '";
-
-            output += ");";
+            output += headers + values + ");";
             output = output.Replace(", )", ")").Replace(", ')", ")");//.Replace("'", "''");
 
             return output;
+        }
+
+        public static void doAction(System.Action action, TimeSpan retryInterval, int maxAttemptCount = 3)
+        {
+            doAction<object, object>(() =>
+            {
+                action();
+                return null;
+            }, new object(), retryInterval, maxAttemptCount);
+        }
+
+        public static void doAction<T>(System.Action action, T param, TimeSpan retryInterval, int maxAttemptCount = 3)
+        {
+            doAction<object, object>(() =>
+            {
+                action();
+                return null;
+            }, param, retryInterval, maxAttemptCount);
+        }
+
+        public static T1 doAction<T1, T2>(Func<T1> action, T2 param, TimeSpan retryInterval, int maxAttemptCount = 3)
+        {
+            var exceptions = new List<Exception>();
+
+            for (int attempted = 0; attempted < maxAttemptCount; attempted++)
+            {
+                try
+                {
+                    if (attempted > 0)
+                        Thread.Sleep(retryInterval);
+                    return action();
+                }
+                catch (Exception ex)
+                {
+                    exceptions.Add(ex);
+                }
+            }
+            throw new AggregateException(exceptions);
+        }
+
+        public async static Task<object> doAction(Func<Task> action, TimeSpan retryInterval, int attempted, List<Exception> exceptions, int maxAttemptCount = 3)
+        {        
+            try
+            {
+                await action();
+                return null;
+            }
+            catch (Exception ex)
+            {
+                exceptions.Add(ex);
+                if (attempted <= maxAttemptCount)
+                {
+                    if (attempted > 0)
+                        Thread.Sleep(retryInterval);
+
+                    attempted++;
+                    await doAction(action, retryInterval, attempted, exceptions, maxAttemptCount);
+                }                
+            }
+            string errorMessage = "";
+            int cpt = 1;
+            foreach (Exception ex in exceptions)
+                errorMessage += "[Attempted = "+cpt+"] "+ex.Message;
+
+            throw new Exception(errorMessage);
+        }
+
+        public async static Task<T1> doAction<T1, T2>(Func<T2, Task<T1>> action, T2 param, TimeSpan retryInterval, int attempted, List<Exception> exceptions, int maxAttemptCount = 3)
+        {        
+            try
+            {
+                return await action(param);
+            }
+            catch (Exception ex)
+            {
+                exceptions.Add(ex);
+                if (attempted <= maxAttemptCount)
+                {
+                    if (attempted > 0)
+                        Thread.Sleep(retryInterval);
+
+                    attempted++;
+                    return await doAction(action, param, retryInterval, attempted, exceptions, maxAttemptCount);
+                }                
+            }            
+
+            throw new AggregateException(exceptions);
         }
 
         public static string getUpdateSqlText(this string tableName, Dictionary<string, string> columsDict)
@@ -97,8 +178,7 @@ namespace QOBDDAL.Helper.ChannelHelper
             {
                 string _constr = System.Configuration.ConfigurationManager.ConnectionStrings["QCBDDatabaseCEConnectionString"].ConnectionString;
                 _constr = _constr.Replace("|DataDirectory|", Utility.getOrCreateDirectory("App_Data"));
-
-                DataSet dataSet = new DataSet("QOBDData");
+                
                 DataTable dataTable = new DataTable("QOBDTable");
 
                 using (SqlCeConnection connection = new SqlCeConnection(_constr))
@@ -188,14 +268,14 @@ namespace QOBDDAL.Helper.ChannelHelper
             {
                 Currency currency = new Currency();
                 currency.ID = Utility.intTryParse(currencyDataTable.Rows[i].ItemArray[currencyDataTable.Columns["ID"].Ordinal].ToString());
-                currency.IsDefault = (Utility.intTryParse(currencyDataTable.Rows[i].ItemArray[currencyDataTable.Columns["IsDefault"].Ordinal].ToString()) == 1)? true : false;
+                currency.IsDefault = (Utility.intTryParse(currencyDataTable.Rows[i].ItemArray[currencyDataTable.Columns["IsDefault"].Ordinal].ToString()) == 1) ? true : false;
                 currency.Name = (currencyDataTable.Rows[i].ItemArray[currencyDataTable.Columns["Name"].Ordinal] ?? "").ToString();
                 currency.Rate = Utility.decimalTryParse(currencyDataTable.Rows[i].ItemArray[currencyDataTable.Columns["Rate"].Ordinal].ToString());
                 currency.Symbol = (currencyDataTable.Rows[i].ItemArray[currencyDataTable.Columns["Symbol"].Ordinal] ?? "").ToString();
                 currency.CountryCode = (currencyDataTable.Rows[i].ItemArray[currencyDataTable.Columns["Country_code"].Ordinal] ?? "").ToString();
                 currency.CurrencyCode = (currencyDataTable.Rows[i].ItemArray[currencyDataTable.Columns["Currency_code"].Ordinal] ?? "").ToString();
                 currency.Country = (currencyDataTable.Rows[i].ItemArray[currencyDataTable.Columns["Country"].Ordinal] ?? "").ToString();
-                currency.Date = Utility.convertToDateTime(currencyDataTable.Rows[i].ItemArray[currencyDataTable.Columns["Date"].Ordinal].ToString());
+                currency.Date = Utility.dateTryParse(currencyDataTable.Rows[i].ItemArray[currencyDataTable.Columns["Date"].Ordinal].ToString());
 
                 lock (_lock) returnList.Add(currency);
             }
@@ -227,7 +307,7 @@ namespace QOBDDAL.Helper.ChannelHelper
                     query = string.Format(query + " {0} Country LIKE '{1}' ", filterOperator.ToString(), Currency.Country);
                 if (Currency.Rate != 0)
                     query = string.Format(query + " {0} Rate LIKE '{1}' ", filterOperator.ToString(), Currency.Rate);
-                
+
                 lock (_lock)
                     if (!string.IsNullOrEmpty(query))
                         baseSqlString = baseSqlString + query.Substring(query.IndexOf(filterOperator.ToString()) + filterOperator.ToString().Length);
@@ -246,7 +326,7 @@ namespace QOBDDAL.Helper.ChannelHelper
 
             output["ID"] = currency.ID.ToString();
             output["IsDefault"] = (currency.IsDefault) ? "1" : "0";
-            output["Date"] = currency.Date.ToString("yyyy-MM-dd H:mm:ss");
+            output["Date"] = Utility.dateTryParse(currency.Date.ToString()).ToString("yyyy-MM-dd H:mm:ss");
             output["Rate"] = currency.Rate.ToString();
             output["Symbol"] = (currency.Symbol ?? "").ToString();
             output["Name"] = (currency.Name ?? "").ToString();
@@ -271,8 +351,8 @@ namespace QOBDDAL.Helper.ChannelHelper
                 Notification notification = new Notification();
                 notification.ID = Utility.intTryParse(NotificationDataTable.Rows[i].ItemArray[NotificationDataTable.Columns["ID"].Ordinal].ToString());
                 notification.BillId = Utility.intTryParse(NotificationDataTable.Rows[i].ItemArray[NotificationDataTable.Columns["BillId"].Ordinal].ToString());
-                notification.Reminder1 = Utility.convertToDateTime(NotificationDataTable.Rows[i].ItemArray[NotificationDataTable.Columns["Reminder1"].Ordinal].ToString());
-                notification.Reminder2 = Utility.convertToDateTime(NotificationDataTable.Rows[i].ItemArray[NotificationDataTable.Columns["Reminder2"].Ordinal].ToString());
+                notification.Reminder1 = Utility.dateTryParse(NotificationDataTable.Rows[i].ItemArray[NotificationDataTable.Columns["Reminder1"].Ordinal].ToString());
+                notification.Reminder2 = Utility.dateTryParse(NotificationDataTable.Rows[i].ItemArray[NotificationDataTable.Columns["Reminder2"].Ordinal].ToString());
 
                 lock (_lock) returnList.Add(notification);
             }
@@ -311,8 +391,8 @@ namespace QOBDDAL.Helper.ChannelHelper
 
             output["ID"] = notification.ID.ToString();
             output["BillId"] = notification.BillId.ToString();
-            output["Reminder1"] = convertDateToStringFormat(notification.Reminder1.ToString(), "yyyy-MM-dd H:mm:ss");
-            output["Reminder2"] = convertDateToStringFormat(notification.Reminder2.ToString(), "yyyy-MM-dd H:mm:ss");
+            output["Reminder1"] = Utility.dateTryParse(notification.Reminder1.ToString()).ToString("yyyy-MM-dd H:mm:ss");
+            output["Reminder2"] = Utility.dateTryParse(notification.Reminder2.ToString()).ToString("yyyy-MM-dd H:mm:ss");
 
             return output;
         }
@@ -337,9 +417,9 @@ namespace QOBDDAL.Helper.ChannelHelper
                 statistic.Tax_value = Utility.doubleTryParse(statisticDataTable.Rows[i].ItemArray[statisticDataTable.Columns["Tax_value"].Ordinal].ToString());
                 statistic.Total = Utility.decimalTryParse(statisticDataTable.Rows[i].ItemArray[statisticDataTable.Columns["Total"].Ordinal].ToString());
                 statistic.Total_tax_included = Utility.decimalTryParse(statisticDataTable.Rows[i].ItemArray[statisticDataTable.Columns["Total_tax_included"].Ordinal].ToString());
-                statistic.Bill_datetime = Utility.convertToDateTime((statisticDataTable.Rows[i].ItemArray[statisticDataTable.Columns["Bill_datetime"].Ordinal] ?? "").ToString());
-                statistic.Date_limit = Utility.convertToDateTime((statisticDataTable.Rows[i].ItemArray[statisticDataTable.Columns["Date_limit"].Ordinal] ?? "").ToString());
-                statistic.Pay_date = Utility.convertToDateTime((statisticDataTable.Rows[i].ItemArray[statisticDataTable.Columns["Pay_datetime"].Ordinal] ?? "").ToString());
+                statistic.Bill_datetime = Utility.dateTryParse((statisticDataTable.Rows[i].ItemArray[statisticDataTable.Columns["Bill_datetime"].Ordinal] ?? "").ToString());
+                statistic.Date_limit = Utility.dateTryParse((statisticDataTable.Rows[i].ItemArray[statisticDataTable.Columns["Date_limit"].Ordinal] ?? "").ToString());
+                statistic.Pay_date = Utility.dateTryParse((statisticDataTable.Rows[i].ItemArray[statisticDataTable.Columns["Pay_datetime"].Ordinal] ?? "").ToString());
 
                 lock (_lock) returnList.Add(statistic);
             }
@@ -394,12 +474,12 @@ namespace QOBDDAL.Helper.ChannelHelper
 
             output["ID"] = statistic.ID.ToString();
             output["BillId"] = statistic.BillId.ToString();
-            output["Bill_datetime"] = convertDateToStringFormat(statistic.Bill_datetime.ToString(), "yyyy-MM-dd H:mm:ss");
+            output["Bill_datetime"] = Utility.dateTryParse(statistic.Bill_datetime.ToString()).ToString("yyyy-MM-dd H:mm:ss");
             output["Company"] = (statistic.Company ?? "").ToString();
-            output["Date_limit"] = convertDateToStringFormat(statistic.Date_limit.ToString(), "yyyy-MM-dd H:mm:ss");
+            output["Date_limit"] = Utility.dateTryParse(statistic.Date_limit.ToString()).ToString("yyyy-MM-dd H:mm:ss");
             output["Income"] = statistic.Income.ToString();
             output["Income_percent"] = statistic.Income_percent.ToString();
-            output["Pay_datetime"] = convertDateToStringFormat(statistic.Pay_date.ToString(), "yyyy-MM-dd H:mm:ss");
+            output["Pay_datetime"] = Utility.dateTryParse(statistic.Pay_date.ToString()).ToString("yyyy-MM-dd H:mm:ss");
             output["Pay_received"] = statistic.Pay_received.ToString();
             output["Price_purchase_total"] = statistic.Price_purchase_total.ToString();
             output["Tax_value"] = statistic.Tax_value.ToString();
@@ -584,7 +664,7 @@ namespace QOBDDAL.Helper.ChannelHelper
                 Order.Comment2 = (OrderDataTable.Rows[i].ItemArray[OrderDataTable.Columns["Comment2"].Ordinal] ?? "").ToString();
                 Order.Comment3 = (OrderDataTable.Rows[i].ItemArray[OrderDataTable.Columns["Comment3"].Ordinal] ?? "").ToString();
                 Order.Status = (OrderDataTable.Rows[i].ItemArray[OrderDataTable.Columns["Status"].Ordinal] ?? "").ToString();
-                Order.Date = Utility.convertToDateTime(OrderDataTable.Rows[i].ItemArray[OrderDataTable.Columns["Date"].Ordinal].ToString());
+                Order.Date = Utility.dateTryParse(OrderDataTable.Rows[i].ItemArray[OrderDataTable.Columns["Date"].Ordinal].ToString());
                 Order.DeliveryAddress = Utility.intTryParse(OrderDataTable.Rows[i].ItemArray[OrderDataTable.Columns["DeliveryAddress"].Ordinal].ToString());
                 Order.Tax = Utility.decimalTryParse(OrderDataTable.Rows[i].ItemArray[OrderDataTable.Columns["Tax"].Ordinal].ToString());
 
@@ -647,7 +727,7 @@ namespace QOBDDAL.Helper.ChannelHelper
             output["Comment1"] = (order.Comment1 ?? "").ToString();
             output["Comment2"] = (order.Comment2 ?? "").ToString();
             output["Comment3"] = (order.Comment3 ?? "").ToString();
-            output["Date"] = convertDateToStringFormat(order.Date.ToString(), "yyyy-MM-dd H:mm:ss");
+            output["Date"] = Utility.dateTryParse(order.Date.ToString()).ToString("yyyy-MM-dd H:mm:ss");
             output["DeliveryAddress"] = order.DeliveryAddress.ToString();
             output["ID"] = order.ID.ToString();
             output["Status"] = (order.Status ?? "").ToString();
@@ -673,7 +753,7 @@ namespace QOBDDAL.Helper.ChannelHelper
                 Tax_order.Target = Tax_OrderDataTableList.Rows[i].ItemArray[Tax_OrderDataTableList.Columns["Target"].Ordinal].ToString();
                 Tax_order.Tax_value = Utility.doubleTryParse(Tax_OrderDataTableList.Rows[i].ItemArray[Tax_OrderDataTableList.Columns["Tax_value"].Ordinal].ToString());
                 Tax_order.TaxId = Utility.intTryParse(Tax_OrderDataTableList.Rows[i].ItemArray[Tax_OrderDataTableList.Columns["TaxId"].Ordinal].ToString());
-                Tax_order.Date_insert = Utility.convertToDateTime(Tax_OrderDataTableList.Rows[i].ItemArray[Tax_OrderDataTableList.Columns["Date_insert"].Ordinal].ToString());
+                Tax_order.Date_insert = Utility.dateTryParse(Tax_OrderDataTableList.Rows[i].ItemArray[Tax_OrderDataTableList.Columns["Date_insert"].Ordinal].ToString());
 
                 lock (_lock) returnList.Add(Tax_order);
             }
@@ -718,7 +798,7 @@ namespace QOBDDAL.Helper.ChannelHelper
             Dictionary<string, string> output = new Dictionary<string, string>();
 
             output["OrderId"] = tax_order.OrderId.ToString();
-            output["Date_insert"] = convertDateToStringFormat(tax_order.Date_insert.ToString(), "yyyy-MM-dd H:mm:ss");
+            output["Date_insert"] = Utility.dateTryParse(tax_order.Date_insert.ToString()).ToString("yyyy-MM-dd H:mm:ss");
             output["Target"] = (tax_order.Target ?? "").ToString();
             output["Tax_value"] = tax_order.Tax_value.ToString();
             output["TaxId"] = tax_order.TaxId.ToString();
@@ -1048,9 +1128,9 @@ namespace QOBDDAL.Helper.ChannelHelper
                     bill.ID = Utility.intTryParse(BillDataTable.Rows[i].ItemArray[BillDataTable.Columns["ID"].Ordinal].ToString());
                     bill.OrderId = Utility.intTryParse(BillDataTable.Rows[i].ItemArray[BillDataTable.Columns["OrderId"].Ordinal].ToString());
                     bill.ClientId = Utility.intTryParse(BillDataTable.Rows[i].ItemArray[BillDataTable.Columns["ClientId"].Ordinal].ToString());
-                    bill.Date = Utility.convertToDateTime(BillDataTable.Rows[i].ItemArray[BillDataTable.Columns["Date"].Ordinal].ToString());
-                    bill.DatePay = Utility.convertToDateTime(BillDataTable.Rows[i].ItemArray[BillDataTable.Columns["DatePay"].Ordinal].ToString());
-                    bill.DateLimit = Utility.convertToDateTime(BillDataTable.Rows[i].ItemArray[BillDataTable.Columns["DateLimit"].Ordinal].ToString());
+                    bill.Date = Utility.dateTryParse(BillDataTable.Rows[i].ItemArray[BillDataTable.Columns["Date"].Ordinal].ToString());
+                    bill.DatePay = Utility.dateTryParse(BillDataTable.Rows[i].ItemArray[BillDataTable.Columns["DatePay"].Ordinal].ToString());
+                    bill.DateLimit = Utility.dateTryParse(BillDataTable.Rows[i].ItemArray[BillDataTable.Columns["DateLimit"].Ordinal].ToString());
                     bill.Pay = Utility.decimalTryParse(BillDataTable.Rows[i].ItemArray[BillDataTable.Columns["Pay"].Ordinal].ToString());
                     bill.Comment1 = (BillDataTable.Rows[i].ItemArray[BillDataTable.Columns["Comment1"].Ordinal] ?? "").ToString();
                     bill.Comment2 = (BillDataTable.Rows[i].ItemArray[BillDataTable.Columns["Comment2"].Ordinal] ?? "").ToString();
@@ -1121,9 +1201,9 @@ namespace QOBDDAL.Helper.ChannelHelper
             output["Comment1"] = (bill.Comment1 ?? "").ToString();
             output["Comment2"] = (bill.Comment2 ?? "").ToString();
             output["Pay"] = bill.Pay.ToString();
-            output["Date"] = convertDateToStringFormat(bill.Date.ToString(), "yyyy-MM-dd H:mm:ss");
-            output["DatePay"] = convertDateToStringFormat(bill.DatePay.ToString(), "yyyy-MM-dd H:mm:ss");
-            output["DateLimit"] = convertDateToStringFormat(bill.DateLimit.ToString(), "yyyy-MM-dd H:mm:ss");
+            output["Date"] = Utility.dateTryParse(bill.Date.ToString()).ToString("yyyy-MM-dd H:mm:ss");
+            output["DatePay"] = Utility.dateTryParse(bill.DatePay.ToString()).ToString("yyyy-MM-dd H:mm:ss");
+            output["DateLimit"] = Utility.dateTryParse(bill.DateLimit.ToString()).ToString("yyyy-MM-dd H:mm:ss");
             output["PayMod"] = (bill.PayMod ?? "").ToString();
             output["PayReceived"] = bill.PayReceived.ToString();
 
@@ -1145,7 +1225,7 @@ namespace QOBDDAL.Helper.ChannelHelper
                     delivery.ID = Utility.intTryParse(DeliveryDataTable.Rows[i].ItemArray[DeliveryDataTable.Columns["ID"].Ordinal].ToString());
                     delivery.OrderId = Utility.intTryParse(DeliveryDataTable.Rows[i].ItemArray[DeliveryDataTable.Columns["OrderId"].Ordinal].ToString());
                     delivery.BillId = Utility.intTryParse(DeliveryDataTable.Rows[i].ItemArray[DeliveryDataTable.Columns["BillId"].Ordinal].ToString());
-                    delivery.Date = Utility.convertToDateTime(DeliveryDataTable.Rows[i].ItemArray[DeliveryDataTable.Columns["Date"].Ordinal].ToString());
+                    delivery.Date = Utility.dateTryParse(DeliveryDataTable.Rows[i].ItemArray[DeliveryDataTable.Columns["Date"].Ordinal].ToString());
                     delivery.Package = Utility.intTryParse(DeliveryDataTable.Rows[i].ItemArray[DeliveryDataTable.Columns["Package"].Ordinal].ToString());
                     delivery.Status = (DeliveryDataTable.Rows[i].ItemArray[DeliveryDataTable.Columns["Status"].Ordinal] ?? "").ToString();
 
@@ -1193,7 +1273,7 @@ namespace QOBDDAL.Helper.ChannelHelper
             output["ID"] = delivery.ID.ToString();
             output["OrderId"] = delivery.OrderId.ToString();
             output["BillId"] = delivery.BillId.ToString();
-            output["Date"] = convertDateToStringFormat(delivery.Date.ToString(), "yyyy-MM-dd H:mm:ss");
+            output["Date"] = Utility.dateTryParse(delivery.Date.ToString()).ToString("yyyy-MM-dd H:mm:ss");
             output["Package"] = delivery.Package.ToString();
             output["Status"] = (delivery.Status ?? "").ToString();
 
@@ -1310,10 +1390,10 @@ namespace QOBDDAL.Helper.ChannelHelper
                     tax.Tax_current = Utility.intTryParse(TaxDataTable.Rows[i].ItemArray[TaxDataTable.Columns["Tax_current"].Ordinal].ToString());
                     tax.Type = (TaxDataTable.Rows[i].ItemArray[TaxDataTable.Columns["Type"].Ordinal] ?? "").ToString();
                     tax.Value = Utility.decimalTryParse(TaxDataTable.Rows[i].ItemArray[TaxDataTable.Columns["Value"].Ordinal].ToString());
-                    tax.Date_insert = Utility.convertToDateTime(TaxDataTable.Rows[i].ItemArray[TaxDataTable.Columns["Date_insert"].Ordinal].ToString());
+                    tax.Date_insert = Utility.dateTryParse(TaxDataTable.Rows[i].ItemArray[TaxDataTable.Columns["Date_insert"].Ordinal].ToString());
                     tax.Comment = (TaxDataTable.Rows[i].ItemArray[TaxDataTable.Columns["Comment"].Ordinal] ?? "").ToString();
 
-                lock (_lock) returnList.Add(tax);
+                    lock (_lock) returnList.Add(tax);
                 }
             }
             return returnList;
@@ -1355,7 +1435,7 @@ namespace QOBDDAL.Helper.ChannelHelper
             Dictionary<string, string> output = new Dictionary<string, string>();
 
             output["Comment"] = (tax.Comment ?? "").ToString();
-            output["Date_insert"] = convertDateToStringFormat(tax.Date_insert.ToString(), "yyyy-MM-dd H:mm:ss");
+            output["Date_insert"] = Utility.dateTryParse(tax.Date_insert.ToString()).ToString("yyyy-MM-dd H:mm:ss");
             output["Tax_current"] = tax.Tax_current.ToString();
             output["Type"] = (tax.Type ?? "").ToString();
             output["Value"] = tax.Value.ToString();

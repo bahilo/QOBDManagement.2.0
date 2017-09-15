@@ -59,6 +59,8 @@ namespace QOBDViewModels.Classes
                     return new SecurityLoginViewModel(mainViewModel);
                 case EViewModel.STATISTIC:
                     return new StatisticViewModel(mainViewModel);
+                case EViewModel.LICENSE:
+                    return new LicenseViewModel(mainViewModel);
             }
             return null;
         }

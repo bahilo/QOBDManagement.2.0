@@ -22,6 +22,7 @@ namespace QOBDGateway.Core
     public class GateWayNotification : INotificationManager, INotifyPropertyChanged
     {
         private ClientProxy _channel;
+        private string _companyName;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -49,12 +50,17 @@ namespace QOBDGateway.Core
             }
         }
 
+        public void setCompanyName(string companyName)
+        {
+            _companyName = companyName;
+        }
+
         public async Task<List<Notification>> DeleteNotificationAsync(List<Notification> listNotification)
         {
             List<Notification> result = new List<Notification>();
             try
             {
-                result = (await _channel.delete_data_notificationAsync(listNotification.NotificationTypeToArray())).ArrayTypeToNotification();
+                result = (await _channel.delete_data_notificationAsync(_companyName, listNotification.NotificationTypeToArray())).ArrayTypeToNotification();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -67,7 +73,7 @@ namespace QOBDGateway.Core
             List<Notification> result = new List<Notification>();
             try
             {
-                result = (await _channel.get_data_notificationAsync(nbLine.ToString())).ArrayTypeToNotification().OrderBy(x => x.ID).ToList();
+                result = (await _channel.get_data_notificationAsync(_companyName, nbLine.ToString())).ArrayTypeToNotification().OrderBy(x => x.ID).ToList();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -80,7 +86,7 @@ namespace QOBDGateway.Core
             List<Notification> result = new List<Notification>();
             try
             {
-                result = (await _channel.get_data_notification_by_idAsync(id.ToString())).ArrayTypeToNotification();
+                result = (await _channel.get_data_notification_by_idAsync(_companyName, id.ToString())).ArrayTypeToNotification();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -93,7 +99,7 @@ namespace QOBDGateway.Core
             List<Notification> result = new List<Notification>();
             try
             {
-                result = (await _channel.get_data_notification_by_order_listAsync(orderList.OrderTypeToArray())).ArrayTypeToNotification();
+                result = (await _channel.get_data_notification_by_order_listAsync(_companyName, orderList.OrderTypeToArray())).ArrayTypeToNotification();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -107,7 +113,7 @@ namespace QOBDGateway.Core
             List<Notification> result = new List<Notification>();
             try
             {
-                result = (await _channel.insert_data_notificationAsync(listNotification.NotificationTypeToArray())).ArrayTypeToNotification();
+                result = (await _channel.insert_data_notificationAsync(_companyName, listNotification.NotificationTypeToArray())).ArrayTypeToNotification();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -120,7 +126,7 @@ namespace QOBDGateway.Core
             List<Notification> result = new List<Notification>();
             try
             {
-                result = (await _channel.update_data_notificationAsync(listNotification.NotificationTypeToArray())).ArrayTypeToNotification();
+                result = (await _channel.update_data_notificationAsync(_companyName, listNotification.NotificationTypeToArray())).ArrayTypeToNotification();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -133,7 +139,7 @@ namespace QOBDGateway.Core
             List<Notification> result = new List<Notification>();
             try
             {
-                result = (await _channel.get_filter_notificationAsync(notification.NotificationTypeToFilterArray(filterOperator))).ArrayTypeToNotification();
+                result = (await _channel.get_filter_notificationAsync(_companyName, notification.NotificationTypeToFilterArray(filterOperator))).ArrayTypeToNotification();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }

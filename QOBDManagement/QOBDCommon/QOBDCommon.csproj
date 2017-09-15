@@ -61,6 +61,7 @@
     <Compile Include="Entities\Item.cs" />
     <Compile Include="Entities\Item_delivery.cs" />
     <Compile Include="Entities\Language.cs" />
+    <Compile Include="Entities\License.cs" />
     <Compile Include="Entities\Message.cs" />
     <Compile Include="Entities\Notification.cs" />
     <Compile Include="Entities\Order.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Enum\ESecurityRole.cs" />
     <Compile Include="Enum\EStatus.cs" />
     <Compile Include="Enum\EStatusAddress.cs" />
+    <Compile Include="Exceptions\NotApplicableException.cs" />
     <Compile Include="Interfaces\BL\IActionManager.cs" />
     <Compile Include="Interfaces\BL\IActionRecordManager.cs" />
     <Compile Include="Interfaces\BL\IAddressManager.cs" />

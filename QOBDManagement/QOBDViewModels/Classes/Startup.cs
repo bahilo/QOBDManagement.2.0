@@ -5,6 +5,7 @@ using QOBDGateway.Classes;
 using QOBDGateway.Interfaces;
 using QOBDViewModels.Core;
 using QOBDViewModels.Interfaces;
+using System;
 
 namespace QOBDViewModels.Classes
 {
@@ -18,7 +19,8 @@ namespace QOBDViewModels.Classes
         public void initialize()
         {
             _dataSet = new QOBDDAL.Classes.QOBDDataSet();
-            _proxyClient = new ClientConcreteProxy("QOBDWebServicePort");
+            _proxyClient = getProxy();
+            //_proxyClient.ChannelFactory.Closed += openChannel;
             _dal = new DataAccess(
                                 new DALAgent(_proxyClient, _dataSet, this),
                                 new DALClient(_proxyClient, _dataSet, this),
@@ -65,7 +67,7 @@ namespace QOBDViewModels.Classes
 
         public void resetCommunication()
         {
-            var newProxyClient = new ClientConcreteProxy("QOBDWebServicePort");
+            var newProxyClient = getProxy();
             Bl.BlAgent.setServiceCredential(newProxyClient);
             Bl.BlChatRoom.setServiceCredential(newProxyClient);
             Bl.BlClient.setServiceCredential(newProxyClient);
@@ -76,6 +78,33 @@ namespace QOBDViewModels.Classes
             Bl.BlSecurity.setServiceCredential(newProxyClient);
             Bl.BlStatisitc.setServiceCredential(newProxyClient);
         }
+
+        public ClientConcreteProxy getProxy()
+        {
+            var newProxyClient = new ClientConcreteProxy("QOBDWebServicePort");
+            newProxyClient.Endpoint.EndpointBehaviors.Add(new SimpleEndPointBehavior());
+            return newProxyClient;
+        }
+
+        public void checkServiceCommunication(ClientProxy proxy)
+        {
+            object locker = new object();
+            lock (locker)
+            {
+                if (proxy.State == System.ServiceModel.CommunicationState.Closed
+                    || proxy.State == System.ServiceModel.CommunicationState.Closing
+                    || proxy.State == System.ServiceModel.CommunicationState.Faulted)
+                    resetCommunication();
+            }
+        }
+
+        private void openChannel(object sender, EventArgs e)
+        {
+            resetCommunication();
+        }
+
+
+
     }
 
 }

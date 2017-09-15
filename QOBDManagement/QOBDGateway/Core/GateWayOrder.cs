@@ -29,6 +29,8 @@ namespace QOBDGateway.Core
     public class GateWayOrder : IOrderManager
     {
         private ClientProxy _channel;
+        private string _companyName;
+
         public event PropertyChangedEventHandler PropertyChanged;
         
         public GateWayOrder(ClientProxy servicePort)
@@ -47,16 +49,21 @@ namespace QOBDGateway.Core
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        public void setCompanyName(string companyName)
+        {
+            _companyName = companyName;
+        }
+
 
         public async Task<List<Order>> InsertOrderAsync(List<Order> orderList)
         {
             List<Order> result = new List<Order>();
             try
             {
-                result = (await _channel.insert_data_orderAsync(orderList.OrderTypeToArray())).ArrayTypeToOrder();
+                result = (await _channel.insert_data_orderAsync(_companyName, orderList.OrderTypeToArray())).ArrayTypeToOrder();
             }
             catch (FaultException) {  Dispose(); throw; }
-            catch (CommunicationException ) { _channel.Abort(); throw; }
+            catch (CommunicationException) { _channel.Abort(); throw; }
             catch (TimeoutException) { _channel.Abort(); }
             return result;
         }
@@ -66,7 +73,7 @@ namespace QOBDGateway.Core
             List<Tax_order> result = new List<Tax_order>();
             try
             {
-                result = (await _channel.insert_data_tax_orderAsync(tax_orderList.Tax_orderTypeToArray())).ArrayTypeToTax_order();
+                result = (await _channel.insert_data_tax_orderAsync(_companyName, tax_orderList.Tax_orderTypeToArray())).ArrayTypeToTax_order();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -79,7 +86,7 @@ namespace QOBDGateway.Core
             List<Order_item> result = new List<Order_item>();
             try
             {
-                result = (await _channel.insert_data_order_itemAsync(order_itemList.order_itemTypeToArray())).ArrayTypeToOrder_item();
+                result = (await _channel.insert_data_order_itemAsync(_companyName, order_itemList.order_itemTypeToArray())).ArrayTypeToOrder_item();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -92,7 +99,7 @@ namespace QOBDGateway.Core
             List<Tax> result = new List<Tax>();
             try
             {
-                result = (await _channel.insert_data_taxAsync(taxList.TaxTypeToArray())).ArrayTypeToTax();
+                result = (await _channel.insert_data_taxAsync(_companyName, taxList.TaxTypeToArray())).ArrayTypeToTax();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -105,7 +112,7 @@ namespace QOBDGateway.Core
             List<Bill> result = new List<Bill>();
             try
             {
-                result = (await _channel.insert_data_billAsync(billList.BillTypeToArray())).ArrayTypeToBill();
+                result = (await _channel.insert_data_billAsync(_companyName, billList.BillTypeToArray())).ArrayTypeToBill();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -118,7 +125,7 @@ namespace QOBDGateway.Core
             List<Delivery> result = new List<Delivery>();
             try
             {
-                result = (await _channel.insert_data_deliveryAsync(deliveryList.DeliveryTypeToArray())).ArrayTypeToDelivery();
+                result = (await _channel.insert_data_deliveryAsync(_companyName, deliveryList.DeliveryTypeToArray())).ArrayTypeToDelivery();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -131,7 +138,7 @@ namespace QOBDGateway.Core
             List<Currency> result = new List<Currency>();
             try
             {
-                result = (await _channel.insert_data_currencyAsync(listCurrency.CurrencyTypeToArray())).ArrayTypeToCurrency();
+                result = (await _channel.insert_data_currencyAsync(_companyName, listCurrency.CurrencyTypeToArray())).ArrayTypeToCurrency();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -145,7 +152,7 @@ namespace QOBDGateway.Core
             List<Order> result = new List<Order>();
             try
             {
-                result = (await _channel.delete_data_orderAsync(orderList.OrderTypeToArray())).ArrayTypeToOrder();
+                result = (await _channel.delete_data_orderAsync(_companyName, orderList.OrderTypeToArray())).ArrayTypeToOrder();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -158,7 +165,7 @@ namespace QOBDGateway.Core
             List<Tax_order> result = new List<Tax_order>();
             try
             {
-                result = (await _channel.delete_data_tax_orderAsync(tax_order.Tax_orderTypeToArray())).ArrayTypeToTax_order();
+                result = (await _channel.delete_data_tax_orderAsync(_companyName, tax_order.Tax_orderTypeToArray())).ArrayTypeToTax_order();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -171,7 +178,7 @@ namespace QOBDGateway.Core
             List<Order_item> result = new List<Order_item>();
             try
             {
-                result = (await _channel.delete_data_order_itemAsync(order_itemList.order_itemTypeToArray())).ArrayTypeToOrder_item();
+                result = (await _channel.delete_data_order_itemAsync(_companyName, order_itemList.order_itemTypeToArray())).ArrayTypeToOrder_item();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -184,7 +191,7 @@ namespace QOBDGateway.Core
             List<Tax> result = new List<Tax>();
             try
             {
-                result = (await _channel.delete_data_taxAsync(taxList.TaxTypeToArray())).ArrayTypeToTax();
+                result = (await _channel.delete_data_taxAsync(_companyName, taxList.TaxTypeToArray())).ArrayTypeToTax();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -197,7 +204,7 @@ namespace QOBDGateway.Core
             List<Bill> result = new List<Bill>();
             try
             {
-                result = (await _channel.delete_data_billAsync(billList.BillTypeToArray())).ArrayTypeToBill();
+                result = (await _channel.delete_data_billAsync(_companyName, billList.BillTypeToArray())).ArrayTypeToBill();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -210,7 +217,7 @@ namespace QOBDGateway.Core
             List<Delivery> result = new List<Delivery>();
             try
             {
-                result = (await _channel.delete_data_deliveryAsync(deliveryList.DeliveryTypeToArray())).ArrayTypeToDelivery();
+                result = (await _channel.delete_data_deliveryAsync(_companyName, deliveryList.DeliveryTypeToArray())).ArrayTypeToDelivery();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -223,7 +230,7 @@ namespace QOBDGateway.Core
             List<Currency> result = new List<Currency>();
             try
             {
-                result = (await _channel.delete_data_currencyAsync(listCurrency.CurrencyTypeToArray())).ArrayTypeToCurrency();
+                result = (await _channel.delete_data_currencyAsync(_companyName, listCurrency.CurrencyTypeToArray())).ArrayTypeToCurrency();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -236,7 +243,7 @@ namespace QOBDGateway.Core
             List<Order> result = new List<Order>();
             try
             {
-                result = (await _channel.update_data_orderAsync(orderList.OrderTypeToArray())).ArrayTypeToOrder();
+                result = (await _channel.update_data_orderAsync(_companyName, orderList.OrderTypeToArray())).ArrayTypeToOrder();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -249,7 +256,7 @@ namespace QOBDGateway.Core
             List<Tax_order> result = new List<Tax_order>();
             try
             {
-                result = (await _channel.update_data_tax_orderAsync(tax_orderList.Tax_orderTypeToArray())).ArrayTypeToTax_order();
+                result = (await _channel.update_data_tax_orderAsync(_companyName, tax_orderList.Tax_orderTypeToArray())).ArrayTypeToTax_order();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -262,7 +269,7 @@ namespace QOBDGateway.Core
             List<Order_item> result = new List<Order_item>();
             try
             {
-                result = (await _channel.update_data_order_itemAsync(order_itemList.order_itemTypeToArray())).ArrayTypeToOrder_item();
+                result = (await _channel.update_data_order_itemAsync(_companyName, order_itemList.order_itemTypeToArray())).ArrayTypeToOrder_item();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -275,7 +282,7 @@ namespace QOBDGateway.Core
             List<Tax> result = new List<Tax>();
             try
             {
-                result = (await _channel.update_data_taxAsync(taxList.TaxTypeToArray())).ArrayTypeToTax();
+                result = (await _channel.update_data_taxAsync(_companyName, taxList.TaxTypeToArray())).ArrayTypeToTax();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -288,7 +295,7 @@ namespace QOBDGateway.Core
             List<Bill> result = new List<Bill>();
             try
             {
-                result = (await _channel.update_data_billAsync(listBill.BillTypeToArray())).ArrayTypeToBill();
+                result = (await _channel.update_data_billAsync(_companyName, listBill.BillTypeToArray())).ArrayTypeToBill();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -301,7 +308,7 @@ namespace QOBDGateway.Core
             List<Delivery> result = new List<Delivery>();
             try
             {
-                result = (await _channel.update_data_deliveryAsync(listDelivery.DeliveryTypeToArray())).ArrayTypeToDelivery();
+                result = (await _channel.update_data_deliveryAsync(_companyName, listDelivery.DeliveryTypeToArray())).ArrayTypeToDelivery();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -314,7 +321,7 @@ namespace QOBDGateway.Core
             List<Currency> result = new List<Currency>();
             try
             {
-                result = (await _channel.update_data_currencyAsync(listCurrency.CurrencyTypeToArray())).ArrayTypeToCurrency();
+                result = (await _channel.update_data_currencyAsync(_companyName, listCurrency.CurrencyTypeToArray())).ArrayTypeToCurrency();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -328,7 +335,7 @@ namespace QOBDGateway.Core
             List<Order> result = new List<Order>();
             try
             {
-                result = (await _channel.get_data_orderAsync(nbLine.ToString())).ArrayTypeToOrder();
+                result = (await _channel.get_data_orderAsync(_companyName, nbLine.ToString())).ArrayTypeToOrder();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -341,7 +348,7 @@ namespace QOBDGateway.Core
             List<Order> result = new List<Order>();
             try
             {
-                result = (await _channel.get_data_order_by_idAsync(id.ToString())).ArrayTypeToOrder();
+                result = (await _channel.get_data_order_by_idAsync(_companyName, id.ToString())).ArrayTypeToOrder();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -355,7 +362,7 @@ namespace QOBDGateway.Core
             List<Tax_order> result = new List<Tax_order>();
             try
             {
-                result = (await _channel.get_data_tax_orderAsync(nbLine.ToString())).ArrayTypeToTax_order();
+                result = (await _channel.get_data_tax_orderAsync(_companyName, nbLine.ToString())).ArrayTypeToTax_order();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -368,7 +375,7 @@ namespace QOBDGateway.Core
             List<Tax_order> result = new List<Tax_order>();
             try
             {
-                result = (await _channel.get_data_tax_order_by_order_listAsync(orderList.OrderTypeToArray())).ArrayTypeToTax_order();
+                result = (await _channel.get_data_tax_order_by_order_listAsync(_companyName, orderList.OrderTypeToArray())).ArrayTypeToTax_order();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -381,7 +388,7 @@ namespace QOBDGateway.Core
             List<Tax_order> result = new List<Tax_order>();
             try
             {
-                result = (await _channel.get_data_tax_order_by_idAsync(id.ToString())).ArrayTypeToTax_order();
+                result = (await _channel.get_data_tax_order_by_idAsync(_companyName, id.ToString())).ArrayTypeToTax_order();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -394,7 +401,7 @@ namespace QOBDGateway.Core
             List<Order_item> result = new List<Order_item>();
             try
             {
-                result = (await _channel.get_data_order_itemAsync(nbLine.ToString())).ArrayTypeToOrder_item();
+                result = (await _channel.get_data_order_itemAsync(_companyName, nbLine.ToString())).ArrayTypeToOrder_item();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -407,7 +414,7 @@ namespace QOBDGateway.Core
             List<Order_item> result = new List<Order_item>();
             try
             {
-                result = (await _channel.get_data_order_item_by_idAsync(id.ToString())).ArrayTypeToOrder_item();
+                result = (await _channel.get_data_order_item_by_idAsync(_companyName, id.ToString())).ArrayTypeToOrder_item();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -420,7 +427,7 @@ namespace QOBDGateway.Core
             List<Order_item> result = new List<Order_item>();
             try
             {
-                result = (await _channel.get_data_order_item_by_order_listAsync(orderList.OrderTypeToArray())).ArrayTypeToOrder_item();
+                result = (await _channel.get_data_order_item_by_order_listAsync(_companyName, orderList.OrderTypeToArray())).ArrayTypeToOrder_item();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -433,7 +440,7 @@ namespace QOBDGateway.Core
             List<Tax> result = new List<Tax>();
             try
             {
-                result = (await _channel.get_data_taxAsync(nbLine.ToString())).ArrayTypeToTax();
+                result = (await _channel.get_data_taxAsync(_companyName, nbLine.ToString())).ArrayTypeToTax();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -446,7 +453,7 @@ namespace QOBDGateway.Core
             List<Tax> result = new List<Tax>();
             try
             {
-                result = (await _channel.get_data_tax_by_idAsync(id.ToString())).ArrayTypeToTax();
+                result = (await _channel.get_data_tax_by_idAsync(_companyName, id.ToString())).ArrayTypeToTax();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -459,7 +466,7 @@ namespace QOBDGateway.Core
             List<Bill> result = new List<Bill>();
             try
             {
-                result = (await _channel.get_data_billAsync(nbLine.ToString())).ArrayTypeToBill();
+                result = (await _channel.get_data_billAsync(_companyName, nbLine.ToString())).ArrayTypeToBill();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -472,7 +479,7 @@ namespace QOBDGateway.Core
             List<Bill> result = new List<Bill>();
             try
             {
-                result = (await _channel.get_data_bill_by_order_listAsync(orderList.OrderTypeToArray())).ArrayTypeToBill();
+                result = (await _channel.get_data_bill_by_order_listAsync(_companyName, orderList.OrderTypeToArray())).ArrayTypeToBill();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -485,7 +492,7 @@ namespace QOBDGateway.Core
             List<Bill> result = new List<Bill>();
             try
             {
-                result = (await _channel.get_data_bill_by_idAsync(id.ToString())).ArrayTypeToBill();
+                result = (await _channel.get_data_bill_by_idAsync(_companyName, id.ToString())).ArrayTypeToBill();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -508,7 +515,7 @@ namespace QOBDGateway.Core
             List<Bill> result = new List<Bill>();
             try
             {
-                result = (await _channel.get_data_bill_by_unpaidAsync(agentId.ToString())).ArrayTypeToBill();
+                result = (await _channel.get_data_bill_by_unpaidAsync(_companyName, agentId.ToString())).ArrayTypeToBill();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -521,7 +528,7 @@ namespace QOBDGateway.Core
             List<Delivery> result = new List<Delivery>();
             try
             {
-                result = (await _channel.get_data_deliveryAsync(nbLine.ToString())).ArrayTypeToDelivery();
+                result = (await _channel.get_data_deliveryAsync(_companyName, nbLine.ToString())).ArrayTypeToDelivery();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -534,7 +541,7 @@ namespace QOBDGateway.Core
             List<Delivery> result = new List<Delivery>();
             try
             {
-                result = (await _channel.get_data_delivery_by_order_listAsync(orderList.OrderTypeToArray())).ArrayTypeToDelivery();
+                result = (await _channel.get_data_delivery_by_order_listAsync(_companyName, orderList.OrderTypeToArray())).ArrayTypeToDelivery();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -547,7 +554,7 @@ namespace QOBDGateway.Core
             List<Delivery> result = new List<Delivery>();
             try
             {
-                result = (await _channel.get_data_delivery_by_idAsync(id.ToString())).ArrayTypeToDelivery();
+                result = (await _channel.get_data_delivery_by_idAsync(_companyName, id.ToString())).ArrayTypeToDelivery();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -560,7 +567,7 @@ namespace QOBDGateway.Core
             List<Currency> result = new List<Currency>();
             try
             {
-                result = (await _channel.get_data_currencyAsync(nbLine.ToString())).ArrayTypeToCurrency();
+                result = (await _channel.get_data_currencyAsync(_companyName, nbLine.ToString())).ArrayTypeToCurrency();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -573,7 +580,7 @@ namespace QOBDGateway.Core
             List<Currency> result = new List<Currency>();
             try
             {
-                result = (await _channel.get_data_currency_by_provider_item_listAsync(provider_itemList.Provider_itemTypeToArray())).ArrayTypeToCurrency();
+                result = (await _channel.get_data_currency_by_provider_item_listAsync(_companyName, provider_itemList.Provider_itemTypeToArray())).ArrayTypeToCurrency();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -587,7 +594,7 @@ namespace QOBDGateway.Core
             List<Order> result = new List<Order>();
             try
             {
-                result = (await _channel.get_filter_orderAsync(order.OrderTypeToFilterArray(filterOperator))).ArrayTypeToOrder();
+                result = (await _channel.get_filter_orderAsync(_companyName, order.OrderTypeToFilterArray(filterOperator))).ArrayTypeToOrder();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -600,7 +607,7 @@ namespace QOBDGateway.Core
             List<Tax_order> result = new List<Tax_order>();
             try
             {
-                result = (await _channel.get_filter_tax_orderAsync(Tax_order.Tax_orderTypeToFilterArray(filterOperator))).ArrayTypeToTax_order();
+                result = (await _channel.get_filter_tax_orderAsync(_companyName, Tax_order.Tax_orderTypeToFilterArray(filterOperator))).ArrayTypeToTax_order();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -613,7 +620,7 @@ namespace QOBDGateway.Core
             List<Order_item> result = new List<Order_item>();
             try
             {
-                result = (await _channel.get_filter_order_itemAsync(order_item.Order_itemTypeToFilterArray(filterOperator))).ArrayTypeToOrder_item();
+                result = (await _channel.get_filter_order_itemAsync(_companyName, order_item.Order_itemTypeToFilterArray(filterOperator))).ArrayTypeToOrder_item();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -626,7 +633,7 @@ namespace QOBDGateway.Core
             List<Tax> result = new List<Tax>();
             try
             {
-                result = (await _channel.get_filter_taxAsync(Tax.TaxTypeToFilterArray(filterOperator))).ArrayTypeToTax();
+                result = (await _channel.get_filter_taxAsync(_companyName, Tax.TaxTypeToFilterArray(filterOperator))).ArrayTypeToTax();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -639,7 +646,7 @@ namespace QOBDGateway.Core
             List<Bill> result = new List<Bill>();
             try
             {
-                result = (await _channel.get_filter_billAsync(Bill.BillTypeToFilterArray(filterOperator))).ArrayTypeToBill();
+                result = (await _channel.get_filter_billAsync(_companyName, Bill.BillTypeToFilterArray(filterOperator))).ArrayTypeToBill();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -652,7 +659,7 @@ namespace QOBDGateway.Core
             List<Delivery> result = new List<Delivery>();
             try
             {
-                result = (await _channel.get_filter_deliveryAsync(Delivery.DeliveryTypeToFilterArray(filterOperator))).ArrayTypeToDelivery();
+                result = (await _channel.get_filter_deliveryAsync(_companyName, Delivery.DeliveryTypeToFilterArray(filterOperator))).ArrayTypeToDelivery();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -665,7 +672,7 @@ namespace QOBDGateway.Core
             List<Currency> result = new List<Currency>();
             try
             {
-                result = (await _channel.get_filter_currencyAsync(Currency.CurrencyTypeToFilterArray(filterOperator))).ArrayTypeToCurrency();
+                result = (await _channel.get_filter_currencyAsync(_companyName, Currency.CurrencyTypeToFilterArray(filterOperator))).ArrayTypeToCurrency();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -687,6 +694,7 @@ namespace QOBDGateway.Core
                 uri += "&num_dev=" + paramDeliveryToPdf.OrderId;
                 uri += "&num_bl=" + paramDeliveryToPdf.DeliveryId;
                 uri += "&lang=" + paramDeliveryToPdf.Lang;
+                uri += "&key=" + paramDeliveryToPdf.LicenseKey;
 
                 System.Diagnostics.Process.Start(uri);
             }
@@ -713,6 +721,7 @@ namespace QOBDGateway.Core
                 uri += "&num_dev=" + paramOrderToPdf.OrderId;
                 uri += "&num_fact=" + paramOrderToPdf.BillId;
                 uri += "&lang=" + paramOrderToPdf.Lang;
+                uri += "&key=" + paramOrderToPdf.LicenseKey;
 
                 if (paramOrderToPdf.ParamEmail.IsSendEmail)
                 {
@@ -748,6 +757,7 @@ namespace QOBDGateway.Core
                 uri += "&delay=" + paramOrderToPdf.ValidityDay;
                 uri += "&quote=" + paramOrderToPdf.TypeQuoteOrProformat.ToString();
                 uri += "&lang=" + paramOrderToPdf.Lang;
+                uri += "&key=" + paramOrderToPdf.LicenseKey;
 
                 if (paramOrderToPdf.ParamEmail.IsSendEmail)
                 {

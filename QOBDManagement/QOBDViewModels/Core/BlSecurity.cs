@@ -39,6 +39,11 @@ namespace QOBDViewModels.Core
             DAC.DALSecurity.setServiceCredential(channel);
         }
 
+        public void setCompanyName(string companyName)
+        {
+            DAC.DALSecurity.setCompanyName(companyName);
+        }
+
         public void initializeCredential(Agent user)
         {
             if (user != null)
@@ -75,6 +80,8 @@ namespace QOBDViewModels.Core
                     Log.warning(ex.Message, EErrorFrom.SECURITY);
                     throw new ApplicationException("Remote communication error.");
                 }
+                else
+                    throw;
             }
             catch (Exception ex)
             {                                
@@ -473,6 +480,28 @@ namespace QOBDViewModels.Core
             try
             {
                 result = await DAC.DALSecurity.GetPrivilegeDataByIdAsync(id);
+            }
+            catch (Exception ex) { Log.error(ex.Message, EErrorFrom.SECURITY); }
+            return result;
+        }
+
+        public async Task<List<QOBDCommon.Entities.License>> checkLicenseByKeyAsync(string licenseKey)
+        {
+            List<QOBDCommon.Entities.License> result = new List<QOBDCommon.Entities.License>();
+            try
+            {
+                result = await DAC.DALSecurity.checkLicenseByKeyAsync(licenseKey);
+            }
+            catch (Exception ex) { Log.error(ex.Message, EErrorFrom.SECURITY); }
+            return result;
+        }
+
+        public async Task<List<QOBDCommon.Entities.License>> checkLicenseByCompanyAsync(string companyName)
+        {
+            List<QOBDCommon.Entities.License> result = new List<QOBDCommon.Entities.License>();
+            try
+            {
+                result = await DAC.DALSecurity.checkLicenseByCompanyAsync(companyName);
             }
             catch (Exception ex) { Log.error(ex.Message, EErrorFrom.SECURITY); }
             return result;

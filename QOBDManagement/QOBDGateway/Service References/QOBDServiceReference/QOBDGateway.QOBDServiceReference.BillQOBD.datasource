@@ -6,5 +6,5 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="BillQOBD" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>QOBDGateway.QOBDServiceReference.BillQOBD</TypeInfo>
+   <TypeInfo>QOBDGateway.QOBDServiceReference.BillQOBD, Service References.QOBDServiceReference.Reference.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>

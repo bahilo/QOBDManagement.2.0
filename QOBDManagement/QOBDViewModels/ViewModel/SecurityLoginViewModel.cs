@@ -12,6 +12,7 @@ using System.Configuration;
 using QOBDModels.Models;
 using QOBDModels.Command;
 using QOBDModels.Classes;
+using System.IO;
 
 namespace QOBDViewModels.ViewModel
 {
@@ -21,11 +22,13 @@ namespace QOBDViewModels.ViewModel
         private string _errorMessage;
         private string _clearPassword;
         private string _login;
+        private bool _isLicenseValid;
 
         //----------------------------[ Models ]------------------
 
         private AgentModel _agentModel;
         private IMainWindowViewModel _main;
+        private LicenseViewModel _licenseViewModel;
 
         //----------------------------[ Commands ]------------------
 
@@ -62,6 +65,7 @@ namespace QOBDViewModels.ViewModel
         private void instancesModel()
         {
             _agentModel = (AgentModel)_main.ModelCreator.createModel(QOBDModels.Enums.EModel.AGENT);
+            _licenseViewModel = (LicenseViewModel)_main.ViewModelCreator.createViewModel(Enums.EViewModel.LICENSE, _main);
         }
 
         private void instancesCommand()
@@ -93,7 +97,7 @@ namespace QOBDViewModels.ViewModel
         public AgentModel AgentModel
         {
             get { return _agentModel; }
-            set { setProperty(ref _agentModel, value, "AgentModel"); }
+            set { setProperty(ref _agentModel, value); }
         }
 
         public BusinessLogic Bl
@@ -104,19 +108,24 @@ namespace QOBDViewModels.ViewModel
         public string TxtErrorMessage
         {
             get { return _errorMessage; }
-            set { setProperty(ref _errorMessage, value, "TxtErrorMessage"); }
+            set { setProperty(ref _errorMessage, value); }
         }
 
         public string TxtClearPassword
         {
             get { return _clearPassword; }
-            set { _clearPassword = value; onPropertyChange("TxtClearPassword"); }
+            set { _clearPassword = value; onPropertyChange(); }
         }
 
         public string TxtLogin
         {
             get { return _login; }
-            set { _login = value; onPropertyChange("TxtLogin"); }
+            set { _login = value; onPropertyChange(); }
+        }
+
+        public string TxtLicenseKey
+        {
+            get { return _licenseViewModel.LicenseKey; }
         }
 
         //----------------------------[ Actions ]------------------
@@ -137,7 +146,11 @@ namespace QOBDViewModels.ViewModel
 
         public async Task showLoginView()
         {
-            bool result = await Singleton.getDialogueBox().showAsync(this as ISecurityLoginViewModel);
+            // display license view
+            await checkLicense();                 
+
+            // display login view
+            bool result = await Singleton.getDialogueBox().showAsync(this);
             if (!string.IsNullOrEmpty(TxtLogin) && !string.IsNullOrEmpty(TxtClearPassword) && result)
             {
                 await authenticateAgent();
@@ -152,6 +165,7 @@ namespace QOBDViewModels.ViewModel
         {
             try
             {
+                Bl.BlSecurity.setCompanyName(_licenseViewModel.License.CompanyName);
                 var agentFound = await Bl.BlSecurity.AuthenticateUserAsync(TxtLogin, TxtClearPassword);
                 if (Bl.BlSecurity.IsUserAuthenticated())
                 {
@@ -181,6 +195,9 @@ namespace QOBDViewModels.ViewModel
         {
             TxtLogin = "demo";// "<< Login here for dev mode >>";
             TxtClearPassword = "demo"; //"<< Password here for dev mode >>";
+
+            await checkLicense();
+
             await authenticateAgent();
         }
 
@@ -224,6 +241,20 @@ namespace QOBDViewModels.ViewModel
                 }
             }
             return false;
+        }
+
+        private async Task checkLicense()
+        {
+            // display license view
+            if (!_isLicenseValid)
+            {
+                _isLicenseValid = await _licenseViewModel.checkLicenseKey();
+                if (!_isLicenseValid)
+                {
+                    await Singleton.getDialogueBox().showAsync(_licenseViewModel);
+                    await showLoginView();
+                }
+            }
         }
 
         public override void Dispose()

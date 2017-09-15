@@ -34,6 +34,7 @@ namespace QOBDViewModels.Enums
         REFERENTIALSECURITY,
         SECURITYLOGIN,
         STATISTIC,
-        HOME
+        HOME,
+        LICENSE
     }
 }

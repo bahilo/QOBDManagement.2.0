@@ -165,9 +165,10 @@
                             <materialDesign:ColorZone Mode="PrimaryMid">
                                 <StackPanel Orientation="Vertical">
                                     <TextBlock Name="txtBWaitValid2" HorizontalAlignment="Center">Quotes List - In Process</TextBlock>
-                                    <DataGrid Grid.Row="1" x:Name="dgQuoteModelList" AutoGenerateColumns="False"
-                                    ItemsSource="{Binding QuoteViewModel.QuoteModelList, UpdateSourceTrigger=PropertyChanged}" 
-                                    MaxHeight="600" MaxWidth="1000" EnableColumnVirtualization="True" EnableRowVirtualization="True" CanUserAddRows="False">
+                                    <DataGrid Grid.Row="1" x:Name="dgQuoteModelList" AutoGenerateColumns="False" Margin="0 0 0 20"
+                                              ItemsSource="{Binding QuoteViewModel.QuoteModelList, UpdateSourceTrigger=PropertyChanged}" 
+                                              MaxWidth="{Binding TxtWidthDataList, UpdateSourceTrigger=PropertyChanged}" MaxHeight="{Binding TxtHeightDataList, UpdateSourceTrigger=PropertyChanged}"
+                                              EnableColumnVirtualization="True" EnableRowVirtualization="True" CanUserAddRows="False">
                                         <DataGrid.Columns>
                                             <DataGridTextColumn Header="ID" Binding="{Binding TxtID}"/>
                                             <DataGridTextColumn Header="Date" Binding="{Binding TxtDate}"/>

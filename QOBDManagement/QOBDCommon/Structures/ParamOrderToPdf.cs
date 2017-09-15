@@ -19,6 +19,7 @@ namespace QOBDCommon.Structures
         private ParamEmail _paramEmail;
         private string _currency;
         private string _lang;
+        private string _licenseKey;
 
         public ParamOrderToPdf(int commandId, int idBill)
         {
@@ -31,6 +32,7 @@ namespace QOBDCommon.Structures
             _isCommandConstructorReferencesVisible = false;
             _paramEmail = new ParamEmail();
             _currency = "";
+            _licenseKey = "";
             _lang = "";
         }
 
@@ -42,6 +44,7 @@ namespace QOBDCommon.Structures
             _quoteValidityDay = 2;
             _currency = "";
             _lang = "";
+            _licenseKey = "";
             _typeQuoteOrProformat = EOrderStatus.Quote;
             _isQuoteConstructorReferencesVisible = true;
             _isCommandConstructorReferencesVisible = false;
@@ -56,6 +59,7 @@ namespace QOBDCommon.Structures
             _quoteValidityDay = 2;
             _currency = "";
             _lang = "";
+            _licenseKey = "";
             _typeQuoteOrProformat = EOrderStatus.Quote;
             _isQuoteConstructorReferencesVisible = true;
             _isCommandConstructorReferencesVisible = false;
@@ -70,6 +74,7 @@ namespace QOBDCommon.Structures
             _quoteValidityDay = 2;
             _currency = "";
             _lang = "";
+            _licenseKey = "";
             _typeQuoteOrProformat = EOrderStatus.Quote;
             _isQuoteConstructorReferencesVisible = true;
             _isCommandConstructorReferencesVisible = false;
@@ -83,6 +88,7 @@ namespace QOBDCommon.Structures
             _status = status;
             _currency = "";
             _lang = "";
+            _licenseKey = "";
             _quoteValidityDay = quoteValidityDay;
             _typeQuoteOrProformat = EOrderStatus.Quote;
             _isQuoteConstructorReferencesVisible = true;
@@ -100,6 +106,12 @@ namespace QOBDCommon.Structures
             : this(commandId, status)
         {
             _typeQuoteOrProformat = typeQuoteOrProformat;
+        }
+
+        public string LicenseKey
+        {
+            get { return _licenseKey; }
+            set { _licenseKey = value; }
         }
 
         public int OrderId

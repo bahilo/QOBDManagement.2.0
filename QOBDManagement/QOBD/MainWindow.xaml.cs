@@ -2,6 +2,7 @@
 using QOBDModels.Classes;
 using QOBDViewModels;
 using QOBDViewModels.Classes;
+using QOBDViewModels.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +27,7 @@ namespace QOBD
     public partial class MainWindow : Window
     {
         private bool confirmed;
-        MainWindowViewModel mainWindowViewModel;
+        IMainWindowViewModel mainWindowViewModel;
 
         public MainWindow()
         {

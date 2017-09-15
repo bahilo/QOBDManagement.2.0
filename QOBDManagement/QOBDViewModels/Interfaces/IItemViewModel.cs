@@ -1,5 +1,6 @@
 ﻿using QOBDCommon.Classes;
 using QOBDCommon.Entities;
+using QOBDModels.Classes;
 using QOBDModels.Command;
 using QOBDModels.Models;
 using System.Collections.Generic;
@@ -28,6 +29,7 @@ namespace QOBDViewModels.Interfaces
         CurrencyModel CurrencyModel { get; }
         List<CurrencyModel> ItemCurrenciesList { get; }
         string BoxVisibility { get; }
+        Cart Cart { get; }
 
         //----------------------------[ Commands ]------------------
 

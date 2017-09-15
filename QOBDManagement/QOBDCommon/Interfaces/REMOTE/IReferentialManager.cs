@@ -21,5 +21,7 @@ namespace QOBDCommon.Interfaces.REMOTE
     {
         void setServiceCredential(object channel);
 
+        void setCompanyName(string companyName);
+
     } /* end interface IReferentialManager */
 }

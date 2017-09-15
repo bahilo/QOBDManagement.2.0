@@ -21,6 +21,7 @@ using QOBDViewModels.Interfaces;
 using QOBDViewModels.Classes;
 using QOBDModels.Abstracts;
 using QOBDViewModels.Enums;
+using System.Reflection;
 
 namespace QOBDViewModels
 {
@@ -43,6 +44,7 @@ namespace QOBDViewModels
         private Creator _contextCreator;
         private Creator _commandCreator;
         private ModelCreator _modelCreator;
+        private string _companyName;
 
         //----------------------------[ Models ]------------------
 
@@ -72,7 +74,7 @@ namespace QOBDViewModels
                                     Creator commandCreator,
                                     ModelCreator modelCreator) 
             : base()
-        {
+        {           
             createCache();
             init(startup, viewModelCreator, imageCreator, contextCreator, modelCreator, commandCreator);
             CommandInstances();
@@ -135,8 +137,6 @@ namespace QOBDViewModels
 
         public bool isNewAgentAuthentication { get; set; }
 
-        public string Lang { get { return _lang; } }
-
         public string TxtUserName
         {
             get { return AuthenticatedUserModel.TxtLogin ?? ""; }
@@ -180,6 +180,12 @@ namespace QOBDViewModels
         public ModelCreator ModelCreator
         {
             get { return _modelCreator; }
+        }
+
+        public string CompanyName
+        {
+            get { return _companyName; }
+            set { setProperty(ref _companyName, value); }
         }
 
         public string TxtHeightDataList
@@ -278,67 +284,27 @@ namespace QOBDViewModels
 
         public string TxtInfo
         {
-            get
-            {
-                return ConfigurationManager.AppSettings["info_description"];
-            }
-            set
-            {
-                ConfigurationManager.AppSettings["info_description"] = value;
-                onPropertyChange();
-            }
+            get { return ConfigurationManager.AppSettings["info_description"]; }
         }
 
         public string TxtInfoAllRightText
         {
-            get
-            {
-                return ConfigurationManager.AppSettings["info_all_right"];
-            }
-            set
-            {
-                ConfigurationManager.AppSettings["info_all_right"] = value;
-                onPropertyChange();
-            }
+            get { return ConfigurationManager.AppSettings["info_all_right"]; }
         }
 
         public string TxtInfoActivationCode
         {
-            get
-            {
-                return ConfigurationManager.AppSettings["info_activation_code"];
-            }
-            set
-            {
-                ConfigurationManager.AppSettings["info_activation_code"] = value;
-                onPropertyChange();
-            }
+            get { return ConfigurationManager.AppSettings["info_activation_code"]; }
         }
 
         public string TxtInfoVersion
         {
-            get
-            {
-                return ConfigurationManager.AppSettings["info_software_version"];
-            }
-            set
-            {
-                ConfigurationManager.AppSettings["info_software_version"] = value;
-                onPropertyChange();
-            }
+            get { return Assembly.GetEntryAssembly().GetName().Version.ToString(); }
         }
 
         public string TxtInfoCompanyName
         {
-            get
-            {
-                return ConfigurationManager.AppSettings["info_company_name"];
-            }
-            set
-            {
-                ConfigurationManager.AppSettings["info_company_name"] = value;
-                onPropertyChange();
-            }
+            get { return ConfigurationManager.AppSettings["info_company_name"]; }
         }
 
         //----------------------------[ Actions ]------------------
@@ -377,14 +343,14 @@ namespace QOBDViewModels
             if (isNewAgentAuthentication)
             {
                 ProgressBarPercentValue = -1;
-                _startup.Dal.SetUserCredential(SecurityLoginViewModel.Bl.BlSecurity.GetAuthenticatedUser(), isNewAgentAuthentication);
+                _startup.Dal.SetUserCredential(SecurityLoginViewModel.Bl.BlSecurity.GetAuthenticatedUser(), CompanyName, isNewAgentAuthentication);
                 isNewAgentAuthentication = false;
                 ProgressBarPercentValue = 100;
             }
             else if (SecurityLoginViewModel.AgentModel.Agent.ID != 0)
             {
                 _startup.Dal.ProgressBarFunc = progressBarManagement;
-                _startup.Dal.SetUserCredential(AuthenticatedUserModel.Agent); 
+                _startup.Dal.SetUserCredential(AuthenticatedUserModel.Agent, CompanyName); 
             }
 
             CommandNavig.raiseCanExecuteActionChanged();
@@ -394,7 +360,7 @@ namespace QOBDViewModels
             ChatRoomCurrentView = ChatRoomViewModel;
 
             // start the chat application
-            ChatRoomViewModel.start();
+            //ChatRoomViewModel.start();
         }
 
         public Object navigation(Object centralPageContent = null)

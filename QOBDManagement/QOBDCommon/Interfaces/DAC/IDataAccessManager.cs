@@ -22,6 +22,6 @@ namespace QOBDCommon.Interfaces.DAC
         INotificationManager DALNotification { get; set; }
         IChatRoomManager DALChatRoom { get; set; }
 
-        void SetUserCredential(Agent authenticatedUser, bool isNewAgentAuthentication = false);
+        void SetUserCredential(Agent authenticatedUser, string companyName, bool isNewAgentAuthentication = false);
     } /* end interface IDataAccessManager */
 }

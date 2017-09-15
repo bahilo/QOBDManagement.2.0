@@ -21,6 +21,7 @@ namespace QOBDViewModels.Interfaces
         string TxtErrorMessage { get; set; }
         string TxtClearPassword { get; set; }
         string TxtLogin { get; set; }
+        string TxtLicenseKey { get; }
 
         ButtonCommand<object> LogoutCommand { get; set; }
 

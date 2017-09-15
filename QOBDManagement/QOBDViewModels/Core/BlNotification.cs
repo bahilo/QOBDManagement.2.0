@@ -36,6 +36,11 @@ namespace QOBDViewModels.Core
                 DAC.DALNotification.initializeCredential(user);
         }
 
+        public void setCompanyName(string companyName)
+        {
+            DAC.DALNotification.setCompanyName(companyName);
+        }
+
 
         public void setServiceCredential(object channel)
         {

@@ -130,7 +130,7 @@ namespace QOBDViewModels.ViewModel
             BillNotPaidList = await billListToModelViewList(await Bl.BlOrder.GetUnpaidBillDataByAgentAsync(Bl.BlSecurity.GetAuthenticatedUser().ID));
 
             // getting the orders waiting to be validated for more than a week
-            _main.OrderViewModel.loadOrders();
+            _main.OrderViewModel.loadOrdersAsync();
             OrderWaitingValidationList = _main.OrderViewModel.OrderModelList.Where(x=> x.TxtStatus.Equals(EOrderStatus.Pre_Order.ToString()) && x.Order.Date < DateTime.Now.AddDays(-7)).ToList();
             Singleton.getDialogueBox().IsDialogOpen = false;
         }

@@ -45,6 +45,9 @@
   <ItemGroup>
     <Compile Include="Abstracts\ClientProxy.cs" />
     <Compile Include="Classes\ClientConcreteProxy.cs" />
+    <Compile Include="Classes\SimpleBehaviorExtensionElement.cs" />
+    <Compile Include="Classes\SimpleEndPointBehavior.cs" />
+    <Compile Include="Classes\SimpleMessageInspector.cs" />
     <Compile Include="Core\GateWayAgent.cs" />
     <Compile Include="Core\GateWayChatRoom.cs" />
     <Compile Include="Core\GateWayCLient.cs" />
@@ -119,6 +122,9 @@
     <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.Item_deliveryQOBD.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.LicenseQOBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\QOBDServiceReference\QOBDGateway.QOBDServiceReference.MessageChatRoom.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -181,7 +187,6 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

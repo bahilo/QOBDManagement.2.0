@@ -22,6 +22,7 @@ namespace QOBDGateway.Core
     public class GateWayStatistic : IStatisticManager, INotifyPropertyChanged
     {
         private ClientProxy _channel;
+        private string _companyName;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -41,12 +42,17 @@ namespace QOBDGateway.Core
             _channel = (ClientProxy)channel;
         }
 
+        public void setCompanyName(string companyName)
+        {
+            _companyName = companyName;
+        }
+
         public  async Task<List<Statistic>> InsertStatisticAsync(List<Statistic> statisticList)
         {
             List<Statistic> result = new List<Statistic>();
             try
             {
-                result = (await _channel.insert_data_statisticAsync(statisticList.StatisticTypeToArray())).ArrayTypeToStatistic();
+                result = (await _channel.insert_data_statisticAsync(_companyName,statisticList.StatisticTypeToArray())).ArrayTypeToStatistic();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -59,7 +65,7 @@ namespace QOBDGateway.Core
             List<Statistic> result = new List<Statistic>();
             try
             {
-                result = (await _channel.update_data_statisticAsync(statisticList.StatisticTypeToArray())).ArrayTypeToStatistic();
+                result = (await _channel.update_data_statisticAsync(_companyName, statisticList.StatisticTypeToArray())).ArrayTypeToStatistic();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -72,7 +78,7 @@ namespace QOBDGateway.Core
             List<Statistic> result = new List<Statistic>();
             try
             {
-                result = (await _channel.delete_data_statisticAsync(statisticList.StatisticTypeToArray())).ArrayTypeToStatistic();
+                result = (await _channel.delete_data_statisticAsync(_companyName, statisticList.StatisticTypeToArray())).ArrayTypeToStatistic();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -85,7 +91,7 @@ namespace QOBDGateway.Core
             List<Statistic> result = new List<Statistic>();
             try
             {
-                result = (await _channel.get_data_statisticAsync(nbLine.ToString())).ArrayTypeToStatistic().OrderBy(x => x.ID).ToList();
+                result = (await _channel.get_data_statisticAsync(_companyName, nbLine.ToString())).ArrayTypeToStatistic().OrderBy(x => x.ID).ToList();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -98,7 +104,7 @@ namespace QOBDGateway.Core
             List<Statistic> result = new List<Statistic>();
             try
             {
-                result = (await _channel.get_filter_statisticAsync(statistic.StatisticTypeToFilterArray(filterOperator))).ArrayTypeToStatistic();
+                result = (await _channel.get_filter_statisticAsync(_companyName, statistic.StatisticTypeToFilterArray(filterOperator))).ArrayTypeToStatistic();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -111,7 +117,7 @@ namespace QOBDGateway.Core
             List<Statistic> result = new List<Statistic>();
             try
             {
-                result = (await _channel.get_data_statistic_by_idAsync(id.ToString())).ArrayTypeToStatistic();
+                result = (await _channel.get_data_statistic_by_idAsync(_companyName, id.ToString())).ArrayTypeToStatistic();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }

@@ -1,4 +1,5 @@
 ﻿using QOBDCommon.Classes;
+using QOBDModels.Classes;
 using QOBDModels.Models;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace QOBDViewModels.Interfaces
         List<OrderModel> QuoteModelList { get; set; }
         ClientModel SelectedClient { get; set; }
         string BoxVisibility { get;}
+        Cart Cart { get;}
 
         //----------------------------[ Commands ]------------------
 

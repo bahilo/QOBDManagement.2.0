@@ -71,7 +71,7 @@ namespace QOBDViewModels.ViewModel
         private void instancesModel()
         {
             _orderModel = (OrderModel)_main.ModelCreator.createModel(QOBDModels.Enums.EModel.ORDER);
-            _quoteDetailViewModel = new OrderDetailViewModel();
+            _quoteDetailViewModel = _main.OrderViewModel.OrderDetailViewModel;
             _selectedClient = (ClientModel)_main.ModelCreator.createModel(QOBDModels.Enums.EModel.CLIENT);
         }
 
@@ -107,6 +107,11 @@ namespace QOBDViewModels.ViewModel
         public BusinessLogic Bl
         {
             get { return _main.Startup.Bl; }
+        }
+
+        public Cart Cart
+        {
+            get { return Singleton.getCart(); }
         }
 
         public string MissingCLientMessage
@@ -169,7 +174,7 @@ namespace QOBDViewModels.ViewModel
             if (_main.OrderViewModel != null)
             {
                 _main.OrderViewModel.addObserver(onOrderModelChange_loadOrder);
-                _main.OrderViewModel.loadOrders();
+                _main.OrderViewModel.load();
             }
         }
 

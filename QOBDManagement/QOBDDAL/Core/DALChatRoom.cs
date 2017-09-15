@@ -52,10 +52,14 @@ namespace QOBDDAL.Core
             _gateWayChatRoom.setServiceCredential(_servicePortType);
         }
 
+        public void setCompanyName(string companyName)
+        {
+            _gateWayChatRoom.setCompanyName(companyName);
+        }
+
         private void checkServiceCommunication()
         {
-            if (_servicePortType.State == System.ServiceModel.CommunicationState.Closed || _servicePortType.State == System.ServiceModel.CommunicationState.Faulted)
-                _serviceCommunication.resetCommunication();
+            _serviceCommunication.checkServiceCommunication(_servicePortType);
         }
 
         #region [ Actions ]

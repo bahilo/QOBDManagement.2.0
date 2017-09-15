@@ -41,7 +41,8 @@ namespace QOBDViewModels.Interfaces
         void Dispose();
         void removeObserver(PropertyChangedEventHandler observerMethode);
         void addObserver(PropertyChangedEventHandler observerMethode);
-        void loadOrders();
+        void load();
+        void loadOrdersAsync();
         void loadCurrencies();
         Task loadCurrenciesAsync();
         void executeNavig(string obj);

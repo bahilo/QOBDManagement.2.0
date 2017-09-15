@@ -40,7 +40,7 @@ public class DataAccess : IDataAccessManager
         this.DALChatRoom = inDALChatRoom;
     }
 
-    public void SetUserCredential(Agent authenticatedUser, bool isNewAgentAuthentication = false)
+    public void SetUserCredential(Agent authenticatedUser, string companyName, bool isNewAgentAuthentication = false)
     {
         if (isNewAgentAuthentication)
         {
@@ -48,11 +48,13 @@ public class DataAccess : IDataAccessManager
             {
                 // Order
                 DALOrder.progressBarManagement(ProgressBarFunc);
+                DALOrder.setCompanyName(companyName);
                 DALOrder.initializeCredential(authenticatedUser);
                 DALOrder.cacheWebServiceData();
 
                 // Client
                 DALClient.progressBarManagement(ProgressBarFunc);
+                DALClient.setCompanyName(companyName);
                 DALClient.initializeCredential(authenticatedUser);
                 DALClient.cacheWebServiceData();
             });            
@@ -63,14 +65,17 @@ public class DataAccess : IDataAccessManager
             {
                 // Order
                 DALOrder.progressBarManagement(ProgressBarFunc);
+                DALOrder.setCompanyName(companyName);
                 DALOrder.initializeCredential(authenticatedUser);
                 DALOrder.cacheWebServiceData();
 
                 // Security
+                DALSecurity.setCompanyName(companyName);
                 DALSecurity.initializeCredential(authenticatedUser);
 
                 // Agent
                 DALAgent.progressBarManagement(ProgressBarFunc);
+                DALAgent.setCompanyName(companyName);
                 DALAgent.initializeCredential(authenticatedUser);
                 DALAgent.cacheWebServiceData();
 
@@ -78,16 +83,19 @@ public class DataAccess : IDataAccessManager
 
                 // Referential
                 DALReferential.progressBarManagement(ProgressBarFunc);
+                DALReferential.setCompanyName(companyName);
                 DALReferential.initializeCredential(authenticatedUser);
                 DALReferential.cacheWebServiceData();
 
                 // Notification
                 DALNotification.progressBarManagement(ProgressBarFunc);
+                DALNotification.setCompanyName(companyName);
                 DALNotification.initializeCredential(authenticatedUser);
                 DALNotification.cacheWebServiceData();
 
                 // Statistic
                 DALStatistic.progressBarManagement(ProgressBarFunc);
+                DALStatistic.setCompanyName(companyName);
                 DALStatistic.initializeCredential(authenticatedUser);
                 DALStatistic.cacheWebServiceData();
 
@@ -95,6 +103,7 @@ public class DataAccess : IDataAccessManager
                 
                 // Item 
                 DALItem.progressBarManagement(ProgressBarFunc);
+                DALItem.setCompanyName(companyName);
                 DALItem.initializeCredential(authenticatedUser);
                 DALItem.cacheWebServiceData();
 
@@ -102,12 +111,14 @@ public class DataAccess : IDataAccessManager
 
                 // Client 
                 DALClient.progressBarManagement(ProgressBarFunc);
+                DALClient.setCompanyName(companyName);
                 DALClient.initializeCredential(authenticatedUser);
                 DALClient.cacheWebServiceData();
             });    
         }
 
         // ChatRoom
+        DALChatRoom.setCompanyName(companyName);
         DALChatRoom.initializeCredential(authenticatedUser);
     }
 

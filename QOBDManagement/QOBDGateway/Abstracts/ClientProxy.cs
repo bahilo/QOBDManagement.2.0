@@ -5,6 +5,7 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using QOBDGateway.QOBDServiceReference;
+using QOBDCommon.Exceptions;
 
 namespace QOBDGateway.Abstracts
 {
@@ -27,2509 +28,2593 @@ namespace QOBDGateway.Abstracts
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ActionQOBD[] delete_data_action(ActionQOBD[] action_array_list)
+        public virtual LicenseQOBD[] check_license_by_company(string company_name)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ActionQOBD[]> delete_data_actionAsync(ActionQOBD[] action_array_list)
+        public virtual Task<LicenseQOBD[]> check_license_by_companyAsync(string company_name)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ActionRecordQOBD[] delete_data_actionRecord(ActionRecordQOBD[] actionRecord_array_list)
+        public virtual LicenseQOBD[] check_license_by_key(string license_key)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ActionRecordQOBD[]> delete_data_actionRecordAsync(ActionRecordQOBD[] actionRecord_array_list)
+        public virtual Task<LicenseQOBD[]> check_license_by_keyAsync(string license_key)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual AddressQOBD[] delete_data_address(AddressQOBD[] address_array_list)
+        public virtual ActionQOBD[] delete_data_action(string company_name, ActionQOBD[] action_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<AddressQOBD[]> delete_data_addressAsync(AddressQOBD[] address_array_list)
+        public virtual Task<ActionQOBD[]> delete_data_actionAsync(string company_name, ActionQOBD[] action_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual AgentQOBD[] delete_data_agent(AgentQOBD[] agent_array_list)
+        public virtual ActionRecordQOBD[] delete_data_actionRecord(string company_name, ActionRecordQOBD[] actionRecord_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<AgentQOBD[]> delete_data_agentAsync(AgentQOBD[] agent_array_list)
+        public virtual Task<ActionRecordQOBD[]> delete_data_actionRecordAsync(string company_name, ActionRecordQOBD[] actionRecord_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Agent_roleQOBD[] delete_data_agent_role(Agent_roleQOBD[] agent_role_array_list)
+        public virtual AddressQOBD[] delete_data_address(string company_name, AddressQOBD[] address_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Agent_roleQOBD[]> delete_data_agent_roleAsync(Agent_roleQOBD[] agent_role_array_list)
+        public virtual Task<AddressQOBD[]> delete_data_addressAsync(string company_name, AddressQOBD[] address_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Auto_refsQOBD[] delete_data_auto_ref(Auto_refsQOBD[] auto_ref_array_list)
+        public virtual AgentQOBD[] delete_data_agent(string company_name, AgentQOBD[] agent_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Auto_refsQOBD[]> delete_data_auto_refAsync(Auto_refsQOBD[] auto_ref_array_list)
+        public virtual Task<AgentQOBD[]> delete_data_agentAsync(string company_name, AgentQOBD[] agent_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual BillQOBD[] delete_data_bill(BillQOBD[] bill_array_list)
+        public virtual Agent_roleQOBD[] delete_data_agent_role(string company_name, Agent_roleQOBD[] agent_role_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<BillQOBD[]> delete_data_billAsync(BillQOBD[] bill_array_list)
+        public virtual Task<Agent_roleQOBD[]> delete_data_agent_roleAsync(string company_name, Agent_roleQOBD[] agent_role_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ClientQOBD[] delete_data_client(ClientQOBD[] client_array_list)
+        public virtual Auto_refsQOBD[] delete_data_auto_ref(string company_name, Auto_refsQOBD[] auto_ref_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ClientQOBD[]> delete_data_clientAsync(ClientQOBD[] client_array_list)
+        public virtual Task<Auto_refsQOBD[]> delete_data_auto_refAsync(string company_name, Auto_refsQOBD[] auto_ref_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ContactQOBD[] delete_data_contact(ContactQOBD[] contact_array_list)
+        public virtual BillQOBD[] delete_data_bill(string company_name, BillQOBD[] bill_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ContactQOBD[]> delete_data_contactAsync(ContactQOBD[] contact_array_list)
+        public virtual Task<BillQOBD[]> delete_data_billAsync(string company_name, BillQOBD[] bill_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual CurrencyQOBD[] delete_data_currency(CurrencyQOBD[] currency_array_list)
+        public virtual ClientQOBD[] delete_data_client(string company_name, ClientQOBD[] client_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<CurrencyQOBD[]> delete_data_currencyAsync(CurrencyQOBD[] currency_array_list)
+        public virtual Task<ClientQOBD[]> delete_data_clientAsync(string company_name, ClientQOBD[] client_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual DeliveryQOBD[] delete_data_delivery(DeliveryQOBD[] delivery_array_list)
+        public virtual ContactQOBD[] delete_data_contact(string company_name, ContactQOBD[] contact_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<DeliveryQOBD[]> delete_data_deliveryAsync(DeliveryQOBD[] delivery_array_list)
+        public virtual Task<ContactQOBD[]> delete_data_contactAsync(string company_name, ContactQOBD[] contact_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual DiscussionChatRoom[] delete_data_discussion(DiscussionChatRoom[] discussion_array_list)
+        public virtual CurrencyQOBD[] delete_data_currency(string company_name, CurrencyQOBD[] currency_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<DiscussionChatRoom[]> delete_data_discussionAsync(DiscussionChatRoom[] discussion_array_list)
+        public virtual Task<CurrencyQOBD[]> delete_data_currencyAsync(string company_name, CurrencyQOBD[] currency_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual InfosQOBD[] delete_data_infos(InfosQOBD[] infos_array_list)
+        public virtual DeliveryQOBD[] delete_data_delivery(string company_name, DeliveryQOBD[] delivery_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<InfosQOBD[]> delete_data_infosAsync(InfosQOBD[] infos_array_list)
+        public virtual Task<DeliveryQOBD[]> delete_data_deliveryAsync(string company_name, DeliveryQOBD[] delivery_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ItemQOBD[] delete_data_item(ItemQOBD[] item_array_list)
+        public virtual DiscussionChatRoom[] delete_data_discussion(string company_name, DiscussionChatRoom[] discussion_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ItemQOBD[]> delete_data_itemAsync(ItemQOBD[] item_array_list)
+        public virtual Task<DiscussionChatRoom[]> delete_data_discussionAsync(string company_name, DiscussionChatRoom[] discussion_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Item_deliveryQOBD[] delete_data_item_delivery(Item_deliveryQOBD[] item_delivery_array_list)
+        public virtual InfosQOBD[] delete_data_infos(string company_name, InfosQOBD[] infos_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Item_deliveryQOBD[]> delete_data_item_deliveryAsync(Item_deliveryQOBD[] item_delivery_array_list)
+        public virtual Task<InfosQOBD[]> delete_data_infosAsync(string company_name, InfosQOBD[] infos_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual MessageChatRoom[] delete_data_message(MessageChatRoom[] message_array_list)
+        public virtual ItemQOBD[] delete_data_item(string company_name, ItemQOBD[] item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<MessageChatRoom[]> delete_data_messageAsync(MessageChatRoom[] message_array_list)
+        public virtual Task<ItemQOBD[]> delete_data_itemAsync(string company_name, ItemQOBD[] item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual NotificationQOBD[] delete_data_notification(NotificationQOBD[] notification_array_list)
+        public virtual Item_deliveryQOBD[] delete_data_item_delivery(string company_name, Item_deliveryQOBD[] item_delivery_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<NotificationQOBD[]> delete_data_notificationAsync(NotificationQOBD[] notification_array_list)
+        public virtual Task<Item_deliveryQOBD[]> delete_data_item_deliveryAsync(string company_name, Item_deliveryQOBD[] item_delivery_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual OrdersQOBD[] delete_data_order(OrdersQOBD[] order_array_list)
+        public virtual LicenseQOBD[] delete_data_license(string company_name, LicenseQOBD[] license_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<OrdersQOBD[]> delete_data_orderAsync(OrdersQOBD[] order_array_list)
+        public virtual Task<LicenseQOBD[]> delete_data_licenseAsync(string company_name, LicenseQOBD[] license_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Order_itemQOBD[] delete_data_order_item(Order_itemQOBD[] order_item_array_list)
+        public virtual MessageChatRoom[] delete_data_message(string company_name, MessageChatRoom[] message_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Order_itemQOBD[]> delete_data_order_itemAsync(Order_itemQOBD[] order_item_array_list)
+        public virtual Task<MessageChatRoom[]> delete_data_messageAsync(string company_name, MessageChatRoom[] message_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual PrivilegeQOBD[] delete_data_privilege(PrivilegeQOBD[] privilege_array_list)
+        public virtual NotificationQOBD[] delete_data_notification(string company_name, NotificationQOBD[] notification_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<PrivilegeQOBD[]> delete_data_privilegeAsync(PrivilegeQOBD[] privilege_array_list)
+        public virtual Task<NotificationQOBD[]> delete_data_notificationAsync(string company_name, NotificationQOBD[] notification_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ProviderQOBD[] delete_data_provider(ProviderQOBD[] provider_array_list)
+        public virtual OrdersQOBD[] delete_data_order(string company_name, OrdersQOBD[] order_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ProviderQOBD[]> delete_data_providerAsync(ProviderQOBD[] provider_array_list)
+        public virtual Task<OrdersQOBD[]> delete_data_orderAsync(string company_name, OrdersQOBD[] order_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Provider_itemQOBD[] delete_data_provider_item(Provider_itemQOBD[] provider_item_array_list)
+        public virtual Order_itemQOBD[] delete_data_order_item(string company_name, Order_itemQOBD[] order_item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Provider_itemQOBD[]> delete_data_provider_itemAsync(Provider_itemQOBD[] provider_item_array_list)
+        public virtual Task<Order_itemQOBD[]> delete_data_order_itemAsync(string company_name, Order_itemQOBD[] order_item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual RoleQOBD[] delete_data_role(RoleQOBD[] role_array_list)
+        public virtual PrivilegeQOBD[] delete_data_privilege(string company_name, PrivilegeQOBD[] privilege_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<RoleQOBD[]> delete_data_roleAsync(RoleQOBD[] role_array_list)
+        public virtual Task<PrivilegeQOBD[]> delete_data_privilegeAsync(string company_name, PrivilegeQOBD[] privilege_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Role_actionQOBD[] delete_data_role_action(Role_actionQOBD[] role_action_array_list)
+        public virtual ProviderQOBD[] delete_data_provider(string company_name, ProviderQOBD[] provider_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Role_actionQOBD[]> delete_data_role_actionAsync(Role_actionQOBD[] role_action_array_list)
+        public virtual Task<ProviderQOBD[]> delete_data_providerAsync(string company_name, ProviderQOBD[] provider_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual StatisticQOBD[] delete_data_statistic(StatisticQOBD[] statistic_array_list)
+        public virtual Provider_itemQOBD[] delete_data_provider_item(string company_name, Provider_itemQOBD[] provider_item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<StatisticQOBD[]> delete_data_statisticAsync(StatisticQOBD[] statistic_array_list)
+        public virtual Task<Provider_itemQOBD[]> delete_data_provider_itemAsync(string company_name, Provider_itemQOBD[] provider_item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual TaxQOBD[] delete_data_tax(TaxQOBD[] tax_array_list)
+        public virtual RoleQOBD[] delete_data_role(string company_name, RoleQOBD[] role_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<TaxQOBD[]> delete_data_taxAsync(TaxQOBD[] tax_array_list)
+        public virtual Task<RoleQOBD[]> delete_data_roleAsync(string company_name, RoleQOBD[] role_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Tax_itemQOBD[] delete_data_tax_item(Tax_itemQOBD[] tax_item_array_list)
+        public virtual Role_actionQOBD[] delete_data_role_action(string company_name, Role_actionQOBD[] role_action_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Tax_itemQOBD[]> delete_data_tax_itemAsync(Tax_itemQOBD[] tax_item_array_list)
+        public virtual Task<Role_actionQOBD[]> delete_data_role_actionAsync(string company_name, Role_actionQOBD[] role_action_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Tax_orderQOBD[] delete_data_tax_order(Tax_orderQOBD[] tax_order_array_list)
+        public virtual StatisticQOBD[] delete_data_statistic(string company_name, StatisticQOBD[] statistic_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Tax_orderQOBD[]> delete_data_tax_orderAsync(Tax_orderQOBD[] tax_order_array_list)
+        public virtual Task<StatisticQOBD[]> delete_data_statisticAsync(string company_name, StatisticQOBD[] statistic_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual UserChatRoom[] delete_data_user(UserChatRoom[] user_array_list)
+        public virtual TaxQOBD[] delete_data_tax(string company_name, TaxQOBD[] tax_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<UserChatRoom[]> delete_data_userAsync(UserChatRoom[] user_array_list)
+        public virtual Task<TaxQOBD[]> delete_data_taxAsync(string company_name, TaxQOBD[] tax_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual User_discussionChatRoom[] delete_data_user_discussion(User_discussionChatRoom[] user_discussion_array_list)
+        public virtual Tax_itemQOBD[] delete_data_tax_item(string company_name, Tax_itemQOBD[] tax_item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<User_discussionChatRoom[]> delete_data_user_discussionAsync(User_discussionChatRoom[] user_discussion_array_list)
+        public virtual Task<Tax_itemQOBD[]> delete_data_tax_itemAsync(string company_name, Tax_itemQOBD[] tax_item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
-        public virtual void generate_pdf(PdfQOBD order_array)
+        [return: MessageParameter(Name = "return")]
+        public virtual Tax_orderQOBD[] delete_data_tax_order(string company_name, Tax_orderQOBD[] tax_order_array_list)
+        {
+            throw new NotApplicableException();
+        }
+
+        [return: MessageParameter(Name = "return")]
+        public virtual Task<Tax_orderQOBD[]> delete_data_tax_orderAsync(string company_name, Tax_orderQOBD[] tax_order_array_list)
+        {
+            throw new NotApplicableException();
+        }
+
+        [return: MessageParameter(Name = "return")]
+        public virtual UserChatRoom[] delete_data_user(string company_name, UserChatRoom[] user_array_list)
+        {
+            throw new NotApplicableException();
+        }
+
+        [return: MessageParameter(Name = "return")]
+        public virtual Task<UserChatRoom[]> delete_data_userAsync(string company_name, UserChatRoom[] user_array_list)
+        {
+            throw new NotApplicableException();
+        }
+
+        [return: MessageParameter(Name = "return")]
+        public virtual User_discussionChatRoom[] delete_data_user_discussion(string company_name, User_discussionChatRoom[] user_discussion_array_list)
+        {
+            throw new NotApplicableException();
+        }
+
+        [return: MessageParameter(Name = "return")]
+        public virtual Task<User_discussionChatRoom[]> delete_data_user_discussionAsync(string company_name, User_discussionChatRoom[] user_discussion_array_list)
+        {
+            throw new NotApplicableException();
+        }
+
+        public virtual void generate_pdf(string company_name, PdfQOBD order_array)
+        {
+            throw new NotApplicableException();
+        }
+
+        public virtual Task generate_pdfAsync(string company_name, PdfQOBD order_array)
+        {
+            throw new NotApplicableException();
+        }
+
+        [return: MessageParameter(Name = "return")]
+        public virtual AgentQOBD[] get_authenticated_user(string company_name, string username, string password)
+        {
+            throw new NotApplicableException();
+        }
+
+        [return: MessageParameter(Name = "return")]
+        public virtual Task<AgentQOBD[]> get_authenticated_userAsync(string company_name, string username, string password)
+        {
+            throw new NotApplicableException();
+        }
+
+        [return: MessageParameter(Name = "return")]
+        public virtual ActionQOBD[] get_data_action(string company_name, string nbLine)
+        {
+            throw new NotApplicableException();
+        }
+
+        [return: MessageParameter(Name = "return")]
+        public virtual Task<ActionQOBD[]> get_data_actionAsync(string company_name, string nbLine)
+        {
+            throw new NotApplicableException();
+        }
+
+        [return: MessageParameter(Name = "return")]
+        public virtual ActionRecordQOBD[] get_data_actionRecord(string company_name, string nbLine)
+        {
+            throw new NotApplicableException();
+        }
+
+        [return: MessageParameter(Name = "return")]
+        public virtual Task<ActionRecordQOBD[]> get_data_actionRecordAsync(string company_name, string nbLine)
+        {
+            throw new NotApplicableException();
+        }
+
+        [return: MessageParameter(Name = "return")]
+        public virtual ActionRecordQOBD[] get_data_actionRecord_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
-        public virtual Task generate_pdfAsync(PdfQOBD order_array)
+        [return: MessageParameter(Name = "return")]
+        public virtual Task<ActionRecordQOBD[]> get_data_actionRecord_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual AgentQOBD get_authenticate_user(string username, string password)
+        public virtual ActionQOBD[] get_data_action_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<AgentQOBD> get_authenticate_userAsync(string username, string password)
+        public virtual Task<ActionQOBD[]> get_data_action_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ActionQOBD[] get_data_action(string nbLine)
+        public virtual AddressQOBD[] get_data_address(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ActionQOBD[]> get_data_actionAsync(string nbLine)
+        public virtual Task<AddressQOBD[]> get_data_addressAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ActionRecordQOBD[] get_data_actionRecord(string nbLine)
+        public virtual AddressQOBD[] get_data_address_by_client_list(string company_name, ClientQOBD[] client_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ActionRecordQOBD[]> get_data_actionRecordAsync(string nbLine)
+        public virtual Task<AddressQOBD[]> get_data_address_by_client_listAsync(string company_name, ClientQOBD[] client_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ActionRecordQOBD[] get_data_actionRecord_by_id(string id)
+        public virtual AddressQOBD[] get_data_address_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ActionRecordQOBD[]> get_data_actionRecord_by_idAsync(string id)
+        public virtual Task<AddressQOBD[]> get_data_address_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ActionQOBD[] get_data_action_by_id(string id)
+        public virtual AddressQOBD[] get_data_address_by_order_list(string company_name, OrdersQOBD[] order_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ActionQOBD[]> get_data_action_by_idAsync(string id)
+        public virtual Task<AddressQOBD[]> get_data_address_by_order_listAsync(string company_name, OrdersQOBD[] order_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual AddressQOBD[] get_data_address(string nbLine)
+        public virtual AgentQOBD[] get_data_agent(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<AddressQOBD[]> get_data_addressAsync(string nbLine)
+        public virtual Task<AgentQOBD[]> get_data_agentAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual AddressQOBD[] get_data_address_by_client_list(ClientQOBD[] client_array_list)
+        public virtual AgentQOBD[] get_data_agent_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<AddressQOBD[]> get_data_address_by_client_listAsync(ClientQOBD[] client_array_list)
+        public virtual Task<AgentQOBD[]> get_data_agent_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual AddressQOBD[] get_data_address_by_id(string id)
+        public virtual AgentQOBD[] get_data_agent_by_order_list(string company_name, OrdersQOBD[] order_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<AddressQOBD[]> get_data_address_by_idAsync(string id)
+        public virtual Task<AgentQOBD[]> get_data_agent_by_order_listAsync(string company_name, OrdersQOBD[] order_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual AddressQOBD[] get_data_address_by_order_list(OrdersQOBD[] order_array_list)
+        public virtual AgentQOBD[] get_data_agent_credential(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<AddressQOBD[]> get_data_address_by_order_listAsync(OrdersQOBD[] order_array_list)
+        public virtual Task<AgentQOBD[]> get_data_agent_credentialAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual AgentQOBD[] get_data_agent(string nbLine)
+        public virtual Agent_roleQOBD[] get_data_agent_role(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<AgentQOBD[]> get_data_agentAsync(string nbLine)
+        public virtual Task<Agent_roleQOBD[]> get_data_agent_roleAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual AgentQOBD[] get_data_agent_by_id(string id)
+        public virtual Agent_roleQOBD[] get_data_agent_role_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<AgentQOBD[]> get_data_agent_by_idAsync(string id)
+        public virtual Task<Agent_roleQOBD[]> get_data_agent_role_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual AgentQOBD[] get_data_agent_by_order_list(OrdersQOBD[] order_array_list)
+        public virtual Auto_refsQOBD[] get_data_auto_ref(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<AgentQOBD[]> get_data_agent_by_order_listAsync(OrdersQOBD[] order_array_list)
+        public virtual Task<Auto_refsQOBD[]> get_data_auto_refAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual AgentQOBD[] get_data_agent_credentail(string nbLine)
+        public virtual Auto_refsQOBD[] get_data_auto_ref_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<AgentQOBD[]> get_data_agent_credentailAsync(string nbLine)
+        public virtual Task<Auto_refsQOBD[]> get_data_auto_ref_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Agent_roleQOBD[] get_data_agent_role(string nbLine)
+        public virtual BillQOBD[] get_data_bill(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Agent_roleQOBD[]> get_data_agent_roleAsync(string nbLine)
+        public virtual Task<BillQOBD[]> get_data_billAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Agent_roleQOBD[] get_data_agent_role_by_id(string id)
+        public virtual BillQOBD[] get_data_bill_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Agent_roleQOBD[]> get_data_agent_role_by_idAsync(string id)
+        public virtual Task<BillQOBD[]> get_data_bill_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Auto_refsQOBD[] get_data_auto_ref(string nbLine)
+        public virtual BillQOBD[] get_data_bill_by_order_list(string company_name, OrdersQOBD[] order_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Auto_refsQOBD[]> get_data_auto_refAsync(string nbLine)
+        public virtual Task<BillQOBD[]> get_data_bill_by_order_listAsync(string company_name, OrdersQOBD[] order_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Auto_refsQOBD[] get_data_auto_ref_by_id(string id)
+        public virtual BillQOBD[] get_data_bill_by_unpaid(string company_name, string agent_id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Auto_refsQOBD[]> get_data_auto_ref_by_idAsync(string id)
+        public virtual Task<BillQOBD[]> get_data_bill_by_unpaidAsync(string company_name, string agent_id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual BillQOBD[] get_data_bill(string nbLine)
+        public virtual ClientQOBD[] get_data_client(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<BillQOBD[]> get_data_billAsync(string nbLine)
+        public virtual Task<ClientQOBD[]> get_data_clientAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual BillQOBD[] get_data_bill_by_id(string id)
+        public virtual ClientQOBD[] get_data_client_by_bill_list(string company_name, BillQOBD[] bill_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<BillQOBD[]> get_data_bill_by_idAsync(string id)
+        public virtual Task<ClientQOBD[]> get_data_client_by_bill_listAsync(string company_name, BillQOBD[] bill_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual BillQOBD[] get_data_bill_by_order_list(OrdersQOBD[] order_array_list)
+        public virtual ClientQOBD[] get_data_client_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<BillQOBD[]> get_data_bill_by_order_listAsync(OrdersQOBD[] order_array_list)
+        public virtual Task<ClientQOBD[]> get_data_client_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual BillQOBD[] get_data_bill_by_unpaid(string agent_id)
+        public virtual ClientQOBD[] get_data_client_by_max_credit_over(string company_name, string agent_id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<BillQOBD[]> get_data_bill_by_unpaidAsync(string agent_id)
+        public virtual Task<ClientQOBD[]> get_data_client_by_max_credit_overAsync(string company_name, string agent_id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ClientQOBD[] get_data_client(string nbLine)
+        public virtual ClientQOBD[] get_data_client_by_order_list(string company_name, OrdersQOBD[] order_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ClientQOBD[]> get_data_clientAsync(string nbLine)
+        public virtual Task<ClientQOBD[]> get_data_client_by_order_listAsync(string company_name, OrdersQOBD[] order_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ClientQOBD[] get_data_client_by_bill_list(BillQOBD[] bill_array_list)
+        public virtual ContactQOBD[] get_data_contact(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ClientQOBD[]> get_data_client_by_bill_listAsync(BillQOBD[] bill_array_list)
+        public virtual Task<ContactQOBD[]> get_data_contactAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ClientQOBD[] get_data_client_by_id(string id)
+        public virtual ContactQOBD[] get_data_contact_by_client_list(string company_name, ClientQOBD[] client_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ClientQOBD[]> get_data_client_by_idAsync(string id)
+        public virtual Task<ContactQOBD[]> get_data_contact_by_client_listAsync(string company_name, ClientQOBD[] client_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ClientQOBD[] get_data_client_by_max_credit_over(string agent_id)
+        public virtual ContactQOBD[] get_data_contact_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ClientQOBD[]> get_data_client_by_max_credit_overAsync(string agent_id)
+        public virtual Task<ContactQOBD[]> get_data_contact_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ClientQOBD[] get_data_client_by_order_list(OrdersQOBD[] order_array_list)
+        public virtual CurrencyQOBD[] get_data_currency(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ClientQOBD[]> get_data_client_by_order_listAsync(OrdersQOBD[] order_array_list)
+        public virtual Task<CurrencyQOBD[]> get_data_currencyAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ContactQOBD[] get_data_contact(string nbLine)
+        public virtual CurrencyQOBD[] get_data_currency_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ContactQOBD[]> get_data_contactAsync(string nbLine)
+        public virtual Task<CurrencyQOBD[]> get_data_currency_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ContactQOBD[] get_data_contact_by_client_list(ClientQOBD[] client_array_list)
+        public virtual CurrencyQOBD[] get_data_currency_by_provider_item_list(string company_name, Provider_itemQOBD[] item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ContactQOBD[]> get_data_contact_by_client_listAsync(ClientQOBD[] client_array_list)
+        public virtual Task<CurrencyQOBD[]> get_data_currency_by_provider_item_listAsync(string company_name, Provider_itemQOBD[] item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ContactQOBD[] get_data_contact_by_id(string id)
+        public virtual DeliveryQOBD[] get_data_delivery(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ContactQOBD[]> get_data_contact_by_idAsync(string id)
+        public virtual Task<DeliveryQOBD[]> get_data_deliveryAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual CurrencyQOBD[] get_data_currency(string nbLine)
+        public virtual DeliveryQOBD[] get_data_delivery_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<CurrencyQOBD[]> get_data_currencyAsync(string nbLine)
+        public virtual Task<DeliveryQOBD[]> get_data_delivery_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual CurrencyQOBD[] get_data_currency_by_id(string id)
+        public virtual DeliveryQOBD[] get_data_delivery_by_order_list(string company_name, OrdersQOBD[] order_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<CurrencyQOBD[]> get_data_currency_by_idAsync(string id)
+        public virtual Task<DeliveryQOBD[]> get_data_delivery_by_order_listAsync(string company_name, OrdersQOBD[] order_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual CurrencyQOBD[] get_data_currency_by_provider_item_list(Provider_itemQOBD[] item_array_list)
+        public virtual DiscussionChatRoom[] get_data_discussion(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<CurrencyQOBD[]> get_data_currency_by_provider_item_listAsync(Provider_itemQOBD[] item_array_list)
+        public virtual Task<DiscussionChatRoom[]> get_data_discussionAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual DeliveryQOBD[] get_data_delivery(string nbLine)
+        public virtual DiscussionChatRoom[] get_data_discussion_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<DeliveryQOBD[]> get_data_deliveryAsync(string nbLine)
+        public virtual Task<DiscussionChatRoom[]> get_data_discussion_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual DeliveryQOBD[] get_data_delivery_by_id(string id)
+        public virtual DiscussionChatRoom[] get_data_discussion_by_message_list(string company_name, MessageChatRoom[] message_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<DeliveryQOBD[]> get_data_delivery_by_idAsync(string id)
+        public virtual Task<DiscussionChatRoom[]> get_data_discussion_by_message_listAsync(string company_name, MessageChatRoom[] message_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual DeliveryQOBD[] get_data_delivery_by_order_list(OrdersQOBD[] order_array_list)
+        public virtual DiscussionChatRoom[] get_data_discussion_by_user_discussion_list(string company_name, User_discussionChatRoom[] user_discussion_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<DeliveryQOBD[]> get_data_delivery_by_order_listAsync(OrdersQOBD[] order_array_list)
+        public virtual Task<DiscussionChatRoom[]> get_data_discussion_by_user_discussion_listAsync(string company_name, User_discussionChatRoom[] user_discussion_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual DiscussionChatRoom[] get_data_discussion(string nbLine)
+        public virtual InfosQOBD[] get_data_infos(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<DiscussionChatRoom[]> get_data_discussionAsync(string nbLine)
+        public virtual Task<InfosQOBD[]> get_data_infosAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual DiscussionChatRoom[] get_data_discussion_by_id(string id)
+        public virtual InfosQOBD[] get_data_infos_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<DiscussionChatRoom[]> get_data_discussion_by_idAsync(string id)
+        public virtual Task<InfosQOBD[]> get_data_infos_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual DiscussionChatRoom[] get_data_discussion_by_message_list(MessageChatRoom[] message_array_list)
+        public virtual ItemQOBD[] get_data_item(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<DiscussionChatRoom[]> get_data_discussion_by_message_listAsync(MessageChatRoom[] message_array_list)
+        public virtual Task<ItemQOBD[]> get_data_itemAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual DiscussionChatRoom[] get_data_discussion_by_user_discussion_list(User_discussionChatRoom[] user_discussion_array_list)
+        public virtual ItemQOBD[] get_data_item_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<DiscussionChatRoom[]> get_data_discussion_by_user_discussion_listAsync(User_discussionChatRoom[] user_discussion_array_list)
+        public virtual Task<ItemQOBD[]> get_data_item_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual InfosQOBD[] get_data_infos(string nbLine)
+        public virtual ItemQOBD[] get_data_item_by_order_item_list(string company_name, Order_itemQOBD[] order_item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<InfosQOBD[]> get_data_infosAsync(string nbLine)
+        public virtual Task<ItemQOBD[]> get_data_item_by_order_item_listAsync(string company_name, Order_itemQOBD[] order_item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual InfosQOBD[] get_data_infos_by_id(string id)
+        public virtual Item_deliveryQOBD[] get_data_item_delivery(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<InfosQOBD[]> get_data_infos_by_idAsync(string id)
+        public virtual Task<Item_deliveryQOBD[]> get_data_item_deliveryAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ItemQOBD[] get_data_item(string nbLine)
+        public virtual Item_deliveryQOBD[] get_data_item_delivery_by_delivery_list(string company_name, DeliveryQOBD[] delivery_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ItemQOBD[]> get_data_itemAsync(string nbLine)
+        public virtual Task<Item_deliveryQOBD[]> get_data_item_delivery_by_delivery_listAsync(string company_name, DeliveryQOBD[] delivery_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ItemQOBD[] get_data_item_by_id(string id)
+        public virtual Item_deliveryQOBD[] get_data_item_delivery_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ItemQOBD[]> get_data_item_by_idAsync(string id)
+        public virtual Task<Item_deliveryQOBD[]> get_data_item_delivery_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ItemQOBD[] get_data_item_by_order_item_list(Order_itemQOBD[] order_item_array_list)
+        public virtual LicenseQOBD[] get_data_license(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ItemQOBD[]> get_data_item_by_order_item_listAsync(Order_itemQOBD[] order_item_array_list)
+        public virtual Task<LicenseQOBD[]> get_data_licenseAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Item_deliveryQOBD[] get_data_item_delivery(string nbLine)
+        public virtual LicenseQOBD[] get_data_license_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Item_deliveryQOBD[]> get_data_item_deliveryAsync(string nbLine)
+        public virtual Task<LicenseQOBD[]> get_data_license_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Item_deliveryQOBD[] get_data_item_delivery_by_delivery_list(DeliveryQOBD[] delivery_array_list)
+        public virtual MessageChatRoom[] get_data_message(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Item_deliveryQOBD[]> get_data_item_delivery_by_delivery_listAsync(DeliveryQOBD[] delivery_array_list)
+        public virtual Task<MessageChatRoom[]> get_data_messageAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Item_deliveryQOBD[] get_data_item_delivery_by_id(string id)
+        public virtual MessageChatRoom[] get_data_message_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Item_deliveryQOBD[]> get_data_item_delivery_by_idAsync(string id)
+        public virtual Task<MessageChatRoom[]> get_data_message_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual MessageChatRoom[] get_data_message(string nbLine)
+        public virtual NotificationQOBD[] get_data_notification(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<MessageChatRoom[]> get_data_messageAsync(string nbLine)
+        public virtual Task<NotificationQOBD[]> get_data_notificationAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual MessageChatRoom[] get_data_message_by_id(string id)
+        public virtual NotificationQOBD[] get_data_notification_by_client_list(string company_name, ClientQOBD[] client_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<MessageChatRoom[]> get_data_message_by_idAsync(string id)
+        public virtual Task<NotificationQOBD[]> get_data_notification_by_client_listAsync(string company_name, ClientQOBD[] client_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual NotificationQOBD[] get_data_notification(string nbLine)
+        public virtual NotificationQOBD[] get_data_notification_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<NotificationQOBD[]> get_data_notificationAsync(string nbLine)
+        public virtual Task<NotificationQOBD[]> get_data_notification_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual NotificationQOBD[] get_data_notification_by_client_list(ClientQOBD[] client_array_list)
+        public virtual NotificationQOBD[] get_data_notification_by_order_list(string company_name, OrdersQOBD[] order_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<NotificationQOBD[]> get_data_notification_by_client_listAsync(ClientQOBD[] client_array_list)
+        public virtual Task<NotificationQOBD[]> get_data_notification_by_order_listAsync(string company_name, OrdersQOBD[] order_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual NotificationQOBD[] get_data_notification_by_id(string id)
+        public virtual OrdersQOBD[] get_data_order(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<NotificationQOBD[]> get_data_notification_by_idAsync(string id)
+        public virtual Task<OrdersQOBD[]> get_data_orderAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual NotificationQOBD[] get_data_notification_by_order_list(OrdersQOBD[] order_array_list)
+        public virtual OrdersQOBD[] get_data_order_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<NotificationQOBD[]> get_data_notification_by_order_listAsync(OrdersQOBD[] order_array_list)
+        public virtual Task<OrdersQOBD[]> get_data_order_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual OrdersQOBD[] get_data_order(string nbLine)
+        public virtual Order_itemQOBD[] get_data_order_item(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<OrdersQOBD[]> get_data_orderAsync(string nbLine)
+        public virtual Task<Order_itemQOBD[]> get_data_order_itemAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual OrdersQOBD[] get_data_order_by_id(string id)
+        public virtual Order_itemQOBD[] get_data_order_item_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<OrdersQOBD[]> get_data_order_by_idAsync(string id)
+        public virtual Task<Order_itemQOBD[]> get_data_order_item_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Order_itemQOBD[] get_data_order_item(string nbLine)
+        public virtual Order_itemQOBD[] get_data_order_item_by_order_list(string company_name, OrdersQOBD[] order_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Order_itemQOBD[]> get_data_order_itemAsync(string nbLine)
+        public virtual Task<Order_itemQOBD[]> get_data_order_item_by_order_listAsync(string company_name, OrdersQOBD[] order_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Order_itemQOBD[] get_data_order_item_by_id(string id)
+        public virtual PrivilegeQOBD[] get_data_privilege(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Order_itemQOBD[]> get_data_order_item_by_idAsync(string id)
+        public virtual Task<PrivilegeQOBD[]> get_data_privilegeAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Order_itemQOBD[] get_data_order_item_by_order_list(OrdersQOBD[] order_array_list)
+        public virtual PrivilegeQOBD[] get_data_privilege_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Order_itemQOBD[]> get_data_order_item_by_order_listAsync(OrdersQOBD[] order_array_list)
+        public virtual Task<PrivilegeQOBD[]> get_data_privilege_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual PrivilegeQOBD[] get_data_privilege(string nbLine)
+        public virtual ProviderQOBD[] get_data_provider(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<PrivilegeQOBD[]> get_data_privilegeAsync(string nbLine)
+        public virtual Task<ProviderQOBD[]> get_data_providerAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual PrivilegeQOBD[] get_data_privilege_by_id(string id)
+        public virtual ProviderQOBD[] get_data_provider_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<PrivilegeQOBD[]> get_data_privilege_by_idAsync(string id)
+        public virtual Task<ProviderQOBD[]> get_data_provider_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ProviderQOBD[] get_data_provider(string nbLine)
+        public virtual ProviderQOBD[] get_data_provider_by_provider_item_list(string company_name, Provider_itemQOBD[] provider_item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ProviderQOBD[]> get_data_providerAsync(string nbLine)
+        public virtual Task<ProviderQOBD[]> get_data_provider_by_provider_item_listAsync(string company_name, Provider_itemQOBD[] provider_item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ProviderQOBD[] get_data_provider_by_id(string id)
+        public virtual Provider_itemQOBD[] get_data_provider_item(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ProviderQOBD[]> get_data_provider_by_idAsync(string id)
+        public virtual Task<Provider_itemQOBD[]> get_data_provider_itemAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ProviderQOBD[] get_data_provider_by_provider_item_list(Provider_itemQOBD[] provider_item_array_list)
+        public virtual Provider_itemQOBD[] get_data_provider_item_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ProviderQOBD[]> get_data_provider_by_provider_item_listAsync(Provider_itemQOBD[] provider_item_array_list)
+        public virtual Task<Provider_itemQOBD[]> get_data_provider_item_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Provider_itemQOBD[] get_data_provider_item(string nbLine)
+        public virtual Provider_itemQOBD[] get_data_provider_item_by_item_list(string company_name, ItemQOBD[] item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Provider_itemQOBD[]> get_data_provider_itemAsync(string nbLine)
+        public virtual Task<Provider_itemQOBD[]> get_data_provider_item_by_item_listAsync(string company_name, ItemQOBD[] item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Provider_itemQOBD[] get_data_provider_item_by_id(string id)
+        public virtual RoleQOBD[] get_data_role(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Provider_itemQOBD[]> get_data_provider_item_by_idAsync(string id)
+        public virtual Task<RoleQOBD[]> get_data_roleAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Provider_itemQOBD[] get_data_provider_item_by_item_list(ItemQOBD[] item_array_list)
+        public virtual Role_actionQOBD[] get_data_role_action(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Provider_itemQOBD[]> get_data_provider_item_by_item_listAsync(ItemQOBD[] item_array_list)
+        public virtual Task<Role_actionQOBD[]> get_data_role_actionAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual RoleQOBD[] get_data_role(string nbLine)
+        public virtual Role_actionQOBD[] get_data_role_action_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<RoleQOBD[]> get_data_roleAsync(string nbLine)
+        public virtual Task<Role_actionQOBD[]> get_data_role_action_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Role_actionQOBD[] get_data_role_action(string nbLine)
+        public virtual RoleQOBD[] get_data_role_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Role_actionQOBD[]> get_data_role_actionAsync(string nbLine)
+        public virtual Task<RoleQOBD[]> get_data_role_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Role_actionQOBD[] get_data_role_action_by_id(string id)
+        public virtual StatisticQOBD[] get_data_statistic(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Role_actionQOBD[]> get_data_role_action_by_idAsync(string id)
+        public virtual Task<StatisticQOBD[]> get_data_statisticAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual RoleQOBD[] get_data_role_by_id(string id)
+        public virtual StatisticQOBD[] get_data_statistic_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<RoleQOBD[]> get_data_role_by_idAsync(string id)
+        public virtual Task<StatisticQOBD[]> get_data_statistic_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual StatisticQOBD[] get_data_statistic(string nbLine)
+        public virtual TaxQOBD[] get_data_tax(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<StatisticQOBD[]> get_data_statisticAsync(string nbLine)
+        public virtual Task<TaxQOBD[]> get_data_taxAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual StatisticQOBD[] get_data_statistic_by_id(string id)
+        public virtual TaxQOBD[] get_data_tax_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<StatisticQOBD[]> get_data_statistic_by_idAsync(string id)
+        public virtual Task<TaxQOBD[]> get_data_tax_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual TaxQOBD[] get_data_tax(string nbLine)
+        public virtual Tax_itemQOBD[] get_data_tax_item(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<TaxQOBD[]> get_data_taxAsync(string nbLine)
+        public virtual Task<Tax_itemQOBD[]> get_data_tax_itemAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual TaxQOBD[] get_data_tax_by_id(string id)
+        public virtual Tax_itemQOBD[] get_data_tax_item_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<TaxQOBD[]> get_data_tax_by_idAsync(string id)
+        public virtual Task<Tax_itemQOBD[]> get_data_tax_item_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Tax_itemQOBD[] get_data_tax_item(string nbLine)
+        public virtual Tax_itemQOBD[] get_data_tax_item_by_item_list(string company_name, ItemQOBD[] item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Tax_itemQOBD[]> get_data_tax_itemAsync(string nbLine)
+        public virtual Task<Tax_itemQOBD[]> get_data_tax_item_by_item_listAsync(string company_name, ItemQOBD[] item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Tax_itemQOBD[] get_data_tax_item_by_id(string id)
+        public virtual Tax_orderQOBD[] get_data_tax_order(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Tax_itemQOBD[]> get_data_tax_item_by_idAsync(string id)
+        public virtual Task<Tax_orderQOBD[]> get_data_tax_orderAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Tax_itemQOBD[] get_data_tax_item_by_item_list(ItemQOBD[] item_array_list)
+        public virtual Tax_orderQOBD[] get_data_tax_order_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Tax_itemQOBD[]> get_data_tax_item_by_item_listAsync(ItemQOBD[] item_array_list)
+        public virtual Task<Tax_orderQOBD[]> get_data_tax_order_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Tax_orderQOBD[] get_data_tax_order(string nbLine)
+        public virtual Tax_orderQOBD[] get_data_tax_order_by_order_list(string company_name, OrdersQOBD[] order_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Tax_orderQOBD[]> get_data_tax_orderAsync(string nbLine)
+        public virtual Task<Tax_orderQOBD[]> get_data_tax_order_by_order_listAsync(string company_name, OrdersQOBD[] order_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Tax_orderQOBD[] get_data_tax_order_by_id(string id)
+        public virtual UserChatRoom[] get_data_user(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Tax_orderQOBD[]> get_data_tax_order_by_idAsync(string id)
+        public virtual Task<UserChatRoom[]> get_data_userAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Tax_orderQOBD[] get_data_tax_order_by_order_list(OrdersQOBD[] order_array_list)
+        public virtual UserChatRoom[] get_data_user_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Tax_orderQOBD[]> get_data_tax_order_by_order_listAsync(OrdersQOBD[] order_array_list)
+        public virtual Task<UserChatRoom[]> get_data_user_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual UserChatRoom[] get_data_user(string nbLine)
+        public virtual UserChatRoom[] get_data_user_by_user_discussion_list(string company_name, User_discussionChatRoom[] user_discussion_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<UserChatRoom[]> get_data_userAsync(string nbLine)
+        public virtual Task<UserChatRoom[]> get_data_user_by_user_discussion_listAsync(string company_name, User_discussionChatRoom[] user_discussion_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual UserChatRoom[] get_data_user_by_id(string id)
+        public virtual User_discussionChatRoom[] get_data_user_discussion(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<UserChatRoom[]> get_data_user_by_idAsync(string id)
+        public virtual Task<User_discussionChatRoom[]> get_data_user_discussionAsync(string company_name, string nbLine)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual UserChatRoom[] get_data_user_by_user_discussion_list(User_discussionChatRoom[] user_discussion_array_list)
+        public virtual User_discussionChatRoom[] get_data_user_discussion_by_id(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<UserChatRoom[]> get_data_user_by_user_discussion_listAsync(User_discussionChatRoom[] user_discussion_array_list)
+        public virtual Task<User_discussionChatRoom[]> get_data_user_discussion_by_idAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual User_discussionChatRoom[] get_data_user_discussion(string nbLine)
+        public virtual ActionQOBD[] get_filter_action(string company_name, ActionFilterQOBD action_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<User_discussionChatRoom[]> get_data_user_discussionAsync(string nbLine)
+        public virtual Task<ActionQOBD[]> get_filter_actionAsync(string company_name, ActionFilterQOBD action_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual User_discussionChatRoom[] get_data_user_discussion_by_id(string id)
+        public virtual ActionRecordQOBD[] get_filter_actionRecord(string company_name, ActionRecordFilterQOBD actionRecord_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<User_discussionChatRoom[]> get_data_user_discussion_by_idAsync(string id)
+        public virtual Task<ActionRecordQOBD[]> get_filter_actionRecordAsync(string company_name, ActionRecordFilterQOBD actionRecord_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ActionQOBD[] get_filter_action(ActionFilterQOBD action_array_list)
+        public virtual AddressQOBD[] get_filter_address(string company_name, AddressFilterQOBD address_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ActionQOBD[]> get_filter_actionAsync(ActionFilterQOBD action_array_list)
+        public virtual Task<AddressQOBD[]> get_filter_addressAsync(string company_name, AddressFilterQOBD address_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ActionRecordQOBD[] get_filter_actionRecord(ActionRecordFilterQOBD actionRecord_array_list)
+        public virtual AgentQOBD[] get_filter_agent(string company_name, AgentFilterQOBD agent_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ActionRecordQOBD[]> get_filter_actionRecordAsync(ActionRecordFilterQOBD actionRecord_array_list)
+        public virtual Task<AgentQOBD[]> get_filter_agentAsync(string company_name, AgentFilterQOBD agent_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual AddressQOBD[] get_filter_address(AddressFilterQOBD address_array_list)
+        public virtual Agent_roleQOBD[] get_filter_agent_role(string company_name, Agent_roleFilterQOBD agent_role_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<AddressQOBD[]> get_filter_addressAsync(AddressFilterQOBD address_array_list)
+        public virtual Task<Agent_roleQOBD[]> get_filter_agent_roleAsync(string company_name, Agent_roleFilterQOBD agent_role_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual AgentQOBD[] get_filter_agent(AgentFilterQOBD agent_array_list_filter)
+        public virtual Auto_refsQOBD[] get_filter_auto_ref(string company_name, Auto_refsFilterQOBD auto_ref_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<AgentQOBD[]> get_filter_agentAsync(AgentFilterQOBD agent_array_list_filter)
+        public virtual Task<Auto_refsQOBD[]> get_filter_auto_refAsync(string company_name, Auto_refsFilterQOBD auto_ref_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Agent_roleQOBD[] get_filter_agent_role(Agent_roleFilterQOBD agent_role_array_list)
+        public virtual BillQOBD[] get_filter_bill(string company_name, BillFilterQOBD bill_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Agent_roleQOBD[]> get_filter_agent_roleAsync(Agent_roleFilterQOBD agent_role_array_list)
+        public virtual Task<BillQOBD[]> get_filter_billAsync(string company_name, BillFilterQOBD bill_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Auto_refsQOBD[] get_filter_auto_ref(Auto_refsFilterQOBD auto_ref_array_list)
+        public virtual ClientQOBD[] get_filter_Client(string company_name, ClientFilterQOBD client_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Auto_refsQOBD[]> get_filter_auto_refAsync(Auto_refsFilterQOBD auto_ref_array_list)
+        public virtual Task<ClientQOBD[]> get_filter_ClientAsync(string company_name, ClientFilterQOBD client_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual BillQOBD[] get_filter_bill(BillFilterQOBD bill_array_list)
+        public virtual ContactQOBD[] get_filter_contact(string company_name, ContactFilterQOBD contact_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<BillQOBD[]> get_filter_billAsync(BillFilterQOBD bill_array_list)
+        public virtual Task<ContactQOBD[]> get_filter_contactAsync(string company_name, ContactFilterQOBD contact_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ClientQOBD[] get_filter_Client(ClientFilterQOBD client_array_list_filter)
+        public virtual CurrencyQOBD[] get_filter_currency(string company_name, CurrencyFilterQOBD currency_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ClientQOBD[]> get_filter_ClientAsync(ClientFilterQOBD client_array_list_filter)
+        public virtual Task<CurrencyQOBD[]> get_filter_currencyAsync(string company_name, CurrencyFilterQOBD currency_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ContactQOBD[] get_filter_contact(ContactFilterQOBD contact_array_list_filter)
+        public virtual DeliveryQOBD[] get_filter_delivery(string company_name, DeliveryFilterQOBD delivery_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ContactQOBD[]> get_filter_contactAsync(ContactFilterQOBD contact_array_list_filter)
+        public virtual Task<DeliveryQOBD[]> get_filter_deliveryAsync(string company_name, DeliveryFilterQOBD delivery_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual CurrencyQOBD[] get_filter_currency(CurrencyFilterQOBD currency_array_list_filter)
+        public virtual DiscussionChatRoom[] get_filter_discussion(string company_name, DiscussionFilterChatRoom discussion_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<CurrencyQOBD[]> get_filter_currencyAsync(CurrencyFilterQOBD currency_array_list_filter)
+        public virtual Task<DiscussionChatRoom[]> get_filter_discussionAsync(string company_name, DiscussionFilterChatRoom discussion_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual DeliveryQOBD[] get_filter_delivery(DeliveryFilterQOBD delivery_array_list_filter)
+        public virtual InfosQOBD[] get_filter_infos(string company_name, InfosFilterQOBD infos_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<DeliveryQOBD[]> get_filter_deliveryAsync(DeliveryFilterQOBD delivery_array_list_filter)
+        public virtual Task<InfosQOBD[]> get_filter_infosAsync(string company_name, InfosFilterQOBD infos_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual DiscussionChatRoom[] get_filter_discussion(DiscussionFilterChatRoom discussion_array_list_filter)
+        public virtual ItemQOBD[] get_filter_item(string company_name, ItemFilterQOBD item_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<DiscussionChatRoom[]> get_filter_discussionAsync(DiscussionFilterChatRoom discussion_array_list_filter)
+        public virtual Task<ItemQOBD[]> get_filter_itemAsync(string company_name, ItemFilterQOBD item_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual InfosQOBD[] get_filter_infos(InfosFilterQOBD infos_array_list_filter)
+        public virtual Item_deliveryQOBD[] get_filter_item_delivery(string company_name, Item_deliveryFilterQOBD item_delivery_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<InfosQOBD[]> get_filter_infosAsync(InfosFilterQOBD infos_array_list_filter)
+        public virtual Task<Item_deliveryQOBD[]> get_filter_item_deliveryAsync(string company_name, Item_deliveryFilterQOBD item_delivery_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ItemQOBD[] get_filter_item(ItemFilterQOBD item_array_list_filter)
+        public virtual LicenseQOBD[] get_filter_license(string company_name, LicenseFilterQOBD license_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ItemQOBD[]> get_filter_itemAsync(ItemFilterQOBD item_array_list_filter)
+        public virtual Task<LicenseQOBD[]> get_filter_licenseAsync(string company_name, LicenseFilterQOBD license_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Item_deliveryQOBD[] get_filter_item_delivery(Item_deliveryFilterQOBD item_delivery_array_list_filter)
+        public virtual MessageChatRoom[] get_filter_message(string company_name, MessageFilterChatRoom message_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Item_deliveryQOBD[]> get_filter_item_deliveryAsync(Item_deliveryFilterQOBD item_delivery_array_list_filter)
+        public virtual Task<MessageChatRoom[]> get_filter_messageAsync(string company_name, MessageFilterChatRoom message_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual MessageChatRoom[] get_filter_message(MessageFilterChatRoom message_array_list_filter)
+        public virtual NotificationQOBD[] get_filter_notification(string company_name, NotificationFilterQOBD notification_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<MessageChatRoom[]> get_filter_messageAsync(MessageFilterChatRoom message_array_list_filter)
+        public virtual Task<NotificationQOBD[]> get_filter_notificationAsync(string company_name, NotificationFilterQOBD notification_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual NotificationQOBD[] get_filter_notification(NotificationFilterQOBD notification_array_list)
+        public virtual OrdersQOBD[] get_filter_order(string company_name, OrderFilterQOBD order_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<NotificationQOBD[]> get_filter_notificationAsync(NotificationFilterQOBD notification_array_list)
+        public virtual Task<OrdersQOBD[]> get_filter_orderAsync(string company_name, OrderFilterQOBD order_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual OrdersQOBD[] get_filter_order(OrderFilterQOBD order_array_list_filter)
+        public virtual Order_itemQOBD[] get_filter_order_item(string company_name, Order_itemFilterQOBD order_item_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<OrdersQOBD[]> get_filter_orderAsync(OrderFilterQOBD order_array_list_filter)
+        public virtual Task<Order_itemQOBD[]> get_filter_order_itemAsync(string company_name, Order_itemFilterQOBD order_item_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Order_itemQOBD[] get_filter_order_item(Order_itemFilterQOBD order_item_array_list_filter)
+        public virtual PrivilegeQOBD[] get_filter_privilege(string company_name, PrivilegeFilterQOBD privilege_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Order_itemQOBD[]> get_filter_order_itemAsync(Order_itemFilterQOBD order_item_array_list_filter)
+        public virtual Task<PrivilegeQOBD[]> get_filter_privilegeAsync(string company_name, PrivilegeFilterQOBD privilege_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual PrivilegeQOBD[] get_filter_privilege(PrivilegeFilterQOBD privilege_array_list_filter)
+        public virtual ProviderQOBD[] get_filter_provider(string company_name, ProviderFilterQOBD provider_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<PrivilegeQOBD[]> get_filter_privilegeAsync(PrivilegeFilterQOBD privilege_array_list_filter)
+        public virtual Task<ProviderQOBD[]> get_filter_providerAsync(string company_name, ProviderFilterQOBD provider_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ProviderQOBD[] get_filter_provider(ProviderFilterQOBD provider_array_list_filter)
+        public virtual Provider_itemQOBD[] get_filter_provider_item(string company_name, Provider_itemFilterQOBD provider_item_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ProviderQOBD[]> get_filter_providerAsync(ProviderFilterQOBD provider_array_list_filter)
+        public virtual Task<Provider_itemQOBD[]> get_filter_provider_itemAsync(string company_name, Provider_itemFilterQOBD provider_item_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Provider_itemQOBD[] get_filter_provider_item(Provider_itemFilterQOBD provider_item_array_list_filter)
+        public virtual RoleQOBD[] get_filter_role(string company_name, RoleFilterQOBD role_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Provider_itemQOBD[]> get_filter_provider_itemAsync(Provider_itemFilterQOBD provider_item_array_list_filter)
+        public virtual Task<RoleQOBD[]> get_filter_roleAsync(string company_name, RoleFilterQOBD role_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual RoleQOBD[] get_filter_role(RoleFilterQOBD role_array_list)
+        public virtual Role_actionQOBD[] get_filter_role_action(string company_name, Role_actionFilterQOBD role_action_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<RoleQOBD[]> get_filter_roleAsync(RoleFilterQOBD role_array_list)
+        public virtual Task<Role_actionQOBD[]> get_filter_role_actionAsync(string company_name, Role_actionFilterQOBD role_action_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Role_actionQOBD[] get_filter_role_action(Role_actionFilterQOBD role_action_array_list)
+        public virtual StatisticQOBD[] get_filter_statistic(string company_name, StatisticFilterQOBD statistic_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Role_actionQOBD[]> get_filter_role_actionAsync(Role_actionFilterQOBD role_action_array_list)
+        public virtual Task<StatisticQOBD[]> get_filter_statisticAsync(string company_name, StatisticFilterQOBD statistic_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual StatisticQOBD[] get_filter_statistic(StatisticFilterQOBD statistic_array_list_filter)
+        public virtual TaxQOBD[] get_filter_tax(string company_name, TaxFilterQOBD tax_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<StatisticQOBD[]> get_filter_statisticAsync(StatisticFilterQOBD statistic_array_list_filter)
+        public virtual Task<TaxQOBD[]> get_filter_taxAsync(string company_name, TaxFilterQOBD tax_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual TaxQOBD[] get_filter_tax(TaxFilterQOBD tax_array_list_filter)
+        public virtual Tax_itemQOBD[] get_filter_tax_item(string company_name, Tax_itemFilterQOBD tax_item_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<TaxQOBD[]> get_filter_taxAsync(TaxFilterQOBD tax_array_list_filter)
+        public virtual Task<Tax_itemQOBD[]> get_filter_tax_itemAsync(string company_name, Tax_itemFilterQOBD tax_item_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Tax_itemQOBD[] get_filter_tax_item(Tax_itemFilterQOBD tax_item_array_list_filter)
+        public virtual Tax_orderQOBD[] get_filter_tax_order(string company_name, Tax_orderFilterQOBD tax_order_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Tax_itemQOBD[]> get_filter_tax_itemAsync(Tax_itemFilterQOBD tax_item_array_list_filter)
+        public virtual Task<Tax_orderQOBD[]> get_filter_tax_orderAsync(string company_name, Tax_orderFilterQOBD tax_order_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Tax_orderQOBD[] get_filter_tax_order(Tax_orderFilterQOBD tax_order_array_list_filter)
+        public virtual UserChatRoom[] get_filter_user(string company_name, UserFilterChatRoom user_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Tax_orderQOBD[]> get_filter_tax_orderAsync(Tax_orderFilterQOBD tax_order_array_list_filter)
+        public virtual Task<UserChatRoom[]> get_filter_userAsync(string company_name, UserFilterChatRoom user_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual UserChatRoom[] get_filter_user(UserFilterChatRoom user_array_list_filter)
+        public virtual User_discussionChatRoom[] get_filter_user_discussion(string company_name, User_discussionFilterChatRoom user_discussion_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<UserChatRoom[]> get_filter_userAsync(UserFilterChatRoom user_array_list_filter)
+        public virtual Task<User_discussionChatRoom[]> get_filter_user_discussionAsync(string company_name, User_discussionFilterChatRoom user_discussion_array_list_filter)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual User_discussionChatRoom[] get_filter_user_discussion(User_discussionFilterChatRoom user_discussion_array_list_filter)
+        public virtual OrdersQOBD[] get_orders_client(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<User_discussionChatRoom[]> get_filter_user_discussionAsync(User_discussionFilterChatRoom user_discussion_array_list_filter)
+        public virtual Task<OrdersQOBD[]> get_orders_clientAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual OrdersQOBD[] get_orders_client(string id)
+        public virtual OrdersQOBD[] get_quotes_client(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<OrdersQOBD[]> get_orders_clientAsync(string id)
+        public virtual Task<OrdersQOBD[]> get_quotes_clientAsync(string company_name, string id)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual OrdersQOBD[] get_quotes_client(string id)
+        public virtual ActionQOBD[] insert_data_action(string company_name, ActionQOBD[] action_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<OrdersQOBD[]> get_quotes_clientAsync(string id)
+        public virtual Task<ActionQOBD[]> insert_data_actionAsync(string company_name, ActionQOBD[] action_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ActionQOBD[] insert_data_action(ActionQOBD[] action_array_list)
+        public virtual ActionRecordQOBD[] insert_data_actionRecord(string company_name, ActionRecordQOBD[] actionRecord_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ActionQOBD[]> insert_data_actionAsync(ActionQOBD[] action_array_list)
+        public virtual Task<ActionRecordQOBD[]> insert_data_actionRecordAsync(string company_name, ActionRecordQOBD[] actionRecord_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ActionRecordQOBD[] insert_data_actionRecord(ActionRecordQOBD[] actionRecord_array_list)
+        public virtual AddressQOBD[] insert_data_address(string company_name, AddressQOBD[] address_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ActionRecordQOBD[]> insert_data_actionRecordAsync(ActionRecordQOBD[] actionRecord_array_list)
+        public virtual Task<AddressQOBD[]> insert_data_addressAsync(string company_name, AddressQOBD[] address_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual AddressQOBD[] insert_data_address(AddressQOBD[] address_array_list)
+        public virtual AgentQOBD[] insert_data_agent(string company_name, AgentQOBD[] agent_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<AddressQOBD[]> insert_data_addressAsync(AddressQOBD[] address_array_list)
+        public virtual Task<AgentQOBD[]> insert_data_agentAsync(string company_name, AgentQOBD[] agent_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual AgentQOBD[] insert_data_agent(AgentQOBD[] agent_array_list)
+        public virtual Agent_roleQOBD[] insert_data_agent_role(string company_name, Agent_roleQOBD[] agent_role_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<AgentQOBD[]> insert_data_agentAsync(AgentQOBD[] agent_array_list)
+        public virtual Task<Agent_roleQOBD[]> insert_data_agent_roleAsync(string company_name, Agent_roleQOBD[] agent_role_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Agent_roleQOBD[] insert_data_agent_role(Agent_roleQOBD[] agent_role_array_list)
+        public virtual Auto_refsQOBD[] insert_data_auto_ref(string company_name, Auto_refsQOBD[] auto_ref_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Agent_roleQOBD[]> insert_data_agent_roleAsync(Agent_roleQOBD[] agent_role_array_list)
+        public virtual Task<Auto_refsQOBD[]> insert_data_auto_refAsync(string company_name, Auto_refsQOBD[] auto_ref_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Auto_refsQOBD[] insert_data_auto_ref(Auto_refsQOBD[] auto_ref_array_list)
+        public virtual BillQOBD[] insert_data_bill(string company_name, BillQOBD[] bill_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Auto_refsQOBD[]> insert_data_auto_refAsync(Auto_refsQOBD[] auto_ref_array_list)
+        public virtual Task<BillQOBD[]> insert_data_billAsync(string company_name, BillQOBD[] bill_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual BillQOBD[] insert_data_bill(BillQOBD[] bill_array_list)
+        public virtual ClientQOBD[] insert_data_client(string company_name, ClientQOBD[] client_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<BillQOBD[]> insert_data_billAsync(BillQOBD[] bill_array_list)
+        public virtual Task<ClientQOBD[]> insert_data_clientAsync(string company_name, ClientQOBD[] client_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ClientQOBD[] insert_data_client(ClientQOBD[] client_array_list)
+        public virtual ContactQOBD[] insert_data_contact(string company_name, ContactQOBD[] contact_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ClientQOBD[]> insert_data_clientAsync(ClientQOBD[] client_array_list)
+        public virtual Task<ContactQOBD[]> insert_data_contactAsync(string company_name, ContactQOBD[] contact_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ContactQOBD[] insert_data_contact(ContactQOBD[] contact_array_list)
+        public virtual CurrencyQOBD[] insert_data_currency(string company_name, CurrencyQOBD[] currency_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ContactQOBD[]> insert_data_contactAsync(ContactQOBD[] contact_array_list)
+        public virtual Task<CurrencyQOBD[]> insert_data_currencyAsync(string company_name, CurrencyQOBD[] currency_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual CurrencyQOBD[] insert_data_currency(CurrencyQOBD[] currency_array_list)
+        public virtual DeliveryQOBD[] insert_data_delivery(string company_name, DeliveryQOBD[] delivery_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<CurrencyQOBD[]> insert_data_currencyAsync(CurrencyQOBD[] currency_array_list)
+        public virtual Task<DeliveryQOBD[]> insert_data_deliveryAsync(string company_name, DeliveryQOBD[] delivery_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual DeliveryQOBD[] insert_data_delivery(DeliveryQOBD[] delivery_array_list)
+        public virtual DiscussionChatRoom[] insert_data_discussion(string company_name, DiscussionChatRoom[] discussion_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<DeliveryQOBD[]> insert_data_deliveryAsync(DeliveryQOBD[] delivery_array_list)
+        public virtual Task<DiscussionChatRoom[]> insert_data_discussionAsync(string company_name, DiscussionChatRoom[] discussion_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual DiscussionChatRoom[] insert_data_discussion(DiscussionChatRoom[] discussion_array_list)
+        public virtual InfosQOBD[] insert_data_infos(string company_name, InfosQOBD[] infos_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<DiscussionChatRoom[]> insert_data_discussionAsync(DiscussionChatRoom[] discussion_array_list)
+        public virtual Task<InfosQOBD[]> insert_data_infosAsync(string company_name, InfosQOBD[] infos_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual InfosQOBD[] insert_data_infos(InfosQOBD[] infos_array_list)
+        public virtual ItemQOBD[] insert_data_item(string company_name, ItemQOBD[] item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<InfosQOBD[]> insert_data_infosAsync(InfosQOBD[] infos_array_list)
+        public virtual Task<ItemQOBD[]> insert_data_itemAsync(string company_name, ItemQOBD[] item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ItemQOBD[] insert_data_item(ItemQOBD[] item_array_list)
+        public virtual Item_deliveryQOBD[] insert_data_item_delivery(string company_name, Item_deliveryQOBD[] item_delivery_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ItemQOBD[]> insert_data_itemAsync(ItemQOBD[] item_array_list)
+        public virtual Task<Item_deliveryQOBD[]> insert_data_item_deliveryAsync(string company_name, Item_deliveryQOBD[] item_delivery_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Item_deliveryQOBD[] insert_data_item_delivery(Item_deliveryQOBD[] item_delivery_array_list)
+        public virtual LicenseQOBD[] insert_data_license(string company_name, LicenseQOBD[] license_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Item_deliveryQOBD[]> insert_data_item_deliveryAsync(Item_deliveryQOBD[] item_delivery_array_list)
+        public virtual Task<LicenseQOBD[]> insert_data_licenseAsync(string company_name, LicenseQOBD[] license_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual MessageChatRoom[] insert_data_message(MessageChatRoom[] message_array_list)
+        public virtual MessageChatRoom[] insert_data_message(string company_name, MessageChatRoom[] message_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<MessageChatRoom[]> insert_data_messageAsync(MessageChatRoom[] message_array_list)
+        public virtual Task<MessageChatRoom[]> insert_data_messageAsync(string company_name, MessageChatRoom[] message_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual NotificationQOBD[] insert_data_notification(NotificationQOBD[] notification_array_list)
+        public virtual NotificationQOBD[] insert_data_notification(string company_name, NotificationQOBD[] notification_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<NotificationQOBD[]> insert_data_notificationAsync(NotificationQOBD[] notification_array_list)
+        public virtual Task<NotificationQOBD[]> insert_data_notificationAsync(string company_name, NotificationQOBD[] notification_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual OrdersQOBD[] insert_data_order(OrdersQOBD[] order_array_list)
+        public virtual OrdersQOBD[] insert_data_order(string company_name, OrdersQOBD[] order_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<OrdersQOBD[]> insert_data_orderAsync(OrdersQOBD[] order_array_list)
+        public virtual Task<OrdersQOBD[]> insert_data_orderAsync(string company_name, OrdersQOBD[] order_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Order_itemQOBD[] insert_data_order_item(Order_itemQOBD[] order_item_array_list)
+        public virtual Order_itemQOBD[] insert_data_order_item(string company_name, Order_itemQOBD[] order_item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Order_itemQOBD[]> insert_data_order_itemAsync(Order_itemQOBD[] order_item_array_list)
+        public virtual Task<Order_itemQOBD[]> insert_data_order_itemAsync(string company_name, Order_itemQOBD[] order_item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual PrivilegeQOBD[] insert_data_privilege(PrivilegeQOBD[] privilege_array_list)
+        public virtual PrivilegeQOBD[] insert_data_privilege(string company_name, PrivilegeQOBD[] privilege_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<PrivilegeQOBD[]> insert_data_privilegeAsync(PrivilegeQOBD[] privilege_array_list)
+        public virtual Task<PrivilegeQOBD[]> insert_data_privilegeAsync(string company_name, PrivilegeQOBD[] privilege_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ProviderQOBD[] insert_data_provider(ProviderQOBD[] provider_array_list)
+        public virtual ProviderQOBD[] insert_data_provider(string company_name, ProviderQOBD[] provider_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ProviderQOBD[]> insert_data_providerAsync(ProviderQOBD[] provider_array_list)
+        public virtual Task<ProviderQOBD[]> insert_data_providerAsync(string company_name, ProviderQOBD[] provider_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Provider_itemQOBD[] insert_data_provider_item(Provider_itemQOBD[] provider_item_array_list)
+        public virtual Provider_itemQOBD[] insert_data_provider_item(string company_name, Provider_itemQOBD[] provider_item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Provider_itemQOBD[]> insert_data_provider_itemAsync(Provider_itemQOBD[] provider_item_array_list)
+        public virtual Task<Provider_itemQOBD[]> insert_data_provider_itemAsync(string company_name, Provider_itemQOBD[] provider_item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual RoleQOBD[] insert_data_role(RoleQOBD[] role_array_list)
+        public virtual RoleQOBD[] insert_data_role(string company_name, RoleQOBD[] role_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<RoleQOBD[]> insert_data_roleAsync(RoleQOBD[] role_array_list)
+        public virtual Task<RoleQOBD[]> insert_data_roleAsync(string company_name, RoleQOBD[] role_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Role_actionQOBD[] insert_data_role_action(Role_actionQOBD[] role_action_array_list)
+        public virtual Role_actionQOBD[] insert_data_role_action(string company_name, Role_actionQOBD[] role_action_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Role_actionQOBD[]> insert_data_role_actionAsync(Role_actionQOBD[] role_action_array_list)
+        public virtual Task<Role_actionQOBD[]> insert_data_role_actionAsync(string company_name, Role_actionQOBD[] role_action_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual StatisticQOBD[] insert_data_statistic(StatisticQOBD[] statistic_array_list)
+        public virtual StatisticQOBD[] insert_data_statistic(string company_name, StatisticQOBD[] statistic_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<StatisticQOBD[]> insert_data_statisticAsync(StatisticQOBD[] statistic_array_list)
+        public virtual Task<StatisticQOBD[]> insert_data_statisticAsync(string company_name, StatisticQOBD[] statistic_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual TaxQOBD[] insert_data_tax(TaxQOBD[] tax_array_list)
+        public virtual TaxQOBD[] insert_data_tax(string company_name, TaxQOBD[] tax_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<TaxQOBD[]> insert_data_taxAsync(TaxQOBD[] tax_array_list)
+        public virtual Task<TaxQOBD[]> insert_data_taxAsync(string company_name, TaxQOBD[] tax_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Tax_itemQOBD[] insert_data_tax_item(Tax_itemQOBD[] tax_item_array_list)
+        public virtual Tax_itemQOBD[] insert_data_tax_item(string company_name, Tax_itemQOBD[] tax_item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Tax_itemQOBD[]> insert_data_tax_itemAsync(Tax_itemQOBD[] tax_item_array_list)
+        public virtual Task<Tax_itemQOBD[]> insert_data_tax_itemAsync(string company_name, Tax_itemQOBD[] tax_item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Tax_orderQOBD[] insert_data_tax_order(Tax_orderQOBD[] tax_order_array_list)
+        public virtual Tax_orderQOBD[] insert_data_tax_order(string company_name, Tax_orderQOBD[] tax_order_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Tax_orderQOBD[]> insert_data_tax_orderAsync(Tax_orderQOBD[] tax_order_array_list)
+        public virtual Task<Tax_orderQOBD[]> insert_data_tax_orderAsync(string company_name, Tax_orderQOBD[] tax_order_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual UserChatRoom[] insert_data_user(UserChatRoom[] user_array_list)
+        public virtual UserChatRoom[] insert_data_user(string company_name, UserChatRoom[] user_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<UserChatRoom[]> insert_data_userAsync(UserChatRoom[] user_array_list)
+        public virtual Task<UserChatRoom[]> insert_data_userAsync(string company_name, UserChatRoom[] user_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual User_discussionChatRoom[] insert_data_user_discussion(User_discussionChatRoom[] user_discussion_array_list)
+        public virtual User_discussionChatRoom[] insert_data_user_discussion(string company_name, User_discussionChatRoom[] user_discussion_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<User_discussionChatRoom[]> insert_data_user_discussionAsync(User_discussionChatRoom[] user_discussion_array_list)
+        public virtual Task<User_discussionChatRoom[]> insert_data_user_discussionAsync(string company_name, User_discussionChatRoom[] user_discussion_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual string send_email_to_client(EmailQOBD client_email)
+        public virtual ActionQOBD[] update_data_action(string company_name, ActionQOBD[] action_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<string> send_email_to_clientAsync(EmailQOBD client_email)
+        public virtual Task<ActionQOBD[]> update_data_actionAsync(string company_name, ActionQOBD[] action_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ActionQOBD[] update_data_action(ActionQOBD[] action_array_list)
+        public virtual ActionRecordQOBD[] update_data_actionRecord(string company_name, ActionRecordQOBD[] actionRecord_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ActionQOBD[]> update_data_actionAsync(ActionQOBD[] action_array_list)
+        public virtual Task<ActionRecordQOBD[]> update_data_actionRecordAsync(string company_name, ActionRecordQOBD[] actionRecord_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ActionRecordQOBD[] update_data_actionRecord(ActionRecordQOBD[] actionRecord_array_list)
+        public virtual AddressQOBD[] update_data_address(string company_name, AddressQOBD[] address_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ActionRecordQOBD[]> update_data_actionRecordAsync(ActionRecordQOBD[] actionRecord_array_list)
+        public virtual Task<AddressQOBD[]> update_data_addressAsync(string company_name, AddressQOBD[] address_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual AddressQOBD[] update_data_address(AddressQOBD[] address_array_list)
+        public virtual AgentQOBD[] update_data_agent(string company_name, AgentQOBD[] agent_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<AddressQOBD[]> update_data_addressAsync(AddressQOBD[] address_array_list)
+        public virtual Task<AgentQOBD[]> update_data_agentAsync(string company_name, AgentQOBD[] agent_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual AgentQOBD[] update_data_agent(AgentQOBD[] agent_array_list)
+        public virtual Agent_roleQOBD[] update_data_agent_role(string company_name, Agent_roleQOBD[] agent_role_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<AgentQOBD[]> update_data_agentAsync(AgentQOBD[] agent_array_list)
+        public virtual Task<Agent_roleQOBD[]> update_data_agent_roleAsync(string company_name, Agent_roleQOBD[] agent_role_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Agent_roleQOBD[] update_data_agent_role(Agent_roleQOBD[] agent_role_array_list)
+        public virtual Auto_refsQOBD[] update_data_auto_ref(string company_name, Auto_refsQOBD[] auto_ref_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Agent_roleQOBD[]> update_data_agent_roleAsync(Agent_roleQOBD[] agent_role_array_list)
+        public virtual Task<Auto_refsQOBD[]> update_data_auto_refAsync(string company_name, Auto_refsQOBD[] auto_ref_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Auto_refsQOBD[] update_data_auto_ref(Auto_refsQOBD[] auto_ref_array_list)
+        public virtual BillQOBD[] update_data_bill(string company_name, BillQOBD[] bill_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Auto_refsQOBD[]> update_data_auto_refAsync(Auto_refsQOBD[] auto_ref_array_list)
+        public virtual Task<BillQOBD[]> update_data_billAsync(string company_name, BillQOBD[] bill_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual BillQOBD[] update_data_bill(BillQOBD[] bill_array_list)
+        public virtual ClientQOBD[] update_data_client(string company_name, ClientQOBD[] client_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<BillQOBD[]> update_data_billAsync(BillQOBD[] bill_array_list)
+        public virtual Task<ClientQOBD[]> update_data_clientAsync(string company_name, ClientQOBD[] client_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ClientQOBD[] update_data_client(ClientQOBD[] client_array_list)
+        public virtual ContactQOBD[] update_data_contact(string company_name, ContactQOBD[] contact_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ClientQOBD[]> update_data_clientAsync(ClientQOBD[] client_array_list)
+        public virtual Task<ContactQOBD[]> update_data_contactAsync(string company_name, ContactQOBD[] contact_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ContactQOBD[] update_data_contact(ContactQOBD[] contact_array_list)
+        public virtual CurrencyQOBD[] update_data_currency(string company_name, CurrencyQOBD[] currency_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ContactQOBD[]> update_data_contactAsync(ContactQOBD[] contact_array_list)
+        public virtual Task<CurrencyQOBD[]> update_data_currencyAsync(string company_name, CurrencyQOBD[] currency_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual CurrencyQOBD[] update_data_currency(CurrencyQOBD[] currency_array_list)
+        public virtual DeliveryQOBD[] update_data_delivery(string company_name, DeliveryQOBD[] delivery_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<CurrencyQOBD[]> update_data_currencyAsync(CurrencyQOBD[] currency_array_list)
+        public virtual Task<DeliveryQOBD[]> update_data_deliveryAsync(string company_name, DeliveryQOBD[] delivery_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual DeliveryQOBD[] update_data_delivery(DeliveryQOBD[] delivery_array_list)
+        public virtual DiscussionChatRoom[] update_data_discussion(string company_name, DiscussionChatRoom[] discussion_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<DeliveryQOBD[]> update_data_deliveryAsync(DeliveryQOBD[] delivery_array_list)
+        public virtual Task<DiscussionChatRoom[]> update_data_discussionAsync(string company_name, DiscussionChatRoom[] discussion_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual DiscussionChatRoom[] update_data_discussion(DiscussionChatRoom[] discussion_array_list)
+        public virtual InfosQOBD[] update_data_infos(string company_name, InfosQOBD[] infos_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<DiscussionChatRoom[]> update_data_discussionAsync(DiscussionChatRoom[] discussion_array_list)
+        public virtual Task<InfosQOBD[]> update_data_infosAsync(string company_name, InfosQOBD[] infos_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual InfosQOBD[] update_data_infos(InfosQOBD[] infos_array_list)
+        public virtual ItemQOBD[] update_data_item(string company_name, ItemQOBD[] item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<InfosQOBD[]> update_data_infosAsync(InfosQOBD[] infos_array_list)
+        public virtual Task<ItemQOBD[]> update_data_itemAsync(string company_name, ItemQOBD[] item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ItemQOBD[] update_data_item(ItemQOBD[] item_array_list)
+        public virtual Item_deliveryQOBD[] update_data_item_delivery(string company_insertname, Item_deliveryQOBD[] item_delivery_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ItemQOBD[]> update_data_itemAsync(ItemQOBD[] item_array_list)
+        public virtual Task<Item_deliveryQOBD[]> update_data_item_deliveryAsync(string company_name, Item_deliveryQOBD[] item_delivery_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Item_deliveryQOBD[] update_data_item_delivery(Item_deliveryQOBD[] item_delivery_array_list)
+        public virtual LicenseQOBD[] update_data_license(string company_name, LicenseQOBD[] license_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Item_deliveryQOBD[]> update_data_item_deliveryAsync(Item_deliveryQOBD[] item_delivery_array_list)
+        public virtual Task<LicenseQOBD[]> update_data_licenseAsync(string company_name, LicenseQOBD[] license_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual MessageChatRoom[] update_data_message(MessageChatRoom[] message_array_list)
+        public virtual MessageChatRoom[] update_data_message(string company_name, MessageChatRoom[] message_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<MessageChatRoom[]> update_data_messageAsync(MessageChatRoom[] message_array_list)
+        public virtual Task<MessageChatRoom[]> update_data_messageAsync(string company_name, MessageChatRoom[] message_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual NotificationQOBD[] update_data_notification(NotificationQOBD[] notification_array_list)
+        public virtual NotificationQOBD[] update_data_notification(string company_name, NotificationQOBD[] notification_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<NotificationQOBD[]> update_data_notificationAsync(NotificationQOBD[] notification_array_list)
+        public virtual Task<NotificationQOBD[]> update_data_notificationAsync(string company_name, NotificationQOBD[] notification_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual OrdersQOBD[] update_data_order(OrdersQOBD[] order_array_list)
+        public virtual OrdersQOBD[] update_data_order(string company_name, OrdersQOBD[] order_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<OrdersQOBD[]> update_data_orderAsync(OrdersQOBD[] order_array_list)
+        public virtual Task<OrdersQOBD[]> update_data_orderAsync(string company_name, OrdersQOBD[] order_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Order_itemQOBD[] update_data_order_item(Order_itemQOBD[] order_item_array_list)
+        public virtual Order_itemQOBD[] update_data_order_item(string company_name, Order_itemQOBD[] order_item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Order_itemQOBD[]> update_data_order_itemAsync(Order_itemQOBD[] order_item_array_list)
+        public virtual Task<Order_itemQOBD[]> update_data_order_itemAsync(string company_name, Order_itemQOBD[] order_item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual PrivilegeQOBD[] update_data_privilege(PrivilegeQOBD[] privilege_array_list)
+        public virtual PrivilegeQOBD[] update_data_privilege(string company_name, PrivilegeQOBD[] privilege_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<PrivilegeQOBD[]> update_data_privilegeAsync(PrivilegeQOBD[] privilege_array_list)
+        public virtual Task<PrivilegeQOBD[]> update_data_privilegeAsync(string company_name, PrivilegeQOBD[] privilege_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual ProviderQOBD[] update_data_provider(ProviderQOBD[] provider_array_list)
+        public virtual ProviderQOBD[] update_data_provider(string company_name, ProviderQOBD[] provider_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<ProviderQOBD[]> update_data_providerAsync(ProviderQOBD[] provider_array_list)
+        public virtual Task<ProviderQOBD[]> update_data_providerAsync(string company_name, ProviderQOBD[] provider_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Provider_itemQOBD[] update_data_provider_item(Provider_itemQOBD[] provider_item_array_list)
+        public virtual Provider_itemQOBD[] update_data_provider_item(string company_name, Provider_itemQOBD[] provider_item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Provider_itemQOBD[]> update_data_provider_itemAsync(Provider_itemQOBD[] provider_item_array_list)
+        public virtual Task<Provider_itemQOBD[]> update_data_provider_itemAsync(string company_name, Provider_itemQOBD[] provider_item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual RoleQOBD[] update_data_role(RoleQOBD[] role_array_list)
+        public virtual RoleQOBD[] update_data_role(string company_name, RoleQOBD[] role_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<RoleQOBD[]> update_data_roleAsync(RoleQOBD[] role_array_list)
+        public virtual Task<RoleQOBD[]> update_data_roleAsync(string company_name, RoleQOBD[] role_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Role_actionQOBD[] update_data_role_action(Role_actionQOBD[] role_action_array_list)
+        public virtual Role_actionQOBD[] update_data_role_action(string company_name, Role_actionQOBD[] role_action_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Role_actionQOBD[]> update_data_role_actionAsync(Role_actionQOBD[] role_action_array_list)
+        public virtual Task<Role_actionQOBD[]> update_data_role_actionAsync(string company_name, Role_actionQOBD[] role_action_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual StatisticQOBD[] update_data_statistic(StatisticQOBD[] statistic_array_list)
+        public virtual StatisticQOBD[] update_data_statistic(string company_name, StatisticQOBD[] statistic_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<StatisticQOBD[]> update_data_statisticAsync(StatisticQOBD[] statistic_array_list)
+        public virtual Task<StatisticQOBD[]> update_data_statisticAsync(string company_name, StatisticQOBD[] statistic_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual TaxQOBD[] update_data_tax(TaxQOBD[] tax_array_list)
+        public virtual TaxQOBD[] update_data_tax(string company_name, TaxQOBD[] tax_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<TaxQOBD[]> update_data_taxAsync(TaxQOBD[] tax_array_list)
+        public virtual Task<TaxQOBD[]> update_data_taxAsync(string company_name, TaxQOBD[] tax_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Tax_itemQOBD[] update_data_tax_item(Tax_itemQOBD[] tax_item_array_list)
+        public virtual Tax_itemQOBD[] update_data_tax_item(string company_name, Tax_itemQOBD[] tax_item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Tax_itemQOBD[]> update_data_tax_itemAsync(Tax_itemQOBD[] tax_item_array_list)
+        public virtual Task<Tax_itemQOBD[]> update_data_tax_itemAsync(string company_name, Tax_itemQOBD[] tax_item_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Tax_orderQOBD[] update_data_tax_order(Tax_orderQOBD[] tax_order_array_list)
+        public virtual Tax_orderQOBD[] update_data_tax_order(string company_name, Tax_orderQOBD[] tax_order_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<Tax_orderQOBD[]> update_data_tax_orderAsync(Tax_orderQOBD[] tax_order_array_list)
+        public virtual Task<Tax_orderQOBD[]> update_data_tax_orderAsync(string company_name, Tax_orderQOBD[] tax_order_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual UserChatRoom[] update_data_user(UserChatRoom[] user_array_list)
+        public virtual UserChatRoom[] update_data_user(string company_name, UserChatRoom[] user_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<UserChatRoom[]> update_data_userAsync(UserChatRoom[] user_array_list)
+        public virtual Task<UserChatRoom[]> update_data_userAsync(string company_name, UserChatRoom[] user_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual User_discussionChatRoom[] update_data_user_discussion(User_discussionChatRoom[] user_discussion_array_list)
+        public virtual User_discussionChatRoom[] update_data_user_discussion(string company_name, User_discussionChatRoom[] user_discussion_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
 
         [return: MessageParameter(Name = "return")]
-        public virtual Task<User_discussionChatRoom[]> update_data_user_discussionAsync(User_discussionChatRoom[] user_discussion_array_list)
+        public virtual Task<User_discussionChatRoom[]> update_data_user_discussionAsync(string company_name, User_discussionChatRoom[] user_discussion_array_list)
         {
-            throw new NotImplementedException();
+            throw new NotApplicableException();
         }
     }
 }

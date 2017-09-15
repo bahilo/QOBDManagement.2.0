@@ -119,19 +119,19 @@ namespace QOBDViewModels.ViewModel
         public AgentModel SelectedAgentModel
         {
             get { return AgentDetailViewModel.SelectedAgentModel; }
-            set { AgentDetailViewModel.SelectedAgentModel = value; onPropertyChange("SelectedAgentModel"); }
+            set { AgentDetailViewModel.SelectedAgentModel = value; onPropertyChange(); }
         }
 
         public IAgentDetailViewModel AgentDetailViewModel
         {
             get { return _agentDetailViewModel; }
-            set { _agentDetailViewModel = value; onPropertyChange("AgentDetailViewModel"); }
+            set { _agentDetailViewModel = value; onPropertyChange(); }
         }
 
         public ISideBarViewModel AgentSideBarViewModel
         {
             get { return _agentDetailViewModel.AgentSideBarViewModel; }
-            set { _agentDetailViewModel.AgentSideBarViewModel = value; onPropertyChange("AgentSideBarViewModel"); }
+            set { _agentDetailViewModel.AgentSideBarViewModel = value; onPropertyChange(); }
         }
 
         public List<AgentModel> UserModelList

@@ -22,6 +22,7 @@ namespace QOBDGateway.Core
     public class GateWayAgent : IAgentManager
     {
         private ClientProxy _channel;
+        private string _companyName;
 
         public event PropertyChangedEventHandler PropertyChanged;
         
@@ -50,12 +51,17 @@ namespace QOBDGateway.Core
             }
         }
 
+        public void setCompanyName(string companyName)
+        {
+            _companyName = companyName;
+        }
+
         public async Task<List<Agent>> DeleteAgentAsync(List<Agent> listAgent)
         {
             List<Agent> result = new List<Agent>();
             try
             {                
-                result = (await _channel.delete_data_agentAsync(listAgent.AgentTypeToArray())).ArrayTypeToAgent();
+                result = (await _channel.delete_data_agentAsync(_companyName, listAgent.AgentTypeToArray())).ArrayTypeToAgent();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -68,7 +74,7 @@ namespace QOBDGateway.Core
             List<Agent> result = new List<Agent>();
             try
             {
-                result = (await _channel.get_data_agentAsync(nbLine.ToString())).ArrayTypeToAgent().OrderBy(x=>x.ID).ToList();
+                result = (await _channel.get_data_agentAsync(_companyName, nbLine.ToString())).ArrayTypeToAgent().OrderBy(x=>x.ID).ToList();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -81,7 +87,7 @@ namespace QOBDGateway.Core
             List<Agent> result = new List<Agent>();
             try
             {                
-                result = (await _channel.get_data_agent_by_idAsync(id.ToString())).ArrayTypeToAgent();
+                result = (await _channel.get_data_agent_by_idAsync(_companyName, id.ToString())).ArrayTypeToAgent();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -94,7 +100,7 @@ namespace QOBDGateway.Core
             List<Agent> result = new List<Agent>();
             try
             {
-                result = (await _channel.get_data_agent_by_order_listAsync(orderList.OrderTypeToArray())).ArrayTypeToAgent();
+                result = (await _channel.get_data_agent_by_order_listAsync(_companyName, orderList.OrderTypeToArray())).ArrayTypeToAgent();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -108,7 +114,7 @@ namespace QOBDGateway.Core
             List<Agent> result = new List<Agent>();
             try
             {                
-                result = (await _channel.insert_data_agentAsync(listAgent.AgentTypeToArray())).ArrayTypeToAgent();
+                result = (await _channel.insert_data_agentAsync(_companyName, listAgent.AgentTypeToArray())).ArrayTypeToAgent();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -121,7 +127,7 @@ namespace QOBDGateway.Core
             List<Agent> result = new List<Agent>();
             try
             {                
-                result = (await _channel.update_data_agentAsync(listAgent.AgentTypeToArray())).ArrayTypeToAgent();
+                result = (await _channel.update_data_agentAsync(_companyName, listAgent.AgentTypeToArray())).ArrayTypeToAgent();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
@@ -134,7 +140,7 @@ namespace QOBDGateway.Core
             List<Agent> result = new List<Agent>();
             try
             {                
-                result = (await _channel.get_filter_agentAsync(agent.AgentTypeToFilterArray(filterOperator))).ArrayTypeToAgent();
+                result = (await _channel.get_filter_agentAsync(_companyName, agent.AgentTypeToFilterArray(filterOperator))).ArrayTypeToAgent();
             }
             catch (FaultException) { Dispose(); throw; }
             catch (CommunicationException) { _channel.Abort(); throw; }
