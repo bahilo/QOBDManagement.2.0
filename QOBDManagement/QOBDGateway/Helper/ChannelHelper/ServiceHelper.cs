@@ -1562,7 +1562,6 @@ namespace QOBDGateway.Helper.ChannelHelper
                 Erasable = Utility.encodeStringToBase64(x.Erasable),
                 Name = Utility.encodeStringToBase64(x.Name),
                 Price_purchase = x.Price_purchase,
-                Number_of_sale = Utility.encodeStringToBase64(x.Number_of_sale.ToString()),
                 Price_sell = x.Price_sell,
                 Stock = Utility.encodeStringToBase64(x.Stock.ToString()),
                 Ref = Utility.encodeStringToBase64(x.Ref),
@@ -1587,7 +1586,6 @@ namespace QOBDGateway.Helper.ChannelHelper
                 ItemQCBD.Price_purchase = Item.Price_purchase;
                 ItemQCBD.Price_sell = Item.Price_sell;
                 ItemQCBD.Stock = Utility.encodeStringToBase64(Item.Stock.ToString());
-                ItemQCBD.Number_of_sale = Utility.encodeStringToBase64(Item.Number_of_sale.ToString());
                 ItemQCBD.Option = Utility.encodeStringToBase64(Item.Option.ToString());
                 ItemQCBD.Ref = Utility.encodeStringToBase64(Item.Ref);
                 ItemQCBD.Picture = Utility.encodeStringToBase64(Item.Picture);

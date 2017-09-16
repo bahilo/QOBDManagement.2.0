@@ -277,9 +277,8 @@ namespace QOBDViewModels.ViewModel
         
         private async void deleteItem(string obj)
         {
-            if (await Singleton.getDialogueBox().showAsync("Do you confirm deleting the item [" + SelectedItemModel.TxtRef+"] ?"))
+            if (await Singleton.getDialogueBox().showAsync("Do you confirm the deletion of the item [" + SelectedItemModel.TxtRef+"] ?"))
             {
-                bool isErrorDetected = false;
                 var itemFoundList = Bl.BlItem.searchItem(new Item { Ref = SelectedItemModel.TxtRef, ID = SelectedItemModel.Item.ID }, ESearchOption.AND);
                 var provider_itemFoundList = Bl.BlItem.searchProvider_item(new Provider_item { ItemId = SelectedItemModel.Item.ID }, ESearchOption.AND);
                 if (itemFoundList.Count > 0 && itemFoundList[0].Erasable == EItem.Yes.ToString())
@@ -292,29 +291,26 @@ namespace QOBDViewModels.ViewModel
                         if (!string.IsNullOrEmpty(SelectedItemModel.TxtPicture))
                         {
                             var credentials = Bl.BlReferential.searchInfo(new Info { Name = "ftp_" }, ESearchOption.AND);
-                            if (WPFHelper.deleteFileFromFtpServer(ConfigurationManager.AppSettings["ftp_catalogue_image_folder"], SelectedItemModel.TxtPicture, credentials))
+                            bool isPictureDeleted = WPFHelper.deleteFileFromFtpServer(ConfigurationManager.AppSettings["ftp_catalogue_image_folder"], SelectedItemModel.TxtPicture, credentials);
+                            if (!isPictureDeleted)
                             {
-                                if (_main.ItemViewModel.ItemModelList.Where(x => x.TxtID == SelectedItemModel.TxtID).Count() != 0)
-                                {
-                                    List<ItemModel> buffer = _main.ItemViewModel.ItemModelList;
-                                    buffer.Remove(SelectedItemModel);
-
-                                    // call the property change for UI update
-                                    _main.ItemViewModel.ItemModelList = new List<ItemModel>(buffer);
-                                }
-
-                                await Singleton.getDialogueBox().showAsync("Item deleted successfully!");
-                            }
-                            else
-                                isErrorDetected = true;
+                                string errorMessage = "Error occurred while deleting the item [ref=" + SelectedItemModel.TxtRef + "] picture deletion error ["+ ConfigurationManager.AppSettings["ftp_catalogue_image_folder"] + "]["+ SelectedItemModel.TxtPicture + "].";
+                                Log.error(errorMessage, EErrorFrom.ITEM);
+                            }                            
                         }
-                        else
-                            await Singleton.getDialogueBox().showAsync("Item deleted successfully!");
+
+                        // remove the deleted item from the item list
+                        if (_main.ItemViewModel.ItemModelList.Where(x => x.TxtID == SelectedItemModel.TxtID).Count() != 0)
+                        {
+                            List<ItemModel> buffer = _main.ItemViewModel.ItemModelList;
+                            buffer.Remove(SelectedItemModel);
+
+                            // call the property change for UI update
+                            _main.ItemViewModel.ItemModelList = new List<ItemModel>(buffer);
+                        }
+                        await Singleton.getDialogueBox().showAsync("Item deleted successfully!");
                     }
                     else
-                        isErrorDetected = true;
-
-                    if (isErrorDetected)
                     {
                         string errorMessage = "Error occurred while deleting the item [ref=" + SelectedItemModel.TxtRef + "].";
                         Log.error(errorMessage, EErrorFrom.ITEM);
@@ -322,7 +318,6 @@ namespace QOBDViewModels.ViewModel
                     }
 
                     Singleton.getDialogueBox().IsDialogOpen = false;
-                    //_main.IsRefresh = true;
                     _page(_main.ItemViewModel);
                 }
                 else
@@ -368,13 +363,13 @@ namespace QOBDViewModels.ViewModel
                     SelectedItemModel.Item.Erasable = EItem.Yes.ToString();
                     var itemSavedList = await Bl.BlItem.InsertItemAsync(new List<Item> { SelectedItemModel.Item });
 
-                    SelectedItemModel.SelectedProvider = ((providerFoundList.Count > 0) ? providerFoundList.First() : (ProviderModel)_main.ModelCreator.createModel(QOBDModels.Enums.EModel.PROVIDER));
-                    SelectedItemModel.Item = itemSavedList[0];
-
-                    SelectedItemModel.Provider_itemModelList = await updateProvider_itemTable();
-                     
                     if (itemSavedList.Count > 0)
                     {
+                        SelectedItemModel.SelectedProvider = ((providerFoundList.Count > 0) ? providerFoundList.First() : (ProviderModel)_main.ModelCreator.createModel(QOBDModels.Enums.EModel.PROVIDER));
+                        SelectedItemModel.Item = itemSavedList[0];
+
+                        SelectedItemModel.Provider_itemModelList = await updateProvider_itemTable();
+                        
                         // update the catalogue
                         SelectedItemModel.Item = itemSavedList[0];
                         if (_main.ItemViewModel.ItemModelList.Where(x => x.TxtID == SelectedItemModel.TxtID).Count() == 0)
@@ -383,11 +378,17 @@ namespace QOBDViewModels.ViewModel
                             buffer.Add(SelectedItemModel);
 
                             // call the property change for UI update
-                            _main.ItemViewModel.ItemModelList = new List<ItemModel>(buffer); 
-                        }                       
+                            _main.ItemViewModel.ItemModelList = new List<ItemModel>(buffer);
+                        }
 
                         await Singleton.getDialogueBox().showAsync("Item has been created successfully!");                        
                     }
+                    else
+                    {
+                        string errorMessage = "Error occured while saving the item [" + SelectedItemModel.TxtRef + "]!";
+                        Log.error(errorMessage, EErrorFrom.ITEM);
+                        await Singleton.getDialogueBox().showAsync(errorMessage);
+                    }                                    
                 }
 
                 // Otherwise update the current item
