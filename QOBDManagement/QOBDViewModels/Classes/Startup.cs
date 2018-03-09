@@ -82,7 +82,8 @@ namespace QOBDViewModels.Classes
         public ClientConcreteProxy getProxy()
         {
             var newProxyClient = new ClientConcreteProxy("QOBDWebServicePort");
-            newProxyClient.Endpoint.EndpointBehaviors.Add(new SimpleEndPointBehavior());
+            //var newProxyClient = new ClientConcreteProxy("QOBDWebServicePort");
+            //newProxyClient.Endpoint.EndpointBehaviors.Add(new SimpleEndPointBehavior());
             return newProxyClient;
         }
 

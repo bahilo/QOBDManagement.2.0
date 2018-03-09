@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace QOBDViewModels.ViewModel
 {
-    public class LicenseViewModel: Classes.ViewModel
+    public class LicenseViewModel : Classes.ViewModel
     {
         private string _registrationStatus;
         private string _licenseKey;
@@ -111,36 +111,32 @@ namespace QOBDViewModels.ViewModel
             if (readLicenseFile().Length == 0)
                 return false;
 
+            TxtErrorMessage = "License key not valid, please purchase a valid key.";
+
             try
             {
                 var licensesFound = await _main.Startup.Bl.BlSecurity.checkLicenseByKeyAsync(LicenseKey);
-                if(licensesFound.Count() > 0)
-                {
+                
+                if (licensesFound.Count() > 0 && (licensesFound[0].EndDate <= Utility.DateTimeMinValueInSQL2005 || licensesFound[0].EndDate > DateTime.Now))
+                {                    
+                    TxtErrorMessage = "";
+                    RegistrationStatus = "REGISTERED";
                     License = licensesFound[0];
                     _main.CompanyName = License.CompanyName;
                     return true;
                 }
-                
+                else if (licensesFound.Count() > 0 && licensesFound[0].EndDate > Utility.DateTimeMinValueInSQL2005
+                         && licensesFound[0].EndDate < DateTime.Now)
+                {
+                    TxtErrorMessage = "Your license key has expired, please purchase a valid key.";
+                }
+                return false;
             }
             catch (Exception ex)
             {
-                TxtErrorMessage = "License key invalid, please purchase a valid key.";
-
-                if (ex.Message.Contains("license key not valid"))
-                {
-                    Log.warning(ex.Message, QOBDCommon.Enum.EErrorFrom.LICENSE);                    
-                    return false;
-                }
-                else if (ex.Message.Contains("license key valid"))
-                {
-                    TxtErrorMessage = "";
-                    RegistrationStatus = "REGISTERED";
-                    return true;
-                }
-                else
-                    Log.error(ex.Message, QOBDCommon.Enum.EErrorFrom.LICENSE);                 
+                Log.warning(ex.Message, QOBDCommon.Enum.EErrorFrom.LICENSE);
+                return false;
             }
-            return false;
         }
 
 
@@ -149,6 +145,8 @@ namespace QOBDViewModels.ViewModel
             if (saveLicenseFile())
             {
                 await Singleton.getDialogueBox().showAsync("Your license key has been saved successfully!");
+                //await _main.SecurityLoginViewModel.showLoginView();
+                //Singleton.DialogBox.IsDialogOpen = false;
             }
         }
 

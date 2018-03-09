@@ -24,7 +24,7 @@ namespace QOBDCommon.Interfaces.BL
 
         Task<List<Agent>> EnableAgent(List<Agent> listAgent);
 
-        Task<Agent> UseAgentAsync(Agent inAgent);
+        Task<Agent> UseAgentAsync(Agent inAgent, string licenseKey);
         
 
     } /* end interface Isecurity */

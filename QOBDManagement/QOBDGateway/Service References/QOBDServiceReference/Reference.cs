@@ -12,10 +12,10 @@ namespace QOBDGateway.QOBDServiceReference {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://localhost/WebServiceSOAP/server.php", ConfigurationName="QOBDServiceReference.QOBDWebServicePortType")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php", ConfigurationName="QOBDServiceReference.QOBDWebServicePortType")]
     public interface QOBDWebServicePortType {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_license", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_license", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -50,11 +50,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.LicenseQOBD[] get_data_license(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_license", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_license", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.LicenseQOBD[]> get_data_licenseAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_license", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_license", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -89,11 +89,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.LicenseQOBD[] delete_data_license(string company_name, QOBDGateway.QOBDServiceReference.LicenseQOBD[] license_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_license", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_license", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.LicenseQOBD[]> delete_data_licenseAsync(string company_name, QOBDGateway.QOBDServiceReference.LicenseQOBD[] license_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_license", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_license", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -128,11 +128,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.LicenseQOBD[] insert_data_license(string company_name, QOBDGateway.QOBDServiceReference.LicenseQOBD[] license_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_license", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_license", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.LicenseQOBD[]> insert_data_licenseAsync(string company_name, QOBDGateway.QOBDServiceReference.LicenseQOBD[] license_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_license", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_license", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -167,11 +167,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.LicenseQOBD[] update_data_license(string company_name, QOBDGateway.QOBDServiceReference.LicenseQOBD[] license_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_license", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_license", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.LicenseQOBD[]> update_data_licenseAsync(string company_name, QOBDGateway.QOBDServiceReference.LicenseQOBD[] license_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_license_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_license_by_id" +
+            "", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -206,11 +207,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.LicenseQOBD[] get_data_license_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_license_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_license_by_id" +
+            "", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.LicenseQOBD[]> get_data_license_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_license", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_license", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -245,11 +247,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.LicenseQOBD[] get_filter_license(string company_name, QOBDGateway.QOBDServiceReference.LicenseFilterQOBD license_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_license", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_license", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.LicenseQOBD[]> get_filter_licenseAsync(string company_name, QOBDGateway.QOBDServiceReference.LicenseFilterQOBD license_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_authenticated_user", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_authenticated_user" +
+            "", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -284,11 +287,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.AgentQOBD[] get_authenticated_user(string company_name, string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_authenticated_user", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_authenticated_user" +
+            "", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.AgentQOBD[]> get_authenticated_userAsync(string company_name, string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_action", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_action", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -323,11 +327,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ActionQOBD[] get_data_action(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_action", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_action", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ActionQOBD[]> get_data_actionAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_action", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_action", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -362,11 +366,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ActionQOBD[] delete_data_action(string company_name, QOBDGateway.QOBDServiceReference.ActionQOBD[] action_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_action", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_action", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ActionQOBD[]> delete_data_actionAsync(string company_name, QOBDGateway.QOBDServiceReference.ActionQOBD[] action_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_action", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_action", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -401,11 +405,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ActionQOBD[] insert_data_action(string company_name, QOBDGateway.QOBDServiceReference.ActionQOBD[] action_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_action", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_action", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ActionQOBD[]> insert_data_actionAsync(string company_name, QOBDGateway.QOBDServiceReference.ActionQOBD[] action_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_action", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_action", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -440,11 +444,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ActionQOBD[] update_data_action(string company_name, QOBDGateway.QOBDServiceReference.ActionQOBD[] action_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_action", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_action", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ActionQOBD[]> update_data_actionAsync(string company_name, QOBDGateway.QOBDServiceReference.ActionQOBD[] action_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_action_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_action_by_id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -479,11 +483,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ActionQOBD[] get_data_action_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_action_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_action_by_id", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ActionQOBD[]> get_data_action_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_action", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_action", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -518,11 +522,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ActionQOBD[] get_filter_action(string company_name, QOBDGateway.QOBDServiceReference.ActionFilterQOBD action_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_action", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_action", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ActionQOBD[]> get_filter_actionAsync(string company_name, QOBDGateway.QOBDServiceReference.ActionFilterQOBD action_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_agent_role", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_agent_role", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -557,11 +561,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Agent_roleQOBD[] get_data_agent_role(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_agent_role", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_agent_role", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Agent_roleQOBD[]> get_data_agent_roleAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_agent_role", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_agent_role" +
+            "", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -596,11 +601,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Agent_roleQOBD[] delete_data_agent_role(string company_name, QOBDGateway.QOBDServiceReference.Agent_roleQOBD[] agent_role_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_agent_role", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_agent_role" +
+            "", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Agent_roleQOBD[]> delete_data_agent_roleAsync(string company_name, QOBDGateway.QOBDServiceReference.Agent_roleQOBD[] agent_role_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_agent_role", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_agent_role" +
+            "", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -635,11 +642,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Agent_roleQOBD[] insert_data_agent_role(string company_name, QOBDGateway.QOBDServiceReference.Agent_roleQOBD[] agent_role_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_agent_role", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_agent_role" +
+            "", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Agent_roleQOBD[]> insert_data_agent_roleAsync(string company_name, QOBDGateway.QOBDServiceReference.Agent_roleQOBD[] agent_role_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_agent_role", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_agent_role" +
+            "", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -674,11 +683,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Agent_roleQOBD[] update_data_agent_role(string company_name, QOBDGateway.QOBDServiceReference.Agent_roleQOBD[] agent_role_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_agent_role", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_agent_role" +
+            "", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Agent_roleQOBD[]> update_data_agent_roleAsync(string company_name, QOBDGateway.QOBDServiceReference.Agent_roleQOBD[] agent_role_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_agent_role_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_agent_role_by" +
+            "_id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -713,11 +724,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Agent_roleQOBD[] get_data_agent_role_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_agent_role_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_agent_role_by" +
+            "_id", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Agent_roleQOBD[]> get_data_agent_role_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_agent_role", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_agent_role", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -752,11 +764,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Agent_roleQOBD[] get_filter_agent_role(string company_name, QOBDGateway.QOBDServiceReference.Agent_roleFilterQOBD agent_role_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_agent_role", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_agent_role", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Agent_roleQOBD[]> get_filter_agent_roleAsync(string company_name, QOBDGateway.QOBDServiceReference.Agent_roleFilterQOBD agent_role_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_role", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_role", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -791,11 +803,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.RoleQOBD[] get_data_role(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_role", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_role", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.RoleQOBD[]> get_data_roleAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_role", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_role", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -830,11 +842,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.RoleQOBD[] delete_data_role(string company_name, QOBDGateway.QOBDServiceReference.RoleQOBD[] role_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_role", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_role", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.RoleQOBD[]> delete_data_roleAsync(string company_name, QOBDGateway.QOBDServiceReference.RoleQOBD[] role_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_role", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_role", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -869,11 +881,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.RoleQOBD[] insert_data_role(string company_name, QOBDGateway.QOBDServiceReference.RoleQOBD[] role_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_role", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_role", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.RoleQOBD[]> insert_data_roleAsync(string company_name, QOBDGateway.QOBDServiceReference.RoleQOBD[] role_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_role", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_role", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -908,11 +920,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.RoleQOBD[] update_data_role(string company_name, QOBDGateway.QOBDServiceReference.RoleQOBD[] role_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_role", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_role", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.RoleQOBD[]> update_data_roleAsync(string company_name, QOBDGateway.QOBDServiceReference.RoleQOBD[] role_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_role_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_role_by_id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -947,11 +959,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.RoleQOBD[] get_data_role_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_role_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_role_by_id", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.RoleQOBD[]> get_data_role_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_role", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_role", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -986,11 +998,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.RoleQOBD[] get_filter_role(string company_name, QOBDGateway.QOBDServiceReference.RoleFilterQOBD role_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_role", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_role", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.RoleQOBD[]> get_filter_roleAsync(string company_name, QOBDGateway.QOBDServiceReference.RoleFilterQOBD role_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_role_action", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_role_action", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -1025,11 +1037,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Role_actionQOBD[] get_data_role_action(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_role_action", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_role_action", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Role_actionQOBD[]> get_data_role_actionAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_role_action", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_role_actio" +
+            "n", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -1064,11 +1077,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Role_actionQOBD[] delete_data_role_action(string company_name, QOBDGateway.QOBDServiceReference.Role_actionQOBD[] role_action_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_role_action", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_role_actio" +
+            "n", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Role_actionQOBD[]> delete_data_role_actionAsync(string company_name, QOBDGateway.QOBDServiceReference.Role_actionQOBD[] role_action_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_role_action", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_role_actio" +
+            "n", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -1103,11 +1118,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Role_actionQOBD[] insert_data_role_action(string company_name, QOBDGateway.QOBDServiceReference.Role_actionQOBD[] role_action_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_role_action", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_role_actio" +
+            "n", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Role_actionQOBD[]> insert_data_role_actionAsync(string company_name, QOBDGateway.QOBDServiceReference.Role_actionQOBD[] role_action_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_role_action", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_role_actio" +
+            "n", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -1142,11 +1159,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Role_actionQOBD[] update_data_role_action(string company_name, QOBDGateway.QOBDServiceReference.Role_actionQOBD[] role_action_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_role_action", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_role_actio" +
+            "n", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Role_actionQOBD[]> update_data_role_actionAsync(string company_name, QOBDGateway.QOBDServiceReference.Role_actionQOBD[] role_action_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_role_action_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_role_action_b" +
+            "y_id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -1181,11 +1200,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Role_actionQOBD[] get_data_role_action_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_role_action_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_role_action_b" +
+            "y_id", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Role_actionQOBD[]> get_data_role_action_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_role_action", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_role_action" +
+            "", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -1220,11 +1241,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Role_actionQOBD[] get_filter_role_action(string company_name, QOBDGateway.QOBDServiceReference.Role_actionFilterQOBD role_action_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_role_action", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_role_action" +
+            "", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Role_actionQOBD[]> get_filter_role_actionAsync(string company_name, QOBDGateway.QOBDServiceReference.Role_actionFilterQOBD role_action_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/check_license_by_key", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/check_license_by_key", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -1259,11 +1281,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.LicenseQOBD[] check_license_by_key(string license_key);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/check_license_by_key", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/check_license_by_key", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.LicenseQOBD[]> check_license_by_keyAsync(string license_key);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/check_license_by_company", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/check_license_by_compa" +
+            "ny", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -1298,11 +1321,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.LicenseQOBD[] check_license_by_company(string company_name);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/check_license_by_company", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/check_license_by_compa" +
+            "ny", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.LicenseQOBD[]> check_license_by_companyAsync(string company_name);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_bill", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_bill", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -1337,11 +1361,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.BillQOBD[] get_data_bill(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_bill", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_bill", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.BillQOBD[]> get_data_billAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_bill", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_bill", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -1376,11 +1400,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.BillQOBD[] delete_data_bill(string company_name, QOBDGateway.QOBDServiceReference.BillQOBD[] bill_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_bill", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_bill", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.BillQOBD[]> delete_data_billAsync(string company_name, QOBDGateway.QOBDServiceReference.BillQOBD[] bill_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_bill", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_bill", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -1415,11 +1439,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.BillQOBD[] insert_data_bill(string company_name, QOBDGateway.QOBDServiceReference.BillQOBD[] bill_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_bill", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_bill", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.BillQOBD[]> insert_data_billAsync(string company_name, QOBDGateway.QOBDServiceReference.BillQOBD[] bill_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_bill", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_bill", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -1454,11 +1478,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.BillQOBD[] update_data_bill(string company_name, QOBDGateway.QOBDServiceReference.BillQOBD[] bill_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_bill", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_bill", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.BillQOBD[]> update_data_billAsync(string company_name, QOBDGateway.QOBDServiceReference.BillQOBD[] bill_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_bill_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_bill_by_id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -1493,11 +1517,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.BillQOBD[] get_data_bill_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_bill_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_bill_by_id", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.BillQOBD[]> get_data_bill_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_bill", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_bill", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -1532,11 +1556,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.BillQOBD[] get_filter_bill(string company_name, QOBDGateway.QOBDServiceReference.BillFilterQOBD bill_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_bill", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_bill", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.BillQOBD[]> get_filter_billAsync(string company_name, QOBDGateway.QOBDServiceReference.BillFilterQOBD bill_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_bill_by_order_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_bill_by_order" +
+            "_list", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -1571,11 +1596,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.BillQOBD[] get_data_bill_by_order_list(string company_name, QOBDGateway.QOBDServiceReference.OrdersQOBD[] order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_bill_by_order_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_bill_by_order" +
+            "_list", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.BillQOBD[]> get_data_bill_by_order_listAsync(string company_name, QOBDGateway.QOBDServiceReference.OrdersQOBD[] order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_bill_by_unpaid", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_bill_by_unpai" +
+            "d", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -1610,11 +1637,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.BillQOBD[] get_data_bill_by_unpaid(string company_name, string agent_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_bill_by_unpaid", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_bill_by_unpai" +
+            "d", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.BillQOBD[]> get_data_bill_by_unpaidAsync(string company_name, string agent_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_order", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_order", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -1649,11 +1677,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.OrdersQOBD[] get_data_order(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_order", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_order", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.OrdersQOBD[]> get_data_orderAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_order", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_order", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -1688,11 +1716,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.OrdersQOBD[] delete_data_order(string company_name, QOBDGateway.QOBDServiceReference.OrdersQOBD[] order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_order", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_order", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.OrdersQOBD[]> delete_data_orderAsync(string company_name, QOBDGateway.QOBDServiceReference.OrdersQOBD[] order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_order", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_order", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -1727,11 +1755,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.OrdersQOBD[] insert_data_order(string company_name, QOBDGateway.QOBDServiceReference.OrdersQOBD[] order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_order", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_order", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.OrdersQOBD[]> insert_data_orderAsync(string company_name, QOBDGateway.QOBDServiceReference.OrdersQOBD[] order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_order", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_order", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -1766,11 +1794,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.OrdersQOBD[] update_data_order(string company_name, QOBDGateway.QOBDServiceReference.OrdersQOBD[] order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_order", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_order", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.OrdersQOBD[]> update_data_orderAsync(string company_name, QOBDGateway.QOBDServiceReference.OrdersQOBD[] order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_order_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_order_by_id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -1805,11 +1833,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.OrdersQOBD[] get_data_order_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_order_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_order_by_id", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.OrdersQOBD[]> get_data_order_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_order", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_order", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -1844,11 +1872,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.OrdersQOBD[] get_filter_order(string company_name, QOBDGateway.QOBDServiceReference.OrderFilterQOBD order_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_order", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_order", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.OrdersQOBD[]> get_filter_orderAsync(string company_name, QOBDGateway.QOBDServiceReference.OrderFilterQOBD order_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/generate_pdf", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/generate_pdf", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -1882,10 +1910,10 @@ namespace QOBDGateway.QOBDServiceReference {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LicenseQOBD))]
         void generate_pdf(string company_name, QOBDGateway.QOBDServiceReference.PdfQOBD order_array);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/generate_pdf", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/generate_pdf", ReplyAction="*")]
         System.Threading.Tasks.Task generate_pdfAsync(string company_name, QOBDGateway.QOBDServiceReference.PdfQOBD order_array);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_agent", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_agent", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -1920,11 +1948,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.AgentQOBD[] get_data_agent(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_agent", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_agent", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.AgentQOBD[]> get_data_agentAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_agent_credential", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_agent_credent" +
+            "ial", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -1959,11 +1988,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.AgentQOBD[] get_data_agent_credential(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_agent_credential", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_agent_credent" +
+            "ial", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.AgentQOBD[]> get_data_agent_credentialAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_agent", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_agent", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -1998,11 +2028,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.AgentQOBD[] delete_data_agent(string company_name, QOBDGateway.QOBDServiceReference.AgentQOBD[] agent_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_agent", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_agent", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.AgentQOBD[]> delete_data_agentAsync(string company_name, QOBDGateway.QOBDServiceReference.AgentQOBD[] agent_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_agent", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_agent", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -2037,11 +2067,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.AgentQOBD[] insert_data_agent(string company_name, QOBDGateway.QOBDServiceReference.AgentQOBD[] agent_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_agent", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_agent", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.AgentQOBD[]> insert_data_agentAsync(string company_name, QOBDGateway.QOBDServiceReference.AgentQOBD[] agent_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_agent", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_agent", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -2076,11 +2106,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.AgentQOBD[] update_data_agent(string company_name, QOBDGateway.QOBDServiceReference.AgentQOBD[] agent_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_agent", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_agent", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.AgentQOBD[]> update_data_agentAsync(string company_name, QOBDGateway.QOBDServiceReference.AgentQOBD[] agent_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_agent_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_agent_by_id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -2115,11 +2145,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.AgentQOBD[] get_data_agent_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_agent_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_agent_by_id", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.AgentQOBD[]> get_data_agent_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_agent", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_agent", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -2154,11 +2184,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.AgentQOBD[] get_filter_agent(string company_name, QOBDGateway.QOBDServiceReference.AgentFilterQOBD agent_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_agent", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_agent", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.AgentQOBD[]> get_filter_agentAsync(string company_name, QOBDGateway.QOBDServiceReference.AgentFilterQOBD agent_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_agent_by_order_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_agent_by_orde" +
+            "r_list", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -2193,11 +2224,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.AgentQOBD[] get_data_agent_by_order_list(string company_name, QOBDGateway.QOBDServiceReference.OrdersQOBD[] order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_agent_by_order_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_agent_by_orde" +
+            "r_list", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.AgentQOBD[]> get_data_agent_by_order_listAsync(string company_name, QOBDGateway.QOBDServiceReference.OrdersQOBD[] order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_statistic", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_statistic", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -2232,11 +2264,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.StatisticQOBD[] get_data_statistic(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_statistic", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_statistic", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.StatisticQOBD[]> get_data_statisticAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_statistic", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_statistic", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -2271,11 +2303,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.StatisticQOBD[] delete_data_statistic(string company_name, QOBDGateway.QOBDServiceReference.StatisticQOBD[] statistic_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_statistic", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_statistic", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.StatisticQOBD[]> delete_data_statisticAsync(string company_name, QOBDGateway.QOBDServiceReference.StatisticQOBD[] statistic_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_statistic", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_statistic", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -2310,11 +2342,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.StatisticQOBD[] insert_data_statistic(string company_name, QOBDGateway.QOBDServiceReference.StatisticQOBD[] statistic_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_statistic", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_statistic", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.StatisticQOBD[]> insert_data_statisticAsync(string company_name, QOBDGateway.QOBDServiceReference.StatisticQOBD[] statistic_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_statistic", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_statistic", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -2349,11 +2381,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.StatisticQOBD[] update_data_statistic(string company_name, QOBDGateway.QOBDServiceReference.StatisticQOBD[] statistic_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_statistic", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_statistic", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.StatisticQOBD[]> update_data_statisticAsync(string company_name, QOBDGateway.QOBDServiceReference.StatisticQOBD[] statistic_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_statistic_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_statistic_by_" +
+            "id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -2388,11 +2421,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.StatisticQOBD[] get_data_statistic_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_statistic_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_statistic_by_" +
+            "id", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.StatisticQOBD[]> get_data_statistic_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_statistic", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_statistic", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -2427,11 +2461,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.StatisticQOBD[] get_filter_statistic(string company_name, QOBDGateway.QOBDServiceReference.StatisticFilterQOBD statistic_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_statistic", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_statistic", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.StatisticQOBD[]> get_filter_statisticAsync(string company_name, QOBDGateway.QOBDServiceReference.StatisticFilterQOBD statistic_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_item", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -2466,11 +2500,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ItemQOBD[] get_data_item(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_item", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ItemQOBD[]> get_data_itemAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_item", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -2505,11 +2539,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ItemQOBD[] delete_data_item(string company_name, QOBDGateway.QOBDServiceReference.ItemQOBD[] item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_item", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ItemQOBD[]> delete_data_itemAsync(string company_name, QOBDGateway.QOBDServiceReference.ItemQOBD[] item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_item", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -2544,11 +2578,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ItemQOBD[] insert_data_item(string company_name, QOBDGateway.QOBDServiceReference.ItemQOBD[] item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_item", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ItemQOBD[]> insert_data_itemAsync(string company_name, QOBDGateway.QOBDServiceReference.ItemQOBD[] item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_item", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -2583,11 +2617,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ItemQOBD[] update_data_item(string company_name, QOBDGateway.QOBDServiceReference.ItemQOBD[] item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_item", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ItemQOBD[]> update_data_itemAsync(string company_name, QOBDGateway.QOBDServiceReference.ItemQOBD[] item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_item_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_item_by_id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -2622,11 +2656,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ItemQOBD[] get_data_item_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_item_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_item_by_id", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ItemQOBD[]> get_data_item_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_item", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -2661,11 +2695,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ItemQOBD[] get_filter_item(string company_name, QOBDGateway.QOBDServiceReference.ItemFilterQOBD item_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_item", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ItemQOBD[]> get_filter_itemAsync(string company_name, QOBDGateway.QOBDServiceReference.ItemFilterQOBD item_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_item_by_order_item_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_item_by_order" +
+            "_item_list", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -2700,11 +2735,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ItemQOBD[] get_data_item_by_order_item_list(string company_name, QOBDGateway.QOBDServiceReference.Order_itemQOBD[] order_item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_item_by_order_item_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_item_by_order" +
+            "_item_list", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ItemQOBD[]> get_data_item_by_order_item_listAsync(string company_name, QOBDGateway.QOBDServiceReference.Order_itemQOBD[] order_item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_client", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_client", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -2739,11 +2775,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ClientQOBD[] get_data_client(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_client", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_client", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ClientQOBD[]> get_data_clientAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_client", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_client", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -2778,11 +2814,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ClientQOBD[] delete_data_client(string company_name, QOBDGateway.QOBDServiceReference.ClientQOBD[] client_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_client", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_client", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ClientQOBD[]> delete_data_clientAsync(string company_name, QOBDGateway.QOBDServiceReference.ClientQOBD[] client_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_client", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_client", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -2817,11 +2853,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ClientQOBD[] insert_data_client(string company_name, QOBDGateway.QOBDServiceReference.ClientQOBD[] client_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_client", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_client", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ClientQOBD[]> insert_data_clientAsync(string company_name, QOBDGateway.QOBDServiceReference.ClientQOBD[] client_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_client", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_client", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -2856,11 +2892,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ClientQOBD[] update_data_client(string company_name, QOBDGateway.QOBDServiceReference.ClientQOBD[] client_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_client", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_client", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ClientQOBD[]> update_data_clientAsync(string company_name, QOBDGateway.QOBDServiceReference.ClientQOBD[] client_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_client_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_client_by_id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -2895,11 +2931,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ClientQOBD[] get_data_client_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_client_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_client_by_id", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ClientQOBD[]> get_data_client_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_Client", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_Client", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -2934,11 +2970,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ClientQOBD[] get_filter_Client(string company_name, QOBDGateway.QOBDServiceReference.ClientFilterQOBD client_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_Client", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_Client", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ClientQOBD[]> get_filter_ClientAsync(string company_name, QOBDGateway.QOBDServiceReference.ClientFilterQOBD client_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_quotes_client", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_quotes_client", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -2973,11 +3009,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.OrdersQOBD[] get_quotes_client(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_quotes_client", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_quotes_client", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.OrdersQOBD[]> get_quotes_clientAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_orders_client", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_orders_client", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -3012,11 +3048,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.OrdersQOBD[] get_orders_client(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_orders_client", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_orders_client", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.OrdersQOBD[]> get_orders_clientAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_client_by_bill_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_client_by_bil" +
+            "l_list", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -3051,11 +3088,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ClientQOBD[] get_data_client_by_bill_list(string company_name, QOBDGateway.QOBDServiceReference.BillQOBD[] bill_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_client_by_bill_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_client_by_bil" +
+            "l_list", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ClientQOBD[]> get_data_client_by_bill_listAsync(string company_name, QOBDGateway.QOBDServiceReference.BillQOBD[] bill_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_client_by_order_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_client_by_ord" +
+            "er_list", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -3090,11 +3129,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ClientQOBD[] get_data_client_by_order_list(string company_name, QOBDGateway.QOBDServiceReference.OrdersQOBD[] order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_client_by_order_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_client_by_ord" +
+            "er_list", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ClientQOBD[]> get_data_client_by_order_listAsync(string company_name, QOBDGateway.QOBDServiceReference.OrdersQOBD[] order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_client_by_max_credit_over", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_client_by_max" +
+            "_credit_over", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -3129,11 +3170,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ClientQOBD[] get_data_client_by_max_credit_over(string company_name, string agent_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_client_by_max_credit_over", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_client_by_max" +
+            "_credit_over", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ClientQOBD[]> get_data_client_by_max_credit_overAsync(string company_name, string agent_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_actionRecord", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_actionRecord", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -3168,11 +3210,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ActionRecordQOBD[] get_data_actionRecord(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_actionRecord", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_actionRecord", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ActionRecordQOBD[]> get_data_actionRecordAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_actionRecord", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_actionReco" +
+            "rd", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -3207,11 +3250,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ActionRecordQOBD[] delete_data_actionRecord(string company_name, QOBDGateway.QOBDServiceReference.ActionRecordQOBD[] actionRecord_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_actionRecord", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_actionReco" +
+            "rd", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ActionRecordQOBD[]> delete_data_actionRecordAsync(string company_name, QOBDGateway.QOBDServiceReference.ActionRecordQOBD[] actionRecord_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_actionRecord", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_actionReco" +
+            "rd", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -3246,11 +3291,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ActionRecordQOBD[] insert_data_actionRecord(string company_name, QOBDGateway.QOBDServiceReference.ActionRecordQOBD[] actionRecord_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_actionRecord", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_actionReco" +
+            "rd", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ActionRecordQOBD[]> insert_data_actionRecordAsync(string company_name, QOBDGateway.QOBDServiceReference.ActionRecordQOBD[] actionRecord_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_actionRecord", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_actionReco" +
+            "rd", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -3285,11 +3332,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ActionRecordQOBD[] update_data_actionRecord(string company_name, QOBDGateway.QOBDServiceReference.ActionRecordQOBD[] actionRecord_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_actionRecord", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_actionReco" +
+            "rd", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ActionRecordQOBD[]> update_data_actionRecordAsync(string company_name, QOBDGateway.QOBDServiceReference.ActionRecordQOBD[] actionRecord_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_actionRecord_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_actionRecord_" +
+            "by_id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -3324,11 +3373,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ActionRecordQOBD[] get_data_actionRecord_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_actionRecord_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_actionRecord_" +
+            "by_id", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ActionRecordQOBD[]> get_data_actionRecord_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_actionRecord", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_actionRecor" +
+            "d", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -3363,11 +3414,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ActionRecordQOBD[] get_filter_actionRecord(string company_name, QOBDGateway.QOBDServiceReference.ActionRecordFilterQOBD actionRecord_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_actionRecord", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_actionRecor" +
+            "d", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ActionRecordQOBD[]> get_filter_actionRecordAsync(string company_name, QOBDGateway.QOBDServiceReference.ActionRecordFilterQOBD actionRecord_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_address", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_address", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -3402,11 +3454,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.AddressQOBD[] get_data_address(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_address", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_address", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.AddressQOBD[]> get_data_addressAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_address", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_address", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -3441,11 +3493,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.AddressQOBD[] delete_data_address(string company_name, QOBDGateway.QOBDServiceReference.AddressQOBD[] address_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_address", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_address", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.AddressQOBD[]> delete_data_addressAsync(string company_name, QOBDGateway.QOBDServiceReference.AddressQOBD[] address_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_address", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_address", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -3480,11 +3532,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.AddressQOBD[] insert_data_address(string company_name, QOBDGateway.QOBDServiceReference.AddressQOBD[] address_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_address", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_address", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.AddressQOBD[]> insert_data_addressAsync(string company_name, QOBDGateway.QOBDServiceReference.AddressQOBD[] address_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_address", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_address", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -3519,11 +3571,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.AddressQOBD[] update_data_address(string company_name, QOBDGateway.QOBDServiceReference.AddressQOBD[] address_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_address", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_address", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.AddressQOBD[]> update_data_addressAsync(string company_name, QOBDGateway.QOBDServiceReference.AddressQOBD[] address_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_address_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_address_by_id" +
+            "", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -3558,11 +3611,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.AddressQOBD[] get_data_address_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_address_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_address_by_id" +
+            "", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.AddressQOBD[]> get_data_address_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_address", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_address", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -3597,11 +3651,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.AddressQOBD[] get_filter_address(string company_name, QOBDGateway.QOBDServiceReference.AddressFilterQOBD address_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_address", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_address", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.AddressQOBD[]> get_filter_addressAsync(string company_name, QOBDGateway.QOBDServiceReference.AddressFilterQOBD address_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_address_by_order_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_address_by_or" +
+            "der_list", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -3636,11 +3691,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.AddressQOBD[] get_data_address_by_order_list(string company_name, QOBDGateway.QOBDServiceReference.OrdersQOBD[] order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_address_by_order_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_address_by_or" +
+            "der_list", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.AddressQOBD[]> get_data_address_by_order_listAsync(string company_name, QOBDGateway.QOBDServiceReference.OrdersQOBD[] order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_address_by_client_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_address_by_cl" +
+            "ient_list", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -3675,11 +3732,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.AddressQOBD[] get_data_address_by_client_list(string company_name, QOBDGateway.QOBDServiceReference.ClientQOBD[] client_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_address_by_client_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_address_by_cl" +
+            "ient_list", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.AddressQOBD[]> get_data_address_by_client_listAsync(string company_name, QOBDGateway.QOBDServiceReference.ClientQOBD[] client_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_order_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_order_item", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -3714,11 +3772,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Order_itemQOBD[] get_data_order_item(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_order_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_order_item", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Order_itemQOBD[]> get_data_order_itemAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_order_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_order_item" +
+            "", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -3753,11 +3812,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Order_itemQOBD[] delete_data_order_item(string company_name, QOBDGateway.QOBDServiceReference.Order_itemQOBD[] order_item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_order_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_order_item" +
+            "", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Order_itemQOBD[]> delete_data_order_itemAsync(string company_name, QOBDGateway.QOBDServiceReference.Order_itemQOBD[] order_item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_order_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_order_item" +
+            "", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -3792,11 +3853,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Order_itemQOBD[] insert_data_order_item(string company_name, QOBDGateway.QOBDServiceReference.Order_itemQOBD[] order_item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_order_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_order_item" +
+            "", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Order_itemQOBD[]> insert_data_order_itemAsync(string company_name, QOBDGateway.QOBDServiceReference.Order_itemQOBD[] order_item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_order_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_order_item" +
+            "", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -3831,11 +3894,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Order_itemQOBD[] update_data_order_item(string company_name, QOBDGateway.QOBDServiceReference.Order_itemQOBD[] order_item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_order_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_order_item" +
+            "", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Order_itemQOBD[]> update_data_order_itemAsync(string company_name, QOBDGateway.QOBDServiceReference.Order_itemQOBD[] order_item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_order_item_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_order_item_by" +
+            "_id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -3870,11 +3935,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Order_itemQOBD[] get_data_order_item_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_order_item_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_order_item_by" +
+            "_id", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Order_itemQOBD[]> get_data_order_item_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_order_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_order_item", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -3909,11 +3975,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Order_itemQOBD[] get_filter_order_item(string company_name, QOBDGateway.QOBDServiceReference.Order_itemFilterQOBD order_item_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_order_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_order_item", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Order_itemQOBD[]> get_filter_order_itemAsync(string company_name, QOBDGateway.QOBDServiceReference.Order_itemFilterQOBD order_item_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_order_item_by_order_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_order_item_by" +
+            "_order_list", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -3948,11 +4015,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Order_itemQOBD[] get_data_order_item_by_order_list(string company_name, QOBDGateway.QOBDServiceReference.OrdersQOBD[] order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_order_item_by_order_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_order_item_by" +
+            "_order_list", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Order_itemQOBD[]> get_data_order_item_by_order_listAsync(string company_name, QOBDGateway.QOBDServiceReference.OrdersQOBD[] order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_contact", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_contact", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -3987,11 +4055,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ContactQOBD[] get_data_contact(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_contact", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_contact", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ContactQOBD[]> get_data_contactAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_contact", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_contact", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -4026,11 +4094,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ContactQOBD[] delete_data_contact(string company_name, QOBDGateway.QOBDServiceReference.ContactQOBD[] contact_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_contact", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_contact", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ContactQOBD[]> delete_data_contactAsync(string company_name, QOBDGateway.QOBDServiceReference.ContactQOBD[] contact_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_contact", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_contact", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -4065,11 +4133,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ContactQOBD[] insert_data_contact(string company_name, QOBDGateway.QOBDServiceReference.ContactQOBD[] contact_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_contact", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_contact", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ContactQOBD[]> insert_data_contactAsync(string company_name, QOBDGateway.QOBDServiceReference.ContactQOBD[] contact_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_contact", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_contact", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -4104,11 +4172,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ContactQOBD[] update_data_contact(string company_name, QOBDGateway.QOBDServiceReference.ContactQOBD[] contact_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_contact", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_contact", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ContactQOBD[]> update_data_contactAsync(string company_name, QOBDGateway.QOBDServiceReference.ContactQOBD[] contact_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_contact_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_contact_by_id" +
+            "", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -4143,11 +4212,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ContactQOBD[] get_data_contact_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_contact_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_contact_by_id" +
+            "", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ContactQOBD[]> get_data_contact_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_contact", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_contact", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -4182,11 +4252,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ContactQOBD[] get_filter_contact(string company_name, QOBDGateway.QOBDServiceReference.ContactFilterQOBD contact_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_contact", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_contact", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ContactQOBD[]> get_filter_contactAsync(string company_name, QOBDGateway.QOBDServiceReference.ContactFilterQOBD contact_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_contact_by_client_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_contact_by_cl" +
+            "ient_list", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -4221,11 +4292,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ContactQOBD[] get_data_contact_by_client_list(string company_name, QOBDGateway.QOBDServiceReference.ClientQOBD[] client_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_contact_by_client_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_contact_by_cl" +
+            "ient_list", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ContactQOBD[]> get_data_contact_by_client_listAsync(string company_name, QOBDGateway.QOBDServiceReference.ClientQOBD[] client_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_delivery", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_delivery", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -4260,11 +4332,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.DeliveryQOBD[] get_data_delivery(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_delivery", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_delivery", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.DeliveryQOBD[]> get_data_deliveryAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_delivery", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_delivery", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -4299,11 +4371,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.DeliveryQOBD[] delete_data_delivery(string company_name, QOBDGateway.QOBDServiceReference.DeliveryQOBD[] delivery_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_delivery", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_delivery", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.DeliveryQOBD[]> delete_data_deliveryAsync(string company_name, QOBDGateway.QOBDServiceReference.DeliveryQOBD[] delivery_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_delivery", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_delivery", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -4338,11 +4410,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.DeliveryQOBD[] insert_data_delivery(string company_name, QOBDGateway.QOBDServiceReference.DeliveryQOBD[] delivery_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_delivery", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_delivery", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.DeliveryQOBD[]> insert_data_deliveryAsync(string company_name, QOBDGateway.QOBDServiceReference.DeliveryQOBD[] delivery_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_delivery", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_delivery", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -4377,11 +4449,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.DeliveryQOBD[] update_data_delivery(string company_name, QOBDGateway.QOBDServiceReference.DeliveryQOBD[] delivery_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_delivery", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_delivery", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.DeliveryQOBD[]> update_data_deliveryAsync(string company_name, QOBDGateway.QOBDServiceReference.DeliveryQOBD[] delivery_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_delivery_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_delivery_by_i" +
+            "d", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -4416,11 +4489,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.DeliveryQOBD[] get_data_delivery_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_delivery_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_delivery_by_i" +
+            "d", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.DeliveryQOBD[]> get_data_delivery_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_delivery", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_delivery", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -4455,11 +4529,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.DeliveryQOBD[] get_filter_delivery(string company_name, QOBDGateway.QOBDServiceReference.DeliveryFilterQOBD delivery_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_delivery", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_delivery", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.DeliveryQOBD[]> get_filter_deliveryAsync(string company_name, QOBDGateway.QOBDServiceReference.DeliveryFilterQOBD delivery_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_delivery_by_order_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_delivery_by_o" +
+            "rder_list", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -4494,11 +4569,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.DeliveryQOBD[] get_data_delivery_by_order_list(string company_name, QOBDGateway.QOBDServiceReference.OrdersQOBD[] order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_delivery_by_order_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_delivery_by_o" +
+            "rder_list", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.DeliveryQOBD[]> get_data_delivery_by_order_listAsync(string company_name, QOBDGateway.QOBDServiceReference.OrdersQOBD[] order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_infos", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_infos", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -4533,11 +4609,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.InfosQOBD[] get_data_infos(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_infos", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_infos", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.InfosQOBD[]> get_data_infosAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_infos", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_infos", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -4572,11 +4648,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.InfosQOBD[] delete_data_infos(string company_name, QOBDGateway.QOBDServiceReference.InfosQOBD[] infos_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_infos", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_infos", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.InfosQOBD[]> delete_data_infosAsync(string company_name, QOBDGateway.QOBDServiceReference.InfosQOBD[] infos_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_infos", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_infos", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -4611,11 +4687,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.InfosQOBD[] insert_data_infos(string company_name, QOBDGateway.QOBDServiceReference.InfosQOBD[] infos_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_infos", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_infos", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.InfosQOBD[]> insert_data_infosAsync(string company_name, QOBDGateway.QOBDServiceReference.InfosQOBD[] infos_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_infos", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_infos", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -4650,11 +4726,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.InfosQOBD[] update_data_infos(string company_name, QOBDGateway.QOBDServiceReference.InfosQOBD[] infos_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_infos", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_infos", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.InfosQOBD[]> update_data_infosAsync(string company_name, QOBDGateway.QOBDServiceReference.InfosQOBD[] infos_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_infos_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_infos_by_id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -4689,11 +4765,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.InfosQOBD[] get_data_infos_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_infos_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_infos_by_id", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.InfosQOBD[]> get_data_infos_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_infos", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_infos", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -4728,11 +4804,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.InfosQOBD[] get_filter_infos(string company_name, QOBDGateway.QOBDServiceReference.InfosFilterQOBD infos_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_infos", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_infos", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.InfosQOBD[]> get_filter_infosAsync(string company_name, QOBDGateway.QOBDServiceReference.InfosFilterQOBD infos_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_auto_ref", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_auto_ref", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -4767,11 +4843,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Auto_refsQOBD[] get_data_auto_ref(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_auto_ref", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_auto_ref", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Auto_refsQOBD[]> get_data_auto_refAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_auto_ref", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_auto_ref", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -4806,11 +4882,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Auto_refsQOBD[] delete_data_auto_ref(string company_name, QOBDGateway.QOBDServiceReference.Auto_refsQOBD[] auto_ref_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_auto_ref", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_auto_ref", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Auto_refsQOBD[]> delete_data_auto_refAsync(string company_name, QOBDGateway.QOBDServiceReference.Auto_refsQOBD[] auto_ref_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_auto_ref", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_auto_ref", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -4845,11 +4921,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Auto_refsQOBD[] insert_data_auto_ref(string company_name, QOBDGateway.QOBDServiceReference.Auto_refsQOBD[] auto_ref_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_auto_ref", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_auto_ref", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Auto_refsQOBD[]> insert_data_auto_refAsync(string company_name, QOBDGateway.QOBDServiceReference.Auto_refsQOBD[] auto_ref_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_auto_ref", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_auto_ref", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -4884,11 +4960,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Auto_refsQOBD[] update_data_auto_ref(string company_name, QOBDGateway.QOBDServiceReference.Auto_refsQOBD[] auto_ref_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_auto_ref", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_auto_ref", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Auto_refsQOBD[]> update_data_auto_refAsync(string company_name, QOBDGateway.QOBDServiceReference.Auto_refsQOBD[] auto_ref_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_auto_ref_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_auto_ref_by_i" +
+            "d", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -4923,11 +5000,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Auto_refsQOBD[] get_data_auto_ref_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_auto_ref_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_auto_ref_by_i" +
+            "d", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Auto_refsQOBD[]> get_data_auto_ref_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_auto_ref", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_auto_ref", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -4962,11 +5040,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Auto_refsQOBD[] get_filter_auto_ref(string company_name, QOBDGateway.QOBDServiceReference.Auto_refsFilterQOBD auto_ref_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_auto_ref", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_auto_ref", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Auto_refsQOBD[]> get_filter_auto_refAsync(string company_name, QOBDGateway.QOBDServiceReference.Auto_refsFilterQOBD auto_ref_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_item_delivery", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_item_delivery" +
+            "", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -5001,11 +5080,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Item_deliveryQOBD[] get_data_item_delivery(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_item_delivery", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_item_delivery" +
+            "", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Item_deliveryQOBD[]> get_data_item_deliveryAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_item_delivery", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_item_deliv" +
+            "ery", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -5040,11 +5121,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Item_deliveryQOBD[] delete_data_item_delivery(string company_name, QOBDGateway.QOBDServiceReference.Item_deliveryQOBD[] item_delivery_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_item_delivery", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_item_deliv" +
+            "ery", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Item_deliveryQOBD[]> delete_data_item_deliveryAsync(string company_name, QOBDGateway.QOBDServiceReference.Item_deliveryQOBD[] item_delivery_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_item_delivery", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_item_deliv" +
+            "ery", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -5079,11 +5162,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Item_deliveryQOBD[] insert_data_item_delivery(string company_name, QOBDGateway.QOBDServiceReference.Item_deliveryQOBD[] item_delivery_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_item_delivery", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_item_deliv" +
+            "ery", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Item_deliveryQOBD[]> insert_data_item_deliveryAsync(string company_name, QOBDGateway.QOBDServiceReference.Item_deliveryQOBD[] item_delivery_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_item_delivery", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_item_deliv" +
+            "ery", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -5118,11 +5203,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Item_deliveryQOBD[] update_data_item_delivery(string company_name, QOBDGateway.QOBDServiceReference.Item_deliveryQOBD[] item_delivery_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_item_delivery", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_item_deliv" +
+            "ery", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Item_deliveryQOBD[]> update_data_item_deliveryAsync(string company_name, QOBDGateway.QOBDServiceReference.Item_deliveryQOBD[] item_delivery_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_item_delivery_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_item_delivery" +
+            "_by_id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -5157,11 +5244,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Item_deliveryQOBD[] get_data_item_delivery_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_item_delivery_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_item_delivery" +
+            "_by_id", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Item_deliveryQOBD[]> get_data_item_delivery_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_item_delivery", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_item_delive" +
+            "ry", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -5196,12 +5285,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Item_deliveryQOBD[] get_filter_item_delivery(string company_name, QOBDGateway.QOBDServiceReference.Item_deliveryFilterQOBD item_delivery_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_item_delivery", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_item_delive" +
+            "ry", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Item_deliveryQOBD[]> get_filter_item_deliveryAsync(string company_name, QOBDGateway.QOBDServiceReference.Item_deliveryFilterQOBD item_delivery_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_item_delivery_by_delivery_lis" +
-            "t", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_item_delivery" +
+            "_by_delivery_list", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -5236,12 +5326,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Item_deliveryQOBD[] get_data_item_delivery_by_delivery_list(string company_name, QOBDGateway.QOBDServiceReference.DeliveryQOBD[] delivery_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_item_delivery_by_delivery_lis" +
-            "t", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_item_delivery" +
+            "_by_delivery_list", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Item_deliveryQOBD[]> get_data_item_delivery_by_delivery_listAsync(string company_name, QOBDGateway.QOBDServiceReference.DeliveryQOBD[] delivery_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_provider_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_provider_item" +
+            "", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -5276,11 +5367,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Provider_itemQOBD[] get_data_provider_item(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_provider_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_provider_item" +
+            "", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Provider_itemQOBD[]> get_data_provider_itemAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_provider_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_provider_i" +
+            "tem", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -5315,11 +5408,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Provider_itemQOBD[] delete_data_provider_item(string company_name, QOBDGateway.QOBDServiceReference.Provider_itemQOBD[] provider_item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_provider_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_provider_i" +
+            "tem", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Provider_itemQOBD[]> delete_data_provider_itemAsync(string company_name, QOBDGateway.QOBDServiceReference.Provider_itemQOBD[] provider_item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_provider_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_provider_i" +
+            "tem", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -5354,11 +5449,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Provider_itemQOBD[] insert_data_provider_item(string company_name, QOBDGateway.QOBDServiceReference.Provider_itemQOBD[] provider_item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_provider_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_provider_i" +
+            "tem", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Provider_itemQOBD[]> insert_data_provider_itemAsync(string company_name, QOBDGateway.QOBDServiceReference.Provider_itemQOBD[] provider_item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_provider_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_provider_i" +
+            "tem", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -5393,11 +5490,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Provider_itemQOBD[] update_data_provider_item(string company_name, QOBDGateway.QOBDServiceReference.Provider_itemQOBD[] provider_item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_provider_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_provider_i" +
+            "tem", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Provider_itemQOBD[]> update_data_provider_itemAsync(string company_name, QOBDGateway.QOBDServiceReference.Provider_itemQOBD[] provider_item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_provider_item_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_provider_item" +
+            "_by_id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -5432,11 +5531,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Provider_itemQOBD[] get_data_provider_item_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_provider_item_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_provider_item" +
+            "_by_id", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Provider_itemQOBD[]> get_data_provider_item_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_provider_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_provider_it" +
+            "em", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -5471,11 +5572,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Provider_itemQOBD[] get_filter_provider_item(string company_name, QOBDGateway.QOBDServiceReference.Provider_itemFilterQOBD provider_item_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_provider_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_provider_it" +
+            "em", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Provider_itemQOBD[]> get_filter_provider_itemAsync(string company_name, QOBDGateway.QOBDServiceReference.Provider_itemFilterQOBD provider_item_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_provider_item_by_item_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_provider_item" +
+            "_by_item_list", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -5510,11 +5613,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Provider_itemQOBD[] get_data_provider_item_by_item_list(string company_name, QOBDGateway.QOBDServiceReference.ItemQOBD[] item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_provider_item_by_item_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_provider_item" +
+            "_by_item_list", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Provider_itemQOBD[]> get_data_provider_item_by_item_listAsync(string company_name, QOBDGateway.QOBDServiceReference.ItemQOBD[] item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_currency", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_currency", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -5549,11 +5653,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.CurrencyQOBD[] get_data_currency(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_currency", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_currency", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.CurrencyQOBD[]> get_data_currencyAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_currency", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_currency", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -5588,11 +5692,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.CurrencyQOBD[] delete_data_currency(string company_name, QOBDGateway.QOBDServiceReference.CurrencyQOBD[] currency_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_currency", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_currency", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.CurrencyQOBD[]> delete_data_currencyAsync(string company_name, QOBDGateway.QOBDServiceReference.CurrencyQOBD[] currency_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_currency", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_currency", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -5627,11 +5731,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.CurrencyQOBD[] insert_data_currency(string company_name, QOBDGateway.QOBDServiceReference.CurrencyQOBD[] currency_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_currency", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_currency", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.CurrencyQOBD[]> insert_data_currencyAsync(string company_name, QOBDGateway.QOBDServiceReference.CurrencyQOBD[] currency_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_currency", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_currency", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -5666,11 +5770,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.CurrencyQOBD[] update_data_currency(string company_name, QOBDGateway.QOBDServiceReference.CurrencyQOBD[] currency_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_currency", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_currency", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.CurrencyQOBD[]> update_data_currencyAsync(string company_name, QOBDGateway.QOBDServiceReference.CurrencyQOBD[] currency_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_currency_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_currency_by_i" +
+            "d", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -5705,11 +5810,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.CurrencyQOBD[] get_data_currency_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_currency_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_currency_by_i" +
+            "d", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.CurrencyQOBD[]> get_data_currency_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_currency", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_currency", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -5744,12 +5850,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.CurrencyQOBD[] get_filter_currency(string company_name, QOBDGateway.QOBDServiceReference.CurrencyFilterQOBD currency_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_currency", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_currency", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.CurrencyQOBD[]> get_filter_currencyAsync(string company_name, QOBDGateway.QOBDServiceReference.CurrencyFilterQOBD currency_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_currency_by_provider_item_lis" +
-            "t", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_currency_by_p" +
+            "rovider_item_list", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -5784,12 +5890,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.CurrencyQOBD[] get_data_currency_by_provider_item_list(string company_name, QOBDGateway.QOBDServiceReference.Provider_itemQOBD[] item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_currency_by_provider_item_lis" +
-            "t", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_currency_by_p" +
+            "rovider_item_list", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.CurrencyQOBD[]> get_data_currency_by_provider_item_listAsync(string company_name, QOBDGateway.QOBDServiceReference.Provider_itemQOBD[] item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_provider", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_provider", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -5824,11 +5930,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ProviderQOBD[] get_data_provider(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_provider", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_provider", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ProviderQOBD[]> get_data_providerAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_provider", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_provider", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -5863,11 +5969,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ProviderQOBD[] delete_data_provider(string company_name, QOBDGateway.QOBDServiceReference.ProviderQOBD[] provider_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_provider", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_provider", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ProviderQOBD[]> delete_data_providerAsync(string company_name, QOBDGateway.QOBDServiceReference.ProviderQOBD[] provider_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_provider", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_provider", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -5902,11 +6008,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ProviderQOBD[] insert_data_provider(string company_name, QOBDGateway.QOBDServiceReference.ProviderQOBD[] provider_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_provider", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_provider", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ProviderQOBD[]> insert_data_providerAsync(string company_name, QOBDGateway.QOBDServiceReference.ProviderQOBD[] provider_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_provider", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_provider", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -5941,11 +6047,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ProviderQOBD[] update_data_provider(string company_name, QOBDGateway.QOBDServiceReference.ProviderQOBD[] provider_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_provider", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_provider", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ProviderQOBD[]> update_data_providerAsync(string company_name, QOBDGateway.QOBDServiceReference.ProviderQOBD[] provider_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_provider_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_provider_by_i" +
+            "d", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -5980,11 +6087,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ProviderQOBD[] get_data_provider_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_provider_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_provider_by_i" +
+            "d", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ProviderQOBD[]> get_data_provider_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_provider", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_provider", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -6019,12 +6127,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ProviderQOBD[] get_filter_provider(string company_name, QOBDGateway.QOBDServiceReference.ProviderFilterQOBD provider_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_provider", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_provider", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ProviderQOBD[]> get_filter_providerAsync(string company_name, QOBDGateway.QOBDServiceReference.ProviderFilterQOBD provider_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_provider_by_provider_item_lis" +
-            "t", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_provider_by_p" +
+            "rovider_item_list", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -6059,12 +6167,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.ProviderQOBD[] get_data_provider_by_provider_item_list(string company_name, QOBDGateway.QOBDServiceReference.Provider_itemQOBD[] provider_item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_provider_by_provider_item_lis" +
-            "t", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_provider_by_p" +
+            "rovider_item_list", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.ProviderQOBD[]> get_data_provider_by_provider_item_listAsync(string company_name, QOBDGateway.QOBDServiceReference.Provider_itemQOBD[] provider_item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_tax_order", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_tax_order", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -6099,11 +6207,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Tax_orderQOBD[] get_data_tax_order(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_tax_order", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_tax_order", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Tax_orderQOBD[]> get_data_tax_orderAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_tax_order", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_tax_order", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -6138,11 +6246,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Tax_orderQOBD[] delete_data_tax_order(string company_name, QOBDGateway.QOBDServiceReference.Tax_orderQOBD[] tax_order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_tax_order", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_tax_order", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Tax_orderQOBD[]> delete_data_tax_orderAsync(string company_name, QOBDGateway.QOBDServiceReference.Tax_orderQOBD[] tax_order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_tax_order", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_tax_order", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -6177,11 +6285,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Tax_orderQOBD[] insert_data_tax_order(string company_name, QOBDGateway.QOBDServiceReference.Tax_orderQOBD[] tax_order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_tax_order", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_tax_order", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Tax_orderQOBD[]> insert_data_tax_orderAsync(string company_name, QOBDGateway.QOBDServiceReference.Tax_orderQOBD[] tax_order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_tax_order", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_tax_order", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -6216,11 +6324,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Tax_orderQOBD[] update_data_tax_order(string company_name, QOBDGateway.QOBDServiceReference.Tax_orderQOBD[] tax_order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_tax_order", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_tax_order", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Tax_orderQOBD[]> update_data_tax_orderAsync(string company_name, QOBDGateway.QOBDServiceReference.Tax_orderQOBD[] tax_order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_tax_order_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_tax_order_by_" +
+            "id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -6255,11 +6364,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Tax_orderQOBD[] get_data_tax_order_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_tax_order_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_tax_order_by_" +
+            "id", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Tax_orderQOBD[]> get_data_tax_order_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_tax_order", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_tax_order", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -6294,11 +6404,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Tax_orderQOBD[] get_filter_tax_order(string company_name, QOBDGateway.QOBDServiceReference.Tax_orderFilterQOBD tax_order_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_tax_order", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_tax_order", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Tax_orderQOBD[]> get_filter_tax_orderAsync(string company_name, QOBDGateway.QOBDServiceReference.Tax_orderFilterQOBD tax_order_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_tax_order_by_order_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_tax_order_by_" +
+            "order_list", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -6333,11 +6444,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Tax_orderQOBD[] get_data_tax_order_by_order_list(string company_name, QOBDGateway.QOBDServiceReference.OrdersQOBD[] order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_tax_order_by_order_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_tax_order_by_" +
+            "order_list", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Tax_orderQOBD[]> get_data_tax_order_by_order_listAsync(string company_name, QOBDGateway.QOBDServiceReference.OrdersQOBD[] order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_tax_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_tax_item", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -6372,11 +6484,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Tax_itemQOBD[] get_data_tax_item(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_tax_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_tax_item", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Tax_itemQOBD[]> get_data_tax_itemAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_tax_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_tax_item", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -6411,11 +6523,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Tax_itemQOBD[] delete_data_tax_item(string company_name, QOBDGateway.QOBDServiceReference.Tax_itemQOBD[] tax_item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_tax_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_tax_item", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Tax_itemQOBD[]> delete_data_tax_itemAsync(string company_name, QOBDGateway.QOBDServiceReference.Tax_itemQOBD[] tax_item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_tax_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_tax_item", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -6450,11 +6562,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Tax_itemQOBD[] insert_data_tax_item(string company_name, QOBDGateway.QOBDServiceReference.Tax_itemQOBD[] tax_item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_tax_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_tax_item", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Tax_itemQOBD[]> insert_data_tax_itemAsync(string company_name, QOBDGateway.QOBDServiceReference.Tax_itemQOBD[] tax_item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_tax_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_tax_item", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -6489,11 +6601,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Tax_itemQOBD[] update_data_tax_item(string company_name, QOBDGateway.QOBDServiceReference.Tax_itemQOBD[] tax_item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_tax_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_tax_item", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Tax_itemQOBD[]> update_data_tax_itemAsync(string company_name, QOBDGateway.QOBDServiceReference.Tax_itemQOBD[] tax_item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_tax_item_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_tax_item_by_i" +
+            "d", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -6528,11 +6641,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Tax_itemQOBD[] get_data_tax_item_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_tax_item_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_tax_item_by_i" +
+            "d", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Tax_itemQOBD[]> get_data_tax_item_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_tax_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_tax_item", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -6567,11 +6681,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Tax_itemQOBD[] get_filter_tax_item(string company_name, QOBDGateway.QOBDServiceReference.Tax_itemFilterQOBD tax_item_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_tax_item", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_tax_item", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Tax_itemQOBD[]> get_filter_tax_itemAsync(string company_name, QOBDGateway.QOBDServiceReference.Tax_itemFilterQOBD tax_item_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_tax_item_by_item_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_tax_item_by_i" +
+            "tem_list", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -6606,11 +6721,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.Tax_itemQOBD[] get_data_tax_item_by_item_list(string company_name, QOBDGateway.QOBDServiceReference.ItemQOBD[] item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_tax_item_by_item_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_tax_item_by_i" +
+            "tem_list", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.Tax_itemQOBD[]> get_data_tax_item_by_item_listAsync(string company_name, QOBDGateway.QOBDServiceReference.ItemQOBD[] item_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_tax", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_tax", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -6645,11 +6761,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.TaxQOBD[] get_data_tax(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_tax", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_tax", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.TaxQOBD[]> get_data_taxAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_tax", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_tax", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -6684,11 +6800,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.TaxQOBD[] delete_data_tax(string company_name, QOBDGateway.QOBDServiceReference.TaxQOBD[] tax_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_tax", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_tax", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.TaxQOBD[]> delete_data_taxAsync(string company_name, QOBDGateway.QOBDServiceReference.TaxQOBD[] tax_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_tax", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_tax", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -6723,11 +6839,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.TaxQOBD[] insert_data_tax(string company_name, QOBDGateway.QOBDServiceReference.TaxQOBD[] tax_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_tax", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_tax", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.TaxQOBD[]> insert_data_taxAsync(string company_name, QOBDGateway.QOBDServiceReference.TaxQOBD[] tax_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_tax", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_tax", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -6762,11 +6878,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.TaxQOBD[] update_data_tax(string company_name, QOBDGateway.QOBDServiceReference.TaxQOBD[] tax_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_tax", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_tax", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.TaxQOBD[]> update_data_taxAsync(string company_name, QOBDGateway.QOBDServiceReference.TaxQOBD[] tax_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_tax_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_tax_by_id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -6801,11 +6917,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.TaxQOBD[] get_data_tax_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_tax_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_tax_by_id", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.TaxQOBD[]> get_data_tax_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_tax", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_tax", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -6840,11 +6956,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.TaxQOBD[] get_filter_tax(string company_name, QOBDGateway.QOBDServiceReference.TaxFilterQOBD tax_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_tax", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_tax", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.TaxQOBD[]> get_filter_taxAsync(string company_name, QOBDGateway.QOBDServiceReference.TaxFilterQOBD tax_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_privilege", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_privilege", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -6879,11 +6995,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.PrivilegeQOBD[] get_data_privilege(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_privilege", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_privilege", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.PrivilegeQOBD[]> get_data_privilegeAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_privilege", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_privilege", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -6918,11 +7034,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.PrivilegeQOBD[] delete_data_privilege(string company_name, QOBDGateway.QOBDServiceReference.PrivilegeQOBD[] privilege_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_privilege", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_privilege", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.PrivilegeQOBD[]> delete_data_privilegeAsync(string company_name, QOBDGateway.QOBDServiceReference.PrivilegeQOBD[] privilege_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_privilege", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_privilege", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -6957,11 +7073,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.PrivilegeQOBD[] insert_data_privilege(string company_name, QOBDGateway.QOBDServiceReference.PrivilegeQOBD[] privilege_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_privilege", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_privilege", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.PrivilegeQOBD[]> insert_data_privilegeAsync(string company_name, QOBDGateway.QOBDServiceReference.PrivilegeQOBD[] privilege_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_privilege", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_privilege", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -6996,11 +7112,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.PrivilegeQOBD[] update_data_privilege(string company_name, QOBDGateway.QOBDServiceReference.PrivilegeQOBD[] privilege_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_privilege", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_privilege", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.PrivilegeQOBD[]> update_data_privilegeAsync(string company_name, QOBDGateway.QOBDServiceReference.PrivilegeQOBD[] privilege_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_privilege_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_privilege_by_" +
+            "id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -7035,11 +7152,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.PrivilegeQOBD[] get_data_privilege_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_privilege_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_privilege_by_" +
+            "id", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.PrivilegeQOBD[]> get_data_privilege_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_privilege", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_privilege", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -7074,11 +7192,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.PrivilegeQOBD[] get_filter_privilege(string company_name, QOBDGateway.QOBDServiceReference.PrivilegeFilterQOBD privilege_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_privilege", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_privilege", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.PrivilegeQOBD[]> get_filter_privilegeAsync(string company_name, QOBDGateway.QOBDServiceReference.PrivilegeFilterQOBD privilege_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_notification", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_notification", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -7113,11 +7231,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.NotificationQOBD[] get_data_notification(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_notification", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_notification", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.NotificationQOBD[]> get_data_notificationAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_notification", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_notificati" +
+            "on", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -7152,11 +7271,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.NotificationQOBD[] delete_data_notification(string company_name, QOBDGateway.QOBDServiceReference.NotificationQOBD[] notification_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_notification", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_notificati" +
+            "on", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.NotificationQOBD[]> delete_data_notificationAsync(string company_name, QOBDGateway.QOBDServiceReference.NotificationQOBD[] notification_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_notification", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_notificati" +
+            "on", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -7191,11 +7312,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.NotificationQOBD[] insert_data_notification(string company_name, QOBDGateway.QOBDServiceReference.NotificationQOBD[] notification_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_notification", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_notificati" +
+            "on", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.NotificationQOBD[]> insert_data_notificationAsync(string company_name, QOBDGateway.QOBDServiceReference.NotificationQOBD[] notification_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_notification", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_notificati" +
+            "on", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -7230,11 +7353,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.NotificationQOBD[] update_data_notification(string company_name, QOBDGateway.QOBDServiceReference.NotificationQOBD[] notification_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_notification", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_notificati" +
+            "on", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.NotificationQOBD[]> update_data_notificationAsync(string company_name, QOBDGateway.QOBDServiceReference.NotificationQOBD[] notification_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_notification_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_notification_" +
+            "by_id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -7269,11 +7394,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.NotificationQOBD[] get_data_notification_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_notification_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_notification_" +
+            "by_id", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.NotificationQOBD[]> get_data_notification_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_notification", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_notificatio" +
+            "n", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -7308,11 +7435,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.NotificationQOBD[] get_filter_notification(string company_name, QOBDGateway.QOBDServiceReference.NotificationFilterQOBD notification_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_notification", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_notificatio" +
+            "n", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.NotificationQOBD[]> get_filter_notificationAsync(string company_name, QOBDGateway.QOBDServiceReference.NotificationFilterQOBD notification_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_notification_by_order_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_notification_" +
+            "by_order_list", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -7347,11 +7476,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.NotificationQOBD[] get_data_notification_by_order_list(string company_name, QOBDGateway.QOBDServiceReference.OrdersQOBD[] order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_notification_by_order_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_notification_" +
+            "by_order_list", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.NotificationQOBD[]> get_data_notification_by_order_listAsync(string company_name, QOBDGateway.QOBDServiceReference.OrdersQOBD[] order_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_notification_by_client_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_notification_" +
+            "by_client_list", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -7386,11 +7517,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.NotificationQOBD[] get_data_notification_by_client_list(string company_name, QOBDGateway.QOBDServiceReference.ClientQOBD[] client_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_notification_by_client_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_notification_" +
+            "by_client_list", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.NotificationQOBD[]> get_data_notification_by_client_listAsync(string company_name, QOBDGateway.QOBDServiceReference.ClientQOBD[] client_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_user", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_user", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -7425,11 +7557,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.UserChatRoom[] get_data_user(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_user", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_user", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.UserChatRoom[]> get_data_userAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_user", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_user", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -7464,11 +7596,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.UserChatRoom[] delete_data_user(string company_name, QOBDGateway.QOBDServiceReference.UserChatRoom[] user_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_user", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_user", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.UserChatRoom[]> delete_data_userAsync(string company_name, QOBDGateway.QOBDServiceReference.UserChatRoom[] user_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_user", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_user", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -7503,11 +7635,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.UserChatRoom[] insert_data_user(string company_name, QOBDGateway.QOBDServiceReference.UserChatRoom[] user_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_user", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_user", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.UserChatRoom[]> insert_data_userAsync(string company_name, QOBDGateway.QOBDServiceReference.UserChatRoom[] user_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_user", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_user", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -7542,11 +7674,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.UserChatRoom[] update_data_user(string company_name, QOBDGateway.QOBDServiceReference.UserChatRoom[] user_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_user", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_user", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.UserChatRoom[]> update_data_userAsync(string company_name, QOBDGateway.QOBDServiceReference.UserChatRoom[] user_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_user_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_user_by_id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -7581,11 +7713,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.UserChatRoom[] get_data_user_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_user_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_user_by_id", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.UserChatRoom[]> get_data_user_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_user", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_user", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -7620,11 +7752,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.UserChatRoom[] get_filter_user(string company_name, QOBDGateway.QOBDServiceReference.UserFilterChatRoom user_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_user", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_user", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.UserChatRoom[]> get_filter_userAsync(string company_name, QOBDGateway.QOBDServiceReference.UserFilterChatRoom user_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_user_by_user_discussion_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_user_by_user_" +
+            "discussion_list", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -7659,11 +7792,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.UserChatRoom[] get_data_user_by_user_discussion_list(string company_name, QOBDGateway.QOBDServiceReference.User_discussionChatRoom[] user_discussion_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_user_by_user_discussion_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_user_by_user_" +
+            "discussion_list", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.UserChatRoom[]> get_data_user_by_user_discussion_listAsync(string company_name, QOBDGateway.QOBDServiceReference.User_discussionChatRoom[] user_discussion_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_message", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_message", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -7698,11 +7832,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.MessageChatRoom[] get_data_message(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_message", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_message", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.MessageChatRoom[]> get_data_messageAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_message", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_message", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -7737,11 +7871,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.MessageChatRoom[] delete_data_message(string company_name, QOBDGateway.QOBDServiceReference.MessageChatRoom[] message_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_message", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_message", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.MessageChatRoom[]> delete_data_messageAsync(string company_name, QOBDGateway.QOBDServiceReference.MessageChatRoom[] message_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_message", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_message", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -7776,11 +7910,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.MessageChatRoom[] insert_data_message(string company_name, QOBDGateway.QOBDServiceReference.MessageChatRoom[] message_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_message", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_message", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.MessageChatRoom[]> insert_data_messageAsync(string company_name, QOBDGateway.QOBDServiceReference.MessageChatRoom[] message_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_message", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_message", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -7815,11 +7949,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.MessageChatRoom[] update_data_message(string company_name, QOBDGateway.QOBDServiceReference.MessageChatRoom[] message_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_message", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_message", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.MessageChatRoom[]> update_data_messageAsync(string company_name, QOBDGateway.QOBDServiceReference.MessageChatRoom[] message_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_message_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_message_by_id" +
+            "", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -7854,11 +7989,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.MessageChatRoom[] get_data_message_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_message_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_message_by_id" +
+            "", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.MessageChatRoom[]> get_data_message_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_message", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_message", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -7893,11 +8029,11 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.MessageChatRoom[] get_filter_message(string company_name, QOBDGateway.QOBDServiceReference.MessageFilterChatRoom message_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_message", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_message", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.MessageChatRoom[]> get_filter_messageAsync(string company_name, QOBDGateway.QOBDServiceReference.MessageFilterChatRoom message_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_discussion", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_discussion", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -7932,11 +8068,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.DiscussionChatRoom[] get_data_discussion(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_discussion", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_discussion", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.DiscussionChatRoom[]> get_data_discussionAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_discussion", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_discussion" +
+            "", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -7971,11 +8108,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.DiscussionChatRoom[] delete_data_discussion(string company_name, QOBDGateway.QOBDServiceReference.DiscussionChatRoom[] discussion_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_discussion", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_discussion" +
+            "", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.DiscussionChatRoom[]> delete_data_discussionAsync(string company_name, QOBDGateway.QOBDServiceReference.DiscussionChatRoom[] discussion_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_discussion", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_discussion" +
+            "", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -8010,11 +8149,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.DiscussionChatRoom[] insert_data_discussion(string company_name, QOBDGateway.QOBDServiceReference.DiscussionChatRoom[] discussion_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_discussion", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_discussion" +
+            "", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.DiscussionChatRoom[]> insert_data_discussionAsync(string company_name, QOBDGateway.QOBDServiceReference.DiscussionChatRoom[] discussion_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_discussion", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_discussion" +
+            "", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -8049,11 +8190,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.DiscussionChatRoom[] update_data_discussion(string company_name, QOBDGateway.QOBDServiceReference.DiscussionChatRoom[] discussion_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_discussion", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_discussion" +
+            "", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.DiscussionChatRoom[]> update_data_discussionAsync(string company_name, QOBDGateway.QOBDServiceReference.DiscussionChatRoom[] discussion_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_discussion_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_discussion_by" +
+            "_id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -8088,11 +8231,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.DiscussionChatRoom[] get_data_discussion_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_discussion_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_discussion_by" +
+            "_id", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.DiscussionChatRoom[]> get_data_discussion_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_discussion", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_discussion", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -8127,12 +8271,12 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.DiscussionChatRoom[] get_filter_discussion(string company_name, QOBDGateway.QOBDServiceReference.DiscussionFilterChatRoom discussion_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_discussion", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_discussion", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.DiscussionChatRoom[]> get_filter_discussionAsync(string company_name, QOBDGateway.QOBDServiceReference.DiscussionFilterChatRoom discussion_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_discussion_by_user_discussion" +
-            "_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_discussion_by" +
+            "_user_discussion_list", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -8167,12 +8311,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.DiscussionChatRoom[] get_data_discussion_by_user_discussion_list(string company_name, QOBDGateway.QOBDServiceReference.User_discussionChatRoom[] user_discussion_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_discussion_by_user_discussion" +
-            "_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_discussion_by" +
+            "_user_discussion_list", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.DiscussionChatRoom[]> get_data_discussion_by_user_discussion_listAsync(string company_name, QOBDGateway.QOBDServiceReference.User_discussionChatRoom[] user_discussion_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_discussion_by_message_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_discussion_by" +
+            "_message_list", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -8207,11 +8352,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.DiscussionChatRoom[] get_data_discussion_by_message_list(string company_name, QOBDGateway.QOBDServiceReference.MessageChatRoom[] message_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_discussion_by_message_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_discussion_by" +
+            "_message_list", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.DiscussionChatRoom[]> get_data_discussion_by_message_listAsync(string company_name, QOBDGateway.QOBDServiceReference.MessageChatRoom[] message_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_user_discussion", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_user_discussi" +
+            "on", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -8246,11 +8393,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.User_discussionChatRoom[] get_data_user_discussion(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_user_discussion", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_user_discussi" +
+            "on", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.User_discussionChatRoom[]> get_data_user_discussionAsync(string company_name, string nbLine);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_user_discussion", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_user_discu" +
+            "ssion", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -8285,11 +8434,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.User_discussionChatRoom[] delete_data_user_discussion(string company_name, QOBDGateway.QOBDServiceReference.User_discussionChatRoom[] user_discussion_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/delete_data_user_discussion", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/delete_data_user_discu" +
+            "ssion", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.User_discussionChatRoom[]> delete_data_user_discussionAsync(string company_name, QOBDGateway.QOBDServiceReference.User_discussionChatRoom[] user_discussion_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_user_discussion", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_user_discu" +
+            "ssion", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -8324,11 +8475,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.User_discussionChatRoom[] insert_data_user_discussion(string company_name, QOBDGateway.QOBDServiceReference.User_discussionChatRoom[] user_discussion_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/insert_data_user_discussion", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/insert_data_user_discu" +
+            "ssion", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.User_discussionChatRoom[]> insert_data_user_discussionAsync(string company_name, QOBDGateway.QOBDServiceReference.User_discussionChatRoom[] user_discussion_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_user_discussion", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_user_discu" +
+            "ssion", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -8363,11 +8516,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.User_discussionChatRoom[] update_data_user_discussion(string company_name, QOBDGateway.QOBDServiceReference.User_discussionChatRoom[] user_discussion_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/update_data_user_discussion", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/update_data_user_discu" +
+            "ssion", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.User_discussionChatRoom[]> update_data_user_discussionAsync(string company_name, QOBDGateway.QOBDServiceReference.User_discussionChatRoom[] user_discussion_array_list);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_user_discussion_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_user_discussi" +
+            "on_by_id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -8402,11 +8557,13 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.User_discussionChatRoom[] get_data_user_discussion_by_id(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_data_user_discussion_by_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_data_user_discussi" +
+            "on_by_id", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.User_discussionChatRoom[]> get_data_user_discussion_by_idAsync(string company_name, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_user_discussion", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_user_discus" +
+            "sion", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DiscussionChatRoom))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MessageChatRoom))]
@@ -8441,7 +8598,8 @@ namespace QOBDGateway.QOBDServiceReference {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         QOBDGateway.QOBDServiceReference.User_discussionChatRoom[] get_filter_user_discussion(string company_name, QOBDGateway.QOBDServiceReference.User_discussionFilterChatRoom user_discussion_array_list_filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceSOAP/server.php/get_filter_user_discussion", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://bahilo-001-site2.ftempurl.com/webservice/server.php/get_filter_user_discus" +
+            "sion", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<QOBDGateway.QOBDServiceReference.User_discussionChatRoom[]> get_filter_user_discussionAsync(string company_name, QOBDGateway.QOBDServiceReference.User_discussionFilterChatRoom user_discussion_array_list_filter);
     }
@@ -8451,7 +8609,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class LicenseQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -8573,7 +8731,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class User_discussionFilterChatRoom : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -8656,7 +8814,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class DiscussionFilterChatRoom : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -8713,7 +8871,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class DiscussionChatRoom : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -8757,7 +8915,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class MessageFilterChatRoom : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -8866,7 +9024,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class MessageChatRoom : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -8962,7 +9120,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class User_discussionChatRoom : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -9032,7 +9190,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class UserFilterChatRoom : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -9154,7 +9312,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class UserChatRoom : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -9263,7 +9421,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class NotificationFilterQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -9359,7 +9517,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class NotificationQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -9442,7 +9600,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class PrivilegeFilterQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -9577,7 +9735,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class TaxFilterQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -9686,7 +9844,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class TaxQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -9782,7 +9940,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class Tax_itemFilterQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -9891,7 +10049,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class Tax_itemQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -9987,7 +10145,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class Tax_orderFilterQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -10096,7 +10254,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class Tax_orderQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -10192,7 +10350,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class ProviderFilterQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -10340,7 +10498,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class ProviderQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -10475,7 +10633,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class CurrencyFilterQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -10623,7 +10781,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class CurrencyQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -10758,7 +10916,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class Provider_itemFilterQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -10841,7 +10999,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class Provider_itemQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -10911,7 +11069,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class Item_deliveryFilterQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -10994,7 +11152,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class Item_deliveryQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -11064,7 +11222,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class Auto_refsFilterQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -11121,7 +11279,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class Auto_refsQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -11165,7 +11323,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class InfosFilterQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -11248,7 +11406,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class InfosQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -11305,7 +11463,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class DeliveryFilterQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -11414,7 +11572,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class DeliveryQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -11510,7 +11668,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class ContactFilterQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -11671,7 +11829,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class ContactQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -11819,7 +11977,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class Order_itemFilterQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -11993,7 +12151,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class AddressFilterQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -12206,7 +12364,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class AddressQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -12406,7 +12564,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class ActionRecordFilterQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -12515,7 +12673,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class ActionRecordQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -12611,7 +12769,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class ClientFilterQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -12850,7 +13008,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class ClientQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -13063,7 +13221,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class Order_itemQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -13224,7 +13382,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class ItemFilterQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -13437,7 +13595,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class ItemQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -13624,7 +13782,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class StatisticFilterQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -13837,7 +13995,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class StatisticQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -14024,7 +14182,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class AgentFilterQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -14250,7 +14408,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class PdfQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string orderIdField;
@@ -14294,7 +14452,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class OrderFilterQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -14481,7 +14639,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class OrdersQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -14655,7 +14813,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class BillFilterQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -14829,7 +14987,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class BillQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -14990,7 +15148,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class Role_actionFilterQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int idField;
@@ -15060,7 +15218,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class Role_actionQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int idField;
@@ -15117,7 +15275,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class RoleFilterQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int idField;
@@ -15174,7 +15332,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class Agent_roleFilterQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int idField;
@@ -15270,7 +15428,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class Agent_roleQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int idField;
@@ -15353,7 +15511,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class ActionFilterQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int idField;
@@ -15423,7 +15581,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class PrivilegeQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -15545,7 +15703,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class ActionQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int idField;
@@ -15615,7 +15773,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class RoleQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int idField;
@@ -15672,7 +15830,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class AgentQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -15898,7 +16056,7 @@ namespace QOBDGateway.QOBDServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://localhost/WebServiceSOAP/server.php")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://bahilo-001-site2.ftempurl.com/webservice/server.php")]
     public partial class LicenseFilterQOBD : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;

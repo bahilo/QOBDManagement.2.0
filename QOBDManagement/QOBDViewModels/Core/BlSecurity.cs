@@ -60,14 +60,14 @@ namespace QOBDViewModels.Core
             return Safe.IsAuthenticated;
         }
 
-        public async Task<Agent> AuthenticateUserAsync(string username, string password)
+        public async Task<Agent> AuthenticateUserAsync(string username, string password, string licenseKey)
         {
             try
             {               
                 if(Utility.isMD5Encoded(password)) 
-                    Safe.AuthenticatedUser = await DAC.DALSecurity.AuthenticateUserAsync(username, password);
+                    Safe.AuthenticatedUser = await DAC.DALSecurity.AuthenticateUserAsync(username, password, licenseKey);
                 else
-                    Safe.AuthenticatedUser = await DAC.DALSecurity.AuthenticateUserAsync(username, CalculateHash(password));
+                    Safe.AuthenticatedUser = await DAC.DALSecurity.AuthenticateUserAsync(username, CalculateHash(password), licenseKey);
 
                 if (Safe.AuthenticatedUser.ID != 0)
                     Safe.IsAuthenticated = true;
@@ -92,9 +92,9 @@ namespace QOBDViewModels.Core
             return Safe.AuthenticatedUser;
         }
 
-        public async Task<Agent> UseAgentAsync(Agent inAgent)
+        public async Task<Agent> UseAgentAsync(Agent inAgent, string licenseKey)
         {
-            return await AuthenticateUserAsync(inAgent.UserName, inAgent.HashedPassword);
+            return await AuthenticateUserAsync(inAgent.UserName, inAgent.HashedPassword, licenseKey);
         }
 
         public static string CalculateHash(string clearTextPassword)

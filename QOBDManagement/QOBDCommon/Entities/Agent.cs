@@ -36,7 +36,7 @@ namespace QOBDCommon.Entities
 
         public string Picture { get; set;}
 
-        public string Admin { get; set; }
+        public bool Admin { get; set; }
 
         public string Status {get; set;}
 
@@ -49,6 +49,8 @@ namespace QOBDCommon.Entities
         public string IPAddress { get; set; }
 
         public List<Role> RoleList { get; set; }
+
+        public string WebServiceCredential { get; set; }
 
     } /* end class Agent */
 }

@@ -157,8 +157,8 @@ namespace QOBDViewModels.ViewModel
                 if (!Bl.BlSecurity.IsUserAuthenticated() || !Bl.BlSecurity.GetAuthenticatedUser().Status.Equals(EStatus.Active.ToString()))
                     await showLoginView();
             }
-            else
-                await showLoginView();
+            //else
+            //    await showLoginView();
         }
 
         public async Task<object> authenticateAgent()
@@ -166,7 +166,7 @@ namespace QOBDViewModels.ViewModel
             try
             {
                 Bl.BlSecurity.setCompanyName(_licenseViewModel.License.CompanyName);
-                var agentFound = await Bl.BlSecurity.AuthenticateUserAsync(TxtLogin, TxtClearPassword);
+                var agentFound = await Bl.BlSecurity.AuthenticateUserAsync(TxtLogin, TxtClearPassword, _licenseViewModel.License.Key);
                 if (Bl.BlSecurity.IsUserAuthenticated())
                 {
                     if(agentFound.Status.Equals(EStatus.Active.ToString()))
@@ -175,6 +175,13 @@ namespace QOBDViewModels.ViewModel
                         TxtLogin = "";
                         TxtClearPassword = "";
                         TxtErrorMessage = "";
+
+                        if (_licenseViewModel.License.EndDate >= Utility.DateTimeMinValueInSQL2005
+                            && _licenseViewModel.License.EndDate.Year == DateTime.Now.Year 
+                                && _licenseViewModel.License.EndDate.Month == DateTime.Now.Month
+                                    && _licenseViewModel.License.EndDate.Day - DateTime.Now.Day <= 10)
+                            await Singleton.DialogBox.showAsync("Your license will expire in: [ " + (_licenseViewModel.License.EndDate.Day - DateTime.Now.Day) + " Day(s) ]");
+
                     }
                     else
                         TxtErrorMessage = "Your profile has been Deactivated!";

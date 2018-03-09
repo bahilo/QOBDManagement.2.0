@@ -89,7 +89,7 @@ namespace QOBDViewModels.ViewModel
                 await Task.Factory.StartNew(() => {
                     _main.ChatRoomViewModel.Dispose();
                 });
-                newAgent = await Bl.BlSecurity.UseAgentAsync(agent);
+                newAgent = await Bl.BlSecurity.UseAgentAsync(agent, _main.SecurityLoginViewModel.TxtLicenseKey);
                 if (Bl.BlSecurity.IsUserAuthenticated())
                 {
                     _main.isNewAgentAuthentication = true;

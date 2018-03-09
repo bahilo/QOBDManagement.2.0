@@ -84,10 +84,10 @@ namespace QOBDDAL.Core
         public void setServiceCredential(object channel)
         {
             _servicePortType = (ClientProxy)channel;
-            if (AuthenticatedUser != null && string.IsNullOrEmpty(_servicePortType.ClientCredentials.UserName.UserName) && string.IsNullOrEmpty(_servicePortType.ClientCredentials.UserName.Password))
+            if (AuthenticatedUser != null && string.IsNullOrEmpty(_servicePortType.ClientCredentials.UserName.Password) && string.IsNullOrEmpty(_servicePortType.ClientCredentials.UserName.Password))
             {
-                _servicePortType.ClientCredentials.UserName.UserName = AuthenticatedUser.UserName;
-                _servicePortType.ClientCredentials.UserName.Password = AuthenticatedUser.HashedPassword;
+                _servicePortType.ClientCredentials.UserName.UserName = "none";
+                _servicePortType.ClientCredentials.UserName.Password = AuthenticatedUser.WebServiceCredential;
             }
             _gateWayReferential.setServiceCredential(_servicePortType);
         }

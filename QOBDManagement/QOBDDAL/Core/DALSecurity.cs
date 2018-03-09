@@ -75,24 +75,24 @@ namespace QOBDDAL.Core
         }
         
 
-        public async Task<Agent> AuthenticateUserAsync(string username, string password)
+        public async Task<Agent> AuthenticateUserAsync(string username, string password, string licenseKey)
         {
-            setChannelCredential(username, password);
-            return await _gateWaySecurity.AuthenticateUserAsync(username, password);
+            setChannelCredential(licenseKey);
+            return await _gateWaySecurity.AuthenticateUserAsync(username, password, licenseKey);
         }
 
-        private void setChannelCredential(string username, string password)
+        private void setChannelCredential(string licenseKey)
         {
             try
             {
-                _servicePortType.ClientCredentials.UserName.UserName = username;
-                _servicePortType.ClientCredentials.UserName.Password = password;
+                _servicePortType.ClientCredentials.UserName.UserName = "none";
+                _servicePortType.ClientCredentials.UserName.Password = licenseKey;
             }
             catch (Exception)
             {
                 _serviceCommunication.resetCommunication();
-                _servicePortType.ClientCredentials.UserName.UserName = username;
-                _servicePortType.ClientCredentials.UserName.Password = password;
+                _servicePortType.ClientCredentials.UserName.UserName = "none";
+                _servicePortType.ClientCredentials.UserName.Password = licenseKey;
             }
         }
 
@@ -291,7 +291,7 @@ namespace QOBDDAL.Core
 
         public async Task<List<QOBDCommon.Entities.License>> checkLicenseByKeyAsync(string licenseKey)
         {
-            setChannelCredential(licenseKey, "none");
+            setChannelCredential(licenseKey);
             checkServiceCommunication();
             return await _gateWaySecurity.checkLicenseByKeyAsync(licenseKey);
         }

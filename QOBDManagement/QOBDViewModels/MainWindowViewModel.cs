@@ -294,7 +294,7 @@ namespace QOBDViewModels
 
         public string TxtInfoActivationCode
         {
-            get { return ConfigurationManager.AppSettings["info_activation_code"]; }
+            get { return SecurityLoginViewModel.TxtLicenseKey; }
         }
 
         public string TxtInfoVersion
@@ -343,13 +343,15 @@ namespace QOBDViewModels
             if (isNewAgentAuthentication)
             {
                 ProgressBarPercentValue = -1;
-                _startup.Dal.SetUserCredential(SecurityLoginViewModel.Bl.BlSecurity.GetAuthenticatedUser(), CompanyName, isNewAgentAuthentication);
+                AuthenticatedUserModel.Agent.WebServiceCredential = SecurityLoginViewModel.TxtLicenseKey;
+                _startup.Dal.SetUserCredential(AuthenticatedUserModel.Agent, CompanyName, isNewAgentAuthentication);
                 isNewAgentAuthentication = false;
                 ProgressBarPercentValue = 100;
             }
             else if (SecurityLoginViewModel.AgentModel.Agent.ID != 0)
             {
                 _startup.Dal.ProgressBarFunc = progressBarManagement;
+                AuthenticatedUserModel.Agent.WebServiceCredential = SecurityLoginViewModel.TxtLicenseKey;
                 _startup.Dal.SetUserCredential(AuthenticatedUserModel.Agent, CompanyName); 
             }
 

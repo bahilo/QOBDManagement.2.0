@@ -57,10 +57,10 @@ public class DataAccess : IDataAccessManager
                 DALClient.setCompanyName(companyName);
                 DALClient.initializeCredential(authenticatedUser);
                 DALClient.cacheWebServiceData();
-            });            
+            });
         }
         else
-        {            
+        {
             Task.Factory.StartNew(() =>
             {
                 // Order
@@ -79,42 +79,45 @@ public class DataAccess : IDataAccessManager
                 DALAgent.initializeCredential(authenticatedUser);
                 DALAgent.cacheWebServiceData();
 
-            }).ContinueWith((tsk)=> {
+            }).ContinueWith((tsk) =>
+         {
 
-                // Referential
-                DALReferential.progressBarManagement(ProgressBarFunc);
-                DALReferential.setCompanyName(companyName);
-                DALReferential.initializeCredential(authenticatedUser);
-                DALReferential.cacheWebServiceData();
+             // Referential
+             DALReferential.progressBarManagement(ProgressBarFunc);
+             DALReferential.setCompanyName(companyName);
+             DALReferential.initializeCredential(authenticatedUser);
+             DALReferential.cacheWebServiceData();
 
-                // Notification
-                DALNotification.progressBarManagement(ProgressBarFunc);
-                DALNotification.setCompanyName(companyName);
-                DALNotification.initializeCredential(authenticatedUser);
-                DALNotification.cacheWebServiceData();
+             // Notification
+             DALNotification.progressBarManagement(ProgressBarFunc);
+             DALNotification.setCompanyName(companyName);
+             DALNotification.initializeCredential(authenticatedUser);
+             DALNotification.cacheWebServiceData();
 
-                // Statistic
-                DALStatistic.progressBarManagement(ProgressBarFunc);
-                DALStatistic.setCompanyName(companyName);
-                DALStatistic.initializeCredential(authenticatedUser);
-                DALStatistic.cacheWebServiceData();
+             // Statistic
+             DALStatistic.progressBarManagement(ProgressBarFunc);
+             DALStatistic.setCompanyName(companyName);
+             DALStatistic.initializeCredential(authenticatedUser);
+             DALStatistic.cacheWebServiceData();
 
-            }).ContinueWith((tsk)=> {
-                
-                // Item 
-                DALItem.progressBarManagement(ProgressBarFunc);
-                DALItem.setCompanyName(companyName);
-                DALItem.initializeCredential(authenticatedUser);
-                DALItem.cacheWebServiceData();
+         }).ContinueWith((tsk) =>
+         {
 
-            }).ContinueWith((tsk)=> {
+             // Item 
+             DALItem.progressBarManagement(ProgressBarFunc);
+             DALItem.setCompanyName(companyName);
+             DALItem.initializeCredential(authenticatedUser);
+             DALItem.cacheWebServiceData();
 
-                // Client 
-                DALClient.progressBarManagement(ProgressBarFunc);
-                DALClient.setCompanyName(companyName);
-                DALClient.initializeCredential(authenticatedUser);
-                DALClient.cacheWebServiceData();
-            });    
+         }).ContinueWith((tsk) =>
+         {
+
+             // Client 
+             DALClient.progressBarManagement(ProgressBarFunc);
+             DALClient.setCompanyName(companyName);
+             DALClient.initializeCredential(authenticatedUser);
+             DALClient.cacheWebServiceData();
+         });
         }
 
         // ChatRoom

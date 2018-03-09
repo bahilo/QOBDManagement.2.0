@@ -50,7 +50,7 @@ namespace QOBDGateway.Core
             _companyName = companyName;
         }
 
-        public async Task<Agent> AuthenticateUserAsync(string username, string password)
+        public async Task<Agent> AuthenticateUserAsync(string username, string password, string licenseKey)
         {
             Agent agentFound = new Agent();
             try

@@ -88,6 +88,15 @@
                                     <ColumnDefinition Width="30"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
+                                <CheckBox IsChecked="{Binding AgentViewModel.AgentDetailViewModel.SelectedAgentModel.IsAdmin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Bottom" Foreground="{Binding ElementName=tbxLastName, Path=BorderBrush}" 
+                                          IsEnabled="{Binding AgentViewModel.IsAuthenticatedAgentAdmin, UpdateSourceTrigger=PropertyChanged}"/>
+                                <TextBlock Name="chbxAdmin" Grid.Column="1" Text="Admin" FontSize="12" VerticalAlignment="Center" MinWidth="150" />
+                            </Grid>
+                            <Grid Margin="0 8 0 0" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
                                 <materialDesign:PackIcon Kind="Drag" VerticalAlignment="Bottom" Foreground="{Binding ElementName=tbxLastName, Path=BorderBrush}" />
                                 <TextBox Name="tbxLastName" Grid.Column="1" materialDesign:HintAssist.Hint="Last Name" Style="{DynamicResource MaterialDesignFloatingHintTextBox}"
                                      FontSize="12" VerticalAlignment="Center" MinWidth="150" Text="{Binding AgentViewModel.AgentDetailViewModel.SelectedAgentModel.TxtLastName, UpdateSourceTrigger=PropertyChanged}"/>

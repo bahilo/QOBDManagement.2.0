@@ -565,7 +565,7 @@ namespace QOBDDAL.Helper.ChannelHelper
                 agent.Phone = (agentDataTable.Rows[i].ItemArray[agentDataTable.Columns["Phone"].Ordinal] ?? "").ToString();
                 agent.Status = (agentDataTable.Rows[i].ItemArray[agentDataTable.Columns["Status"].Ordinal] ?? "").ToString();
                 agent.IPAddress = (agentDataTable.Rows[i].ItemArray[agentDataTable.Columns["IPAddress"].Ordinal] ?? "").ToString();
-                agent.Admin = (agentDataTable.Rows[i].ItemArray[agentDataTable.Columns["Admin"].Ordinal] ?? "").ToString();
+                agent.Admin = Utility.intTryParse((agentDataTable.Rows[i].ItemArray[agentDataTable.Columns["Admin"].Ordinal] ?? "").ToString()) == 1 ? true : false;
                 agent.Email = (agentDataTable.Rows[i].ItemArray[agentDataTable.Columns["Email"].Ordinal] ?? "").ToString();
                 agent.Fax = (agentDataTable.Rows[i].ItemArray[agentDataTable.Columns["Fax"].Ordinal] ?? "").ToString();
                 agent.ListSize = Utility.intTryParse(agentDataTable.Rows[i].ItemArray[agentDataTable.Columns["ListSize"].Ordinal].ToString());
@@ -604,8 +604,8 @@ namespace QOBDDAL.Helper.ChannelHelper
                     query = string.Format(query + " {0} Password LIKE '{1}' ", filterOperator.ToString(), agent.HashedPassword.Replace("'", "''"));
                 if (!string.IsNullOrEmpty(agent.Picture))
                     query = string.Format(query + " {0} Picture LIKE '{1}' ", filterOperator.ToString(), agent.Picture.Replace("'", "''"));
-                if (!string.IsNullOrEmpty(agent.Admin))
-                    query = string.Format(query + " {0} Admin LIKE '{1}' ", filterOperator.ToString(), agent.Admin.Replace("'", "''"));
+                if (agent.Admin)
+                    query = string.Format(query + " {0} Admin LIKE '{1}' ", filterOperator.ToString(), agent.Admin == true ? 1 : 0);
                 if (!string.IsNullOrEmpty(agent.Status))
                     query = string.Format(query + " {0} Status LIKE '{1}' ", filterOperator.ToString(), agent.Status.Replace("'", "''"));
                 if (!string.IsNullOrEmpty(agent.IPAddress))
@@ -635,7 +635,7 @@ namespace QOBDDAL.Helper.ChannelHelper
             output["Phone"] = (agent.Phone ?? "").ToString();
             output["Status"] = (agent.Status ?? "").ToString();
             output["IPAddress"] = (agent.IPAddress ?? "").ToString();
-            output["Admin"] = (agent.Admin ?? "").ToString();
+            output["Admin"] = (agent.Admin ? 1 : 0).ToString();
             output["Email"] = (agent.Email ?? "").ToString();
             output["Fax"] = (agent.Fax ?? "").ToString();
             output["ListSize"] = agent.ListSize.ToString();

@@ -77,7 +77,7 @@ namespace QOBDModels.Models
             set { _clearPasswordVerification = value; onPropertyChange(); }
         }
 
-        public string TxtAdmin
+        public bool IsAdmin
         {
             get { return _agent.Admin; }
             set { _agent.Admin = value; onPropertyChange(); }

@@ -220,6 +220,7 @@ namespace QOBDGateway.Helper.ChannelHelper
                         Comment = Utility.decodeBase64ToString(x.Comment),
                         Email = Utility.decodeBase64ToString(x.Email),
                         Fax = Utility.decodeBase64ToString(x.Fax),
+                        Admin = Utility.intTryParse(Utility.decodeBase64ToString(x.Admin)) == 1 ? true :false,
                         RoleList = x.Roles.ArrayTypeToRole(),
                     };
                 }
@@ -248,6 +249,7 @@ namespace QOBDGateway.Helper.ChannelHelper
                 Comment = Utility.encodeStringToBase64(x.Comment),
                 Email = Utility.encodeStringToBase64(x.Email),
                 Fax = Utility.encodeStringToBase64(x.Fax),
+                Admin = Utility.encodeStringToBase64((x.Admin ? 1 : 0).ToString()),
             }).ToArray();
 
             return outputArray;
@@ -272,6 +274,7 @@ namespace QOBDGateway.Helper.ChannelHelper
                 agentQCBD.IsOnline = (agent.IsOnline) ? Utility.encodeStringToBase64("1") : Utility.encodeStringToBase64("0");
                 agentQCBD.Email = Utility.encodeStringToBase64(agent.Email);
                 agentQCBD.Fax = Utility.encodeStringToBase64(agent.Fax);
+                agentQCBD.Admin = Utility.encodeStringToBase64((agent.Admin ? 1:0).ToString());
                 agentQCBD.Operator = Utility.encodeStringToBase64(filterOperator.ToString());
             }
             return agentQCBD;

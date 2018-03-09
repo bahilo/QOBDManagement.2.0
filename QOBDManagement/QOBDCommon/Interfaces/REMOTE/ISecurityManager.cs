@@ -19,7 +19,7 @@ namespace QOBDCommon.Interfaces.REMOTE
 
         void setCompanyName(string companyName);
 
-        Task<Agent> AuthenticateUserAsync(string username, string password);
+        Task<Agent> AuthenticateUserAsync(string username, string password, string licenseKey);
 
         Task<List<License>> checkLicenseByKeyAsync(string licenseKey);
 

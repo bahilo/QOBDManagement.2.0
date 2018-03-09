@@ -69,21 +69,23 @@ namespace QOBDDAL.Core
         }
 
         public async void cacheWebServiceData()
-        {            
-            try
-            {
-                await DALHelper.doAction(retrieveGateWayOrderDataAsync, TimeSpan.FromSeconds(1), 0, new List<Exception>(), 3);
-            }
-            catch (Exception ex) { Log.error(ex.Message, EErrorFrom.ORDER); }
+        {
+            await retrieveGateWayOrderDataAsync();
+            //try
+            //{
+                
+            //    await DALHelper.doAction(retrieveGateWayOrderDataAsync, TimeSpan.FromSeconds(1), 0, new List<Exception>(), 3);
+            //}
+            //catch (Exception ex) { Log.error(ex.Message, EErrorFrom.ORDER); }
         }
 
         public void setServiceCredential(object channel)
         {
             _servicePortType = (ClientProxy)channel;
-            if (AuthenticatedUser != null && string.IsNullOrEmpty(_servicePortType.ClientCredentials.UserName.UserName) && string.IsNullOrEmpty(_servicePortType.ClientCredentials.UserName.Password))
+            if (AuthenticatedUser != null && string.IsNullOrEmpty(_servicePortType.ClientCredentials.UserName.Password) && string.IsNullOrEmpty(_servicePortType.ClientCredentials.UserName.Password))
             {
-                _servicePortType.ClientCredentials.UserName.UserName = AuthenticatedUser.UserName;
-                _servicePortType.ClientCredentials.UserName.Password = AuthenticatedUser.HashedPassword;
+                _servicePortType.ClientCredentials.UserName.UserName = "none";
+                _servicePortType.ClientCredentials.UserName.Password = AuthenticatedUser.WebServiceCredential;
             }
             _gatewayOrder.setServiceCredential(_servicePortType);
         }
@@ -105,7 +107,8 @@ namespace QOBDDAL.Core
                 try { _progressBarFunc((double)100 / _progressStep); }
                 catch (DivideByZeroException ex) { Log.error(ex.Message, EErrorFrom.ORDER); }
             }
-            catch (Exception) { throw; }
+            catch (Exception ex) {
+                Log.error(ex.Message, EErrorFrom.ORDER);/*throw;*/ }
             finally { lock (_lock) IsDataDownloading = false; }
 
         }
@@ -820,14 +823,14 @@ namespace QOBDDAL.Core
             var newProxy = _serviceCommunication.getProxy();
             try
             {
-                newProxy.ClientCredentials.UserName.UserName = AuthenticatedUser.UserName;
-                newProxy.ClientCredentials.UserName.Password = AuthenticatedUser.HashedPassword;
+                newProxy.ClientCredentials.UserName.UserName = "none";
+                newProxy.ClientCredentials.UserName.Password = AuthenticatedUser.WebServiceCredential;
             }
             catch (Exception)
             {
                 newProxy = _serviceCommunication.getProxy();
-                newProxy.ClientCredentials.UserName.UserName = AuthenticatedUser.UserName;
-                newProxy.ClientCredentials.UserName.Password = AuthenticatedUser.HashedPassword;
+                newProxy.ClientCredentials.UserName.UserName = "none";
+                newProxy.ClientCredentials.UserName.Password = AuthenticatedUser.WebServiceCredential;
             }
 
             DALItem dalItem = new DALItem(newProxy, _dataSet);
